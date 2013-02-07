@@ -4,6 +4,30 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="Case" projectFiles="true">
+        <logicalFolder name="f1" displayName="Propriété" projectFiles="true">
+          <itemPath>Case/Propriété/Domaine.h</itemPath>
+          <itemPath>Case/Propriété/Gare.h</itemPath>
+          <itemPath>Case/Propriété/Propriete.h</itemPath>
+          <itemPath>Case/Propriété/ServicePublique.h</itemPath>
+        </logicalFolder>
+        <itemPath>Case/Arrestation.h</itemPath>
+        <itemPath>Case/Carte.h</itemPath>
+        <itemPath>Case/Case.h</itemPath>
+        <itemPath>Case/Depart.h</itemPath>
+        <itemPath>Case/Parc.h</itemPath>
+        <itemPath>Case/Prison.h</itemPath>
+        <itemPath>Case/Taxe.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="Participant" projectFiles="true">
+        <itemPath>Participant/Banque.h</itemPath>
+        <itemPath>Participant/Cagnotte.h</itemPath>
+        <itemPath>Participant/Joueur.h</itemPath>
+        <itemPath>Participant/Participant.h</itemPath>
+      </logicalFolder>
+      <itemPath>Billet.h</itemPath>
+      <itemPath>De.h</itemPath>
+      <itemPath>Plateau.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -12,6 +36,30 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="Case" projectFiles="true">
+        <logicalFolder name="f1" displayName="Propriété" projectFiles="true">
+          <itemPath>Case/Propriété/Domaine.cpp</itemPath>
+          <itemPath>Case/Propriété/Gare.cpp</itemPath>
+          <itemPath>Case/Propriété/Propriete.cpp</itemPath>
+          <itemPath>Case/Propriété/ServicePublique.cpp</itemPath>
+        </logicalFolder>
+        <itemPath>Case/Arrestation.cpp</itemPath>
+        <itemPath>Case/Carte.cpp</itemPath>
+        <itemPath>Case/Case.cpp</itemPath>
+        <itemPath>Case/Depart.cpp</itemPath>
+        <itemPath>Case/Parc.cpp</itemPath>
+        <itemPath>Case/Prison.cpp</itemPath>
+        <itemPath>Case/Taxe.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="Participant" projectFiles="true">
+        <itemPath>Participant/Banque.cpp</itemPath>
+        <itemPath>Participant/Cagnotte.cpp</itemPath>
+        <itemPath>Participant/Joueur.cpp</itemPath>
+        <itemPath>Participant/Participant.cpp</itemPath>
+      </logicalFolder>
+      <itemPath>Billet.cpp</itemPath>
+      <itemPath>De.cpp</itemPath>
+      <itemPath>Plateau.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
