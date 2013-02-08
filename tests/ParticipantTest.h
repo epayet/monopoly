@@ -9,6 +9,7 @@
 #define	PARTICIPANTTEST_H
 
 #include <cppunit/extensions/HelperMacros.h>
+class Participant;
 
 class ParticipantTest : public CPPUNIT_NS::TestFixture
 {
@@ -28,6 +29,8 @@ public:
 private:
 	void testCrediter();
 	void testPayer();
+	
+	Participant* _participant;
 
 };
 

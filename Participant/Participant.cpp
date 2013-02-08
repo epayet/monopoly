@@ -12,7 +12,9 @@ Participant::~Participant()
 
 Billets Participant::Payer(int somme, Participant *crediteur)
 {
-//	return NULL;
+	Billets billets;
+	
+	return billets;
 }
 
 void Participant::Crediter(Billets billets)
