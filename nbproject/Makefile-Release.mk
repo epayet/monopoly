@@ -44,8 +44,10 @@ OBJECTFILES= \
 	${OBJECTDIR}/Plateau.o \
 	${OBJECTDIR}/De.o \
 	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/Carte/Carte.o \
 	${OBJECTDIR}/Case/Arrestation.o \
 	${OBJECTDIR}/Case/Propriété/Gare.o \
+	${OBJECTDIR}/Carte/TypeCarte.o \
 	${OBJECTDIR}/Case/Propriété/Propriete.o \
 	${OBJECTDIR}/Case/Carte.o \
 	${OBJECTDIR}/Case/Prison.o \
@@ -125,6 +127,11 @@ ${OBJECTDIR}/main.o: main.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
 
+${OBJECTDIR}/Carte/Carte.o: Carte/Carte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Carte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Carte/Carte.o Carte/Carte.cpp
+
 ${OBJECTDIR}/Case/Arrestation.o: Case/Arrestation.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Case
 	${RM} $@.d
@@ -134,6 +141,11 @@ ${OBJECTDIR}/Case/Propriété/Gare.o: Case/Propriété/Gare.cpp
 	${MKDIR} -p ${OBJECTDIR}/Case/Propriété
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Propriété/Gare.o Case/Propriété/Gare.cpp
+
+${OBJECTDIR}/Carte/TypeCarte.o: Carte/TypeCarte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Carte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Carte/TypeCarte.o Carte/TypeCarte.cpp
 
 ${OBJECTDIR}/Case/Propriété/Propriete.o: Case/Propriété/Propriete.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Case/Propriété

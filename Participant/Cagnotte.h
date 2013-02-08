@@ -12,7 +12,8 @@
 
 class Cagnotte : Participant
 {
-	
+	public :
+		void InitialiserBillets();
 };
 
 #endif	/* CAGNOTTE_H */

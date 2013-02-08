@@ -8,7 +8,19 @@
 #ifndef BILLET_H
 #define	BILLET_H
 
+#include <cstdlib>
+#include <cstdio>
+#include <map>
+#include <vector>
 
+
+class Billet
+{
+	
+};
+
+typedef std::pair<int, Billet> NbBillets;
+typedef std::vector<NbBillets> Billets;
 
 #endif	/* BILLET_H */
 

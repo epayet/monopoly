@@ -8,7 +8,7 @@
 #ifndef CASE_H
 #define	CASE_H
 
-#include "../Participant/Joueur.h"
+class Joueur;
 
 class Case
 {

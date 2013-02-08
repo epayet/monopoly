@@ -12,7 +12,10 @@
 
 class Banque : Participant
 {
-	
+	public:
+		Billets FaireMonnaie(Billet billet);
+		Billets FaireMonnaie(Billets billets);
+		void InitialiserBillets();
 };
 
 #endif	/* BANQUE_H */
