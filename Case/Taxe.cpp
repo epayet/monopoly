@@ -1,6 +1,6 @@
 #include "Taxe.h"
 
-void Taxe::Agir(Joueur joueur)
+void Taxe::Agir(Joueur *joueur)
 {
 	
 }

@@ -8,13 +8,12 @@
 #ifndef PARC_H
 #define	PARC_H
 
-
 #include "Case.h"
 
 class Parc : Case
 {
 public:
-	void Agir(Joueur joueur);
+	void Agir(Joueur *joueur);
 };
 
 #endif	/* PARC_H */

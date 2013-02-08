@@ -9,25 +9,29 @@
 #define	JOUEUR_H
 
 #include "Participant.h"
-#include "../Case/Propriété/Propriete.h"
 #include <cstdlib>
 #include <vector>
+
+class Propriete;
+class Case;
 
 class Joueur : Participant
 {
 public:
+	Joueur();
+	~Joueur();
 	void Avancer();
-	void Acheter(Propriete propriete);
+	void Acheter(Propriete *propriete);
 	bool PeutPayer(int somme);
-	void Construire(Propriete propriete);
-	void Detruire(Propriete propriete);
-	void Hypothequer(Propriete propriete);
-	void LeverHypotheque(Propriete propriete);
-	void Placer(Case caseAPlacer);
+	void Construire(Propriete *propriete);
+	void Detruire(Propriete *propriete);
+	void Hypothequer(Propriete *propriete);
+	void LeverHypotheque(Propriete *propriete);
+	void Placer(Case *caseAPlacer);
 	void InitialiserBillets();
 
 private:
-	std::vector<Propriete> _proprietes;
+	std::vector<Propriete*> _proprietes;
 };
 
 #endif	/* JOUEUR_H */

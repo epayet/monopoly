@@ -57,6 +57,12 @@ OBJECTFILES= \
 	${OBJECTDIR}/Participant/Joueur.o \
 	${OBJECTDIR}/Participant/Cagnotte.o
 
+# Test Directory
+TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
+
+# Test Files
+TESTFILES= \
+	${TESTDIR}/TestFiles/f1
 
 # C Compiler Flags
 CFLAGS=
@@ -189,6 +195,307 @@ ${OBJECTDIR}/Participant/Cagnotte.o: Participant/Cagnotte.cpp
 
 # Subprojects
 .build-subprojects:
+
+# Build Test Targets
+.build-tests-conf: .build-conf ${TESTFILES}
+${TESTDIR}/TestFiles/f1: ${TESTDIR}/tests/ParticipantTest.o ${TESTDIR}/tests/ParticipantTestRunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS} -lcppunit -lcppunit -lcppunit -lcppunit 
+
+
+${TESTDIR}/tests/ParticipantTest.o: tests/ParticipantTest.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} $@.d
+	$(COMPILE.cc) -g -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${TESTDIR}/tests/ParticipantTest.o tests/ParticipantTest.cpp
+
+
+${TESTDIR}/tests/ParticipantTestRunner.o: tests/ParticipantTestRunner.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} $@.d
+	$(COMPILE.cc) -g -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${TESTDIR}/tests/ParticipantTestRunner.o tests/ParticipantTestRunner.cpp
+
+
+${OBJECTDIR}/Case/Depart_nomain.o: ${OBJECTDIR}/Case/Depart.o Case/Depart.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Case
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Depart.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Depart_nomain.o Case/Depart.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Case/Depart.o ${OBJECTDIR}/Case/Depart_nomain.o;\
+	fi
+
+${OBJECTDIR}/Case/Propriété/ServicePublique_nomain.o: ${OBJECTDIR}/Case/Propriété/ServicePublique.o Case/Propriété/ServicePublique.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Case/Propriété
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Propriété/ServicePublique.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Propriété/ServicePublique_nomain.o Case/Propriété/ServicePublique.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Case/Propriété/ServicePublique.o ${OBJECTDIR}/Case/Propriété/ServicePublique_nomain.o;\
+	fi
+
+${OBJECTDIR}/Participant/Participant_nomain.o: ${OBJECTDIR}/Participant/Participant.o Participant/Participant.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Participant
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Participant/Participant.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Participant/Participant_nomain.o Participant/Participant.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Participant/Participant.o ${OBJECTDIR}/Participant/Participant_nomain.o;\
+	fi
+
+${OBJECTDIR}/Billet_nomain.o: ${OBJECTDIR}/Billet.o Billet.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Billet.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Billet_nomain.o Billet.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Billet.o ${OBJECTDIR}/Billet_nomain.o;\
+	fi
+
+${OBJECTDIR}/Case/Taxe_nomain.o: ${OBJECTDIR}/Case/Taxe.o Case/Taxe.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Case
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Taxe.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Taxe_nomain.o Case/Taxe.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Case/Taxe.o ${OBJECTDIR}/Case/Taxe_nomain.o;\
+	fi
+
+${OBJECTDIR}/Participant/Banque_nomain.o: ${OBJECTDIR}/Participant/Banque.o Participant/Banque.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Participant
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Participant/Banque.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Participant/Banque_nomain.o Participant/Banque.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Participant/Banque.o ${OBJECTDIR}/Participant/Banque_nomain.o;\
+	fi
+
+${OBJECTDIR}/Plateau_nomain.o: ${OBJECTDIR}/Plateau.o Plateau.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Plateau.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Plateau_nomain.o Plateau.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Plateau.o ${OBJECTDIR}/Plateau_nomain.o;\
+	fi
+
+${OBJECTDIR}/De_nomain.o: ${OBJECTDIR}/De.o De.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/De.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/De_nomain.o De.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/De.o ${OBJECTDIR}/De_nomain.o;\
+	fi
+
+${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/main.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/main_nomain.o main.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/main.o ${OBJECTDIR}/main_nomain.o;\
+	fi
+
+${OBJECTDIR}/Carte/Carte_nomain.o: ${OBJECTDIR}/Carte/Carte.o Carte/Carte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Carte/Carte.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Carte/Carte_nomain.o Carte/Carte.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Carte/Carte.o ${OBJECTDIR}/Carte/Carte_nomain.o;\
+	fi
+
+${OBJECTDIR}/Case/Arrestation_nomain.o: ${OBJECTDIR}/Case/Arrestation.o Case/Arrestation.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Case
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Arrestation.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Arrestation_nomain.o Case/Arrestation.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Case/Arrestation.o ${OBJECTDIR}/Case/Arrestation_nomain.o;\
+	fi
+
+${OBJECTDIR}/Case/Propriété/Gare_nomain.o: ${OBJECTDIR}/Case/Propriété/Gare.o Case/Propriété/Gare.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Case/Propriété
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Propriété/Gare.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Propriété/Gare_nomain.o Case/Propriété/Gare.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Case/Propriété/Gare.o ${OBJECTDIR}/Case/Propriété/Gare_nomain.o;\
+	fi
+
+${OBJECTDIR}/Carte/TypeCarte_nomain.o: ${OBJECTDIR}/Carte/TypeCarte.o Carte/TypeCarte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Carte/TypeCarte.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Carte/TypeCarte_nomain.o Carte/TypeCarte.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Carte/TypeCarte.o ${OBJECTDIR}/Carte/TypeCarte_nomain.o;\
+	fi
+
+${OBJECTDIR}/Case/Propriété/Propriete_nomain.o: ${OBJECTDIR}/Case/Propriété/Propriete.o Case/Propriété/Propriete.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Case/Propriété
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Propriété/Propriete.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Propriété/Propriete_nomain.o Case/Propriété/Propriete.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Case/Propriété/Propriete.o ${OBJECTDIR}/Case/Propriété/Propriete_nomain.o;\
+	fi
+
+${OBJECTDIR}/Case/Carte_nomain.o: ${OBJECTDIR}/Case/Carte.o Case/Carte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Case
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Carte.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Carte_nomain.o Case/Carte.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Case/Carte.o ${OBJECTDIR}/Case/Carte_nomain.o;\
+	fi
+
+${OBJECTDIR}/Case/Prison_nomain.o: ${OBJECTDIR}/Case/Prison.o Case/Prison.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Case
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Prison.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Prison_nomain.o Case/Prison.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Case/Prison.o ${OBJECTDIR}/Case/Prison_nomain.o;\
+	fi
+
+${OBJECTDIR}/Case/Case_nomain.o: ${OBJECTDIR}/Case/Case.o Case/Case.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Case
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Case.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Case_nomain.o Case/Case.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Case/Case.o ${OBJECTDIR}/Case/Case_nomain.o;\
+	fi
+
+${OBJECTDIR}/Case/Propriété/Domaine_nomain.o: ${OBJECTDIR}/Case/Propriété/Domaine.o Case/Propriété/Domaine.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Case/Propriété
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Propriété/Domaine.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Propriété/Domaine_nomain.o Case/Propriété/Domaine.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Case/Propriété/Domaine.o ${OBJECTDIR}/Case/Propriété/Domaine_nomain.o;\
+	fi
+
+${OBJECTDIR}/Case/Parc_nomain.o: ${OBJECTDIR}/Case/Parc.o Case/Parc.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Case
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Parc.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Parc_nomain.o Case/Parc.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Case/Parc.o ${OBJECTDIR}/Case/Parc_nomain.o;\
+	fi
+
+${OBJECTDIR}/Participant/Joueur_nomain.o: ${OBJECTDIR}/Participant/Joueur.o Participant/Joueur.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Participant
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Participant/Joueur.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Participant/Joueur_nomain.o Participant/Joueur.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Participant/Joueur.o ${OBJECTDIR}/Participant/Joueur_nomain.o;\
+	fi
+
+${OBJECTDIR}/Participant/Cagnotte_nomain.o: ${OBJECTDIR}/Participant/Cagnotte.o Participant/Cagnotte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Participant
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Participant/Cagnotte.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Participant/Cagnotte_nomain.o Participant/Cagnotte.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Participant/Cagnotte.o ${OBJECTDIR}/Participant/Cagnotte_nomain.o;\
+	fi
+
+# Run Test Targets
+.test-conf:
+	@if [ "${TEST}" = "" ]; \
+	then  \
+	    ${TESTDIR}/TestFiles/f1 || true; \
+	else  \
+	    ./${TEST} || true; \
+	fi
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}

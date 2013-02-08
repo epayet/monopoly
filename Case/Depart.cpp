@@ -1,6 +1,6 @@
 #include "Depart.h"
 
-void Depart::Agir(Joueur joueur)
+void Depart::Agir(Joueur *joueur)
 {
 	
 }

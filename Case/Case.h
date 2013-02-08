@@ -14,7 +14,7 @@ class Case
 {
 public:
 	Case();
-	virtual void Agir(Joueur joueur);
+	virtual void Agir(Joueur *joueur);
 
 protected:
 	int Numero;

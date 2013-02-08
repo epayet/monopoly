@@ -13,7 +13,7 @@
 class ServicePublique : Propriete
 {
 	public:
-		void Agir(Joueur joueur);
+		void Agir(Joueur *joueur);
 };
 
 #endif	/* SERVICEPUBLIQUE_H */

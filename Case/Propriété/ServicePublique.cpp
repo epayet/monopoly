@@ -1,6 +1,6 @@
 #include "ServicePublique.h"
 
-void ServicePublique::Agir(Joueur joueur)
+void ServicePublique::Agir(Joueur *joueur)
 {
 	
 }

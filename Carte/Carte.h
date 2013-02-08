@@ -8,17 +8,17 @@
 #ifndef CARTE_H
 #define	CARTE_H
 
-#include "TypeCarte.h"
-#include "../Participant/Joueur.h"
-#include "../Plateau.h"
+class Joueur;
+class Plateau;
+class TypeCarte;
 
 class Carte
 {
 public :
-	virtual void Agir(Joueur joueur);
+	virtual void Agir(Joueur *joueur);
 private:
-	TypeCarte _typeCarte;
-	Plateau _plateau;
+	TypeCarte *_typeCarte;
+	Plateau *_plateau;
 };
 
 #endif	/* CARTE_H */

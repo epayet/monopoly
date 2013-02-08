@@ -16,10 +16,14 @@
 
 class Billet
 {
-	
+public:
+	Billet(int valeur);
+	int GetValeur();
+private:
+	int Valeur;
 };
 
-typedef std::pair<int, Billet> NbBillets;
+typedef std::pair<int, Billet*> NbBillets;
 typedef std::vector<NbBillets> Billets;
 
 #endif	/* BILLET_H */

@@ -13,7 +13,7 @@
 class Depart : Case
 {
 	public:
-		void Agir(Joueur joueur);
+		void Agir(Joueur *joueur);
 };
 
 #endif	/* DEPART_H */

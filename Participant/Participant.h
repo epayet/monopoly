@@ -15,9 +15,10 @@ class Participant
 public:
 	Participant();
 	~Participant();
-	Billets Payer(int somme, Participant crediteur);
+	Billets Payer(int somme, Participant *crediteur);
 	void Crediter(Billets billets);
 	virtual void InitialiserBillets();
+	int SommeBillets();
 	
 protected:
 	Billets _billets;

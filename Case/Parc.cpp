@@ -1,6 +1,6 @@
 #include "Parc.h"
 
-void Parc::Agir(Joueur joueur)
+void Parc::Agir(Joueur *joueur)
 {
 	
 }

@@ -1,6 +1,6 @@
 #include "Carte.h"
 
-void Carte::Agir(Joueur joueur)
+void Carte::Agir(Joueur *joueur)
 {
 	
 }

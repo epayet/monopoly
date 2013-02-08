@@ -13,7 +13,7 @@
 class Carte : Case
 {
 	public:
-		void Agir(Joueur joueur);
+		void Agir(Joueur *joueur);
 };
 
 #endif	/* CARTE_H */

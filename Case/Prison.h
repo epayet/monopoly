@@ -13,7 +13,7 @@
 class Prison : Case 
 {
 	public :
-		void Agir(Joueur joueur);
+		void Agir(Joueur *joueur);
 };
 
 #endif	/* PRISON_H */

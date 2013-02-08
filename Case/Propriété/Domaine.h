@@ -9,7 +9,7 @@
 #define	DOMAINE_H
 
 #include "Propriete.h"
-#include "Couleur.h"
+class Couleur;
 
 class Domaine : Propriete
 {
@@ -17,10 +17,10 @@ public:
 	bool PeutConstruire();
 	void Construire();
 	int Detruire();
-	void Agir(Joueur joueur);
+	void Agir(Joueur *joueur);
 
 private:
-	Couleur _couleur;
+	Couleur *_couleur;
 };
 
 #endif	/* DOMAINE_H */

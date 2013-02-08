@@ -15,7 +15,7 @@ int Domaine::Detruire()
 	return -1;
 }
 
-void Domaine::Agir(Joueur joueur)
+void Domaine::Agir(Joueur *joueur)
 {
 	
 }

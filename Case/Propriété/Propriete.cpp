@@ -5,7 +5,7 @@ int Propriete::Hypothequer()
 	return -1;
 }
 
-void Propriete::Acheter(Joueur joueur)
+void Propriete::Acheter(Joueur *joueur)
 {
 	
 }

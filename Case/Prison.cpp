@@ -1,6 +1,6 @@
 #include "Prison.h"
 
-void Prison::Agir(Joueur joueur)
+void Prison::Agir(Joueur *joueur)
 {
 	
 }

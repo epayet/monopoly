@@ -1,6 +1,6 @@
 #include "Case.h"
 
-void Case::Agir(Joueur joueur)
+void Case::Agir(Joueur *joueur)
 {
 	
 }

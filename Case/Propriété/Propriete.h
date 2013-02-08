@@ -9,14 +9,14 @@
 #define	PROPRIETE_H
 
 #include "../Case.h"
-#include "../../Participant/Joueur.h"
+class Joueur;
 
 class Propriete : Case
 {
 	public :
 		int Hypothequer();
 		void LeverHypotheque();
-		void Acheter(Joueur joueur);
+		void Acheter(Joueur *joueur);
 };
 
 #endif	/* PROPRIETE_H */
