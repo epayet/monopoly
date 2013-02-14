@@ -10,7 +10,7 @@ Joueur::~Joueur()
 	
 }
 
-void Joueur::Avancer()
+void Joueur::Avancer(int valeur)
 {
 	
 }
@@ -53,4 +53,16 @@ void Joueur::Placer(Case *caseAPlacer)
 void Joueur::InitialiserBillets()
 {
 	
+}
+
+int Joueur::GetPosition()
+{
+	return -1;
+}
+
+Billets Joueur::GetBillets()
+{
+	Billets billets;
+	
+	return billets;
 }

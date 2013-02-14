@@ -62,6 +62,7 @@ TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
 
 # Test Files
 TESTFILES= \
+	${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/monopoly \
 	${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/monopoly
 
 # C Compiler Flags
@@ -198,9 +199,25 @@ ${OBJECTDIR}/Participant/Cagnotte.o: Participant/Cagnotte.cpp
 
 # Build Test Targets
 .build-tests-conf: .build-conf ${TESTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/monopoly: ${TESTDIR}/tests/JoueurTest.o ${TESTDIR}/tests/JoueurTestRunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
+	${LINK.cc}   -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/monopoly $^ ${LDLIBSOPTIONS} 
+
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/monopoly: ${TESTDIR}/tests/ParticipantTest.o ${TESTDIR}/tests/ParticipantTestRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc}   -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/monopoly $^ ${LDLIBSOPTIONS} 
+
+
+${TESTDIR}/tests/JoueurTest.o: tests/JoueurTest.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${TESTDIR}/tests/JoueurTest.o tests/JoueurTest.cpp
+
+
+${TESTDIR}/tests/JoueurTestRunner.o: tests/JoueurTestRunner.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${TESTDIR}/tests/JoueurTestRunner.o tests/JoueurTestRunner.cpp
 
 
 ${TESTDIR}/tests/ParticipantTest.o: tests/ParticipantTest.cpp 
@@ -492,6 +509,7 @@ ${OBJECTDIR}/Participant/Cagnotte_nomain.o: ${OBJECTDIR}/Participant/Cagnotte.o 
 .test-conf:
 	@if [ "${TEST}" = "" ]; \
 	then  \
+	    ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/monopoly || true; \
 	    ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/monopoly || true; \
 	else  \
 	    ./${TEST} || true; \

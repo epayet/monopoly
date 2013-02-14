@@ -10,7 +10,7 @@
 
 #include "Participant.h"
 
-class Banque : Participant
+class Banque : public Participant
 {
 	public:
 		Billets FaireMonnaie(Billet *billet);

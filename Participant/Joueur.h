@@ -15,12 +15,12 @@
 class Propriete;
 class Case;
 
-class Joueur : Participant
+class Joueur : public Participant
 {
 public:
 	Joueur();
 	~Joueur();
-	void Avancer();
+	void Avancer(int valeur);
 	void Acheter(Propriete *propriete);
 	bool PeutPayer(int somme);
 	void Construire(Propriete *propriete);
@@ -29,6 +29,8 @@ public:
 	void LeverHypotheque(Propriete *propriete);
 	void Placer(Case *caseAPlacer);
 	void InitialiserBillets();
+	int GetPosition();
+	Billets GetBillets();
 
 private:
 	std::vector<Propriete*> _proprietes;

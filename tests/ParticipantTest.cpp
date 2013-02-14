@@ -42,22 +42,19 @@ void ParticipantTest::testCrediter()
 	_participant->Crediter(billets);
 	CPPUNIT_ASSERT(_participant->SommeBillets() == 10);
 	
-	delete nbBillets.second;
 	nbBillets.second = new Billet(50);
 	
 	_participant->Crediter(billets);
 	CPPUNIT_ASSERT(_participant->SommeBillets() == 60);
-	
-	delete nbBillets.second;
 }
 
 void ParticipantTest::testPayer()
 {
-	int somme = 100;
+	int somme = 120;
 	Participant* crediteur = new Participant();
 	CPPUNIT_ASSERT(_participant->SommeBillets() == 0);
 	
-	Billet* billet10, billet20, billet50, billet100, billet500;
+	Billet* billet10, *billet20, *billet50, *billet100, *billet500;
 	billet10 = new Billet(10);
 	billet20 = new Billet(20);
 	billet50 = new Billet(50);
@@ -84,19 +81,18 @@ void ParticipantTest::testPayer()
 	nbBillets500.first = 1;
 	nbBillets500.second = billet500;
 	
+	Billets billets;
+	billets.push_back(nbBillets10);
+	billets.push_back(nbBillets20);
+	billets.push_back(nbBillets50);
+	billets.push_back(nbBillets100);
+	billets.push_back(nbBillets500);
 	
+	_participant->Crediter(billets);
 	
-	Billets result = _participant->Payer(somme, crediteur);
-	if(true /*check result*/)
-	{
-		CPPUNIT_ASSERT(false);
-	}
+	Billets result = _participant->Payer(somme);
+	crediteur->Crediter(result);
+	CPPUNIT_ASSERT(crediteur->SommeBillets() == somme);
 	
-	delete crediteur;
-	delete billet10;
-	delete billet20;
-	delete billet50;
-	delete billet100;
-	delete billet500;
 }
 

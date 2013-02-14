@@ -10,7 +10,7 @@
 
 #include "Participant.h"
 
-class Cagnotte : Participant
+class Cagnotte : public Participant
 {
 	public :
 		void InitialiserBillets();

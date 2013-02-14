@@ -10,7 +10,7 @@ Participant::~Participant()
 	
 }
 
-Billets Participant::Payer(int somme, Participant *crediteur)
+Billets Participant::Payer(int somme)
 {
 	Billets billets;
 	

@@ -13,11 +13,12 @@ class Joueur;
 class Case
 {
 public:
-	Case();
+	Case(int numero);
 	virtual void Agir(Joueur *joueur);
+	int GetNumero();
 
 protected:
-	int Numero;
+	int _numero;
 };
 
 #endif	/* CASE_H */
