@@ -30,9 +30,9 @@ public:
 	void Placer(Case *caseAPlacer);
 	void InitialiserBillets();
 	int GetPosition();
-	Billets GetBillets();
 
 private:
+	int _position;
 	std::vector<Propriete*> _proprietes;
 };
 

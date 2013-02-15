@@ -1,33 +1,37 @@
 #include "Participant.h"
 
-Participant::Participant()
+Participant::Participant(std::string nom)
 {
-	
+	_nom = nom;
+	_billetManager = new BilletManager();
 }
 
 Participant::~Participant()
 {
-	
+	delete _billetManager;
 }
 
-Billets Participant::Payer(int somme)
+BilletManager* Participant::Payer(int somme)
 {
-	Billets billets;
-	
-	return billets;
+	return new BilletManager(somme);
 }
 
-void Participant::Crediter(Billets billets)
+void Participant::Crediter(BilletManager *billetManager)
 {
-
-}
-
-void Participant::InitialiserBillets()
-{
-	
+	_billetManager->Ajouter(billetManager);
 }
 
 int Participant::SommeBillets()
 {
-	return -1;
+	return _billetManager->SommeBillets();
+}
+
+std::string Participant::GetNom()
+{
+	return _nom;
+}
+
+BilletManager* Participant::GetBilletManager()
+{
+	return _billetManager;
 }

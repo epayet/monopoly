@@ -8,23 +8,14 @@
 #ifndef BILLET_H
 #define	BILLET_H
 
-#include <cstdlib>
-#include <cstdio>
-#include <map>
-#include <vector>
-
-
 class Billet
 {
 public:
 	Billet(int valeur);
 	int GetValeur();
 private:
-	int Valeur;
+	int _valeur;
 };
-
-typedef std::pair<int, Billet*> NbBillets;
-typedef std::vector<NbBillets> Billets;
 
 #endif	/* BILLET_H */
 

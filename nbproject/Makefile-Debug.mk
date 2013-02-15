@@ -53,6 +53,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Case/Prison.o \
 	${OBJECTDIR}/Case/Case.o \
 	${OBJECTDIR}/Case/Propriété/Domaine.o \
+	${OBJECTDIR}/Billet/BilletManager.o \
 	${OBJECTDIR}/Case/Parc.o \
 	${OBJECTDIR}/Participant/Joueur.o \
 	${OBJECTDIR}/Participant/Cagnotte.o
@@ -62,8 +63,8 @@ TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
 
 # Test Files
 TESTFILES= \
-	${TESTDIR}/TestFiles/f2 \
-	${TESTDIR}/TestFiles/f1
+	${TESTDIR}/TestFiles/f3 \
+	${TESTDIR}/TestFiles/f2
 
 # C Compiler Flags
 CFLAGS=
@@ -179,6 +180,11 @@ ${OBJECTDIR}/Case/Propriété/Domaine.o: Case/Propriété/Domaine.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Propriété/Domaine.o Case/Propriété/Domaine.cpp
 
+${OBJECTDIR}/Billet/BilletManager.o: Billet/BilletManager.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Billet
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/Billet/BilletManager.o Billet/BilletManager.cpp
+
 ${OBJECTDIR}/Case/Parc.o: Case/Parc.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Case
 	${RM} $@.d
@@ -199,13 +205,25 @@ ${OBJECTDIR}/Participant/Cagnotte.o: Participant/Cagnotte.cpp
 
 # Build Test Targets
 .build-tests-conf: .build-conf ${TESTFILES}
+${TESTDIR}/TestFiles/f3: ${TESTDIR}/tests/BilletManagerTest.o ${TESTDIR}/tests/BilletManagerTestRunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f3 $^ ${LDLIBSOPTIONS} -lcppunit 
+
 ${TESTDIR}/TestFiles/f2: ${TESTDIR}/tests/JoueurTest.o ${TESTDIR}/tests/JoueurTestRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f2 $^ ${LDLIBSOPTIONS} -lcppunit 
 
-${TESTDIR}/TestFiles/f1: ${TESTDIR}/tests/ParticipantTest.o ${TESTDIR}/tests/ParticipantTestRunner.o ${OBJECTFILES:%.o=%_nomain.o}
-	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS} -lcppunit -lcppunit -lcppunit -lcppunit 
+
+${TESTDIR}/tests/BilletManagerTest.o: tests/BilletManagerTest.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} $@.d
+	$(COMPILE.cc) -g -I. -MMD -MP -MF $@.d -o ${TESTDIR}/tests/BilletManagerTest.o tests/BilletManagerTest.cpp
+
+
+${TESTDIR}/tests/BilletManagerTestRunner.o: tests/BilletManagerTestRunner.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} $@.d
+	$(COMPILE.cc) -g -I. -MMD -MP -MF $@.d -o ${TESTDIR}/tests/BilletManagerTestRunner.o tests/BilletManagerTestRunner.cpp
 
 
 ${TESTDIR}/tests/JoueurTest.o: tests/JoueurTest.cpp 
@@ -218,18 +236,6 @@ ${TESTDIR}/tests/JoueurTestRunner.o: tests/JoueurTestRunner.cpp
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} $@.d
 	$(COMPILE.cc) -g -I. -MMD -MP -MF $@.d -o ${TESTDIR}/tests/JoueurTestRunner.o tests/JoueurTestRunner.cpp
-
-
-${TESTDIR}/tests/ParticipantTest.o: tests/ParticipantTest.cpp 
-	${MKDIR} -p ${TESTDIR}/tests
-	${RM} $@.d
-	$(COMPILE.cc) -g -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${TESTDIR}/tests/ParticipantTest.o tests/ParticipantTest.cpp
-
-
-${TESTDIR}/tests/ParticipantTestRunner.o: tests/ParticipantTestRunner.cpp 
-	${MKDIR} -p ${TESTDIR}/tests
-	${RM} $@.d
-	$(COMPILE.cc) -g -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${TESTDIR}/tests/ParticipantTestRunner.o tests/ParticipantTestRunner.cpp
 
 
 ${OBJECTDIR}/Case/Depart_nomain.o: ${OBJECTDIR}/Case/Depart.o Case/Depart.cpp 
@@ -466,6 +472,19 @@ ${OBJECTDIR}/Case/Propriété/Domaine_nomain.o: ${OBJECTDIR}/Case/Propriété/Do
 	    ${CP} ${OBJECTDIR}/Case/Propriété/Domaine.o ${OBJECTDIR}/Case/Propriété/Domaine_nomain.o;\
 	fi
 
+${OBJECTDIR}/Billet/BilletManager_nomain.o: ${OBJECTDIR}/Billet/BilletManager.o Billet/BilletManager.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Billet
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Billet/BilletManager.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Billet/BilletManager_nomain.o Billet/BilletManager.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Billet/BilletManager.o ${OBJECTDIR}/Billet/BilletManager_nomain.o;\
+	fi
+
 ${OBJECTDIR}/Case/Parc_nomain.o: ${OBJECTDIR}/Case/Parc.o Case/Parc.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Case
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Parc.o`; \
@@ -509,8 +528,8 @@ ${OBJECTDIR}/Participant/Cagnotte_nomain.o: ${OBJECTDIR}/Participant/Cagnotte.o 
 .test-conf:
 	@if [ "${TEST}" = "" ]; \
 	then  \
+	    ${TESTDIR}/TestFiles/f3 || true; \
 	    ${TESTDIR}/TestFiles/f2 || true; \
-	    ${TESTDIR}/TestFiles/f1 || true; \
 	else  \
 	    ./${TEST} || true; \
 	fi

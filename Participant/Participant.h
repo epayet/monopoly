@@ -8,20 +8,24 @@
 #ifndef PARTICIPANT_H
 #define	PARTICIPANT_H
 
-#include "../Billet.h"
+#include "../Billet/BilletManager.h"
+#include <string>
 
 class Participant
 {
 public:
-	Participant();
+	Participant(std::string nom = "");
 	~Participant();
-	virtual Billets Payer(int somme);
-	void Crediter(Billets billets);
-	virtual void InitialiserBillets();
+	virtual BilletManager* Payer(int somme);
+	void Crediter(BilletManager *billetManager);
+	virtual void InitialiserBillets() = 0;
 	int SommeBillets();
+	std::string GetNom();
+	BilletManager* GetBilletManager();
 	
 protected:
-	Billets _billets;
+	BilletManager* _billetManager;
+	std::string _nom;
 };
 
 #endif	/* PARTICIPANT_H */

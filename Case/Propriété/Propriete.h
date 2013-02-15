@@ -15,7 +15,7 @@ class Propriete : Case
 {
 	public :
 		int Hypothequer();
-		void LeverHypotheque();
+		int LeverHypotheque();
 		void Acheter(Joueur *joueur);
 };
 

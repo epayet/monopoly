@@ -4,6 +4,10 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <logicalFolder name="f4" displayName="Billet" projectFiles="true">
+        <itemPath>Billet.h</itemPath>
+        <itemPath>Billet/BilletManager.h</itemPath>
+      </logicalFolder>
       <logicalFolder name="f3" displayName="Carte" projectFiles="true">
         <itemPath>Carte/Carte.h</itemPath>
         <itemPath>Carte/TypeCarte.h</itemPath>
@@ -30,7 +34,6 @@
         <itemPath>Participant/Joueur.h</itemPath>
         <itemPath>Participant/Participant.h</itemPath>
       </logicalFolder>
-      <itemPath>Billet.h</itemPath>
       <itemPath>De.h</itemPath>
       <itemPath>Plateau.h</itemPath>
     </logicalFolder>
@@ -41,6 +44,10 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="f4" displayName="Billet" projectFiles="true">
+        <itemPath>Billet.cpp</itemPath>
+        <itemPath>Billet/BilletManager.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="f3" displayName="Carte" projectFiles="true">
         <itemPath>Carte/Carte.cpp</itemPath>
         <itemPath>Carte/TypeCarte.cpp</itemPath>
@@ -66,7 +73,6 @@
         <itemPath>Participant/Joueur.cpp</itemPath>
         <itemPath>Participant/Participant.cpp</itemPath>
       </logicalFolder>
-      <itemPath>Billet.cpp</itemPath>
       <itemPath>De.cpp</itemPath>
       <itemPath>Plateau.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -75,6 +81,14 @@
                    displayName="Test Files"
                    projectFiles="false"
                    kind="TEST_LOGICAL_FOLDER">
+      <logicalFolder name="f3"
+                     displayName="BilletManagerTest"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/BilletManagerTest.cpp</itemPath>
+        <itemPath>tests/BilletManagerTest.h</itemPath>
+        <itemPath>tests/BilletManagerTestRunner.cpp</itemPath>
+      </logicalFolder>
       <logicalFolder name="f2"
                      displayName="JoueurTest"
                      projectFiles="true"
@@ -82,14 +96,6 @@
         <itemPath>tests/JoueurTest.cpp</itemPath>
         <itemPath>tests/JoueurTest.h</itemPath>
         <itemPath>tests/JoueurTestRunner.cpp</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f1"
-                     displayName="ParticipantTest"
-                     projectFiles="true"
-                     kind="TEST">
-        <itemPath>tests/ParticipantTest.cpp</itemPath>
-        <itemPath>tests/ParticipantTest.h</itemPath>
-        <itemPath>tests/ParticipantTestRunner.cpp</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -150,6 +156,24 @@
         </ccTool>
         <linkerTool>
           <output>${TESTDIR}/TestFiles/f2</output>
+          <linkerLibItems>
+            <linkerLibStdlibItem>CppUnit</linkerLibStdlibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f3">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f3</output>
           <linkerLibItems>
             <linkerLibStdlibItem>CppUnit</linkerLibStdlibItem>
           </linkerLibItems>

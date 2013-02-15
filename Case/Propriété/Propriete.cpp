@@ -10,7 +10,7 @@ void Propriete::Acheter(Joueur *joueur)
 	
 }
 
-void Propriete::LeverHypotheque()
+int Propriete::LeverHypotheque()
 {
 	
 }

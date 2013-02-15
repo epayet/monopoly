@@ -5,12 +5,9 @@ void Banque::InitialiserBillets()
 	
 }
 
-Billets Banque::FaireMonnaie(Billet *billet)
+BilletManager* Banque::FaireMonnaie(BilletManager *billetManager)
 {
+	BilletManager* retour = new BilletManager();
 	
-}
-
-Billets Banque::FaireMonnaie(Billets billets)
-{
-	
+	return retour;
 }

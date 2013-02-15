@@ -13,8 +13,7 @@
 class Banque : public Participant
 {
 	public:
-		Billets FaireMonnaie(Billet *billet);
-		Billets FaireMonnaie(Billets billets);
+		BilletManager* FaireMonnaie(BilletManager* billetManager);
 		void InitialiserBillets();
 };
 

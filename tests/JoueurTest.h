@@ -20,6 +20,8 @@ class JoueurTest : public CPPUNIT_NS::TestFixture
 	CPPUNIT_TEST(testInitialiserBillets);
 	CPPUNIT_TEST(testPeutPayer);
 	CPPUNIT_TEST(testPlacer);
+	CPPUNIT_TEST(testCrediter);
+	CPPUNIT_TEST(testPayer);
 
 	CPPUNIT_TEST_SUITE_END();
 
@@ -34,6 +36,8 @@ private:
 	void testInitialiserBillets();
 	void testPeutPayer();
 	void testPlacer();
+	void testCrediter();
+	void testPayer();
 	
 	Joueur* _joueur;
 
