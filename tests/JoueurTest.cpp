@@ -6,8 +6,8 @@
  */
 
 #include "JoueurTest.h"
-#include "Participant/Joueur.h"
-#include "Case/Case.h"
+#include "GameEngine/Participant/Joueur.h"
+#include "GameEngine/Case/Case.h"
 
 
 CPPUNIT_TEST_SUITE_REGISTRATION(JoueurTest);
@@ -35,8 +35,8 @@ void JoueurTest::testAvancer()
 	CPPUNIT_ASSERT(_joueur->GetPosition() == 0);
 	_joueur->Avancer(10);
 	CPPUNIT_ASSERT(_joueur->GetPosition() == 10);
-	_joueur->Avancer(26);
-	CPPUNIT_ASSERT(_joueur->GetPosition() == 36);
+	_joueur->Avancer(29);
+	CPPUNIT_ASSERT(_joueur->GetPosition() == 39);
 	_joueur->Avancer(2);
 	CPPUNIT_ASSERT(_joueur->GetPosition() == 1);
 }

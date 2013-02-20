@@ -6,7 +6,7 @@
  */
 
 #include "BilletManagerTest.h"
-#include "Billet/BilletManager.h"
+#include "GameEngine/Billet/BilletManager.h"
 
 CPPUNIT_TEST_SUITE_REGISTRATION(BilletManagerTest);
 

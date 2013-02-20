@@ -1,7 +1,7 @@
 #include <vector>
 
 #include "BilletManager.h"
-#include "../Billet.h"
+#include "Billet.h"
 
 BilletManager::BilletManager(int somme)
 {

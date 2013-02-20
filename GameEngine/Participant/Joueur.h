@@ -9,7 +9,6 @@
 #define	JOUEUR_H
 
 #include "Participant.h"
-#include <cstdlib>
 #include <vector>
 
 class Propriete;
@@ -26,14 +25,15 @@ public:
 	void Construire(Propriete *propriete);
 	void Detruire(Propriete *propriete);
 	void Hypothequer(Propriete *propriete);
-	void LeverHypotheque(Propriete *propriete);
-	void Placer(Case *caseAPlacer);
+	void LeverHypotheque(Propriete *propriete, BilletManager* billetManager);
+	void Placer(Case *caseAPlacer, bool passerParDepart = true);
 	void InitialiserBillets();
 	int GetPosition();
 
 private:
 	int _position;
 	std::vector<Propriete*> _proprietes;
+	void GagnerArgentCaseDepart();
 };
 
 #endif	/* JOUEUR_H */

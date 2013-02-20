@@ -2,7 +2,7 @@
 
 Case::Case(int numero)
 {
-	
+	_numero = numero;
 }
 
 void Case::Agir(Joueur *joueur)
@@ -12,5 +12,5 @@ void Case::Agir(Joueur *joueur)
 
 int Case::GetNumero()
 {
-	return -1;
+	return _numero;
 }

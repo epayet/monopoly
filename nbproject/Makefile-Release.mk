@@ -35,28 +35,28 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/Case/Depart.o \
-	${OBJECTDIR}/Case/Propriété/ServicePublique.o \
-	${OBJECTDIR}/Participant/Participant.o \
-	${OBJECTDIR}/Billet.o \
-	${OBJECTDIR}/Case/Taxe.o \
-	${OBJECTDIR}/Participant/Banque.o \
-	${OBJECTDIR}/Plateau.o \
-	${OBJECTDIR}/De.o \
+	${OBJECTDIR}/GameEngine/Case/Carte.o \
+	${OBJECTDIR}/GameEngine/Case/Parc.o \
+	${OBJECTDIR}/GameEngine/Participant/Participant.o \
+	${OBJECTDIR}/GameEngine/Case/Prison.o \
+	${OBJECTDIR}/GameEngine/De.o \
+	${OBJECTDIR}/GameEngine/Participant/Banque.o \
+	${OBJECTDIR}/GameEngine/Case/Propriété/Domaine.o \
 	${OBJECTDIR}/main.o \
-	${OBJECTDIR}/Carte/Carte.o \
-	${OBJECTDIR}/Case/Arrestation.o \
-	${OBJECTDIR}/Case/Propriété/Gare.o \
-	${OBJECTDIR}/Carte/TypeCarte.o \
-	${OBJECTDIR}/Case/Propriété/Propriete.o \
-	${OBJECTDIR}/Case/Carte.o \
-	${OBJECTDIR}/Case/Prison.o \
-	${OBJECTDIR}/Case/Case.o \
-	${OBJECTDIR}/Case/Propriété/Domaine.o \
-	${OBJECTDIR}/Billet/BilletManager.o \
-	${OBJECTDIR}/Case/Parc.o \
-	${OBJECTDIR}/Participant/Joueur.o \
-	${OBJECTDIR}/Participant/Cagnotte.o
+	${OBJECTDIR}/GameEngine/Participant/Joueur.o \
+	${OBJECTDIR}/GameEngine/Carte/Carte.o \
+	${OBJECTDIR}/GameEngine/Plateau.o \
+	${OBJECTDIR}/GameEngine/Case/Taxe.o \
+	${OBJECTDIR}/GameEngine/Case/Propriété/Propriete.o \
+	${OBJECTDIR}/GameEngine/Billet/BilletManager.o \
+	${OBJECTDIR}/GameEngine/Case/Arrestation.o \
+	${OBJECTDIR}/GameEngine/Billet/Billet.o \
+	${OBJECTDIR}/GameEngine/Case/Propriété/ServicePublique.o \
+	${OBJECTDIR}/GameEngine/Case/Depart.o \
+	${OBJECTDIR}/GameEngine/Case/Case.o \
+	${OBJECTDIR}/GameEngine/Case/Propriété/Gare.o \
+	${OBJECTDIR}/GameEngine/Carte/TypeCarte.o \
+	${OBJECTDIR}/GameEngine/Participant/Cagnotte.o
 
 # Test Directory
 TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
@@ -90,115 +90,115 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/monopoly: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/monopoly ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
-${OBJECTDIR}/Case/Depart.o: Case/Depart.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case
+${OBJECTDIR}/GameEngine/Case/Carte.o: GameEngine/Case/Carte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Depart.o Case/Depart.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte.o GameEngine/Case/Carte.cpp
 
-${OBJECTDIR}/Case/Propriété/ServicePublique.o: Case/Propriété/ServicePublique.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case/Propriété
+${OBJECTDIR}/GameEngine/Case/Parc.o: GameEngine/Case/Parc.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Propriété/ServicePublique.o Case/Propriété/ServicePublique.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Parc.o GameEngine/Case/Parc.cpp
 
-${OBJECTDIR}/Participant/Participant.o: Participant/Participant.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Participant
+${OBJECTDIR}/GameEngine/Participant/Participant.o: GameEngine/Participant/Participant.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Participant
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Participant/Participant.o Participant/Participant.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Participant/Participant.o GameEngine/Participant/Participant.cpp
 
-${OBJECTDIR}/Billet.o: Billet.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/GameEngine/Case/Prison.o: GameEngine/Case/Prison.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Billet.o Billet.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Prison.o GameEngine/Case/Prison.cpp
 
-${OBJECTDIR}/Case/Taxe.o: Case/Taxe.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case
+${OBJECTDIR}/GameEngine/De.o: GameEngine/De.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Taxe.o Case/Taxe.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/De.o GameEngine/De.cpp
 
-${OBJECTDIR}/Participant/Banque.o: Participant/Banque.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Participant
+${OBJECTDIR}/GameEngine/Participant/Banque.o: GameEngine/Participant/Banque.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Participant
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Participant/Banque.o Participant/Banque.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Participant/Banque.o GameEngine/Participant/Banque.cpp
 
-${OBJECTDIR}/Plateau.o: Plateau.cpp 
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/GameEngine/Case/Propriété/Domaine.o: GameEngine/Case/Propriété/Domaine.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Propriété
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Plateau.o Plateau.cpp
-
-${OBJECTDIR}/De.o: De.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/De.o De.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Propriété/Domaine.o GameEngine/Case/Propriété/Domaine.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
 
-${OBJECTDIR}/Carte/Carte.o: Carte/Carte.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Carte
+${OBJECTDIR}/GameEngine/Participant/Joueur.o: GameEngine/Participant/Joueur.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Participant
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Carte/Carte.o Carte/Carte.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Participant/Joueur.o GameEngine/Participant/Joueur.cpp
 
-${OBJECTDIR}/Case/Arrestation.o: Case/Arrestation.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case
+${OBJECTDIR}/GameEngine/Carte/Carte.o: GameEngine/Carte/Carte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Carte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Arrestation.o Case/Arrestation.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Carte/Carte.o GameEngine/Carte/Carte.cpp
 
-${OBJECTDIR}/Case/Propriété/Gare.o: Case/Propriété/Gare.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case/Propriété
+${OBJECTDIR}/GameEngine/Plateau.o: GameEngine/Plateau.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Propriété/Gare.o Case/Propriété/Gare.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Plateau.o GameEngine/Plateau.cpp
 
-${OBJECTDIR}/Carte/TypeCarte.o: Carte/TypeCarte.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Carte
+${OBJECTDIR}/GameEngine/Case/Taxe.o: GameEngine/Case/Taxe.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Carte/TypeCarte.o Carte/TypeCarte.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Taxe.o GameEngine/Case/Taxe.cpp
 
-${OBJECTDIR}/Case/Propriété/Propriete.o: Case/Propriété/Propriete.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case/Propriété
+${OBJECTDIR}/GameEngine/Case/Propriété/Propriete.o: GameEngine/Case/Propriété/Propriete.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Propriété
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Propriété/Propriete.o Case/Propriété/Propriete.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Propriété/Propriete.o GameEngine/Case/Propriété/Propriete.cpp
 
-${OBJECTDIR}/Case/Carte.o: Case/Carte.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case
+${OBJECTDIR}/GameEngine/Billet/BilletManager.o: GameEngine/Billet/BilletManager.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Billet
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Carte.o Case/Carte.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Billet/BilletManager.o GameEngine/Billet/BilletManager.cpp
 
-${OBJECTDIR}/Case/Prison.o: Case/Prison.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case
+${OBJECTDIR}/GameEngine/Case/Arrestation.o: GameEngine/Case/Arrestation.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Prison.o Case/Prison.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Arrestation.o GameEngine/Case/Arrestation.cpp
 
-${OBJECTDIR}/Case/Case.o: Case/Case.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case
+${OBJECTDIR}/GameEngine/Billet/Billet.o: GameEngine/Billet/Billet.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Billet
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Case.o Case/Case.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Billet/Billet.o GameEngine/Billet/Billet.cpp
 
-${OBJECTDIR}/Case/Propriété/Domaine.o: Case/Propriété/Domaine.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case/Propriété
+${OBJECTDIR}/GameEngine/Case/Propriété/ServicePublique.o: GameEngine/Case/Propriété/ServicePublique.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Propriété
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Propriété/Domaine.o Case/Propriété/Domaine.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Propriété/ServicePublique.o GameEngine/Case/Propriété/ServicePublique.cpp
 
-${OBJECTDIR}/Billet/BilletManager.o: Billet/BilletManager.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Billet
+${OBJECTDIR}/GameEngine/Case/Depart.o: GameEngine/Case/Depart.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Billet/BilletManager.o Billet/BilletManager.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Depart.o GameEngine/Case/Depart.cpp
 
-${OBJECTDIR}/Case/Parc.o: Case/Parc.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case
+${OBJECTDIR}/GameEngine/Case/Case.o: GameEngine/Case/Case.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Parc.o Case/Parc.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Case.o GameEngine/Case/Case.cpp
 
-${OBJECTDIR}/Participant/Joueur.o: Participant/Joueur.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Participant
+${OBJECTDIR}/GameEngine/Case/Propriété/Gare.o: GameEngine/Case/Propriété/Gare.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Propriété
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Participant/Joueur.o Participant/Joueur.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Propriété/Gare.o GameEngine/Case/Propriété/Gare.cpp
 
-${OBJECTDIR}/Participant/Cagnotte.o: Participant/Cagnotte.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Participant
+${OBJECTDIR}/GameEngine/Carte/TypeCarte.o: GameEngine/Carte/TypeCarte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Carte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Participant/Cagnotte.o Participant/Cagnotte.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Carte/TypeCarte.o GameEngine/Carte/TypeCarte.cpp
+
+${OBJECTDIR}/GameEngine/Participant/Cagnotte.o: GameEngine/Participant/Cagnotte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Participant
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Participant/Cagnotte.o GameEngine/Participant/Cagnotte.cpp
 
 # Subprojects
 .build-subprojects:
@@ -238,108 +238,95 @@ ${TESTDIR}/tests/JoueurTestRunner.o: tests/JoueurTestRunner.cpp
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${TESTDIR}/tests/JoueurTestRunner.o tests/JoueurTestRunner.cpp
 
 
-${OBJECTDIR}/Case/Depart_nomain.o: ${OBJECTDIR}/Case/Depart.o Case/Depart.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Depart.o`; \
+${OBJECTDIR}/GameEngine/Case/Carte_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte.o GameEngine/Case/Carte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Depart_nomain.o Case/Depart.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte_nomain.o GameEngine/Case/Carte.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Case/Depart.o ${OBJECTDIR}/Case/Depart_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte.o ${OBJECTDIR}/GameEngine/Case/Carte_nomain.o;\
 	fi
 
-${OBJECTDIR}/Case/Propriété/ServicePublique_nomain.o: ${OBJECTDIR}/Case/Propriété/ServicePublique.o Case/Propriété/ServicePublique.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case/Propriété
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Propriété/ServicePublique.o`; \
+${OBJECTDIR}/GameEngine/Case/Parc_nomain.o: ${OBJECTDIR}/GameEngine/Case/Parc.o GameEngine/Case/Parc.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Parc.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Propriété/ServicePublique_nomain.o Case/Propriété/ServicePublique.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Parc_nomain.o GameEngine/Case/Parc.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Case/Propriété/ServicePublique.o ${OBJECTDIR}/Case/Propriété/ServicePublique_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Parc.o ${OBJECTDIR}/GameEngine/Case/Parc_nomain.o;\
 	fi
 
-${OBJECTDIR}/Participant/Participant_nomain.o: ${OBJECTDIR}/Participant/Participant.o Participant/Participant.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Participant
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Participant/Participant.o`; \
+${OBJECTDIR}/GameEngine/Participant/Participant_nomain.o: ${OBJECTDIR}/GameEngine/Participant/Participant.o GameEngine/Participant/Participant.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Participant
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Participant/Participant.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Participant/Participant_nomain.o Participant/Participant.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Participant/Participant_nomain.o GameEngine/Participant/Participant.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Participant/Participant.o ${OBJECTDIR}/Participant/Participant_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/Participant/Participant.o ${OBJECTDIR}/GameEngine/Participant/Participant_nomain.o;\
 	fi
 
-${OBJECTDIR}/Billet_nomain.o: ${OBJECTDIR}/Billet.o Billet.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Billet.o`; \
+${OBJECTDIR}/GameEngine/Case/Prison_nomain.o: ${OBJECTDIR}/GameEngine/Case/Prison.o GameEngine/Case/Prison.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Prison.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Billet_nomain.o Billet.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Prison_nomain.o GameEngine/Case/Prison.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Billet.o ${OBJECTDIR}/Billet_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Prison.o ${OBJECTDIR}/GameEngine/Case/Prison_nomain.o;\
 	fi
 
-${OBJECTDIR}/Case/Taxe_nomain.o: ${OBJECTDIR}/Case/Taxe.o Case/Taxe.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Taxe.o`; \
+${OBJECTDIR}/GameEngine/De_nomain.o: ${OBJECTDIR}/GameEngine/De.o GameEngine/De.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/De.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Taxe_nomain.o Case/Taxe.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/De_nomain.o GameEngine/De.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Case/Taxe.o ${OBJECTDIR}/Case/Taxe_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/De.o ${OBJECTDIR}/GameEngine/De_nomain.o;\
 	fi
 
-${OBJECTDIR}/Participant/Banque_nomain.o: ${OBJECTDIR}/Participant/Banque.o Participant/Banque.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Participant
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Participant/Banque.o`; \
+${OBJECTDIR}/GameEngine/Participant/Banque_nomain.o: ${OBJECTDIR}/GameEngine/Participant/Banque.o GameEngine/Participant/Banque.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Participant
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Participant/Banque.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Participant/Banque_nomain.o Participant/Banque.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Participant/Banque_nomain.o GameEngine/Participant/Banque.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Participant/Banque.o ${OBJECTDIR}/Participant/Banque_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/Participant/Banque.o ${OBJECTDIR}/GameEngine/Participant/Banque_nomain.o;\
 	fi
 
-${OBJECTDIR}/Plateau_nomain.o: ${OBJECTDIR}/Plateau.o Plateau.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Plateau.o`; \
+${OBJECTDIR}/GameEngine/Case/Propriété/Domaine_nomain.o: ${OBJECTDIR}/GameEngine/Case/Propriété/Domaine.o GameEngine/Case/Propriété/Domaine.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Propriété
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Propriété/Domaine.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Plateau_nomain.o Plateau.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Propriété/Domaine_nomain.o GameEngine/Case/Propriété/Domaine.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Plateau.o ${OBJECTDIR}/Plateau_nomain.o;\
-	fi
-
-${OBJECTDIR}/De_nomain.o: ${OBJECTDIR}/De.o De.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/De.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/De_nomain.o De.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/De.o ${OBJECTDIR}/De_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Propriété/Domaine.o ${OBJECTDIR}/GameEngine/Case/Propriété/Domaine_nomain.o;\
 	fi
 
 ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp 
@@ -355,173 +342,186 @@ ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp
 	    ${CP} ${OBJECTDIR}/main.o ${OBJECTDIR}/main_nomain.o;\
 	fi
 
-${OBJECTDIR}/Carte/Carte_nomain.o: ${OBJECTDIR}/Carte/Carte.o Carte/Carte.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Carte
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Carte/Carte.o`; \
+${OBJECTDIR}/GameEngine/Participant/Joueur_nomain.o: ${OBJECTDIR}/GameEngine/Participant/Joueur.o GameEngine/Participant/Joueur.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Participant
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Participant/Joueur.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Carte/Carte_nomain.o Carte/Carte.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Participant/Joueur_nomain.o GameEngine/Participant/Joueur.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Carte/Carte.o ${OBJECTDIR}/Carte/Carte_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/Participant/Joueur.o ${OBJECTDIR}/GameEngine/Participant/Joueur_nomain.o;\
 	fi
 
-${OBJECTDIR}/Case/Arrestation_nomain.o: ${OBJECTDIR}/Case/Arrestation.o Case/Arrestation.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Arrestation.o`; \
+${OBJECTDIR}/GameEngine/Carte/Carte_nomain.o: ${OBJECTDIR}/GameEngine/Carte/Carte.o GameEngine/Carte/Carte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Carte/Carte.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Arrestation_nomain.o Case/Arrestation.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Carte/Carte_nomain.o GameEngine/Carte/Carte.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Case/Arrestation.o ${OBJECTDIR}/Case/Arrestation_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/Carte/Carte.o ${OBJECTDIR}/GameEngine/Carte/Carte_nomain.o;\
 	fi
 
-${OBJECTDIR}/Case/Propriété/Gare_nomain.o: ${OBJECTDIR}/Case/Propriété/Gare.o Case/Propriété/Gare.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case/Propriété
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Propriété/Gare.o`; \
+${OBJECTDIR}/GameEngine/Plateau_nomain.o: ${OBJECTDIR}/GameEngine/Plateau.o GameEngine/Plateau.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Plateau.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Propriété/Gare_nomain.o Case/Propriété/Gare.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Plateau_nomain.o GameEngine/Plateau.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Case/Propriété/Gare.o ${OBJECTDIR}/Case/Propriété/Gare_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/Plateau.o ${OBJECTDIR}/GameEngine/Plateau_nomain.o;\
 	fi
 
-${OBJECTDIR}/Carte/TypeCarte_nomain.o: ${OBJECTDIR}/Carte/TypeCarte.o Carte/TypeCarte.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Carte
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Carte/TypeCarte.o`; \
+${OBJECTDIR}/GameEngine/Case/Taxe_nomain.o: ${OBJECTDIR}/GameEngine/Case/Taxe.o GameEngine/Case/Taxe.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Taxe.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Carte/TypeCarte_nomain.o Carte/TypeCarte.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Taxe_nomain.o GameEngine/Case/Taxe.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Carte/TypeCarte.o ${OBJECTDIR}/Carte/TypeCarte_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Taxe.o ${OBJECTDIR}/GameEngine/Case/Taxe_nomain.o;\
 	fi
 
-${OBJECTDIR}/Case/Propriété/Propriete_nomain.o: ${OBJECTDIR}/Case/Propriété/Propriete.o Case/Propriété/Propriete.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case/Propriété
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Propriété/Propriete.o`; \
+${OBJECTDIR}/GameEngine/Case/Propriété/Propriete_nomain.o: ${OBJECTDIR}/GameEngine/Case/Propriété/Propriete.o GameEngine/Case/Propriété/Propriete.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Propriété
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Propriété/Propriete.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Propriété/Propriete_nomain.o Case/Propriété/Propriete.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Propriété/Propriete_nomain.o GameEngine/Case/Propriété/Propriete.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Case/Propriété/Propriete.o ${OBJECTDIR}/Case/Propriété/Propriete_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Propriété/Propriete.o ${OBJECTDIR}/GameEngine/Case/Propriété/Propriete_nomain.o;\
 	fi
 
-${OBJECTDIR}/Case/Carte_nomain.o: ${OBJECTDIR}/Case/Carte.o Case/Carte.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Carte.o`; \
+${OBJECTDIR}/GameEngine/Billet/BilletManager_nomain.o: ${OBJECTDIR}/GameEngine/Billet/BilletManager.o GameEngine/Billet/BilletManager.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Billet
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Billet/BilletManager.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Carte_nomain.o Case/Carte.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Billet/BilletManager_nomain.o GameEngine/Billet/BilletManager.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Case/Carte.o ${OBJECTDIR}/Case/Carte_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/Billet/BilletManager.o ${OBJECTDIR}/GameEngine/Billet/BilletManager_nomain.o;\
 	fi
 
-${OBJECTDIR}/Case/Prison_nomain.o: ${OBJECTDIR}/Case/Prison.o Case/Prison.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Prison.o`; \
+${OBJECTDIR}/GameEngine/Case/Arrestation_nomain.o: ${OBJECTDIR}/GameEngine/Case/Arrestation.o GameEngine/Case/Arrestation.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Arrestation.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Prison_nomain.o Case/Prison.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Arrestation_nomain.o GameEngine/Case/Arrestation.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Case/Prison.o ${OBJECTDIR}/Case/Prison_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Arrestation.o ${OBJECTDIR}/GameEngine/Case/Arrestation_nomain.o;\
 	fi
 
-${OBJECTDIR}/Case/Case_nomain.o: ${OBJECTDIR}/Case/Case.o Case/Case.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Case.o`; \
+${OBJECTDIR}/GameEngine/Billet/Billet_nomain.o: ${OBJECTDIR}/GameEngine/Billet/Billet.o GameEngine/Billet/Billet.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Billet
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Billet/Billet.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Case_nomain.o Case/Case.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Billet/Billet_nomain.o GameEngine/Billet/Billet.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Case/Case.o ${OBJECTDIR}/Case/Case_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/Billet/Billet.o ${OBJECTDIR}/GameEngine/Billet/Billet_nomain.o;\
 	fi
 
-${OBJECTDIR}/Case/Propriété/Domaine_nomain.o: ${OBJECTDIR}/Case/Propriété/Domaine.o Case/Propriété/Domaine.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case/Propriété
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Propriété/Domaine.o`; \
+${OBJECTDIR}/GameEngine/Case/Propriété/ServicePublique_nomain.o: ${OBJECTDIR}/GameEngine/Case/Propriété/ServicePublique.o GameEngine/Case/Propriété/ServicePublique.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Propriété
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Propriété/ServicePublique.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Propriété/Domaine_nomain.o Case/Propriété/Domaine.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Propriété/ServicePublique_nomain.o GameEngine/Case/Propriété/ServicePublique.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Case/Propriété/Domaine.o ${OBJECTDIR}/Case/Propriété/Domaine_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Propriété/ServicePublique.o ${OBJECTDIR}/GameEngine/Case/Propriété/ServicePublique_nomain.o;\
 	fi
 
-${OBJECTDIR}/Billet/BilletManager_nomain.o: ${OBJECTDIR}/Billet/BilletManager.o Billet/BilletManager.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Billet
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Billet/BilletManager.o`; \
+${OBJECTDIR}/GameEngine/Case/Depart_nomain.o: ${OBJECTDIR}/GameEngine/Case/Depart.o GameEngine/Case/Depart.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Depart.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Billet/BilletManager_nomain.o Billet/BilletManager.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Depart_nomain.o GameEngine/Case/Depart.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Billet/BilletManager.o ${OBJECTDIR}/Billet/BilletManager_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Depart.o ${OBJECTDIR}/GameEngine/Case/Depart_nomain.o;\
 	fi
 
-${OBJECTDIR}/Case/Parc_nomain.o: ${OBJECTDIR}/Case/Parc.o Case/Parc.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Case
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Case/Parc.o`; \
+${OBJECTDIR}/GameEngine/Case/Case_nomain.o: ${OBJECTDIR}/GameEngine/Case/Case.o GameEngine/Case/Case.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Case.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Case/Parc_nomain.o Case/Parc.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Case_nomain.o GameEngine/Case/Case.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Case/Parc.o ${OBJECTDIR}/Case/Parc_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Case.o ${OBJECTDIR}/GameEngine/Case/Case_nomain.o;\
 	fi
 
-${OBJECTDIR}/Participant/Joueur_nomain.o: ${OBJECTDIR}/Participant/Joueur.o Participant/Joueur.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Participant
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Participant/Joueur.o`; \
+${OBJECTDIR}/GameEngine/Case/Propriété/Gare_nomain.o: ${OBJECTDIR}/GameEngine/Case/Propriété/Gare.o GameEngine/Case/Propriété/Gare.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Propriété
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Propriété/Gare.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Participant/Joueur_nomain.o Participant/Joueur.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Propriété/Gare_nomain.o GameEngine/Case/Propriété/Gare.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Participant/Joueur.o ${OBJECTDIR}/Participant/Joueur_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Propriété/Gare.o ${OBJECTDIR}/GameEngine/Case/Propriété/Gare_nomain.o;\
 	fi
 
-${OBJECTDIR}/Participant/Cagnotte_nomain.o: ${OBJECTDIR}/Participant/Cagnotte.o Participant/Cagnotte.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Participant
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Participant/Cagnotte.o`; \
+${OBJECTDIR}/GameEngine/Carte/TypeCarte_nomain.o: ${OBJECTDIR}/GameEngine/Carte/TypeCarte.o GameEngine/Carte/TypeCarte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Carte/TypeCarte.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Participant/Cagnotte_nomain.o Participant/Cagnotte.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Carte/TypeCarte_nomain.o GameEngine/Carte/TypeCarte.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Participant/Cagnotte.o ${OBJECTDIR}/Participant/Cagnotte_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/Carte/TypeCarte.o ${OBJECTDIR}/GameEngine/Carte/TypeCarte_nomain.o;\
+	fi
+
+${OBJECTDIR}/GameEngine/Participant/Cagnotte_nomain.o: ${OBJECTDIR}/GameEngine/Participant/Cagnotte.o GameEngine/Participant/Cagnotte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Participant
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Participant/Cagnotte.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Participant/Cagnotte_nomain.o GameEngine/Participant/Cagnotte.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Participant/Cagnotte.o ${OBJECTDIR}/GameEngine/Participant/Cagnotte_nomain.o;\
 	fi
 
 # Run Test Targets

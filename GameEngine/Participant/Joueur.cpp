@@ -1,6 +1,8 @@
 #include "Joueur.h"
+#include "../Case/Case.h"
+#include "../Case/Propriété/Propriete.h"
 
-Joueur::Joueur()
+Joueur::Joueur() : Participant()
 {
 	_position = 0;
 }
@@ -20,7 +22,10 @@ void Joueur::Avancer(int valeur)
 	_position += valeur;
 	
 	if(_position > 39)
+	{
+		GagnerArgentCaseDepart();
 		_position -= 40;
+	}
 }
 
 void Joueur::Acheter(Propriete *propriete)
@@ -48,16 +53,20 @@ void Joueur::Hypothequer(Propriete *propriete)
 {
 	BilletManager* billetManagerValHypotheque = new BilletManager(propriete->Hypothequer());
 	_billetManager->Ajouter(billetManagerValHypotheque);
+	delete billetManagerValHypotheque;
 }
 
-void Joueur::LeverHypotheque(Propriete *propriete)
+void Joueur::LeverHypotheque(Propriete *propriete, BilletManager* billetManager)
 {
-	BilletManager* billetManagerValHypotheque = new BilletManager(propriete->Hypothequer());
-	//_billetManager->Enlever(billetManagerValHypotheque);
+	_billetManager->Ajouter(billetManager);
+	propriete->LeverHypotheque();
 }
 
-void Joueur::Placer(Case *caseAPlacer)
+void Joueur::Placer(Case *caseAPlacer, bool passerParDepart)
 {
+	if(caseAPlacer->GetNumero() < _position && passerParDepart)
+		GagnerArgentCaseDepart();
+	
 	_position = caseAPlacer->GetNumero();
 }
 
@@ -75,4 +84,9 @@ void Joueur::InitialiserBillets()
 int Joueur::GetPosition()
 {
 	return _position;
+}
+
+void Joueur::GagnerArgentCaseDepart()
+{
+	_billetManager->Ajouter(2, BILLET100);
 }

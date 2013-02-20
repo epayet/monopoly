@@ -4,38 +4,46 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <logicalFolder name="f4" displayName="Billet" projectFiles="true">
-        <itemPath>Billet.h</itemPath>
-        <itemPath>Billet/BilletManager.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f3" displayName="Carte" projectFiles="true">
-        <itemPath>Carte/Carte.h</itemPath>
-        <itemPath>Carte/TypeCarte.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f1" displayName="Case" projectFiles="true">
-        <logicalFolder name="f1" displayName="Propriété" projectFiles="true">
-          <itemPath>Case/Propriété/Couleur.h</itemPath>
-          <itemPath>Case/Propriété/Domaine.h</itemPath>
-          <itemPath>Case/Propriété/Gare.h</itemPath>
-          <itemPath>Case/Propriété/Propriete.h</itemPath>
-          <itemPath>Case/Propriété/ServicePublique.h</itemPath>
+      <logicalFolder name="GameEngine" displayName="GameEngine" projectFiles="true">
+        <logicalFolder name="Billet" displayName="Billet" projectFiles="true">
+          <itemPath>GameEngine/Billet/Billet.h</itemPath>
+          <itemPath>GameEngine/Billet/BilletManager.h</itemPath>
         </logicalFolder>
-        <itemPath>Case/Arrestation.h</itemPath>
-        <itemPath>Case/Carte.h</itemPath>
-        <itemPath>Case/Case.h</itemPath>
-        <itemPath>Case/Depart.h</itemPath>
-        <itemPath>Case/Parc.h</itemPath>
-        <itemPath>Case/Prison.h</itemPath>
-        <itemPath>Case/Taxe.h</itemPath>
+        <logicalFolder name="Carte" displayName="Carte" projectFiles="true">
+          <itemPath>GameEngine/Carte/Carte.h</itemPath>
+          <itemPath>GameEngine/Carte/TypeCarte.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Case" displayName="Case" projectFiles="true">
+          <logicalFolder name="Propriété" displayName="Propriété" projectFiles="true">
+            <itemPath>GameEngine/Case/Propriété/Couleur.h</itemPath>
+            <itemPath>GameEngine/Case/Propriété/Domaine.h</itemPath>
+            <itemPath>GameEngine/Case/Propriété/Gare.h</itemPath>
+            <itemPath>GameEngine/Case/Propriété/Propriete.h</itemPath>
+            <itemPath>GameEngine/Case/Propriété/ServicePublique.h</itemPath>
+          </logicalFolder>
+          <itemPath>GameEngine/Case/Arrestation.h</itemPath>
+          <itemPath>GameEngine/Case/Carte.h</itemPath>
+          <itemPath>GameEngine/Case/Case.h</itemPath>
+          <itemPath>GameEngine/Case/Depart.h</itemPath>
+          <itemPath>GameEngine/Case/Parc.h</itemPath>
+          <itemPath>GameEngine/Case/Prison.h</itemPath>
+          <itemPath>GameEngine/Case/Taxe.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Participant" displayName="Participant" projectFiles="true">
+          <itemPath>GameEngine/Participant/Banque.cpp</itemPath>
+          <itemPath>GameEngine/Participant/Banque.h</itemPath>
+          <itemPath>GameEngine/Participant/Cagnotte.cpp</itemPath>
+          <itemPath>GameEngine/Participant/Cagnotte.h</itemPath>
+          <itemPath>GameEngine/Participant/Joueur.cpp</itemPath>
+          <itemPath>GameEngine/Participant/Joueur.h</itemPath>
+          <itemPath>GameEngine/Participant/Participant.cpp</itemPath>
+          <itemPath>GameEngine/Participant/Participant.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Propriété" displayName="Propriété" projectFiles="true">
+        </logicalFolder>
+        <itemPath>GameEngine/De.h</itemPath>
+        <itemPath>GameEngine/Plateau.h</itemPath>
       </logicalFolder>
-      <logicalFolder name="f2" displayName="Participant" projectFiles="true">
-        <itemPath>Participant/Banque.h</itemPath>
-        <itemPath>Participant/Cagnotte.h</itemPath>
-        <itemPath>Participant/Joueur.h</itemPath>
-        <itemPath>Participant/Participant.h</itemPath>
-      </logicalFolder>
-      <itemPath>De.h</itemPath>
-      <itemPath>Plateau.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -44,37 +52,37 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <logicalFolder name="f4" displayName="Billet" projectFiles="true">
-        <itemPath>Billet.cpp</itemPath>
-        <itemPath>Billet/BilletManager.cpp</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f3" displayName="Carte" projectFiles="true">
-        <itemPath>Carte/Carte.cpp</itemPath>
-        <itemPath>Carte/TypeCarte.cpp</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f1" displayName="Case" projectFiles="true">
-        <logicalFolder name="f1" displayName="Propriété" projectFiles="true">
-          <itemPath>Case/Propriété/Domaine.cpp</itemPath>
-          <itemPath>Case/Propriété/Gare.cpp</itemPath>
-          <itemPath>Case/Propriété/Propriete.cpp</itemPath>
-          <itemPath>Case/Propriété/ServicePublique.cpp</itemPath>
+      <logicalFolder name="GameEngine" displayName="GameEngine" projectFiles="true">
+        <logicalFolder name="Billet" displayName="Billet" projectFiles="true">
+          <itemPath>GameEngine/Billet/Billet.cpp</itemPath>
+          <itemPath>GameEngine/Billet/BilletManager.cpp</itemPath>
         </logicalFolder>
-        <itemPath>Case/Arrestation.cpp</itemPath>
-        <itemPath>Case/Carte.cpp</itemPath>
-        <itemPath>Case/Case.cpp</itemPath>
-        <itemPath>Case/Depart.cpp</itemPath>
-        <itemPath>Case/Parc.cpp</itemPath>
-        <itemPath>Case/Prison.cpp</itemPath>
-        <itemPath>Case/Taxe.cpp</itemPath>
+        <logicalFolder name="Carte" displayName="Carte" projectFiles="true">
+          <itemPath>GameEngine/Carte/Carte.cpp</itemPath>
+          <itemPath>GameEngine/Carte/TypeCarte.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Case" displayName="Case" projectFiles="true">
+          <logicalFolder name="Propriété" displayName="Propriété" projectFiles="true">
+            <itemPath>GameEngine/Case/Propriété/Domaine.cpp</itemPath>
+            <itemPath>GameEngine/Case/Propriété/Gare.cpp</itemPath>
+            <itemPath>GameEngine/Case/Propriété/Propriete.cpp</itemPath>
+            <itemPath>GameEngine/Case/Propriété/ServicePublique.cpp</itemPath>
+          </logicalFolder>
+          <itemPath>GameEngine/Case/Arrestation.cpp</itemPath>
+          <itemPath>GameEngine/Case/Carte.cpp</itemPath>
+          <itemPath>GameEngine/Case/Case.cpp</itemPath>
+          <itemPath>GameEngine/Case/Depart.cpp</itemPath>
+          <itemPath>GameEngine/Case/Parc.cpp</itemPath>
+          <itemPath>GameEngine/Case/Prison.cpp</itemPath>
+          <itemPath>GameEngine/Case/Taxe.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Participant" displayName="Participant" projectFiles="true">
+        </logicalFolder>
+        <logicalFolder name="Propriété" displayName="Propriété" projectFiles="true">
+        </logicalFolder>
+        <itemPath>GameEngine/De.cpp</itemPath>
+        <itemPath>GameEngine/Plateau.cpp</itemPath>
       </logicalFolder>
-      <logicalFolder name="f2" displayName="Participant" projectFiles="true">
-        <itemPath>Participant/Banque.cpp</itemPath>
-        <itemPath>Participant/Cagnotte.cpp</itemPath>
-        <itemPath>Participant/Joueur.cpp</itemPath>
-        <itemPath>Participant/Participant.cpp</itemPath>
-      </logicalFolder>
-      <itemPath>De.cpp</itemPath>
-      <itemPath>Plateau.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -105,6 +113,9 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>GameEngine</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Debug" type="1">
@@ -113,8 +124,6 @@
         <compilerSet>default</compilerSet>
       </toolsSet>
       <compileType>
-      </compileType>
-      <folder path="TestFiles/f1">
         <cTool>
           <incDir>
             <pElem>.</pElem>
@@ -142,7 +151,7 @@
             <linkerLibStdlibItem>CppUnit</linkerLibStdlibItem>
           </linkerLibItems>
         </linkerTool>
-      </folder>
+      </compileType>
       <folder path="TestFiles/f2">
         <cTool>
           <incDir>
