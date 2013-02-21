@@ -8,16 +8,22 @@
 #ifndef BUTTON_H
 #define	BUTTON_H
 
+#define MARGIN 5
+
 #include "GuiItem.h"
 
 class Button : public GuiItem
 {
 	public:
-		Button(sf::RenderWindow &window, int x, int y, int size, std::string content);
+		Button(sf::RenderWindow &window, int x, int y, int size, sf::Font font, std::string content);
 		~Button();
 		void Draw();
+        sf::String &GetText();
+        
 	private:
-		std::string _content;
+        sf::Font _font;
+        sf::String _text;
+        sf::Shape _rect;
 };
 
 #endif	/* BUTTON_H */

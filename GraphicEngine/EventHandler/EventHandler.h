@@ -19,7 +19,7 @@ public :
 	~EventHandler();
 	virtual bool IsTriggered(sf::Event) = 0;
 	
-private:
+protected:
 	GuiItem* _guiItem;
 };
 

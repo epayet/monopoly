@@ -9,7 +9,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "GraphicEngine/GraphicEngine.h"
-#include "Jeu.h"
+#include "Graphic/Jeu.h"
 
 using namespace std;
 

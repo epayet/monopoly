@@ -8,16 +8,20 @@
 #ifndef JEU_H
 #define	JEU_H
 
-#include "GraphicEngine/GraphicEngineOwner.h"
+#define SIZEWINDOWX 800
+#define SIZEWINDOWY 600
 
-class Jeu : public GraphicEngineOwner
+class GraphicEngine;
+
+class Jeu
 {
 public:
 	Jeu();
 	~Jeu();
+    void Run();
 
 private:
-
+    GraphicEngine* _graphicEngine;
 };
 
 #endif	/* JEU_H */

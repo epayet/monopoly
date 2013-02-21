@@ -1,28 +1,38 @@
 #include "CallBackManager.h"
 #include "GraphicEngine/EventHandler/OnClickHandler.h"
+#include "GraphicEngine/ActionListeners/ActionListener.h"
+#include "GraphicEngine/EventHandler/MouseOverHandler.h"
+#include "GraphicEngine/EventHandler/MouseOutHandler.h"
 
-CallBackManager::CallBackManager(EVENTTYPE eventType, void (*callBack)(GraphicEngineOwner*), GraphicEngineOwner* gOwner, GuiItem* guiItem)
+CallBackManager::CallBackManager(EVENTTYPE eventType, ActionListener* actionListener, GuiItem* guiItem)
 {
-	_gOwner = gOwner;
-	_callBack = callBack;
-	_eventType = eventType;
+    _actionListener = actionListener;
 	
 	switch(eventType)
 	{
 		case ONCLICK:
 			_eventHandler = new OnClickHandler(guiItem);
 			break;
+            
+        case MOUSEOVER:
+            _eventHandler = new MouseOverHandler(guiItem);
+            break;
+            
+        case MOUSEOUT:
+            _eventHandler = new MouseOutHandler(guiItem);
+            break;
 	}
 }
 
 CallBackManager::~CallBackManager()
 {
 	delete _eventHandler;
+    delete _actionListener;
 }
 
 void CallBackManager::Call()
 {
-	(*_callBack)(_gOwner);
+	_actionListener->Act();
 }
 
 EventHandler* CallBackManager::GetEventHandler()

@@ -8,27 +8,25 @@
 #ifndef CALLBACKMANAGER_H
 #define	CALLBACKMANAGER_H
 
-class GraphicEngineOwner;
+class ActionListener;
 class EventHandler;
 class GuiItem;
 
 typedef enum 
 {
-	ONCLICK
+	ONCLICK, MOUSEOVER, MOUSEOUT
 } EVENTTYPE;
 
 class CallBackManager
 {
 public:
-	CallBackManager(EVENTTYPE eventType, void (*callBack)(GraphicEngineOwner*), GraphicEngineOwner* gOwner, GuiItem* guiItem);
+	CallBackManager(EVENTTYPE eventType, ActionListener* actionListener, GuiItem* guiItem);
 	~CallBackManager();
 	EventHandler* GetEventHandler();
 	void Call();
 	
 private :
-	void (*_callBack)(GraphicEngineOwner*);
-	GraphicEngineOwner* _gOwner;
-	EVENTTYPE _eventType;
+	ActionListener* _actionListener;
 	EventHandler* _eventHandler;
 };
 

@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Monopoly
+PROJECTNAME=monopoly
 
 # Active Configuration
 DEFAULTCONF=Debug

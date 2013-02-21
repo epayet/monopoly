@@ -11,20 +11,24 @@
 #include <SFML/Graphics.hpp>
 
 class GuiManager;
+class Police;
 
 class GraphicEngine
 {
 public:
-	GraphicEngine(sf::RenderWindow &window);
+	GraphicEngine(int sizex, int sizey, std::string windowName);
 	~GraphicEngine();
 	GuiManager* GetGuiManager();
 	void HandleEvent(sf::Event event);
 	void Draw();
 	sf::RenderWindow &GetWindow();
+    void Run();
+    sf::Font GetFont();
 	
 private:
 	GuiManager* _guiManager;
-	sf::RenderWindow &_window;
+	sf::RenderWindow _window;
+    Police* _police;
 };
 
 #endif	/* GRAPHICENGINE_H */
