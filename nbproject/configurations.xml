@@ -30,20 +30,31 @@
           <itemPath>GameEngine/Case/Taxe.h</itemPath>
         </logicalFolder>
         <logicalFolder name="Participant" displayName="Participant" projectFiles="true">
-          <itemPath>GameEngine/Participant/Banque.cpp</itemPath>
           <itemPath>GameEngine/Participant/Banque.h</itemPath>
-          <itemPath>GameEngine/Participant/Cagnotte.cpp</itemPath>
           <itemPath>GameEngine/Participant/Cagnotte.h</itemPath>
-          <itemPath>GameEngine/Participant/Joueur.cpp</itemPath>
           <itemPath>GameEngine/Participant/Joueur.h</itemPath>
-          <itemPath>GameEngine/Participant/Participant.cpp</itemPath>
           <itemPath>GameEngine/Participant/Participant.h</itemPath>
-        </logicalFolder>
-        <logicalFolder name="Propriété" displayName="Propriété" projectFiles="true">
         </logicalFolder>
         <itemPath>GameEngine/De.h</itemPath>
         <itemPath>GameEngine/Plateau.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f1" displayName="GraphicEngine" projectFiles="true">
+        <logicalFolder name="f2" displayName="EventHandler" projectFiles="true">
+          <itemPath>GraphicEngine/EventHandler/EventHandler.h</itemPath>
+          <itemPath>GraphicEngine/EventHandler/OnClickHandler.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f1" displayName="GuiManager" projectFiles="true">
+          <logicalFolder name="f1" displayName="GuiItem" projectFiles="true">
+            <itemPath>GraphicEngine/GuiManager/GuiItem/Button.h</itemPath>
+            <itemPath>GraphicEngine/GuiManager/GuiItem/GuiItem.h</itemPath>
+          </logicalFolder>
+          <itemPath>GraphicEngine/GuiManager/CallBackManager.h</itemPath>
+          <itemPath>GraphicEngine/GuiManager/GuiManager.h</itemPath>
+        </logicalFolder>
+        <itemPath>GraphicEngine/GraphicEngine.h</itemPath>
+        <itemPath>GraphicEngine/GraphicEngineOwner.h</itemPath>
+      </logicalFolder>
+      <itemPath>Jeu.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -77,12 +88,31 @@
           <itemPath>GameEngine/Case/Taxe.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="Participant" displayName="Participant" projectFiles="true">
-        </logicalFolder>
-        <logicalFolder name="Propriété" displayName="Propriété" projectFiles="true">
+          <itemPath>GameEngine/Participant/Banque.cpp</itemPath>
+          <itemPath>GameEngine/Participant/Cagnotte.cpp</itemPath>
+          <itemPath>GameEngine/Participant/Joueur.cpp</itemPath>
+          <itemPath>GameEngine/Participant/Participant.cpp</itemPath>
         </logicalFolder>
         <itemPath>GameEngine/De.cpp</itemPath>
         <itemPath>GameEngine/Plateau.cpp</itemPath>
       </logicalFolder>
+      <logicalFolder name="f1" displayName="GraphicEngine" projectFiles="true">
+        <logicalFolder name="f2" displayName="EventHandler" projectFiles="true">
+          <itemPath>GraphicEngine/EventHandler/EventHandler.cpp</itemPath>
+          <itemPath>GraphicEngine/EventHandler/OnClickHandler.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f1" displayName="GuiManager" projectFiles="true">
+          <logicalFolder name="f1" displayName="GuiItem" projectFiles="true">
+            <itemPath>GraphicEngine/GuiManager/GuiItem/Button.cpp</itemPath>
+            <itemPath>GraphicEngine/GuiManager/GuiItem/GuiItem.cpp</itemPath>
+          </logicalFolder>
+          <itemPath>GraphicEngine/GuiManager/CallBackManager.cpp</itemPath>
+          <itemPath>GraphicEngine/GuiManager/GuiManager.cpp</itemPath>
+        </logicalFolder>
+        <itemPath>GraphicEngine/GraphicEngine.cpp</itemPath>
+        <itemPath>GraphicEngine/GraphicEngineOwner.cpp</itemPath>
+      </logicalFolder>
+      <itemPath>Jeu.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -141,6 +171,9 @@
             <pElem>.</pElem>
             <pElem>.</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>SFML_DYNAMIC</Elem>
+          </preprocessorList>
         </ccTool>
         <linkerTool>
           <output>${TESTDIR}/TestFiles/f1</output>
@@ -149,7 +182,11 @@
             <linkerLibStdlibItem>CppUnit</linkerLibStdlibItem>
             <linkerLibStdlibItem>CppUnit</linkerLibStdlibItem>
             <linkerLibStdlibItem>CppUnit</linkerLibStdlibItem>
+            <linkerLibFileItem>/usr/lib/libsfml-graphics.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/libsfml-system.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/libsfml-window.so</linkerLibFileItem>
           </linkerLibItems>
+          <commandLine>-lsfml-system -lsfml-window -lsfml-graphics</commandLine>
         </linkerTool>
       </compileType>
       <folder path="TestFiles/f2">
