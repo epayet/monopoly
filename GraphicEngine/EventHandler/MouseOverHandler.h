@@ -12,9 +12,9 @@
 
 class MouseOverHandler : public EventHandler
 {
-    public:
-        MouseOverHandler(GuiItem* guiItem);
-        bool IsTriggered(sf::Event);
+public:
+	MouseOverHandler(GuiItem* guiItem);
+	bool IsTriggered(sf::Event);
 };
 
 #endif	/* MOUSEOVERHANDLER_H */

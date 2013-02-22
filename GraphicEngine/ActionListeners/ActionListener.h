@@ -16,11 +16,11 @@ class GraphicEngine;
 class ActionListener
 {
 public:
-    ActionListener(GraphicEngine* graphicEngine = NULL);
-    virtual void Act(sf::Event) = 0;
-    
+	ActionListener(GraphicEngine* graphicEngine = NULL);
+	virtual void Act(sf::Event) = 0;
+
 protected:
-    GraphicEngine* _graphicEngine;
+	GraphicEngine* _graphicEngine;
 };
 
 #endif	/* ACTIONLISTENER_H */

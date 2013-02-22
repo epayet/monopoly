@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/GameEngine/Case/Carte.o \
+	${OBJECTDIR}/Graphic/JeuConstantes.o \
 	${OBJECTDIR}/GameEngine/Case/Parc.o \
 	${OBJECTDIR}/GraphicEngine/EventHandler/MouseOverHandler.o \
 	${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/TextBlock.o \
@@ -46,8 +47,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/GraphicEngine/ActionListeners/ButtonMouseOverListener.o \
 	${OBJECTDIR}/GameEngine/Case/Prison.o \
 	${OBJECTDIR}/GameEngine/De.o \
-	${OBJECTDIR}/GameEngine/Participant/Banque.o \
 	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Image.o \
 	${OBJECTDIR}/GameEngine/Case/Propriété/Domaine.o \
 	${OBJECTDIR}/GameEngine/Participant/Joueur.o \
 	${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Button.o \
@@ -116,6 +117,11 @@ ${OBJECTDIR}/GameEngine/Case/Carte.o: GameEngine/Case/Carte.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte.o GameEngine/Case/Carte.cpp
 
+${OBJECTDIR}/Graphic/JeuConstantes.o: Graphic/JeuConstantes.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/JeuConstantes.o Graphic/JeuConstantes.cpp
+
 ${OBJECTDIR}/GameEngine/Case/Parc.o: GameEngine/Case/Parc.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	${RM} $@.d
@@ -166,15 +172,15 @@ ${OBJECTDIR}/GameEngine/De.o: GameEngine/De.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/De.o GameEngine/De.cpp
 
-${OBJECTDIR}/GameEngine/Participant/Banque.o: GameEngine/Participant/Banque.cpp 
-	${MKDIR} -p ${OBJECTDIR}/GameEngine/Participant
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Participant/Banque.o GameEngine/Participant/Banque.cpp
-
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Image.o: GraphicEngine/GuiManager/GuiItem/Image.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Image.o GraphicEngine/GuiManager/GuiItem/Image.cpp
 
 ${OBJECTDIR}/GameEngine/Case/Propriété/Domaine.o: GameEngine/Case/Propriété/Domaine.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Propriété
@@ -377,6 +383,19 @@ ${OBJECTDIR}/GameEngine/Case/Carte_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte.
 	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte.o ${OBJECTDIR}/GameEngine/Case/Carte_nomain.o;\
 	fi
 
+${OBJECTDIR}/Graphic/JeuConstantes_nomain.o: ${OBJECTDIR}/Graphic/JeuConstantes.o Graphic/JeuConstantes.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/JeuConstantes.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/JeuConstantes_nomain.o Graphic/JeuConstantes.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/JeuConstantes.o ${OBJECTDIR}/Graphic/JeuConstantes_nomain.o;\
+	fi
+
 ${OBJECTDIR}/GameEngine/Case/Parc_nomain.o: ${OBJECTDIR}/GameEngine/Case/Parc.o GameEngine/Case/Parc.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Parc.o`; \
@@ -507,19 +526,6 @@ ${OBJECTDIR}/GameEngine/De_nomain.o: ${OBJECTDIR}/GameEngine/De.o GameEngine/De.
 	    ${CP} ${OBJECTDIR}/GameEngine/De.o ${OBJECTDIR}/GameEngine/De_nomain.o;\
 	fi
 
-${OBJECTDIR}/GameEngine/Participant/Banque_nomain.o: ${OBJECTDIR}/GameEngine/Participant/Banque.o GameEngine/Participant/Banque.cpp 
-	${MKDIR} -p ${OBJECTDIR}/GameEngine/Participant
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Participant/Banque.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Participant/Banque_nomain.o GameEngine/Participant/Banque.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/GameEngine/Participant/Banque.o ${OBJECTDIR}/GameEngine/Participant/Banque_nomain.o;\
-	fi
-
 ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/main.o`; \
@@ -531,6 +537,19 @@ ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/main_nomain.o main.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/main.o ${OBJECTDIR}/main_nomain.o;\
+	fi
+
+${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Image_nomain.o: ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Image.o GraphicEngine/GuiManager/GuiItem/Image.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Image.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Image_nomain.o GraphicEngine/GuiManager/GuiItem/Image.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Image.o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Image_nomain.o;\
 	fi
 
 ${OBJECTDIR}/GameEngine/Case/Propriété/Domaine_nomain.o: ${OBJECTDIR}/GameEngine/Case/Propriété/Domaine.o GameEngine/Case/Propriété/Domaine.cpp 

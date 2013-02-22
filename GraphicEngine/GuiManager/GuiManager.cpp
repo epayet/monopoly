@@ -3,32 +3,46 @@
 
 GuiManager::GuiManager(sf::RenderWindow& window) : _window(window)
 {
-	
+
 }
 
 GuiManager::~GuiManager()
 {
-	for(int i=0; i<_guiItems.size(); i++)
-		delete _guiItems[i];
+	for(int i = 0; i < _guiItems.size(); i++)
+		delete _guiItems[i].second;
 }
 
-void GuiManager::AddGuiItem(GuiItem* guiItem)
+void GuiManager::AddGuiItem(std::string key, GuiItem* guiItem)
 {
-	_guiItems.push_back(guiItem);
+	GuiItemDictonnary guiItemDictionnary;
+	guiItemDictionnary.first = key;
+	guiItemDictionnary.second = guiItem;
+	_guiItems.push_back(guiItemDictionnary);
 }
 
 void GuiManager::HandleEvent(sf::Event event, int state)
 {
-	for(int i=0; i<_guiItems.size(); i++)
+	for(int i = 0; i < _guiItems.size(); i++)
 	{
-		_guiItems[i]->HandleEvent(event, state);
+		_guiItems[i].second->HandleEvent(event, state);
 	}
 }
 
 void GuiManager::Draw(int state)
 {
-	for(int i=0; i<_guiItems.size(); i++)
+	for(int i = 0; i < _guiItems.size(); i++)
 	{
-		_guiItems[i]->Draw(state);
+		_guiItems[i].second->Draw(state);
 	}
+}
+
+GuiItem* GuiManager::GetGuiItem(std::string key)
+{
+	for(int i = 0; i < _guiItems.size(); i++)
+	{
+		if(key == _guiItems[i].first)
+			return _guiItems[i].second;
+	}
+
+	return NULL;
 }

@@ -13,7 +13,7 @@
 class Constant
 {
 public:
-    static const std::string PolicePath;
+	static const std::string PolicePath;
 };
 
 #endif	/* CONSTANT_H */

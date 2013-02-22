@@ -2,5 +2,5 @@
 
 void Arrestation::Agir(Joueur *joueur)
 {
-	
+
 }

@@ -2,5 +2,5 @@
 
 void Gare::Agir(Joueur *joueur)
 {
-	
+
 }

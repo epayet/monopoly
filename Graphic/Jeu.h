@@ -8,7 +8,7 @@
 #ifndef JEU_H
 #define	JEU_H
 
-#define SIZEWINDOWX 1024
+#define SIZEWINDOWX 1366
 #define SIZEWINDOWY 768
 
 typedef enum
@@ -24,10 +24,11 @@ class Jeu
 public:
 	Jeu();
 	~Jeu();
-    void Run();
+	void Run();
+	Plateau* GetPlateau();
 
 private:
-    GraphicEngine* _graphicEngine;
+	GraphicEngine* _graphicEngine;
 	Plateau* _plateau;
 };
 

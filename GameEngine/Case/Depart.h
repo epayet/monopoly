@@ -12,8 +12,8 @@
 
 class Depart : Case
 {
-	public:
-		void Agir(Joueur *joueur);
+public:
+	void Agir(Joueur *joueur);
 };
 
 #endif	/* DEPART_H */

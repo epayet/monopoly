@@ -21,11 +21,11 @@ public:
 	virtual void Draw(int state) = 0;
 	void AddCallBack(CallBackManager* callBackManager);
 	void HandleEvent(sf::Event, int state);
-    int GetX();
-    int GetY();
-    int GetSizeX();
-    int GetSizeY();
-	
+	int GetX();
+	int GetY();
+	int GetSizeX();
+	int GetSizeY();
+
 protected:
 	int _sizex, _sizey;
 	int _x;

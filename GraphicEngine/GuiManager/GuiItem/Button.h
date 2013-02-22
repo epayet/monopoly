@@ -14,16 +14,16 @@
 
 class Button : public GuiItem
 {
-	public:
-		Button(sf::RenderWindow &window, int state, int x, int y, int size, sf::Font font, std::string content);
-		~Button();
-		void Draw(int state);
-        sf::String &GetText();
-        
-	private:
-        sf::Font _font;
-        sf::String _text;
-        sf::Shape _rect;
+public:
+	Button(sf::RenderWindow &window, int state, int x, int y, int size, sf::Font font, std::string content);
+	~Button();
+	void Draw(int state);
+	sf::String &GetText();
+
+private:
+	sf::Font _font;
+	sf::String _text;
+	sf::Shape _rect;
 };
 
 #endif	/* BUTTON_H */

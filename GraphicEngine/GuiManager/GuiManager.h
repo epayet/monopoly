@@ -13,17 +13,20 @@
 
 class GuiItem;
 
+typedef std::pair<std::string, GuiItem*> GuiItemDictonnary;
+
 class GuiManager
 {
 public:
 	GuiManager(sf::RenderWindow &window);
 	~GuiManager();
-	void AddGuiItem(GuiItem* guiItem);
+	void AddGuiItem(std::string key, GuiItem* guiItem);
 	void HandleEvent(sf::Event event, int state);
 	void Draw(int state);
-	
+	GuiItem* GetGuiItem(std::string key);
+
 private:
-	std::vector<GuiItem*> _guiItems;
+	std::vector<GuiItemDictonnary> _guiItems;
 	sf::RenderWindow &_window;
 };
 

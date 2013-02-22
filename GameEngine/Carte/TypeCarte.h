@@ -10,7 +10,6 @@
 
 class TypeCarte
 {
-	
 };
 
 #endif	/* TYPECARTE_H */

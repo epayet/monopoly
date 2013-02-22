@@ -2,5 +2,5 @@
 
 void Taxe::Agir(Joueur *joueur)
 {
-	
+
 }

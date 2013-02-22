@@ -10,16 +10,15 @@
 
 #include "GuiItem.h"
 
-
 class TextBlock : public GuiItem
 {
-	public :
-		TextBlock(sf::RenderWindow &window, int state, int x, int y, int size, sf::Font font, std::string content);
-		virtual void Draw(int state);
-		
-		protected:
-			sf::Font _font;
-			sf::String _text;
+public:
+	TextBlock(sf::RenderWindow &window, int state, int x, int y, int size, sf::Font font, std::string content);
+	virtual void Draw(int state);
+
+protected:
+	sf::Font _font;
+	sf::String _text;
 };
 
 #endif	/* TEXTBLOCK_H */

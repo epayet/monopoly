@@ -70,7 +70,7 @@ void BilletManager::Ajouter(int nb, int billet)
 
 void BilletManager::Ajouter(BilletManager* billetManager)
 {
-	for(int i=0; i<_billets.size(); i++)
+	for(int i = 0; i < _billets.size(); i++)
 	{
 		_billets[i].first += billetManager->GetBillets()[i].first;
 	}
@@ -79,7 +79,7 @@ void BilletManager::Ajouter(BilletManager* billetManager)
 void BilletManager::Enlever(int nb, int billet)
 {
 	_billets[billet].first -= nb;
-	
+
 	if(_billets[billet].first < 0)
 		_billets[billet].first = 0;
 }
@@ -115,7 +115,7 @@ void BilletManager::SetSomme(int somme)
 	int valeurBillets[7] = {1, 5, 10, 20, 50, 100, 500};
 	int restant = somme;
 
-	for(int i = nbBillets-1; i >= 0; i--)
+	for(int i = nbBillets - 1; i >= 0; i--)
 	{
 		int nb;
 
@@ -132,7 +132,7 @@ void BilletManager::SetSomme(int somme)
 		nbBillets.first = nb;
 		nbBillets.second = new Billet(valeurBillets[i]);
 		_billets.push_back(nbBillets);
-		
+
 		restant -= valeurBillets[i] * nb;
 	}
 }

@@ -12,8 +12,8 @@
 
 class Taxe : Case
 {
-	public:
-		void Agir(Joueur *joueur);
+public:
+	void Agir(Joueur *joueur);
 };
 
 #endif	/* TAXE_H */

@@ -38,7 +38,7 @@ private:
 	void testPlacer();
 	void testCrediter();
 	void testPayer();
-	
+
 	Joueur* _joueur;
 
 };

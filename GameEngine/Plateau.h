@@ -20,12 +20,16 @@ class Carte;
 
 class Plateau
 {
-private :
+public:
+	Plateau();
+	~Plateau();
+	void SetNbJoueurs(int nbJoueurs);
+
+private:
 	std::vector<Case*> _cases;
 	std::vector<Joueur*> _joueurs;
 	std::vector<Carte*> _cartes;
 	Cagnotte *_cagnotte;
-	Banque *_banque;
 };
 
 #endif	/* PLATEAU_H */

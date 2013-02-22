@@ -9,18 +9,18 @@ Joueur::Joueur() : Participant()
 
 Joueur::~Joueur()
 {
-	for(int i=0; i<_proprietes.size(); i++)
+	for(int i = 0; i < _proprietes.size(); i++)
 	{
 		delete _proprietes[i];
 	}
-	
+
 	_proprietes.clear();
 }
 
 void Joueur::Avancer(int valeur)
 {
 	_position += valeur;
-	
+
 	if(_position > 39)
 	{
 		GagnerArgentCaseDepart();
@@ -41,12 +41,12 @@ bool Joueur::PeutPayer(int somme)
 
 void Joueur::Construire(Propriete *propriete)
 {
-	
+
 }
 
 void Joueur::Detruire(Propriete *propriete)
 {
-	
+
 }
 
 void Joueur::Hypothequer(Propriete *propriete)
@@ -66,7 +66,7 @@ void Joueur::Placer(Case *caseAPlacer, bool passerParDepart)
 {
 	if(caseAPlacer->GetNumero() < _position && passerParDepart)
 		GagnerArgentCaseDepart();
-	
+
 	_position = caseAPlacer->GetNumero();
 }
 

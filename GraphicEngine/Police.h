@@ -13,14 +13,14 @@
 class Police
 {
 public:
-    Police(std::string filePath);
-    ~Police();
-    sf::Font GetFont();
-    
+	Police(std::string filePath);
+	~Police();
+	sf::Font GetFont();
+
 private:
-    char* _buffer;
-    long _file_size;
-    sf::Font _font;
+	char* _buffer;
+	long _file_size;
+	sf::Font _font;
 };
 
 #endif	/* POLICE_H */

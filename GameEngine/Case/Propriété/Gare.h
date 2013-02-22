@@ -12,8 +12,8 @@
 
 class Gare : Propriete
 {
-	public:
-		void Agir(Joueur *joueur);
+public:
+	void Agir(Joueur *joueur);
 };
 
 #endif	/* GARE_H */

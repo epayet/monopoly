@@ -8,5 +8,5 @@ JouerOnClickListener::JouerOnClickListener(GraphicEngine* graphicEngine) : Actio
 
 void JouerOnClickListener::Act(sf::Event)
 {
-    _graphicEngine->SetState(CHOOSEPLAYER);
+	_graphicEngine->SetState(CHOOSEPLAYER);
 }

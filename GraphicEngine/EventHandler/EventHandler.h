@@ -14,11 +14,11 @@ class GuiItem;
 
 class EventHandler
 {
-public :
+public:
 	EventHandler(GuiItem* guiItem);
 	~EventHandler();
 	virtual bool IsTriggered(sf::Event) = 0;
-	
+
 protected:
 	GuiItem* _guiItem;
 };

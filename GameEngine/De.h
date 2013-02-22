@@ -10,7 +10,7 @@
 
 class De
 {
-public :
+public:
 	static int Lancer(int min, int max);
 };
 

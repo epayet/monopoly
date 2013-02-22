@@ -8,15 +8,22 @@ Spinner::Spinner(sf::RenderWindow& window, int state, int x, int y, int size, sf
 	_nb = min;
 	_min = min;
 	_max = max;
-	
+
 	_font = font;
 
 	int startxArrows = GetStartXArrows();
-	
+
+	_plus.SetText("+");
+	_plus.SetPosition(startxArrows + 2, y + 2);
+	_plus.SetSize(size / 3);
+	_moins.SetText("-");
+	_moins.SetPosition(startxArrows + 2, y + (size / 2) + 2);
+	_moins.SetSize(size / 3);
+
 	Update();
-    _nbString.SetFont(_font);
-    _nbString.SetSize(size / 2);
-    _nbString.SetPosition(x + 5, y + 5);
+	_nbString.SetFont(_font);
+	_nbString.SetSize(size / 2);
+	_nbString.SetPosition(x + 5, y + 5);
 
 	_rect = sf::Shape::Rectangle(x, y, x + size, y + size, sf::Color(0, 0, 0), 1, sf::Color(255, 255, 255));
 	_upRect = sf::Shape::Rectangle(startxArrows, y, x + size, y + size / 2, sf::Color(0, 0, 0), 1, sf::Color(255, 255, 255));
@@ -35,6 +42,8 @@ void Spinner::Draw(int state)
 		_window.Draw(_upRect);
 		_window.Draw(_downRect);
 		_window.Draw(_nbString);
+		_window.Draw(_plus);
+		_window.Draw(_moins);
 	}
 }
 
@@ -64,14 +73,14 @@ void Spinner::Down()
 void Spinner::Update()
 {
 	// créer un flux de sortie
-    std::ostringstream oss;
-    // écrire un nombre dans le flux
-    oss << _nb;
-    // récupérer une chaîne de caractères
+	std::ostringstream oss;
+	// écrire un nombre dans le flux
+	oss << _nb;
+	// récupérer une chaîne de caractères
 	_nbString.SetText(oss.str());
 }
 
 int Spinner::GetStartXArrows()
 {
-	return _x + _sizex - (_sizex / 6);
+	return _x + _sizex - (_sizex / 5);
 }

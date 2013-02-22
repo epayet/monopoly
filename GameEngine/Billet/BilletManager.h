@@ -28,7 +28,7 @@ public:
 	void Vider();
 	void SetSomme(int somme);
 	bool PeutPayer(int somme);
-	
+
 private:
 	Billets _billets;
 };

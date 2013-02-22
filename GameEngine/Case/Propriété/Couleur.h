@@ -10,7 +10,6 @@
 
 class Couleur
 {
-	
 };
 
 #endif	/* COULEUR_H */

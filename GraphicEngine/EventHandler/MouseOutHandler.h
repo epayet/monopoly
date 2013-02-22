@@ -12,9 +12,9 @@
 
 class MouseOutHandler : public EventHandler
 {
-    public:
-        MouseOutHandler(GuiItem* guiItem);
-        bool IsTriggered(sf::Event);
+public:
+	MouseOutHandler(GuiItem* guiItem);
+	bool IsTriggered(sf::Event);
 };
 
 #endif	/* MOUSEOUTHANDLER_H */

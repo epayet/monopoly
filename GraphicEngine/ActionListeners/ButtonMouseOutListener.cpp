@@ -3,10 +3,10 @@
 
 ButtonMouseOutListener::ButtonMouseOutListener(Button* button)
 {
-    _button = button;
+	_button = button;
 }
 
 void ButtonMouseOutListener::Act(sf::Event)
 {
-    _button->GetText().SetColor(sf::Color(0, 0, 0));
+	_button->GetText().SetColor(sf::Color(0, 0, 0));
 }

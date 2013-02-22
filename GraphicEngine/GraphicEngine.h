@@ -20,14 +20,14 @@ public:
 	~GraphicEngine();
 	GuiManager* GetGuiManager();
 	sf::RenderWindow &GetWindow();
-    void Run();
-    sf::Font GetFont();
+	void Run();
+	sf::Font GetFont();
 	void SetState(int state);
-	
+
 private:
 	GuiManager* _guiManager;
 	sf::RenderWindow _window;
-    Police* _police;
+	Police* _police;
 	int _state;
 };
 

@@ -2,5 +2,5 @@
 
 void Prison::Agir(Joueur *joueur)
 {
-	
+
 }

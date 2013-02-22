@@ -10,13 +10,14 @@
 
 #include "../../GraphicEngine/ActionListeners/ActionListener.h"
 
-class JouerOnClickListener : public ActionListener {
+class JouerOnClickListener : public ActionListener
+{
 public:
-    JouerOnClickListener(GraphicEngine* graphicEngine);
-    void Act(sf::Event);
+	JouerOnClickListener(GraphicEngine* graphicEngine);
+	void Act(sf::Event);
 
 private:
-    
+
 };
 
 #endif	/* JOUERONCLICKLISTENER_H */

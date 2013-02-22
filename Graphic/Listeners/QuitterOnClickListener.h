@@ -12,9 +12,9 @@
 
 class QuitterOnClickListener : public ActionListener
 {
-	public:
-		QuitterOnClickListener(GraphicEngine* graphicEngine);
-		void Act(sf::Event);
+public:
+	QuitterOnClickListener(GraphicEngine* graphicEngine);
+	void Act(sf::Event);
 };
 
 #endif	/* QUITTERONCLICKLISTENER_H */

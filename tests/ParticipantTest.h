@@ -29,7 +29,7 @@ public:
 private:
 	void testCrediter();
 	void testPayer();
-	
+
 	Participant* _participant;
 
 };

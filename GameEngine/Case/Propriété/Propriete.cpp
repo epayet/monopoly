@@ -1,12 +1,13 @@
 #include "Propriete.h"
+
 Propriete::Propriete(int numero) : Case(numero)
 {
-	
+
 }
 
 Propriete::~Propriete()
 {
-	
+
 }
 
 int Propriete::Hypothequer()
@@ -16,7 +17,7 @@ int Propriete::Hypothequer()
 
 void Propriete::Acheter(Joueur *joueur)
 {
-	
+
 }
 
 int Propriete::LeverHypotheque()

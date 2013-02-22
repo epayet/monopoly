@@ -14,7 +14,7 @@ class ActionListener;
 class EventHandler;
 class GuiItem;
 
-typedef enum 
+typedef enum
 {
 	ONCLICK, MOUSEOVER, MOUSEOUT
 } EVENTTYPE;
@@ -26,8 +26,8 @@ public:
 	~CallBackManager();
 	EventHandler* GetEventHandler();
 	void Call(sf::Event);
-	
-private :
+
+private:
 	ActionListener* _actionListener;
 	EventHandler* _eventHandler;
 };

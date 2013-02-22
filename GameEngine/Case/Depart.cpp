@@ -2,5 +2,5 @@
 
 void Depart::Agir(Joueur *joueur)
 {
-	
+
 }

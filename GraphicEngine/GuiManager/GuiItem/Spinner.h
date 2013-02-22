@@ -20,13 +20,13 @@ public:
 	void Up();
 	void Down();
 	int GetStartXArrows();
-	
-	private:
-		int _nb, _min, _max;
-		sf::Shape _rect, _upRect, _downRect, _upArrow, _downArrow;
-		sf::String _nbString;
-		sf::Font _font;
-		void Update();
+
+private:
+	int _nb, _min, _max;
+	sf::Shape _rect, _upRect, _downRect, _upArrow, _downArrow;
+	sf::String _nbString, _plus, _moins;
+	sf::Font _font;
+	void Update();
 };
 
 #endif	/* SPINNER_H */

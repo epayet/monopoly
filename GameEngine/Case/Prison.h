@@ -10,10 +10,10 @@
 
 #include "Case.h"
 
-class Prison : Case 
+class Prison : Case
 {
-	public :
-		void Agir(Joueur *joueur);
+public:
+	void Agir(Joueur *joueur);
 };
 
 #endif	/* PRISON_H */

@@ -2,5 +2,5 @@
 
 void ServicePublique::Agir(Joueur *joueur)
 {
-	
+
 }

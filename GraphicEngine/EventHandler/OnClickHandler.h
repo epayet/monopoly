@@ -14,9 +14,9 @@
 
 class OnClickHandler : public EventHandler
 {
-	public :
-		OnClickHandler(GuiItem* guiItem);
-		bool IsTriggered(sf::Event);
+public:
+	OnClickHandler(GuiItem* guiItem);
+	bool IsTriggered(sf::Event);
 };
 
 #endif	/* ONCLICKHANDLER_H */

@@ -7,7 +7,7 @@ Case::Case(int numero)
 
 void Case::Agir(Joueur *joueur)
 {
-	
+
 }
 
 int Case::GetNumero()

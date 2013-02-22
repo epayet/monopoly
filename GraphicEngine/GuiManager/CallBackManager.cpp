@@ -6,28 +6,28 @@
 
 CallBackManager::CallBackManager(EVENTTYPE eventType, ActionListener* actionListener, GuiItem* guiItem)
 {
-    _actionListener = actionListener;
-	
+	_actionListener = actionListener;
+
 	switch(eventType)
 	{
 		case ONCLICK:
 			_eventHandler = new OnClickHandler(guiItem);
 			break;
-            
-        case MOUSEOVER:
-            _eventHandler = new MouseOverHandler(guiItem);
-            break;
-            
-        case MOUSEOUT:
-            _eventHandler = new MouseOutHandler(guiItem);
-            break;
+
+		case MOUSEOVER:
+			_eventHandler = new MouseOverHandler(guiItem);
+			break;
+
+		case MOUSEOUT:
+			_eventHandler = new MouseOutHandler(guiItem);
+			break;
 	}
 }
 
 CallBackManager::~CallBackManager()
 {
 	delete _eventHandler;
-    delete _actionListener;
+	delete _actionListener;
 }
 
 void CallBackManager::Call(sf::Event event)

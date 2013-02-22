@@ -13,13 +13,13 @@ class Joueur;
 
 class Propriete : Case
 {
-	public :
-		Propriete(int numero);
-		~Propriete();
-		int Hypothequer();
-		int LeverHypotheque();
-		void Acheter(Joueur *joueur);
-		
+public:
+	Propriete(int numero);
+	~Propriete();
+	int Hypothequer();
+	int LeverHypotheque();
+	void Acheter(Joueur *joueur);
+
 };
 
 #endif	/* PROPRIETE_H */

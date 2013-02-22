@@ -2,5 +2,5 @@
 
 void Carte::Agir(Joueur *joueur)
 {
-	
+
 }

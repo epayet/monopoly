@@ -7,5 +7,5 @@ EventHandler::EventHandler(GuiItem* guiItem)
 
 EventHandler::~EventHandler()
 {
-	
+
 }

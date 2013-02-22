@@ -14,7 +14,7 @@ class TypeCarte;
 
 class Carte
 {
-public :
+public:
 	virtual void Agir(Joueur *joueur);
 private:
 	TypeCarte *_typeCarte;

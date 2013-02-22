@@ -36,7 +36,7 @@ private:
 	void testEnlever();
 	void testVider();
 	void testSetSomme();
-	
+
 	BilletManager* _billetManager;
 
 };

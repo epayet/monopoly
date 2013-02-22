@@ -69,15 +69,15 @@ void JoueurTest::testCrediter()
 {
 	BilletManager* billetManager = new BilletManager();
 	billetManager->Ajouter(1, BILLET10);
-	
+
 	CPPUNIT_ASSERT(_joueur->SommeBillets() == 0);
-	
+
 	_joueur->Crediter(billetManager);
 	CPPUNIT_ASSERT(_joueur->SommeBillets() == 10);
-	
+
 	billetManager->Enlever(1, BILLET10);
 	billetManager->Ajouter(1, BILLET50);
-	
+
 	_joueur->Crediter(billetManager);
 	CPPUNIT_ASSERT(_joueur->SommeBillets() == 60);
 }
@@ -87,7 +87,7 @@ void JoueurTest::testPayer()
 	int somme = 120;
 	Participant* crediteur = new Joueur();
 	CPPUNIT_ASSERT(_joueur->SommeBillets() == 0);
-	
+
 	BilletManager* billetManager = new BilletManager();
 	billetManager->Ajouter(1, BILLET1);
 	billetManager->Ajouter(1, BILLET5);
@@ -96,9 +96,9 @@ void JoueurTest::testPayer()
 	billetManager->Ajouter(1, BILLET50);
 	billetManager->Ajouter(1, BILLET100);
 	billetManager->Ajouter(1, BILLET500);
-	
+
 	_joueur->Crediter(billetManager);
-	
+
 	BilletManager* result = _joueur->Payer(somme);
 	crediteur->Crediter(result);
 	CPPUNIT_ASSERT(crediteur->SommeBillets() == somme);

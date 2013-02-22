@@ -22,7 +22,7 @@ public:
 	int SommeBillets();
 	std::string GetNom();
 	BilletManager* GetBilletManager();
-	
+
 protected:
 	BilletManager* _billetManager;
 	std::string _nom;

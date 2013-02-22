@@ -7,7 +7,7 @@ bool Domaine::PeutConstruire()
 
 void Domaine::Construire()
 {
-	
+
 }
 
 int Domaine::Detruire()
@@ -17,5 +17,5 @@ int Domaine::Detruire()
 
 void Domaine::Agir(Joueur *joueur)
 {
-	
+
 }

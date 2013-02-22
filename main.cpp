@@ -20,7 +20,6 @@ int main(int argc, char** argv)
 {
 	Jeu* jeu = new Jeu;
 	jeu->Run();
-	
 	delete jeu;
 
 	return 0;
