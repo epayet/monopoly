@@ -9,6 +9,7 @@
 #define	ACTIONLISTENER_H
 
 #include <cstdio>
+#include <SFML/Graphics.hpp>
 
 class GraphicEngine;
 
@@ -16,7 +17,7 @@ class ActionListener
 {
 public:
     ActionListener(GraphicEngine* graphicEngine = NULL);
-    virtual void Act() = 0;
+    virtual void Act(sf::Event) = 0;
     
 protected:
     GraphicEngine* _graphicEngine;

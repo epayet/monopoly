@@ -2,14 +2,14 @@
 #include "../CallBackManager.h"
 #include "GraphicEngine/EventHandler/EventHandler.h"
 
-GuiItem::GuiItem(sf::RenderWindow& window, int x, int y, int sizex, int sizey) : _window(window)
+GuiItem::GuiItem(sf::RenderWindow& window, int state, int x, int y, int sizex, int sizey) : _window(window)
 {
     _x = x;
     _y = y;
     _sizex = sizex;
     _sizey = sizey;
     
-    _canDraw = true;
+    _state = state;
 }
 
 GuiItem::~GuiItem()
@@ -25,12 +25,12 @@ void GuiItem::AddCallBack(CallBackManager* callBackManager)
     _callBackManagers.push_back(callBackManager);
 }
 
-void GuiItem::HandleEvent(sf::Event event)
+void GuiItem::HandleEvent(sf::Event event, int state)
 {
     for (int i = 0; i < _callBackManagers.size(); i++)
     {
-        if (_callBackManagers[i]->GetEventHandler()->IsTriggered(event))
-            _callBackManagers[i]->Call();
+        if (_state == state && _callBackManagers[i]->GetEventHandler()->IsTriggered(event))
+            _callBackManagers[i]->Call(event);
     }
 }
 

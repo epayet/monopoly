@@ -8,10 +8,16 @@
 #ifndef JEU_H
 #define	JEU_H
 
-#define SIZEWINDOWX 800
-#define SIZEWINDOWY 600
+#define SIZEWINDOWX 1024
+#define SIZEWINDOWY 768
+
+typedef enum
+{
+	FIRSTMENU, CHOOSEPLAYER, INGAME
+} GAMESTATE;
 
 class GraphicEngine;
+class Plateau;
 
 class Jeu
 {
@@ -22,6 +28,7 @@ public:
 
 private:
     GraphicEngine* _graphicEngine;
+	Plateau* _plateau;
 };
 
 #endif	/* JEU_H */

@@ -30,9 +30,9 @@ CallBackManager::~CallBackManager()
     delete _actionListener;
 }
 
-void CallBackManager::Call()
+void CallBackManager::Call(sf::Event event)
 {
-	_actionListener->Act();
+	_actionListener->Act(event);
 }
 
 EventHandler* CallBackManager::GetEventHandler()

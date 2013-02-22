@@ -8,6 +8,8 @@
 #ifndef CALLBACKMANAGER_H
 #define	CALLBACKMANAGER_H
 
+#include <SFML/Graphics.hpp>
+
 class ActionListener;
 class EventHandler;
 class GuiItem;
@@ -23,7 +25,7 @@ public:
 	CallBackManager(EVENTTYPE eventType, ActionListener* actionListener, GuiItem* guiItem);
 	~CallBackManager();
 	EventHandler* GetEventHandler();
-	void Call();
+	void Call(sf::Event);
 	
 private :
 	ActionListener* _actionListener;

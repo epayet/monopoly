@@ -1,12 +1,12 @@
 #include "JouerOnClickListener.h"
 #include "GraphicEngine/GraphicEngine.h"
+#include "Graphic/Jeu.h"
 
-JouerOnClickListener::JouerOnClickListener(GraphicEngine* graphicEngine, Jeu* jeu) : ActionListener(graphicEngine)
+JouerOnClickListener::JouerOnClickListener(GraphicEngine* graphicEngine) : ActionListener(graphicEngine)
 {
-    _jeu = jeu;
 }
 
-void JouerOnClickListener::Act()
+void JouerOnClickListener::Act(sf::Event)
 {
-    _graphicEngine->GetWindow().Close();
+    _graphicEngine->SetState(CHOOSEPLAYER);
 }

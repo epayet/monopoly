@@ -16,17 +16,15 @@ class CallBackManager;
 class GuiItem
 {
 public:
-	GuiItem(sf::RenderWindow &window, int x, int y, int sizex = 0, int sizey = 0);
+	GuiItem(sf::RenderWindow &window, int state, int x, int y, int sizex = 0, int sizey = 0);
 	~GuiItem();
-	virtual void Draw() = 0;
+	virtual void Draw(int state) = 0;
 	void AddCallBack(CallBackManager* callBackManager);
-	void HandleEvent(sf::Event);
+	void HandleEvent(sf::Event, int state);
     int GetX();
     int GetY();
     int GetSizeX();
     int GetSizeY();
-    void SetCanDraw(bool);
-    bool GetCanDraw();
 	
 protected:
 	int _sizex, _sizey;
@@ -34,7 +32,7 @@ protected:
 	int _y;
 	std::vector<CallBackManager*> _callBackManagers;
 	sf::RenderWindow &_window;
-    bool _canDraw;
+	int _state;
 };
 
 #endif	/* GUIITEM_H */

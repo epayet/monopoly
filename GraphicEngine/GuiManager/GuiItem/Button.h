@@ -15,9 +15,9 @@
 class Button : public GuiItem
 {
 	public:
-		Button(sf::RenderWindow &window, int x, int y, int size, sf::Font font, std::string content);
+		Button(sf::RenderWindow &window, int state, int x, int y, int size, sf::Font font, std::string content);
 		~Button();
-		void Draw();
+		void Draw(int state);
         sf::String &GetText();
         
 	private:

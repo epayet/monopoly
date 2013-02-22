@@ -19,16 +19,16 @@ public:
 	GraphicEngine(int sizex, int sizey, std::string windowName);
 	~GraphicEngine();
 	GuiManager* GetGuiManager();
-	void HandleEvent(sf::Event event);
-	void Draw();
 	sf::RenderWindow &GetWindow();
     void Run();
     sf::Font GetFont();
+	void SetState(int state);
 	
 private:
 	GuiManager* _guiManager;
 	sf::RenderWindow _window;
     Police* _police;
+	int _state;
 };
 
 #endif	/* GRAPHICENGINE_H */

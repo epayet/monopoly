@@ -40,7 +40,9 @@
       </logicalFolder>
       <logicalFolder name="f2" displayName="Graphic" projectFiles="true">
         <logicalFolder name="f1" displayName="Listeners" projectFiles="true">
+          <itemPath>Graphic/Listeners/CommencerOnClickListener.h</itemPath>
           <itemPath>Graphic/Listeners/JouerOnClickListener.h</itemPath>
+          <itemPath>Graphic/Listeners/QuitterOnClickListener.h</itemPath>
         </logicalFolder>
         <itemPath>Graphic/Jeu.h</itemPath>
       </logicalFolder>
@@ -49,6 +51,7 @@
           <itemPath>GraphicEngine/ActionListeners/ActionListener.h</itemPath>
           <itemPath>GraphicEngine/ActionListeners/ButtonMouseOutListener.h</itemPath>
           <itemPath>GraphicEngine/ActionListeners/ButtonMouseOverListener.h</itemPath>
+          <itemPath>GraphicEngine/ActionListeners/SpinnerOnClickListener.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="EventHandler" projectFiles="true">
           <itemPath>GraphicEngine/EventHandler/EventHandler.h</itemPath>
@@ -60,6 +63,8 @@
           <logicalFolder name="f1" displayName="GuiItem" projectFiles="true">
             <itemPath>GraphicEngine/GuiManager/GuiItem/Button.h</itemPath>
             <itemPath>GraphicEngine/GuiManager/GuiItem/GuiItem.h</itemPath>
+            <itemPath>GraphicEngine/GuiManager/GuiItem/Spinner.h</itemPath>
+            <itemPath>GraphicEngine/GuiManager/GuiItem/TextBlock.h</itemPath>
           </logicalFolder>
           <itemPath>GraphicEngine/GuiManager/CallBackManager.h</itemPath>
           <itemPath>GraphicEngine/GuiManager/GuiManager.h</itemPath>
@@ -111,7 +116,9 @@
       </logicalFolder>
       <logicalFolder name="f2" displayName="Graphic" projectFiles="true">
         <logicalFolder name="f1" displayName="Listeners" projectFiles="true">
+          <itemPath>Graphic/Listeners/CommencerOnClickListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/JouerOnClickListener.cpp</itemPath>
+          <itemPath>Graphic/Listeners/QuitterOnClickListener.cpp</itemPath>
         </logicalFolder>
         <itemPath>Graphic/Jeu.cpp</itemPath>
       </logicalFolder>
@@ -120,6 +127,7 @@
           <itemPath>GraphicEngine/ActionListeners/ActionListener.cpp</itemPath>
           <itemPath>GraphicEngine/ActionListeners/ButtonMouseOutListener.cpp</itemPath>
           <itemPath>GraphicEngine/ActionListeners/ButtonMouseOverListener.cpp</itemPath>
+          <itemPath>GraphicEngine/ActionListeners/SpinnerOnClickListener.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="f2" displayName="EventHandler" projectFiles="true">
           <itemPath>GraphicEngine/EventHandler/EventHandler.cpp</itemPath>
@@ -131,6 +139,8 @@
           <logicalFolder name="f1" displayName="GuiItem" projectFiles="true">
             <itemPath>GraphicEngine/GuiManager/GuiItem/Button.cpp</itemPath>
             <itemPath>GraphicEngine/GuiManager/GuiItem/GuiItem.cpp</itemPath>
+            <itemPath>GraphicEngine/GuiManager/GuiItem/Spinner.cpp</itemPath>
+            <itemPath>GraphicEngine/GuiManager/GuiItem/TextBlock.cpp</itemPath>
           </logicalFolder>
           <itemPath>GraphicEngine/GuiManager/CallBackManager.cpp</itemPath>
           <itemPath>GraphicEngine/GuiManager/GuiManager.cpp</itemPath>

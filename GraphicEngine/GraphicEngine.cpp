@@ -10,6 +10,7 @@ GraphicEngine::GraphicEngine(int sizex, int sizey, std::string windowName)
     _guiManager = new GuiManager(_window);
 
     _police = new Police(Constant::PolicePath);
+	_state = -1;
 }
 
 GraphicEngine::~GraphicEngine()
@@ -28,26 +29,13 @@ void GraphicEngine::Run()
             if (event.Type == sf::Event::Closed)
                 _window.Close();
 
-            _guiManager->HandleEvent(event);
+            _guiManager->HandleEvent(event, _state);
         }
 
         _window.Clear();
-        _guiManager->Draw();
+        _guiManager->Draw(_state);
         _window.Display();
     }
-}
-
-void GraphicEngine::HandleEvent(sf::Event event)
-{
-    if (event.Type == sf::Event::Closed)
-        _window.Close();
-
-    _guiManager->HandleEvent(event);
-}
-
-void GraphicEngine::Draw()
-{
-    _guiManager->Draw();
 }
 
 GuiManager* GraphicEngine::GetGuiManager()
@@ -63,4 +51,9 @@ sf::RenderWindow &GraphicEngine::GetWindow()
 sf::Font GraphicEngine::GetFont()
 {
     return _police->GetFont();
+}
+
+void GraphicEngine::SetState(int state)
+{
+	_state = state;
 }

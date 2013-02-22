@@ -19,8 +19,8 @@ public:
 	GuiManager(sf::RenderWindow &window);
 	~GuiManager();
 	void AddGuiItem(GuiItem* guiItem);
-	void HandleEvent(sf::Event event);
-	void Draw();
+	void HandleEvent(sf::Event event, int state);
+	void Draw(int state);
 	
 private:
 	std::vector<GuiItem*> _guiItems;

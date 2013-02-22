@@ -3,10 +3,10 @@
 #include "GraphicEngine/ActionListeners/ButtonMouseOverListener.h"
 #include "GraphicEngine/ActionListeners/ButtonMouseOutListener.h"
 
-Button::Button(sf::RenderWindow& window, int x, int y, int size, sf::Font font, std::string content) : GuiItem(window, x - MARGIN / 2, y - MARGIN / 2)
+Button::Button(sf::RenderWindow& window, int state, int x, int y, int size, sf::Font font, std::string content) : GuiItem(window, state,  x - MARGIN / 2, y - MARGIN / 2)
 {
-    _font = font;
-
+	_font = font;
+	
     _text.SetText(content);
     _text.SetFont(_font);
     _text.SetSize(size);
@@ -27,14 +27,9 @@ Button::Button(sf::RenderWindow& window, int x, int y, int size, sf::Font font, 
     _callBackManagers.push_back(mouseOutCallBack);
 }
 
-Button::~Button()
+void Button::Draw(int state)
 {
-
-}
-
-void Button::Draw()
-{
-    if (_canDraw)
+    if (_state == state)
     {
         _window.Draw(_rect);
         _window.Draw(_text);

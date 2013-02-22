@@ -16,7 +16,7 @@ class ButtonMouseOutListener : public ActionListener
 {
 public:
     ButtonMouseOutListener(Button* button);
-    void Act();
+    void Act(sf::Event);
 
 private:
     Button* _button;
