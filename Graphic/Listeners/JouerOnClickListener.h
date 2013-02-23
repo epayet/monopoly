@@ -10,10 +10,12 @@
 
 #include "../../GraphicEngine/ActionListeners/ActionListener.h"
 
+class Button;
+
 class JouerOnClickListener : public ActionListener
 {
 public:
-	JouerOnClickListener(GraphicEngine* graphicEngine);
+	JouerOnClickListener(EVENTTYPE, Button* jouerBouton, GraphicEngine* graphicEngine);
 	void Act(sf::Event);
 
 private:

@@ -11,6 +11,8 @@
 #define SIZEWINDOWX 1366
 #define SIZEWINDOWY 768
 
+#include <vector>
+
 typedef enum
 {
 	FIRSTMENU, CHOOSEPLAYER, INGAME
@@ -18,6 +20,8 @@ typedef enum
 
 class GraphicEngine;
 class Plateau;
+class Pion;
+class Joueur;
 
 class Jeu
 {
@@ -26,10 +30,15 @@ public:
 	~Jeu();
 	void Run();
 	Plateau* GetPlateau();
+    void SetNbJoueurs(int nbJoueurs);
+    void UpdateJoueurActuel();
+    void SetPositionJoueur(Joueur* joueur);
 
 private:
 	GraphicEngine* _graphicEngine;
 	Plateau* _plateau;
+    int _nbJoueurs;
+    std::vector<Pion*> _pions;
 };
 
 #endif	/* JEU_H */

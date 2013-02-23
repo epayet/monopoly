@@ -10,10 +10,12 @@
 
 #include "../../GraphicEngine/ActionListeners/ActionListener.h"
 
+class Button;
+
 class QuitterOnClickListener : public ActionListener
 {
 public:
-	QuitterOnClickListener(GraphicEngine* graphicEngine);
+	QuitterOnClickListener(EVENTTYPE, Button* quitterBouton, GraphicEngine* graphicEngine);
 	void Act(sf::Event);
 };
 

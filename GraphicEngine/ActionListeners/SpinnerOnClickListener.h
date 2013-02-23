@@ -15,11 +15,8 @@ class Spinner;
 class SpinnerOnClickListener : public ActionListener
 {
 public:
-	SpinnerOnClickListener(Spinner* spinner);
+	SpinnerOnClickListener(EVENTTYPE, Spinner* spinner);
 	void Act(sf::Event);
-
-private:
-	Spinner* _spinner;
 };
 
 #endif	/* SPINNERONCLICKLISTENER_H */

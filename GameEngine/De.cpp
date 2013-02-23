@@ -1,6 +1,7 @@
 #include "De.h"
+#include "util.h"
 
 int De::Lancer(int min, int max)
 {
-	return -1;
+	return rand_a_b(min, max + 1);
 }

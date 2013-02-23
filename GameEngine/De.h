@@ -11,7 +11,7 @@
 class De
 {
 public:
-	static int Lancer(int min, int max);
+	static int Lancer(int min = 1, int max = 6);
 };
 
 #endif	/* DE_H */

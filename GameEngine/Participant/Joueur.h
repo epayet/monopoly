@@ -17,7 +17,7 @@ class Case;
 class Joueur : public Participant
 {
 public:
-	Joueur();
+	Joueur(std::string nom);
 	~Joueur();
 	void Avancer(int valeur);
 	void Acheter(Propriete *propriete);
@@ -34,6 +34,7 @@ private:
 	int _position;
 	std::vector<Propriete*> _proprietes;
 	void GagnerArgentCaseDepart();
+    int _tour;
 };
 
 #endif	/* JOUEUR_H */

@@ -6,6 +6,7 @@
  */
 
 #include <cstdlib>
+#include <ctime>
 #include <SFML/Graphics.hpp>
 
 #include "GraphicEngine/GraphicEngine.h"
@@ -18,6 +19,8 @@ using namespace std;
  */
 int main(int argc, char** argv)
 {
+    srand(time(NULL)); // initialisation de rand
+    
 	Jeu* jeu = new Jeu;
 	jeu->Run();
 	delete jeu;

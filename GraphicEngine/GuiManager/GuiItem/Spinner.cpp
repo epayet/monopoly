@@ -1,7 +1,7 @@
-#include <sstream>
 #include "Spinner.h"
 #include "GraphicEngine/ActionListeners/SpinnerOnClickListener.h"
 #include "GraphicEngine/GuiManager/CallBackManager.h"
+#include "util.h"
 
 Spinner::Spinner(sf::RenderWindow& window, int state, int x, int y, int size, sf::Font font, int min, int max) : GuiItem(window, state, x, y, size, size)
 {
@@ -29,14 +29,12 @@ Spinner::Spinner(sf::RenderWindow& window, int state, int x, int y, int size, sf
 	_upRect = sf::Shape::Rectangle(startxArrows, y, x + size, y + size / 2, sf::Color(0, 0, 0), 1, sf::Color(255, 255, 255));
 	_downRect = sf::Shape::Rectangle(startxArrows, y + size / 2, x + size, y + size, sf::Color(0, 0, 0), 1, sf::Color(255, 255, 255));
 
-	SpinnerOnClickListener* onClickListener = new SpinnerOnClickListener(this);
-	CallBackManager* callBackManager = new CallBackManager(ONCLICK, onClickListener, this);
-	_callBackManagers.push_back(callBackManager);
+	_listeners.push_back(new SpinnerOnClickListener(ONCLICK, this));
 }
 
 void Spinner::Draw(int state)
 {
-	if(_state == state)
+	if(CanDraw(state))
 	{
 		_window.Draw(_rect);
 		_window.Draw(_upRect);
@@ -72,12 +70,7 @@ void Spinner::Down()
 
 void Spinner::Update()
 {
-	// créer un flux de sortie
-	std::ostringstream oss;
-	// écrire un nombre dans le flux
-	oss << _nb;
-	// récupérer une chaîne de caractères
-	_nbString.SetText(oss.str());
+	_nbString.SetText(intToString(_nb));
 }
 
 int Spinner::GetStartXArrows()

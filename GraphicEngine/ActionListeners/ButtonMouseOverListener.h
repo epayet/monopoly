@@ -15,11 +15,8 @@ class Button;
 class ButtonMouseOverListener : public ActionListener
 {
 public:
-	ButtonMouseOverListener(Button* button);
+	ButtonMouseOverListener(EVENTTYPE, Button* button);
 	void Act(sf::Event);
-
-private:
-	Button *_button;
 };
 
 #endif	/* BUTTONMOUSEOVERLISTENER_H */

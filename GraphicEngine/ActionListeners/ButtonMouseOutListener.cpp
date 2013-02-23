@@ -1,12 +1,13 @@
 #include "ButtonMouseOutListener.h"
 #include "../GuiManager/GuiItem/Button.h"
 
-ButtonMouseOutListener::ButtonMouseOutListener(Button* button)
+ButtonMouseOutListener::ButtonMouseOutListener(EVENTTYPE eventType, Button* button) : ActionListener(eventType, button)
 {
-	_button = button;
+    
 }
 
 void ButtonMouseOutListener::Act(sf::Event)
 {
-	_button->GetText().SetColor(sf::Color(0, 0, 0));
+	Button* button = (Button*)_guiItem;
+    button->GetText().SetColor(sf::Color(0, 0, 0));
 }

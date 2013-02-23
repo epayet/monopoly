@@ -10,6 +10,7 @@
 
 #include <cstdlib>
 #include <vector>
+#include <string>
 
 class Case;
 class Joueur;
@@ -23,13 +24,17 @@ class Plateau
 public:
 	Plateau();
 	~Plateau();
-	void SetNbJoueurs(int nbJoueurs);
+	void AddJoueur(std::string nomJoueur);
+    Joueur* GetJoueurActuel();
+    std::vector<Joueur*> GetJoueurs();
+    void FinirTour();
 
 private:
 	std::vector<Case*> _cases;
 	std::vector<Joueur*> _joueurs;
 	std::vector<Carte*> _cartes;
 	Cagnotte *_cagnotte;
+    int _tour;
 };
 
 #endif	/* PLATEAU_H */

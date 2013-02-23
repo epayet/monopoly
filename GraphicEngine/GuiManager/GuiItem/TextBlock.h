@@ -14,11 +14,12 @@ class TextBlock : public GuiItem
 {
 public:
 	TextBlock(sf::RenderWindow &window, int state, int x, int y, int size, sf::Font font, std::string content);
-	virtual void Draw(int state);
+	void Draw(int state);
+    void SetContent(std::string content);
 
 protected:
 	sf::Font _font;
-	sf::String _text;
+	sf::String _content;
 };
 
 #endif	/* TEXTBLOCK_H */

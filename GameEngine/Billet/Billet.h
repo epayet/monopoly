@@ -13,6 +13,7 @@ class Billet
 public:
 	Billet(int valeur);
 	int GetValeur();
+    
 private:
 	int _valeur;
 };

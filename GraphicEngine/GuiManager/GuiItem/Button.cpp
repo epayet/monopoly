@@ -18,18 +18,13 @@ Button::Button(sf::RenderWindow& window, int state, int x, int y, int size, sf::
 
 	_rect = sf::Shape::Rectangle(_x - MARGIN / 2, _y - MARGIN / 2, _x + _sizex, _y + _sizey, sf::Color(255, 255, 255));
 
-	ButtonMouseOverListener* mouseOverListener = new ButtonMouseOverListener(this);
-	CallBackManager* mouseOverCallBack = new CallBackManager(MOUSEOVER, mouseOverListener, this);
-	_callBackManagers.push_back(mouseOverCallBack);
-
-	ButtonMouseOutListener* mouseOutListener = new ButtonMouseOutListener(this);
-	CallBackManager* mouseOutCallBack = new CallBackManager(MOUSEOUT, mouseOutListener, this);
-	_callBackManagers.push_back(mouseOutCallBack);
+	_listeners.push_back(new ButtonMouseOverListener(MOUSEOVER, this));
+	_listeners.push_back(new ButtonMouseOutListener(MOUSEOUT, this));
 }
 
 void Button::Draw(int state)
 {
-	if(_state == state)
+	if(CanDraw(state))
 	{
 		_window.Draw(_rect);
 		_window.Draw(_text);

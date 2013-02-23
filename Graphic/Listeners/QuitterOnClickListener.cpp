@@ -1,7 +1,8 @@
 #include "QuitterOnClickListener.h"
 #include "GraphicEngine/GraphicEngine.h"
+#include "../../GraphicEngine/GuiManager/GuiItem/Button.h"
 
-QuitterOnClickListener::QuitterOnClickListener(GraphicEngine* graphicEngine) : ActionListener(graphicEngine)
+QuitterOnClickListener::QuitterOnClickListener(EVENTTYPE eventType, Button* quitterBouton, GraphicEngine* graphicEngine) : ActionListener(eventType, quitterBouton, graphicEngine)
 {
 
 }

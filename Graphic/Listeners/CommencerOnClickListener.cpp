@@ -5,8 +5,9 @@
 #include "Graphic/JeuConstantes.h"
 #include "GraphicEngine/GuiManager/GuiItem/Spinner.h"
 #include "../../GameEngine/Plateau.h"
+#include "../../GraphicEngine/GuiManager/GuiItem/Button.h"
 
-CommencerOnClickListener::CommencerOnClickListener(GraphicEngine* graphicEngine, Jeu* jeu) : ActionListener(graphicEngine)
+CommencerOnClickListener::CommencerOnClickListener(EVENTTYPE eventType, Button* commencerBouton, GraphicEngine* graphicEngine, Jeu* jeu) : ActionListener(eventType, commencerBouton, graphicEngine)
 {
 	_jeu = jeu;
 }
@@ -14,6 +15,6 @@ CommencerOnClickListener::CommencerOnClickListener(GraphicEngine* graphicEngine,
 void CommencerOnClickListener::Act(sf::Event)
 {
 	Spinner* nbJoueursSpinner = (Spinner*) _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::SpinnerChoixNbJoueursKey);
-	_jeu->GetPlateau()->SetNbJoueurs(nbJoueursSpinner->GetNb());
+	_jeu->SetNbJoueurs(nbJoueursSpinner->GetNb());
 	_graphicEngine->SetState(INGAME);
 }

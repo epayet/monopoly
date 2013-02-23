@@ -1,6 +1,7 @@
 #include "GuiItem.h"
 #include "../CallBackManager.h"
 #include "GraphicEngine/EventHandler/EventHandler.h"
+#include "GraphicEngine/ActionListeners/ActionListener.h"
 
 GuiItem::GuiItem(sf::RenderWindow& window, int state, int x, int y, int sizex, int sizey) : _window(window)
 {
@@ -10,27 +11,29 @@ GuiItem::GuiItem(sf::RenderWindow& window, int state, int x, int y, int sizex, i
 	_sizey = sizey;
 
 	_state = state;
+    
+    _canDraw = true;
 }
 
 GuiItem::~GuiItem()
 {
-	for(int i = 0; i < _callBackManagers.size(); i++)
+	for(int i = 0; i < _listeners.size(); i++)
 	{
-		delete _callBackManagers[i];
+		delete _listeners[i];
 	}
 }
 
-void GuiItem::AddCallBack(CallBackManager* callBackManager)
+void GuiItem::AddListener(ActionListener* actionListener)
 {
-	_callBackManagers.push_back(callBackManager);
+	_listeners.push_back(actionListener);
 }
 
 void GuiItem::HandleEvent(sf::Event event, int state)
 {
-	for(int i = 0; i < _callBackManagers.size(); i++)
+	for(int i = 0; i < _listeners.size(); i++)
 	{
-		if(_state == state && _callBackManagers[i]->GetEventHandler()->IsTriggered(event))
-			_callBackManagers[i]->Call(event);
+		if(_state == state && _listeners[i]->GetEventHandler()->IsTriggered(event))
+			_listeners[i]->Act(event);
 	}
 }
 
@@ -44,6 +47,16 @@ int GuiItem::GetY()
 	return _y;
 }
 
+void GuiItem::SetX(int x)
+{
+    _x = x;
+}
+
+void GuiItem::SetY(int y)
+{
+    _y = y;
+}
+
 int GuiItem::GetSizeX()
 {
 	return _sizex;
@@ -52,4 +65,14 @@ int GuiItem::GetSizeX()
 int GuiItem::GetSizeY()
 {
 	return _sizey;
+}
+
+void GuiItem::SetCanDraw(bool canDraw)
+{
+    _canDraw = canDraw;
+}
+
+bool GuiItem::CanDraw(int state)
+{
+    return _state == state && _canDraw;
 }

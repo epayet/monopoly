@@ -13,12 +13,15 @@
 class Image : public GuiItem
 {
 public:
-	Image(sf::RenderWindow &window, int state, int x, int y, std::string filePath);
-	void Draw(int state);
+    Image(sf::RenderWindow &window, int state, int x, int y, std::string filePath);
+    void Draw(int state);
+    void SetFilePath(std::string filePath);
+    void SetX(int x);
+    void SetY(int y);
 
 private:
-	sf::Sprite _sprite;
-	sf::Image _image;
+    sf::Sprite _sprite;
+    sf::Image _image;
 };
 
 #endif	/* IMAGE_H */

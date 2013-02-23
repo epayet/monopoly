@@ -35,18 +35,20 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/GraphicEngine/EventHandler/MouseOverHandler.o \
 	${OBJECTDIR}/GameEngine/Case/Carte.o \
 	${OBJECTDIR}/Graphic/JeuConstantes.o \
 	${OBJECTDIR}/GameEngine/Case/Parc.o \
-	${OBJECTDIR}/GraphicEngine/EventHandler/MouseOverHandler.o \
 	${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/TextBlock.o \
+	${OBJECTDIR}/util.o \
 	${OBJECTDIR}/GraphicEngine/Police.o \
 	${OBJECTDIR}/GraphicEngine/GuiManager/GuiManager.o \
-	${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener.o \
 	${OBJECTDIR}/GameEngine/Participant/Participant.o \
 	${OBJECTDIR}/GraphicEngine/ActionListeners/ButtonMouseOverListener.o \
+	${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener.o \
 	${OBJECTDIR}/GameEngine/Case/Prison.o \
 	${OBJECTDIR}/GameEngine/De.o \
+	${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Image.o \
 	${OBJECTDIR}/GameEngine/Case/Propriété/Domaine.o \
@@ -59,10 +61,10 @@ OBJECTFILES= \
 	${OBJECTDIR}/GameEngine/Case/Propriété/Propriete.o \
 	${OBJECTDIR}/Graphic/Listeners/JouerOnClickListener.o \
 	${OBJECTDIR}/GameEngine/Billet/BilletManager.o \
-	${OBJECTDIR}/GraphicEngine/GuiManager/CallBackManager.o \
 	${OBJECTDIR}/GameEngine/Case/Arrestation.o \
 	${OBJECTDIR}/GameEngine/Billet/Billet.o \
 	${OBJECTDIR}/GraphicEngine/EventHandler/OnClickHandler.o \
+	${OBJECTDIR}/Graphic/GuiItems/Pion.o \
 	${OBJECTDIR}/GraphicEngine/ActionListeners/ButtonMouseOutListener.o \
 	${OBJECTDIR}/GraphicEngine/ActionListeners/SpinnerOnClickListener.o \
 	${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Spinner.o \
@@ -112,6 +114,11 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/monopoly: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/monopoly ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
+${OBJECTDIR}/GraphicEngine/EventHandler/MouseOverHandler.o: GraphicEngine/EventHandler/MouseOverHandler.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/EventHandler
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/EventHandler/MouseOverHandler.o GraphicEngine/EventHandler/MouseOverHandler.cpp
+
 ${OBJECTDIR}/GameEngine/Case/Carte.o: GameEngine/Case/Carte.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	${RM} $@.d
@@ -127,15 +134,15 @@ ${OBJECTDIR}/GameEngine/Case/Parc.o: GameEngine/Case/Parc.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Parc.o GameEngine/Case/Parc.cpp
 
-${OBJECTDIR}/GraphicEngine/EventHandler/MouseOverHandler.o: GraphicEngine/EventHandler/MouseOverHandler.cpp 
-	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/EventHandler
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/EventHandler/MouseOverHandler.o GraphicEngine/EventHandler/MouseOverHandler.cpp
-
 ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/TextBlock.o: GraphicEngine/GuiManager/GuiItem/TextBlock.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/TextBlock.o GraphicEngine/GuiManager/GuiItem/TextBlock.cpp
+
+${OBJECTDIR}/util.o: util.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/util.o util.cpp
 
 ${OBJECTDIR}/GraphicEngine/Police.o: GraphicEngine/Police.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GraphicEngine
@@ -147,11 +154,6 @@ ${OBJECTDIR}/GraphicEngine/GuiManager/GuiManager.o: GraphicEngine/GuiManager/Gui
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiManager.o GraphicEngine/GuiManager/GuiManager.cpp
 
-${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener.o: GraphicEngine/ActionListeners/ActionListener.cpp 
-	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/ActionListeners
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener.o GraphicEngine/ActionListeners/ActionListener.cpp
-
 ${OBJECTDIR}/GameEngine/Participant/Participant.o: GameEngine/Participant/Participant.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Participant
 	${RM} $@.d
@@ -162,6 +164,11 @@ ${OBJECTDIR}/GraphicEngine/ActionListeners/ButtonMouseOverListener.o: GraphicEng
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/ActionListeners/ButtonMouseOverListener.o GraphicEngine/ActionListeners/ButtonMouseOverListener.cpp
 
+${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener.o: GraphicEngine/ActionListeners/ActionListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/ActionListeners
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener.o GraphicEngine/ActionListeners/ActionListener.cpp
+
 ${OBJECTDIR}/GameEngine/Case/Prison.o: GameEngine/Case/Prison.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	${RM} $@.d
@@ -171,6 +178,11 @@ ${OBJECTDIR}/GameEngine/De.o: GameEngine/De.cpp
 	${MKDIR} -p ${OBJECTDIR}/GameEngine
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/De.o GameEngine/De.cpp
+
+${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener.o: Graphic/Listeners/LancerLesDesOnClickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener.o Graphic/Listeners/LancerLesDesOnClickListener.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -232,11 +244,6 @@ ${OBJECTDIR}/GameEngine/Billet/BilletManager.o: GameEngine/Billet/BilletManager.
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Billet/BilletManager.o GameEngine/Billet/BilletManager.cpp
 
-${OBJECTDIR}/GraphicEngine/GuiManager/CallBackManager.o: GraphicEngine/GuiManager/CallBackManager.cpp 
-	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/GuiManager
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/GuiManager/CallBackManager.o GraphicEngine/GuiManager/CallBackManager.cpp
-
 ${OBJECTDIR}/GameEngine/Case/Arrestation.o: GameEngine/Case/Arrestation.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	${RM} $@.d
@@ -251,6 +258,11 @@ ${OBJECTDIR}/GraphicEngine/EventHandler/OnClickHandler.o: GraphicEngine/EventHan
 	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/EventHandler
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/EventHandler/OnClickHandler.o GraphicEngine/EventHandler/OnClickHandler.cpp
+
+${OBJECTDIR}/Graphic/GuiItems/Pion.o: Graphic/GuiItems/Pion.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/GuiItems
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/GuiItems/Pion.o Graphic/GuiItems/Pion.cpp
 
 ${OBJECTDIR}/GraphicEngine/ActionListeners/ButtonMouseOutListener.o: GraphicEngine/ActionListeners/ButtonMouseOutListener.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/ActionListeners
@@ -370,6 +382,19 @@ ${TESTDIR}/tests/JoueurTestRunner.o: tests/JoueurTestRunner.cpp
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${TESTDIR}/tests/JoueurTestRunner.o tests/JoueurTestRunner.cpp
 
 
+${OBJECTDIR}/GraphicEngine/EventHandler/MouseOverHandler_nomain.o: ${OBJECTDIR}/GraphicEngine/EventHandler/MouseOverHandler.o GraphicEngine/EventHandler/MouseOverHandler.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/EventHandler
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GraphicEngine/EventHandler/MouseOverHandler.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/EventHandler/MouseOverHandler_nomain.o GraphicEngine/EventHandler/MouseOverHandler.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GraphicEngine/EventHandler/MouseOverHandler.o ${OBJECTDIR}/GraphicEngine/EventHandler/MouseOverHandler_nomain.o;\
+	fi
+
 ${OBJECTDIR}/GameEngine/Case/Carte_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte.o GameEngine/Case/Carte.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte.o`; \
@@ -409,19 +434,6 @@ ${OBJECTDIR}/GameEngine/Case/Parc_nomain.o: ${OBJECTDIR}/GameEngine/Case/Parc.o 
 	    ${CP} ${OBJECTDIR}/GameEngine/Case/Parc.o ${OBJECTDIR}/GameEngine/Case/Parc_nomain.o;\
 	fi
 
-${OBJECTDIR}/GraphicEngine/EventHandler/MouseOverHandler_nomain.o: ${OBJECTDIR}/GraphicEngine/EventHandler/MouseOverHandler.o GraphicEngine/EventHandler/MouseOverHandler.cpp 
-	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/EventHandler
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/GraphicEngine/EventHandler/MouseOverHandler.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/EventHandler/MouseOverHandler_nomain.o GraphicEngine/EventHandler/MouseOverHandler.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/GraphicEngine/EventHandler/MouseOverHandler.o ${OBJECTDIR}/GraphicEngine/EventHandler/MouseOverHandler_nomain.o;\
-	fi
-
 ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/TextBlock_nomain.o: ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/TextBlock.o GraphicEngine/GuiManager/GuiItem/TextBlock.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/TextBlock.o`; \
@@ -433,6 +445,19 @@ ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/TextBlock_nomain.o: ${OBJECTDIR}/G
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/TextBlock_nomain.o GraphicEngine/GuiManager/GuiItem/TextBlock.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/TextBlock.o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/TextBlock_nomain.o;\
+	fi
+
+${OBJECTDIR}/util_nomain.o: ${OBJECTDIR}/util.o util.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/util.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/util_nomain.o util.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/util.o ${OBJECTDIR}/util_nomain.o;\
 	fi
 
 ${OBJECTDIR}/GraphicEngine/Police_nomain.o: ${OBJECTDIR}/GraphicEngine/Police.o GraphicEngine/Police.cpp 
@@ -461,19 +486,6 @@ ${OBJECTDIR}/GraphicEngine/GuiManager/GuiManager_nomain.o: ${OBJECTDIR}/GraphicE
 	    ${CP} ${OBJECTDIR}/GraphicEngine/GuiManager/GuiManager.o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiManager_nomain.o;\
 	fi
 
-${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener_nomain.o: ${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener.o GraphicEngine/ActionListeners/ActionListener.cpp 
-	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/ActionListeners
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener_nomain.o GraphicEngine/ActionListeners/ActionListener.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener.o ${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener_nomain.o;\
-	fi
-
 ${OBJECTDIR}/GameEngine/Participant/Participant_nomain.o: ${OBJECTDIR}/GameEngine/Participant/Participant.o GameEngine/Participant/Participant.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Participant
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Participant/Participant.o`; \
@@ -500,6 +512,19 @@ ${OBJECTDIR}/GraphicEngine/ActionListeners/ButtonMouseOverListener_nomain.o: ${O
 	    ${CP} ${OBJECTDIR}/GraphicEngine/ActionListeners/ButtonMouseOverListener.o ${OBJECTDIR}/GraphicEngine/ActionListeners/ButtonMouseOverListener_nomain.o;\
 	fi
 
+${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener_nomain.o: ${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener.o GraphicEngine/ActionListeners/ActionListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/ActionListeners
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener_nomain.o GraphicEngine/ActionListeners/ActionListener.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener.o ${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener_nomain.o;\
+	fi
+
 ${OBJECTDIR}/GameEngine/Case/Prison_nomain.o: ${OBJECTDIR}/GameEngine/Case/Prison.o GameEngine/Case/Prison.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Prison.o`; \
@@ -524,6 +549,19 @@ ${OBJECTDIR}/GameEngine/De_nomain.o: ${OBJECTDIR}/GameEngine/De.o GameEngine/De.
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/De_nomain.o GameEngine/De.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/GameEngine/De.o ${OBJECTDIR}/GameEngine/De_nomain.o;\
+	fi
+
+${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener.o Graphic/Listeners/LancerLesDesOnClickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener_nomain.o Graphic/Listeners/LancerLesDesOnClickListener.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener.o ${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener_nomain.o;\
 	fi
 
 ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp 
@@ -682,19 +720,6 @@ ${OBJECTDIR}/GameEngine/Billet/BilletManager_nomain.o: ${OBJECTDIR}/GameEngine/B
 	    ${CP} ${OBJECTDIR}/GameEngine/Billet/BilletManager.o ${OBJECTDIR}/GameEngine/Billet/BilletManager_nomain.o;\
 	fi
 
-${OBJECTDIR}/GraphicEngine/GuiManager/CallBackManager_nomain.o: ${OBJECTDIR}/GraphicEngine/GuiManager/CallBackManager.o GraphicEngine/GuiManager/CallBackManager.cpp 
-	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/GuiManager
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/GraphicEngine/GuiManager/CallBackManager.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/GuiManager/CallBackManager_nomain.o GraphicEngine/GuiManager/CallBackManager.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/GraphicEngine/GuiManager/CallBackManager.o ${OBJECTDIR}/GraphicEngine/GuiManager/CallBackManager_nomain.o;\
-	fi
-
 ${OBJECTDIR}/GameEngine/Case/Arrestation_nomain.o: ${OBJECTDIR}/GameEngine/Case/Arrestation.o GameEngine/Case/Arrestation.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Arrestation.o`; \
@@ -732,6 +757,19 @@ ${OBJECTDIR}/GraphicEngine/EventHandler/OnClickHandler_nomain.o: ${OBJECTDIR}/Gr
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/EventHandler/OnClickHandler_nomain.o GraphicEngine/EventHandler/OnClickHandler.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/GraphicEngine/EventHandler/OnClickHandler.o ${OBJECTDIR}/GraphicEngine/EventHandler/OnClickHandler_nomain.o;\
+	fi
+
+${OBJECTDIR}/Graphic/GuiItems/Pion_nomain.o: ${OBJECTDIR}/Graphic/GuiItems/Pion.o Graphic/GuiItems/Pion.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/GuiItems
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/GuiItems/Pion.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/GuiItems/Pion_nomain.o Graphic/GuiItems/Pion.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/GuiItems/Pion.o ${OBJECTDIR}/Graphic/GuiItems/Pion_nomain.o;\
 	fi
 
 ${OBJECTDIR}/GraphicEngine/ActionListeners/ButtonMouseOutListener_nomain.o: ${OBJECTDIR}/GraphicEngine/ActionListeners/ButtonMouseOutListener.o GraphicEngine/ActionListeners/ButtonMouseOutListener.cpp 

@@ -11,11 +11,12 @@
 #include "../../GraphicEngine/ActionListeners/ActionListener.h"
 
 class Jeu;
+class Button;
 
 class CommencerOnClickListener : public ActionListener
 {
 public:
-	CommencerOnClickListener(GraphicEngine* graphicEngine, Jeu* jeu);
+	CommencerOnClickListener(EVENTTYPE, Button* commencerBouton, GraphicEngine* graphicEngine, Jeu* jeu);
 	void Act(sf::Event);
 
 private:

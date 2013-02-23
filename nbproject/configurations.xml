@@ -1,288 +1,296 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="84">
-	<logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
-		<logicalFolder name="HeaderFiles"
-				   displayName="Header Files"
-				   projectFiles="true">
-			<logicalFolder name="GameEngine" displayName="GameEngine" projectFiles="true">
-				<logicalFolder name="Billet" displayName="Billet" projectFiles="true">
-					<itemPath>GameEngine/Billet/Billet.h</itemPath>
-					<itemPath>GameEngine/Billet/BilletManager.h</itemPath>
-				</logicalFolder>
-				<logicalFolder name="Carte" displayName="Carte" projectFiles="true">
-					<itemPath>GameEngine/Carte/Carte.h</itemPath>
-					<itemPath>GameEngine/Carte/TypeCarte.h</itemPath>
-				</logicalFolder>
-				<logicalFolder name="Case" displayName="Case" projectFiles="true">
-					<logicalFolder name="Propriété" displayName="Propriété" projectFiles="true">
-						<itemPath>GameEngine/Case/Propriété/Couleur.h</itemPath>
-						<itemPath>GameEngine/Case/Propriété/Domaine.h</itemPath>
-						<itemPath>GameEngine/Case/Propriété/Gare.h</itemPath>
-						<itemPath>GameEngine/Case/Propriété/Propriete.h</itemPath>
-						<itemPath>GameEngine/Case/Propriété/ServicePublique.h</itemPath>
-					</logicalFolder>
-					<itemPath>GameEngine/Case/Arrestation.h</itemPath>
-					<itemPath>GameEngine/Case/Carte.h</itemPath>
-					<itemPath>GameEngine/Case/Case.h</itemPath>
-					<itemPath>GameEngine/Case/Depart.h</itemPath>
-					<itemPath>GameEngine/Case/Parc.h</itemPath>
-					<itemPath>GameEngine/Case/Prison.h</itemPath>
-					<itemPath>GameEngine/Case/Taxe.h</itemPath>
-				</logicalFolder>
-				<logicalFolder name="Participant" displayName="Participant" projectFiles="true">
-					<itemPath>GameEngine/Participant/Cagnotte.h</itemPath>
-					<itemPath>GameEngine/Participant/Joueur.h</itemPath>
-					<itemPath>GameEngine/Participant/Participant.h</itemPath>
-				</logicalFolder>
-				<itemPath>GameEngine/De.h</itemPath>
-				<itemPath>GameEngine/Plateau.h</itemPath>
-			</logicalFolder>
-			<logicalFolder name="f2" displayName="Graphic" projectFiles="true">
-				<logicalFolder name="f1" displayName="Listeners" projectFiles="true">
-					<itemPath>Graphic/Listeners/CommencerOnClickListener.h</itemPath>
-					<itemPath>Graphic/Listeners/JouerOnClickListener.h</itemPath>
-					<itemPath>Graphic/Listeners/QuitterOnClickListener.h</itemPath>
-				</logicalFolder>
-				<itemPath>Graphic/Jeu.h</itemPath>
-				<itemPath>Graphic/JeuConstantes.h</itemPath>
-			</logicalFolder>
-			<logicalFolder name="f1" displayName="GraphicEngine" projectFiles="true">
-				<logicalFolder name="f3" displayName="ActionListeners" projectFiles="true">
-					<itemPath>GraphicEngine/ActionListeners/ActionListener.h</itemPath>
-					<itemPath>GraphicEngine/ActionListeners/ButtonMouseOutListener.h</itemPath>
-					<itemPath>GraphicEngine/ActionListeners/ButtonMouseOverListener.h</itemPath>
-					<itemPath>GraphicEngine/ActionListeners/SpinnerOnClickListener.h</itemPath>
-				</logicalFolder>
-				<logicalFolder name="f2" displayName="EventHandler" projectFiles="true">
-					<itemPath>GraphicEngine/EventHandler/EventHandler.h</itemPath>
-					<itemPath>GraphicEngine/EventHandler/MouseOutHandler.h</itemPath>
-					<itemPath>GraphicEngine/EventHandler/MouseOverHandler.h</itemPath>
-					<itemPath>GraphicEngine/EventHandler/OnClickHandler.h</itemPath>
-				</logicalFolder>
-				<logicalFolder name="f1" displayName="GuiManager" projectFiles="true">
-					<logicalFolder name="f1" displayName="GuiItem" projectFiles="true">
-						<itemPath>GraphicEngine/GuiManager/GuiItem/Button.h</itemPath>
-						<itemPath>GraphicEngine/GuiManager/GuiItem/GuiItem.h</itemPath>
-						<itemPath>GraphicEngine/GuiManager/GuiItem/Image.h</itemPath>
-						<itemPath>GraphicEngine/GuiManager/GuiItem/Spinner.h</itemPath>
-						<itemPath>GraphicEngine/GuiManager/GuiItem/TextBlock.h</itemPath>
-					</logicalFolder>
-					<itemPath>GraphicEngine/GuiManager/CallBackManager.h</itemPath>
-					<itemPath>GraphicEngine/GuiManager/GuiManager.h</itemPath>
-				</logicalFolder>
-				<itemPath>GraphicEngine/Constant.h</itemPath>
-				<itemPath>GraphicEngine/GraphicEngine.h</itemPath>
-				<itemPath>GraphicEngine/Police.h</itemPath>
-			</logicalFolder>
-		</logicalFolder>
-		<logicalFolder name="ResourceFiles"
-				   displayName="Resource Files"
-				   projectFiles="true">
-		</logicalFolder>
-		<logicalFolder name="SourceFiles"
-				   displayName="Source Files"
-				   projectFiles="true">
-			<logicalFolder name="GameEngine" displayName="GameEngine" projectFiles="true">
-				<logicalFolder name="Billet" displayName="Billet" projectFiles="true">
-					<itemPath>GameEngine/Billet/Billet.cpp</itemPath>
-					<itemPath>GameEngine/Billet/BilletManager.cpp</itemPath>
-				</logicalFolder>
-				<logicalFolder name="Carte" displayName="Carte" projectFiles="true">
-					<itemPath>GameEngine/Carte/Carte.cpp</itemPath>
-					<itemPath>GameEngine/Carte/TypeCarte.cpp</itemPath>
-				</logicalFolder>
-				<logicalFolder name="Case" displayName="Case" projectFiles="true">
-					<logicalFolder name="Propriété" displayName="Propriété" projectFiles="true">
-						<itemPath>GameEngine/Case/Propriété/Domaine.cpp</itemPath>
-						<itemPath>GameEngine/Case/Propriété/Gare.cpp</itemPath>
-						<itemPath>GameEngine/Case/Propriété/Propriete.cpp</itemPath>
-						<itemPath>GameEngine/Case/Propriété/ServicePublique.cpp</itemPath>
-					</logicalFolder>
-					<itemPath>GameEngine/Case/Arrestation.cpp</itemPath>
-					<itemPath>GameEngine/Case/Carte.cpp</itemPath>
-					<itemPath>GameEngine/Case/Case.cpp</itemPath>
-					<itemPath>GameEngine/Case/Depart.cpp</itemPath>
-					<itemPath>GameEngine/Case/Parc.cpp</itemPath>
-					<itemPath>GameEngine/Case/Prison.cpp</itemPath>
-					<itemPath>GameEngine/Case/Taxe.cpp</itemPath>
-				</logicalFolder>
-				<logicalFolder name="Participant" displayName="Participant" projectFiles="true">
-					<itemPath>GameEngine/Participant/Cagnotte.cpp</itemPath>
-					<itemPath>GameEngine/Participant/Joueur.cpp</itemPath>
-					<itemPath>GameEngine/Participant/Participant.cpp</itemPath>
-				</logicalFolder>
-				<itemPath>GameEngine/De.cpp</itemPath>
-				<itemPath>GameEngine/Plateau.cpp</itemPath>
-			</logicalFolder>
-			<logicalFolder name="f2" displayName="Graphic" projectFiles="true">
-				<logicalFolder name="f1" displayName="Listeners" projectFiles="true">
-					<itemPath>Graphic/Listeners/CommencerOnClickListener.cpp</itemPath>
-					<itemPath>Graphic/Listeners/JouerOnClickListener.cpp</itemPath>
-					<itemPath>Graphic/Listeners/QuitterOnClickListener.cpp</itemPath>
-				</logicalFolder>
-				<itemPath>Graphic/Jeu.cpp</itemPath>
-				<itemPath>Graphic/JeuConstantes.cpp</itemPath>
-			</logicalFolder>
-			<logicalFolder name="f1" displayName="GraphicEngine" projectFiles="true">
-				<logicalFolder name="f3" displayName="ActionListeners" projectFiles="true">
-					<itemPath>GraphicEngine/ActionListeners/ActionListener.cpp</itemPath>
-					<itemPath>GraphicEngine/ActionListeners/ButtonMouseOutListener.cpp</itemPath>
-					<itemPath>GraphicEngine/ActionListeners/ButtonMouseOverListener.cpp</itemPath>
-					<itemPath>GraphicEngine/ActionListeners/SpinnerOnClickListener.cpp</itemPath>
-				</logicalFolder>
-				<logicalFolder name="f2" displayName="EventHandler" projectFiles="true">
-					<itemPath>GraphicEngine/EventHandler/EventHandler.cpp</itemPath>
-					<itemPath>GraphicEngine/EventHandler/MouseOutHandler.cpp</itemPath>
-					<itemPath>GraphicEngine/EventHandler/MouseOverHandler.cpp</itemPath>
-					<itemPath>GraphicEngine/EventHandler/OnClickHandler.cpp</itemPath>
-				</logicalFolder>
-				<logicalFolder name="f1" displayName="GuiManager" projectFiles="true">
-					<logicalFolder name="f1" displayName="GuiItem" projectFiles="true">
-						<itemPath>GraphicEngine/GuiManager/GuiItem/Button.cpp</itemPath>
-						<itemPath>GraphicEngine/GuiManager/GuiItem/GuiItem.cpp</itemPath>
-						<itemPath>GraphicEngine/GuiManager/GuiItem/Image.cpp</itemPath>
-						<itemPath>GraphicEngine/GuiManager/GuiItem/Spinner.cpp</itemPath>
-						<itemPath>GraphicEngine/GuiManager/GuiItem/TextBlock.cpp</itemPath>
-					</logicalFolder>
-					<itemPath>GraphicEngine/GuiManager/CallBackManager.cpp</itemPath>
-					<itemPath>GraphicEngine/GuiManager/GuiManager.cpp</itemPath>
-				</logicalFolder>
-				<itemPath>GraphicEngine/Constant.cpp</itemPath>
-				<itemPath>GraphicEngine/GraphicEngine.cpp</itemPath>
-				<itemPath>GraphicEngine/Police.cpp</itemPath>
-			</logicalFolder>
-			<itemPath>main.cpp</itemPath>
-		</logicalFolder>
-		<logicalFolder name="TestFiles"
-				   displayName="Test Files"
-				   projectFiles="false"
-				   kind="TEST_LOGICAL_FOLDER">
-			<logicalFolder name="f3"
-					 displayName="BilletManagerTest"
-					 projectFiles="true"
-					 kind="TEST">
-				<itemPath>tests/BilletManagerTest.cpp</itemPath>
-				<itemPath>tests/BilletManagerTest.h</itemPath>
-				<itemPath>tests/BilletManagerTestRunner.cpp</itemPath>
-			</logicalFolder>
-			<logicalFolder name="f2"
-					 displayName="JoueurTest"
-					 projectFiles="true"
-					 kind="TEST">
-				<itemPath>tests/JoueurTest.cpp</itemPath>
-				<itemPath>tests/JoueurTest.h</itemPath>
-				<itemPath>tests/JoueurTestRunner.cpp</itemPath>
-			</logicalFolder>
-		</logicalFolder>
-		<logicalFolder name="ExternalFiles"
-				   displayName="Important Files"
-				   projectFiles="false"
-				   kind="IMPORTANT_FILES_FOLDER">
-			<itemPath>Makefile</itemPath>
-		</logicalFolder>
-	</logicalFolder>
-	<sourceRootList>
-		<Elem>GameEngine</Elem>
-	</sourceRootList>
-	<projectmakefile>Makefile</projectmakefile>
-	<confs>
-		<conf name="Debug" type="1">
-			<toolsSet>
-				<remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
-				<compilerSet>GNU|GNU</compilerSet>
-			</toolsSet>
-			<compileType>
-				<cTool>
-					<incDir>
-						<pElem>.</pElem>
-						<pElem>.</pElem>
-						<pElem>.</pElem>
-						<pElem>.</pElem>
-						<pElem>.</pElem>
-					</incDir>
-				</cTool>
-				<ccTool>
-					<incDir>
-						<pElem>.</pElem>
-						<pElem>.</pElem>
-						<pElem>.</pElem>
-						<pElem>.</pElem>
-						<pElem>.</pElem>
-					</incDir>
-					<preprocessorList>
-						<Elem>SFML_DYNAMIC</Elem>
-					</preprocessorList>
-				</ccTool>
-				<linkerTool>
-					<output>${TESTDIR}/TestFiles/f1</output>
-					<linkerLibItems>
-						<linkerLibStdlibItem>CppUnit</linkerLibStdlibItem>
-						<linkerLibStdlibItem>CppUnit</linkerLibStdlibItem>
-						<linkerLibStdlibItem>CppUnit</linkerLibStdlibItem>
-						<linkerLibStdlibItem>CppUnit</linkerLibStdlibItem>
-						<linkerLibFileItem>/usr/lib/libsfml-graphics.so</linkerLibFileItem>
-						<linkerLibFileItem>/usr/lib/libsfml-system.so</linkerLibFileItem>
-						<linkerLibFileItem>/usr/lib/libsfml-window.so</linkerLibFileItem>
-					</linkerLibItems>
-					<commandLine>-lsfml-system -lsfml-window -lsfml-graphics</commandLine>
-				</linkerTool>
-			</compileType>
-			<folder path="TestFiles/f2">
-				<cTool>
-					<incDir>
-						<pElem>.</pElem>
-					</incDir>
-				</cTool>
-				<ccTool>
-					<incDir>
-						<pElem>.</pElem>
-					</incDir>
-				</ccTool>
-				<linkerTool>
-					<output>${TESTDIR}/TestFiles/f2</output>
-					<linkerLibItems>
-						<linkerLibStdlibItem>CppUnit</linkerLibStdlibItem>
-					</linkerLibItems>
-				</linkerTool>
-			</folder>
-			<folder path="TestFiles/f3">
-				<cTool>
-					<incDir>
-						<pElem>.</pElem>
-					</incDir>
-				</cTool>
-				<ccTool>
-					<incDir>
-						<pElem>.</pElem>
-					</incDir>
-				</ccTool>
-				<linkerTool>
-					<output>${TESTDIR}/TestFiles/f3</output>
-					<linkerLibItems>
-						<linkerLibStdlibItem>CppUnit</linkerLibStdlibItem>
-					</linkerLibItems>
-				</linkerTool>
-			</folder>
-		</conf>
-		<conf name="Release" type="1">
-			<toolsSet>
-				<remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
-				<compilerSet>default</compilerSet>
-			</toolsSet>
-			<compileType>
-				<cTool>
-					<developmentMode>5</developmentMode>
-				</cTool>
-				<ccTool>
-					<developmentMode>5</developmentMode>
-				</ccTool>
-				<fortranCompilerTool>
-					<developmentMode>5</developmentMode>
-				</fortranCompilerTool>
-				<asmTool>
-					<developmentMode>5</developmentMode>
-				</asmTool>
-			</compileType>
-		</conf>
-	</confs>
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <logicalFolder name="GameEngine" displayName="GameEngine" projectFiles="true">
+        <logicalFolder name="Billet" displayName="Billet" projectFiles="true">
+          <itemPath>GameEngine/Billet/Billet.h</itemPath>
+          <itemPath>GameEngine/Billet/BilletManager.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Carte" displayName="Carte" projectFiles="true">
+          <itemPath>GameEngine/Carte/Carte.h</itemPath>
+          <itemPath>GameEngine/Carte/TypeCarte.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Case" displayName="Case" projectFiles="true">
+          <logicalFolder name="Propriété" displayName="Propriété" projectFiles="true">
+            <itemPath>GameEngine/Case/Propriété/Couleur.h</itemPath>
+            <itemPath>GameEngine/Case/Propriété/Domaine.h</itemPath>
+            <itemPath>GameEngine/Case/Propriété/Gare.h</itemPath>
+            <itemPath>GameEngine/Case/Propriété/Propriete.h</itemPath>
+            <itemPath>GameEngine/Case/Propriété/ServicePublique.h</itemPath>
+          </logicalFolder>
+          <itemPath>GameEngine/Case/Arrestation.h</itemPath>
+          <itemPath>GameEngine/Case/Carte.h</itemPath>
+          <itemPath>GameEngine/Case/Case.h</itemPath>
+          <itemPath>GameEngine/Case/Depart.h</itemPath>
+          <itemPath>GameEngine/Case/Parc.h</itemPath>
+          <itemPath>GameEngine/Case/Prison.h</itemPath>
+          <itemPath>GameEngine/Case/Taxe.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Participant" displayName="Participant" projectFiles="true">
+          <itemPath>GameEngine/Participant/Cagnotte.h</itemPath>
+          <itemPath>GameEngine/Participant/Joueur.h</itemPath>
+          <itemPath>GameEngine/Participant/Participant.h</itemPath>
+        </logicalFolder>
+        <itemPath>GameEngine/De.h</itemPath>
+        <itemPath>GameEngine/Plateau.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="Graphic" projectFiles="true">
+        <logicalFolder name="f2" displayName="GuiItems" projectFiles="true">
+          <itemPath>Graphic/GuiItems/Pion.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f1" displayName="Listeners" projectFiles="true">
+          <itemPath>Graphic/Listeners/CommencerOnClickListener.h</itemPath>
+          <itemPath>Graphic/Listeners/JouerOnClickListener.h</itemPath>
+          <itemPath>Graphic/Listeners/LancerLesDesOnClickListener.h</itemPath>
+          <itemPath>Graphic/Listeners/QuitterOnClickListener.h</itemPath>
+        </logicalFolder>
+        <itemPath>Graphic/Jeu.h</itemPath>
+        <itemPath>Graphic/JeuConstantes.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="GraphicEngine" projectFiles="true">
+        <logicalFolder name="f3" displayName="ActionListeners" projectFiles="true">
+          <itemPath>GraphicEngine/ActionListeners/ActionListener.h</itemPath>
+          <itemPath>GraphicEngine/ActionListeners/ButtonMouseOutListener.h</itemPath>
+          <itemPath>GraphicEngine/ActionListeners/ButtonMouseOverListener.h</itemPath>
+          <itemPath>GraphicEngine/ActionListeners/SpinnerOnClickListener.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f2" displayName="EventHandler" projectFiles="true">
+          <itemPath>GraphicEngine/EventHandler/EventHandler.h</itemPath>
+          <itemPath>GraphicEngine/EventHandler/MouseOutHandler.h</itemPath>
+          <itemPath>GraphicEngine/EventHandler/MouseOverHandler.h</itemPath>
+          <itemPath>GraphicEngine/EventHandler/OnClickHandler.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f1" displayName="GuiManager" projectFiles="true">
+          <logicalFolder name="f1" displayName="GuiItem" projectFiles="true">
+            <itemPath>GraphicEngine/GuiManager/GuiItem/Button.h</itemPath>
+            <itemPath>GraphicEngine/GuiManager/GuiItem/GuiItem.h</itemPath>
+            <itemPath>GraphicEngine/GuiManager/GuiItem/Image.h</itemPath>
+            <itemPath>GraphicEngine/GuiManager/GuiItem/Spinner.h</itemPath>
+            <itemPath>GraphicEngine/GuiManager/GuiItem/TextBlock.h</itemPath>
+          </logicalFolder>
+          <itemPath>GraphicEngine/GuiManager/GuiManager.h</itemPath>
+        </logicalFolder>
+        <itemPath>GraphicEngine/Constant.h</itemPath>
+        <itemPath>GraphicEngine/GraphicEngine.h</itemPath>
+        <itemPath>GraphicEngine/Police.h</itemPath>
+      </logicalFolder>
+      <itemPath>util.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="GameEngine" displayName="GameEngine" projectFiles="true">
+        <logicalFolder name="Billet" displayName="Billet" projectFiles="true">
+          <itemPath>GameEngine/Billet/Billet.cpp</itemPath>
+          <itemPath>GameEngine/Billet/BilletManager.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Carte" displayName="Carte" projectFiles="true">
+          <itemPath>GameEngine/Carte/Carte.cpp</itemPath>
+          <itemPath>GameEngine/Carte/TypeCarte.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Case" displayName="Case" projectFiles="true">
+          <logicalFolder name="Propriété" displayName="Propriété" projectFiles="true">
+            <itemPath>GameEngine/Case/Propriété/Domaine.cpp</itemPath>
+            <itemPath>GameEngine/Case/Propriété/Gare.cpp</itemPath>
+            <itemPath>GameEngine/Case/Propriété/Propriete.cpp</itemPath>
+            <itemPath>GameEngine/Case/Propriété/ServicePublique.cpp</itemPath>
+          </logicalFolder>
+          <itemPath>GameEngine/Case/Arrestation.cpp</itemPath>
+          <itemPath>GameEngine/Case/Carte.cpp</itemPath>
+          <itemPath>GameEngine/Case/Case.cpp</itemPath>
+          <itemPath>GameEngine/Case/Depart.cpp</itemPath>
+          <itemPath>GameEngine/Case/Parc.cpp</itemPath>
+          <itemPath>GameEngine/Case/Prison.cpp</itemPath>
+          <itemPath>GameEngine/Case/Taxe.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Participant" displayName="Participant" projectFiles="true">
+          <itemPath>GameEngine/Participant/Cagnotte.cpp</itemPath>
+          <itemPath>GameEngine/Participant/Joueur.cpp</itemPath>
+          <itemPath>GameEngine/Participant/Participant.cpp</itemPath>
+        </logicalFolder>
+        <itemPath>GameEngine/De.cpp</itemPath>
+        <itemPath>GameEngine/Plateau.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="Graphic" projectFiles="true">
+        <logicalFolder name="f2" displayName="GuiItems" projectFiles="true">
+          <itemPath>Graphic/GuiItems/Pion.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f1" displayName="Listeners" projectFiles="true">
+          <itemPath>Graphic/Listeners/CommencerOnClickListener.cpp</itemPath>
+          <itemPath>Graphic/Listeners/JouerOnClickListener.cpp</itemPath>
+          <itemPath>Graphic/Listeners/LancerLesDesOnClickListener.cpp</itemPath>
+          <itemPath>Graphic/Listeners/QuitterOnClickListener.cpp</itemPath>
+        </logicalFolder>
+        <itemPath>Graphic/Jeu.cpp</itemPath>
+        <itemPath>Graphic/JeuConstantes.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="GraphicEngine" projectFiles="true">
+        <logicalFolder name="f3" displayName="ActionListeners" projectFiles="true">
+          <itemPath>GraphicEngine/ActionListeners/ActionListener.cpp</itemPath>
+          <itemPath>GraphicEngine/ActionListeners/ButtonMouseOutListener.cpp</itemPath>
+          <itemPath>GraphicEngine/ActionListeners/ButtonMouseOverListener.cpp</itemPath>
+          <itemPath>GraphicEngine/ActionListeners/SpinnerOnClickListener.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f2" displayName="EventHandler" projectFiles="true">
+          <itemPath>GraphicEngine/EventHandler/EventHandler.cpp</itemPath>
+          <itemPath>GraphicEngine/EventHandler/MouseOutHandler.cpp</itemPath>
+          <itemPath>GraphicEngine/EventHandler/MouseOverHandler.cpp</itemPath>
+          <itemPath>GraphicEngine/EventHandler/OnClickHandler.cpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f1" displayName="GuiManager" projectFiles="true">
+          <logicalFolder name="f1" displayName="GuiItem" projectFiles="true">
+            <itemPath>GraphicEngine/GuiManager/GuiItem/Button.cpp</itemPath>
+            <itemPath>GraphicEngine/GuiManager/GuiItem/GuiItem.cpp</itemPath>
+            <itemPath>GraphicEngine/GuiManager/GuiItem/Image.cpp</itemPath>
+            <itemPath>GraphicEngine/GuiManager/GuiItem/Spinner.cpp</itemPath>
+            <itemPath>GraphicEngine/GuiManager/GuiItem/TextBlock.cpp</itemPath>
+          </logicalFolder>
+          <itemPath>GraphicEngine/GuiManager/GuiManager.cpp</itemPath>
+        </logicalFolder>
+        <itemPath>GraphicEngine/Constant.cpp</itemPath>
+        <itemPath>GraphicEngine/GraphicEngine.cpp</itemPath>
+        <itemPath>GraphicEngine/Police.cpp</itemPath>
+      </logicalFolder>
+      <itemPath>main.cpp</itemPath>
+      <itemPath>util.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+      <logicalFolder name="f3"
+                     displayName="BilletManagerTest"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/BilletManagerTest.cpp</itemPath>
+        <itemPath>tests/BilletManagerTest.h</itemPath>
+        <itemPath>tests/BilletManagerTestRunner.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2"
+                     displayName="JoueurTest"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/JoueurTest.cpp</itemPath>
+        <itemPath>tests/JoueurTest.h</itemPath>
+        <itemPath>tests/JoueurTestRunner.cpp</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>GameEngine</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>GNU|GNU</compilerSet>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+            <pElem>.</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>SFML_DYNAMIC</Elem>
+          </preprocessorList>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+          <linkerLibItems>
+            <linkerLibStdlibItem>CppUnit</linkerLibStdlibItem>
+            <linkerLibStdlibItem>CppUnit</linkerLibStdlibItem>
+            <linkerLibStdlibItem>CppUnit</linkerLibStdlibItem>
+            <linkerLibStdlibItem>CppUnit</linkerLibStdlibItem>
+            <linkerLibFileItem>/usr/lib/libsfml-graphics.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/libsfml-system.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/libsfml-window.so</linkerLibFileItem>
+          </linkerLibItems>
+          <commandLine>-lsfml-system -lsfml-window -lsfml-graphics</commandLine>
+        </linkerTool>
+      </compileType>
+      <folder path="TestFiles/f2">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f2</output>
+          <linkerLibItems>
+            <linkerLibStdlibItem>CppUnit</linkerLibStdlibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f3">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f3</output>
+          <linkerLibItems>
+            <linkerLibStdlibItem>CppUnit</linkerLibStdlibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+    </conf>
+  </confs>
 </configurationDescriptor>

@@ -1,12 +1,13 @@
 #include "ButtonMouseOverListener.h"
 #include "../GuiManager/GuiItem/Button.h"
 
-ButtonMouseOverListener::ButtonMouseOverListener(Button* button)
+ButtonMouseOverListener::ButtonMouseOverListener(EVENTTYPE eventType, Button* button) : ActionListener(eventType, button)
 {
-	_button = button;
+	
 }
 
 void ButtonMouseOverListener::Act(sf::Event)
 {
-	_button->GetText().SetColor(sf::Color(255, 0, 0));
+	Button* button = (Button*)_guiItem;
+    button->GetText().SetColor(sf::Color(255, 0, 0));
 }

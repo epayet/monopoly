@@ -2,9 +2,10 @@
 #include "../Case/Case.h"
 #include "../Case/Propriété/Propriete.h"
 
-Joueur::Joueur() : Participant()
+Joueur::Joueur(std::string nom) : Participant(nom)
 {
 	_position = 0;
+    _tour = 0;
 }
 
 Joueur::~Joueur()
@@ -89,4 +90,5 @@ int Joueur::GetPosition()
 void Joueur::GagnerArgentCaseDepart()
 {
 	_billetManager->Ajouter(2, BILLET100);
+    _tour++;
 }
