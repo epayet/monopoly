@@ -10,6 +10,8 @@ const std::string JeuConstantes::ActionsPossiblesPourKey = "Actions possibles po
 const std::string JeuConstantes::LancerLesDesKey = "Lancer les des";
 const std::string JeuConstantes::De1Key = "De1";
 const std::string JeuConstantes::De2Key = "De2";
+const std::string JeuConstantes::SommeCagnotteKey = "SommeCagnotte";
+const std::string JeuConstantes::CaseMessageKey = "CaseMessage";
 const std::string JeuConstantes::BilletsKeys[JeuConstantes::NbBillets] = {"Billet1", "Billet5", "Billet10", "Billet20", "Billet50", "Billet100", "Billet500"};
 const std::string JeuConstantes::NbBilletsKeys[JeuConstantes::NbBillets] = {"NbBillets1", "NbBillets5", "NbBillets10", "NbBillets20", "NbBillets50", "NbBillets100", "NbBillets500"};
 

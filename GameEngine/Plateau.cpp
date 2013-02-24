@@ -39,3 +39,8 @@ std::vector<Joueur*> Plateau::GetJoueurs()
 {
     return _joueurs;
 }
+
+Cagnotte* Plateau::GetCagnotte()
+{
+    return _cagnotte;
+}

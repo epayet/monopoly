@@ -90,5 +90,10 @@ int Joueur::GetPosition()
 void Joueur::GagnerArgentCaseDepart()
 {
 	_billetManager->Ajouter(2, BILLET100);
+    
+//    Depart* depart = new Depart();
+//    depart->Agir(this);
+//    delete depart;
+    
     _tour++;
 }

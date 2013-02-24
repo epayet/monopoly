@@ -68,6 +68,7 @@
             <itemPath>GraphicEngine/GuiManager/GuiItem/Button.h</itemPath>
             <itemPath>GraphicEngine/GuiManager/GuiItem/GuiItem.h</itemPath>
             <itemPath>GraphicEngine/GuiManager/GuiItem/Image.h</itemPath>
+            <itemPath>GraphicEngine/GuiManager/GuiItem/ModalWindow.h</itemPath>
             <itemPath>GraphicEngine/GuiManager/GuiItem/Spinner.h</itemPath>
             <itemPath>GraphicEngine/GuiManager/GuiItem/TextBlock.h</itemPath>
           </logicalFolder>
@@ -149,6 +150,7 @@
             <itemPath>GraphicEngine/GuiManager/GuiItem/Button.cpp</itemPath>
             <itemPath>GraphicEngine/GuiManager/GuiItem/GuiItem.cpp</itemPath>
             <itemPath>GraphicEngine/GuiManager/GuiItem/Image.cpp</itemPath>
+            <itemPath>GraphicEngine/GuiManager/GuiItem/ModalWindow.cpp</itemPath>
             <itemPath>GraphicEngine/GuiManager/GuiItem/Spinner.cpp</itemPath>
             <itemPath>GraphicEngine/GuiManager/GuiItem/TextBlock.cpp</itemPath>
           </logicalFolder>

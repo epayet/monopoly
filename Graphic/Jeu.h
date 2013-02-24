@@ -32,6 +32,7 @@ public:
 	Plateau* GetPlateau();
     void SetNbJoueurs(int nbJoueurs);
     void UpdateJoueurActuel();
+    void UpdatePlateau();
     void SetPositionJoueur(Joueur* joueur);
 
 private:

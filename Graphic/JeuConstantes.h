@@ -32,6 +32,8 @@ public:
     static const std::string De2Key;
     static const std::string BilletsKeys[NbBillets];
     static const std::string NbBilletsKeys[NbBillets];
+    static const std::string SommeCagnotteKey;
+    static const std::string CaseMessageKey;
 
     //Paths
 	static const std::string PlateauPath;

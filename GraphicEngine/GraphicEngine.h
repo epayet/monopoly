@@ -23,6 +23,8 @@ public:
 	void Run();
 	sf::Font GetFont();
 	void SetState(int state);
+    int GetState();
+    void Draw();
 
 private:
 	GuiManager* _guiManager;

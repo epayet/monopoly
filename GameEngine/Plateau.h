@@ -28,6 +28,8 @@ public:
     Joueur* GetJoueurActuel();
     std::vector<Joueur*> GetJoueurs();
     void FinirTour();
+    Case* GetCase(int);
+    Cagnotte* GetCagnotte();
 
 private:
 	std::vector<Case*> _cases;

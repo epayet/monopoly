@@ -75,8 +75,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/GraphicEngine/EventHandler/EventHandler.o \
 	${OBJECTDIR}/GameEngine/Case/Case.o \
 	${OBJECTDIR}/GameEngine/Case/Propriété/Gare.o \
-	${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem.o \
+	${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/ModalWindow.o \
 	${OBJECTDIR}/GameEngine/Carte/TypeCarte.o \
+	${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem.o \
 	${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener.o \
 	${OBJECTDIR}/GameEngine/Participant/Cagnotte.o \
 	${OBJECTDIR}/GraphicEngine/GraphicEngine.o \
@@ -320,15 +321,20 @@ ${OBJECTDIR}/GameEngine/Case/Propriété/Gare.o: GameEngine/Case/Propriété/Gar
 	${RM} $@.d
 	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Propriété/Gare.o GameEngine/Case/Propriété/Gare.cpp
 
-${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem.o: GraphicEngine/GuiManager/GuiItem/GuiItem.cpp 
+${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/ModalWindow.o: GraphicEngine/GuiManager/GuiItem/ModalWindow.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem
 	${RM} $@.d
-	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem.o GraphicEngine/GuiManager/GuiItem/GuiItem.cpp
+	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/ModalWindow.o GraphicEngine/GuiManager/GuiItem/ModalWindow.cpp
 
 ${OBJECTDIR}/GameEngine/Carte/TypeCarte.o: GameEngine/Carte/TypeCarte.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Carte
 	${RM} $@.d
 	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Carte/TypeCarte.o GameEngine/Carte/TypeCarte.cpp
+
+${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem.o: GraphicEngine/GuiManager/GuiItem/GuiItem.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem
+	${RM} $@.d
+	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem.o GraphicEngine/GuiManager/GuiItem/GuiItem.cpp
 
 ${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener.o: Graphic/Listeners/CommencerOnClickListener.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
@@ -908,17 +914,17 @@ ${OBJECTDIR}/GameEngine/Case/Propriété/Gare_nomain.o: ${OBJECTDIR}/GameEngine/
 	    ${CP} ${OBJECTDIR}/GameEngine/Case/Propriété/Gare.o ${OBJECTDIR}/GameEngine/Case/Propriété/Gare_nomain.o;\
 	fi
 
-${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem_nomain.o: ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem.o GraphicEngine/GuiManager/GuiItem/GuiItem.cpp 
+${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/ModalWindow_nomain.o: ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/ModalWindow.o GraphicEngine/GuiManager/GuiItem/ModalWindow.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem.o`; \
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/ModalWindow.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem_nomain.o GraphicEngine/GuiManager/GuiItem/GuiItem.cpp;\
+	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/ModalWindow_nomain.o GraphicEngine/GuiManager/GuiItem/ModalWindow.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem.o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/ModalWindow.o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/ModalWindow_nomain.o;\
 	fi
 
 ${OBJECTDIR}/GameEngine/Carte/TypeCarte_nomain.o: ${OBJECTDIR}/GameEngine/Carte/TypeCarte.o GameEngine/Carte/TypeCarte.cpp 
@@ -932,6 +938,19 @@ ${OBJECTDIR}/GameEngine/Carte/TypeCarte_nomain.o: ${OBJECTDIR}/GameEngine/Carte/
 	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Carte/TypeCarte_nomain.o GameEngine/Carte/TypeCarte.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/GameEngine/Carte/TypeCarte.o ${OBJECTDIR}/GameEngine/Carte/TypeCarte_nomain.o;\
+	fi
+
+${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem_nomain.o: ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem.o GraphicEngine/GuiManager/GuiItem/GuiItem.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem_nomain.o GraphicEngine/GuiManager/GuiItem/GuiItem.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem.o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem_nomain.o;\
 	fi
 
 ${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener.o Graphic/Listeners/CommencerOnClickListener.cpp 

@@ -16,6 +16,7 @@
 #include "GameEngine/Participant/Participant.h"
 #include "GameEngine/Participant/Joueur.h"
 #include "Listeners/LancerLesDesOnClickListener.h"
+#include "GameEngine/Case/Case.h"
 
 Jeu::Jeu()
 {
@@ -88,6 +89,15 @@ Jeu::Jeu()
         TextBlock* nbBillets = new TextBlock(_graphicEngine->GetWindow(), INGAME, xbillet + (JeuConstantes::HauteurBillet /3), ybillet - 40, 35, _graphicEngine->GetFont(), "0");
         _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::NbBilletsKeys[i], nbBillets);
     }
+    
+    //Somme cagnotte
+    TextBlock* sommeCagnotte = new TextBlock(_graphicEngine->GetWindow(), INGAME, JeuConstantes::HauteurCase + 20, plateauImage->GetSizeY() - JeuConstantes::TailleCase * 2.5, 35, _graphicEngine->GetFont(), "Cagnotte : 0");
+    _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::SommeCagnotteKey, sommeCagnotte);
+    
+    TextBlock* caseMessage = new TextBlock(_graphicEngine->GetWindow(), INGAME, lancerLesDesButtons->GetX(), 
+            actionsPossiblesPourTextBlock->GetY() + actionsPossiblesPourTextBlock->GetSizeY() + 20, 20, _graphicEngine->GetFont(), "");
+    caseMessage->SetCanDraw(false);
+    _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::CaseMessageKey, caseMessage);
 }
 
 Jeu::~Jeu()
@@ -127,10 +137,17 @@ void Jeu::SetNbJoueurs(int nbJoueurs)
         SetPositionJoueur(_plateau->GetJoueurs()[i]);
 }
 
+void Jeu::UpdatePlateau()
+{
+    UpdateJoueurActuel();
+    
+    //Update Cagnotte
+}
+
 void Jeu::UpdateJoueurActuel()
 {
     TextBlock* actionsPossiblesPourTextBlock = (TextBlock*)_graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::ActionsPossiblesPourKey);
-    actionsPossiblesPourTextBlock->SetContent(JeuConstantes::ActionsPossiblesPourKey + _plateau->GetJoueurActuel()->GetNom() + " :");
+    actionsPossiblesPourTextBlock->SetContent(_plateau->GetJoueurActuel()->GetNom() + " :");
     
     int j = 0;
     for(int i=JeuConstantes::NbBillets-1; i>=0; i--)
@@ -198,4 +215,5 @@ void Jeu::SetPositionJoueur(Joueur* joueur)
     
     pion->SetX(x);
     pion->SetY(y);
+    _graphicEngine->Draw();
 }

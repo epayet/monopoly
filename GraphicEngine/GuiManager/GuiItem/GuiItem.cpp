@@ -32,7 +32,7 @@ void GuiItem::HandleEvent(sf::Event event, int state)
 {
 	for(int i = 0; i < _listeners.size(); i++)
 	{
-		if(_state == state && _listeners[i]->GetEventHandler()->IsTriggered(event))
+		if(_state == state && _listeners[i]->GetEventHandler()->IsTriggered(event) && CanDraw(state))
 			_listeners[i]->Act(event);
 	}
 }

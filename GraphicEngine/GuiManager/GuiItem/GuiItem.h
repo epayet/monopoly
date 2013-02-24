@@ -17,7 +17,7 @@ class ActionListener;
 class GuiItem
 {
 public:
-	GuiItem(sf::RenderWindow &window, int state, int x, int y, int sizex = 0, int sizey = 0);
+	GuiItem(sf::RenderWindow &window, int state, int x = 0, int y = 0, int sizex = 0, int sizey = 0);
 	~GuiItem();
 	virtual void Draw(int state) = 0;
 //	void AddCallBack(CallBackManager* callBackManager);
