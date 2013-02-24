@@ -10,10 +10,14 @@
 
 #include "Case.h"
 
-class Depart : Case
+class Depart : public Case
 {
 public:
-	void Agir(Joueur *joueur);
+    Depart(Plateau *plateau, int numero, std::string libelle, int sommeADonner);
+    void Agir(Joueur *joueur);
+    ACTION DoitPayer();
+private:
+    int _sommeADonner;
 };
 
 #endif	/* DEPART_H */

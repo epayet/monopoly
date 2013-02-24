@@ -10,10 +10,15 @@
 
 #include "Case.h"
 
-class Taxe : Case
+class Taxe : public Case
 {
-public:
-	void Agir(Joueur *joueur);
+    public:
+            Taxe(Plateau *plateau, int numero, std::string libelle, int sommeAPayer);
+            void Agir(Joueur *joueur, BilletManager *billetManager);
+            ACTION DoitPayer();
+            int SommeAPayer();
+    private:
+        int _sommeAPayer;
 };
 
 #endif	/* TAXE_H */

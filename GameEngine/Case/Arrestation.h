@@ -10,10 +10,11 @@
 
 #include "Case.h"
 
-class Arrestation : Case
+class Arrestation : public Case
 {
 public:
 	void Agir(Joueur *joueur);
+    ACTION DoitPayer();
 };
 
 #endif	/* ARRESTATION_H */
