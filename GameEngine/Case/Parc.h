@@ -10,10 +10,13 @@
 
 #include "Case.h"
 
-class Parc : Case
+class Parc : public Case
 {
 public:
+    Parc(Plateau *plateau, int numero, std::string libelle);
 	void Agir(Joueur *joueur);
+    ACTION DoitPayer();
+    std::string GetMessage();
 };
 
 #endif	/* PARC_H */

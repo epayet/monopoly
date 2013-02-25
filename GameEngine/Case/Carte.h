@@ -10,7 +10,7 @@
 
 #include "Case.h"
 
-class Carte : Case
+class Carte : public Case
 {
 public:
 	void Agir(Joueur *joueur);

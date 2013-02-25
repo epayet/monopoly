@@ -7,13 +7,22 @@
 
 #ifndef PRISON_H
 #define	PRISON_H
-
+#include <vector>
 #include "Case.h"
 
-class Prison : Case
+class Prison : public Case
 {
-public:
-	void Agir(Joueur *joueur);
+    typedef std::pair<Joueur*, int> Prisonnier;    //Dico avec {joueur, nbToursPassesEnPrison}
+    typedef std::vector<Prisonnier> Emprisonnes;
+    
+    
+    public:
+            Prison(Plateau *plateau, int numero, std::string libelle);
+            void Agir(Joueur *joueur);
+            ACTION DoitPayer();
+            
+    private:
+            Emprisonnes _emprisonnes;
 };
 
 #endif	/* PRISON_H */

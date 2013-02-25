@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="84">
+<configurationDescriptor version="88">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
@@ -9,14 +9,10 @@
           <itemPath>GameEngine/Billet/Billet.h</itemPath>
           <itemPath>GameEngine/Billet/BilletManager.h</itemPath>
         </logicalFolder>
-        <logicalFolder name="Carte" displayName="Carte" projectFiles="true">
-          <itemPath>GameEngine/Carte/Carte.h</itemPath>
-          <itemPath>GameEngine/Carte/TypeCarte.h</itemPath>
-        </logicalFolder>
         <logicalFolder name="Case" displayName="Case" projectFiles="true">
           <logicalFolder name="Propriété" displayName="Propriété" projectFiles="true">
-            <itemPath>GameEngine/Case/Propriété/Couleur.h</itemPath>
             <itemPath>GameEngine/Case/Propriété/Domaine.h</itemPath>
+            <itemPath>GameEngine/Case/Propriété/Famille.h</itemPath>
             <itemPath>GameEngine/Case/Propriété/Gare.h</itemPath>
             <itemPath>GameEngine/Case/Propriété/Propriete.h</itemPath>
             <itemPath>GameEngine/Case/Propriété/ServicePublique.h</itemPath>
@@ -92,13 +88,10 @@
           <itemPath>GameEngine/Billet/Billet.cpp</itemPath>
           <itemPath>GameEngine/Billet/BilletManager.cpp</itemPath>
         </logicalFolder>
-        <logicalFolder name="Carte" displayName="Carte" projectFiles="true">
-          <itemPath>GameEngine/Carte/Carte.cpp</itemPath>
-          <itemPath>GameEngine/Carte/TypeCarte.cpp</itemPath>
-        </logicalFolder>
         <logicalFolder name="Case" displayName="Case" projectFiles="true">
           <logicalFolder name="Propriété" displayName="Propriété" projectFiles="true">
             <itemPath>GameEngine/Case/Propriété/Domaine.cpp</itemPath>
+            <itemPath>GameEngine/Case/Propriété/Famille.cpp</itemPath>
             <itemPath>GameEngine/Case/Propriété/Gare.cpp</itemPath>
             <itemPath>GameEngine/Case/Propriété/Propriete.cpp</itemPath>
             <itemPath>GameEngine/Case/Propriété/ServicePublique.cpp</itemPath>
@@ -237,6 +230,322 @@
           <commandLine>-lsfml-system -lsfml-window -lsfml-graphics</commandLine>
         </linkerTool>
       </compileType>
+      <item path="GameEngine/Billet/Billet.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Billet/Billet.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Billet/BilletManager.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Billet/BilletManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Arrestation.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Arrestation.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Case.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Case.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Depart.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Depart.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Parc.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Parc.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Prison.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Prison.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Propriété/Domaine.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Propriété/Domaine.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Propriété/Famille.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Propriété/Famille.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Propriété/Gare.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Propriété/Gare.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Propriété/Propriete.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Propriété/Propriete.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Propriété/ServicePublique.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Propriété/ServicePublique.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Taxe.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Taxe.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/De.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/De.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Participant/Cagnotte.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Participant/Cagnotte.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Participant/Joueur.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Participant/Joueur.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Participant/Participant.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Participant/Participant.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Plateau.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Plateau.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Graphic/GuiItems/Pion.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Graphic/GuiItems/Pion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Graphic/Jeu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Graphic/Jeu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Graphic/JeuConstantes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Graphic/JeuConstantes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/CommencerOnClickListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/CommencerOnClickListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/JouerOnClickListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/JouerOnClickListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/LancerLesDesOnClickListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/LancerLesDesOnClickListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/QuitterOnClickListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/QuitterOnClickListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/ActionListeners/ActionListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/ActionListeners/ActionListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/ActionListeners/ButtonMouseOutListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/ActionListeners/ButtonMouseOutListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/ActionListeners/ButtonMouseOverListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/ActionListeners/ButtonMouseOverListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/ActionListeners/SpinnerOnClickListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/ActionListeners/SpinnerOnClickListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/Constant.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GraphicEngine/Constant.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GraphicEngine/EventHandler/EventHandler.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/EventHandler/EventHandler.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/EventHandler/MouseOutHandler.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/EventHandler/MouseOutHandler.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/EventHandler/MouseOverHandler.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/EventHandler/MouseOverHandler.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/EventHandler/OnClickHandler.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/EventHandler/OnClickHandler.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GraphicEngine.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GraphicEngine/GraphicEngine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiItem/Button.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiItem/Button.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiItem/GuiItem.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiItem/GuiItem.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiItem/Image.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiItem/Image.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiItem/Spinner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiItem/Spinner.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiItem/TextBlock.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiItem/TextBlock.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiManager.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiManager.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/Police.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GraphicEngine/Police.h" ex="false" tool="3" flavor2="0">
+      </item>
       <folder path="TestFiles/f2">
         <cTool>
           <incDir>
@@ -273,6 +582,24 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/BilletManagerTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/BilletManagerTest.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/BilletManagerTestRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/JoueurTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/JoueurTest.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/JoueurTestRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="util.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="util.h" ex="false" tool="3" flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="1">
       <toolsSet>
@@ -293,6 +620,340 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="GameEngine/Billet/Billet.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Billet/Billet.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Billet/BilletManager.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Billet/BilletManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Arrestation.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Arrestation.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Case.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Case.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Depart.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Depart.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Parc.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Parc.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Prison.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Prison.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Propriété/Domaine.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Propriété/Domaine.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Propriété/Famille.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Propriété/Famille.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Propriété/Gare.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Propriété/Gare.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Propriété/Propriete.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Propriété/Propriete.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Propriété/ServicePublique.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Propriété/ServicePublique.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Taxe.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Taxe.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/De.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/De.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Participant/Cagnotte.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Participant/Cagnotte.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Participant/Joueur.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Participant/Joueur.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Participant/Participant.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Participant/Participant.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Plateau.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Plateau.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Graphic/GuiItems/Pion.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Graphic/GuiItems/Pion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Graphic/Jeu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Graphic/Jeu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Graphic/JeuConstantes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Graphic/JeuConstantes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/CommencerOnClickListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/CommencerOnClickListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/JouerOnClickListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/JouerOnClickListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/LancerLesDesOnClickListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/LancerLesDesOnClickListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/QuitterOnClickListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/QuitterOnClickListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/ActionListeners/ActionListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/ActionListeners/ActionListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/ActionListeners/ButtonMouseOutListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/ActionListeners/ButtonMouseOutListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/ActionListeners/ButtonMouseOverListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/ActionListeners/ButtonMouseOverListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/ActionListeners/SpinnerOnClickListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/ActionListeners/SpinnerOnClickListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/Constant.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GraphicEngine/Constant.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GraphicEngine/EventHandler/EventHandler.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/EventHandler/EventHandler.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/EventHandler/MouseOutHandler.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/EventHandler/MouseOutHandler.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/EventHandler/MouseOverHandler.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/EventHandler/MouseOverHandler.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/EventHandler/OnClickHandler.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/EventHandler/OnClickHandler.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GraphicEngine.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GraphicEngine/GraphicEngine.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiItem/Button.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiItem/Button.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiItem/GuiItem.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiItem/GuiItem.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiItem/Image.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiItem/Image.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiItem/Spinner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiItem/Spinner.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiItem/TextBlock.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiItem/TextBlock.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiManager.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/GuiManager/GuiManager.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/Police.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GraphicEngine/Police.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/BilletManagerTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/BilletManagerTest.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/BilletManagerTestRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/JoueurTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/JoueurTest.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/JoueurTestRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="util.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="util.h" ex="false" tool="3" flavor2="0">
+      </item>
     </conf>
   </confs>
 </configurationDescriptor>

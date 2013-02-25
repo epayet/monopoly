@@ -11,7 +11,7 @@
 #include "Propriete.h"
 class Couleur;
 
-class Domaine : Propriete
+class Domaine : public Propriete
 {
 public:
 	bool PeutConstruire();

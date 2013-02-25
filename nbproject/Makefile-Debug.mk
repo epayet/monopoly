@@ -54,7 +54,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/GameEngine/Case/Propriété/Domaine.o \
 	${OBJECTDIR}/GameEngine/Participant/Joueur.o \
 	${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Button.o \
-	${OBJECTDIR}/GameEngine/Carte/Carte.o \
 	${OBJECTDIR}/GameEngine/Plateau.o \
 	${OBJECTDIR}/GameEngine/Case/Taxe.o \
 	${OBJECTDIR}/GraphicEngine/EventHandler/MouseOutHandler.o \
@@ -67,16 +66,16 @@ OBJECTFILES= \
 	${OBJECTDIR}/Graphic/GuiItems/Pion.o \
 	${OBJECTDIR}/GraphicEngine/ActionListeners/ButtonMouseOutListener.o \
 	${OBJECTDIR}/GraphicEngine/ActionListeners/SpinnerOnClickListener.o \
+	${OBJECTDIR}/GameEngine/Case/Propriété/Famille.o \
 	${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Spinner.o \
-	${OBJECTDIR}/GraphicEngine/Constant.o \
 	${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener.o \
+	${OBJECTDIR}/GraphicEngine/Constant.o \
 	${OBJECTDIR}/GameEngine/Case/Propriété/ServicePublique.o \
 	${OBJECTDIR}/GameEngine/Case/Depart.o \
 	${OBJECTDIR}/GraphicEngine/EventHandler/EventHandler.o \
 	${OBJECTDIR}/GameEngine/Case/Case.o \
 	${OBJECTDIR}/GameEngine/Case/Propriété/Gare.o \
 	${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/ModalWindow.o \
-	${OBJECTDIR}/GameEngine/Carte/TypeCarte.o \
 	${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem.o \
 	${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener.o \
 	${OBJECTDIR}/GameEngine/Participant/Cagnotte.o \
@@ -216,11 +215,6 @@ ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Button.o: GraphicEngine/GuiManager
 	${RM} $@.d
 	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Button.o GraphicEngine/GuiManager/GuiItem/Button.cpp
 
-${OBJECTDIR}/GameEngine/Carte/Carte.o: GameEngine/Carte/Carte.cpp 
-	${MKDIR} -p ${OBJECTDIR}/GameEngine/Carte
-	${RM} $@.d
-	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Carte/Carte.o GameEngine/Carte/Carte.cpp
-
 ${OBJECTDIR}/GameEngine/Plateau.o: GameEngine/Plateau.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine
 	${RM} $@.d
@@ -281,20 +275,25 @@ ${OBJECTDIR}/GraphicEngine/ActionListeners/SpinnerOnClickListener.o: GraphicEngi
 	${RM} $@.d
 	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/ActionListeners/SpinnerOnClickListener.o GraphicEngine/ActionListeners/SpinnerOnClickListener.cpp
 
+${OBJECTDIR}/GameEngine/Case/Propriété/Famille.o: GameEngine/Case/Propriété/Famille.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Propriété
+	${RM} $@.d
+	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Propriété/Famille.o GameEngine/Case/Propriété/Famille.cpp
+
 ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Spinner.o: GraphicEngine/GuiManager/GuiItem/Spinner.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem
 	${RM} $@.d
 	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Spinner.o GraphicEngine/GuiManager/GuiItem/Spinner.cpp
 
-${OBJECTDIR}/GraphicEngine/Constant.o: GraphicEngine/Constant.cpp 
-	${MKDIR} -p ${OBJECTDIR}/GraphicEngine
-	${RM} $@.d
-	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/Constant.o GraphicEngine/Constant.cpp
-
 ${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener.o: Graphic/Listeners/QuitterOnClickListener.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
 	${RM} $@.d
 	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener.o Graphic/Listeners/QuitterOnClickListener.cpp
+
+${OBJECTDIR}/GraphicEngine/Constant.o: GraphicEngine/Constant.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GraphicEngine
+	${RM} $@.d
+	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/Constant.o GraphicEngine/Constant.cpp
 
 ${OBJECTDIR}/GameEngine/Case/Propriété/ServicePublique.o: GameEngine/Case/Propriété/ServicePublique.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Propriété
@@ -325,11 +324,6 @@ ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/ModalWindow.o: GraphicEngine/GuiMa
 	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem
 	${RM} $@.d
 	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/ModalWindow.o GraphicEngine/GuiManager/GuiItem/ModalWindow.cpp
-
-${OBJECTDIR}/GameEngine/Carte/TypeCarte.o: GameEngine/Carte/TypeCarte.cpp 
-	${MKDIR} -p ${OBJECTDIR}/GameEngine/Carte
-	${RM} $@.d
-	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Carte/TypeCarte.o GameEngine/Carte/TypeCarte.cpp
 
 ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem.o: GraphicEngine/GuiManager/GuiItem/GuiItem.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem
@@ -641,19 +635,6 @@ ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Button_nomain.o: ${OBJECTDIR}/Grap
 	    ${CP} ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Button.o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Button_nomain.o;\
 	fi
 
-${OBJECTDIR}/GameEngine/Carte/Carte_nomain.o: ${OBJECTDIR}/GameEngine/Carte/Carte.o GameEngine/Carte/Carte.cpp 
-	${MKDIR} -p ${OBJECTDIR}/GameEngine/Carte
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Carte/Carte.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} $@.d;\
-	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Carte/Carte_nomain.o GameEngine/Carte/Carte.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/GameEngine/Carte/Carte.o ${OBJECTDIR}/GameEngine/Carte/Carte_nomain.o;\
-	fi
-
 ${OBJECTDIR}/GameEngine/Plateau_nomain.o: ${OBJECTDIR}/GameEngine/Plateau.o GameEngine/Plateau.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Plateau.o`; \
@@ -810,6 +791,19 @@ ${OBJECTDIR}/GraphicEngine/ActionListeners/SpinnerOnClickListener_nomain.o: ${OB
 	    ${CP} ${OBJECTDIR}/GraphicEngine/ActionListeners/SpinnerOnClickListener.o ${OBJECTDIR}/GraphicEngine/ActionListeners/SpinnerOnClickListener_nomain.o;\
 	fi
 
+${OBJECTDIR}/GameEngine/Case/Propriété/Famille_nomain.o: ${OBJECTDIR}/GameEngine/Case/Propriété/Famille.o GameEngine/Case/Propriété/Famille.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Propriété
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Propriété/Famille.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Propriété/Famille_nomain.o GameEngine/Case/Propriété/Famille.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Propriété/Famille.o ${OBJECTDIR}/GameEngine/Case/Propriété/Famille_nomain.o;\
+	fi
+
 ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Spinner_nomain.o: ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Spinner.o GraphicEngine/GuiManager/GuiItem/Spinner.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Spinner.o`; \
@@ -823,19 +817,6 @@ ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Spinner_nomain.o: ${OBJECTDIR}/Gra
 	    ${CP} ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Spinner.o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/Spinner_nomain.o;\
 	fi
 
-${OBJECTDIR}/GraphicEngine/Constant_nomain.o: ${OBJECTDIR}/GraphicEngine/Constant.o GraphicEngine/Constant.cpp 
-	${MKDIR} -p ${OBJECTDIR}/GraphicEngine
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/GraphicEngine/Constant.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} $@.d;\
-	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/Constant_nomain.o GraphicEngine/Constant.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/GraphicEngine/Constant.o ${OBJECTDIR}/GraphicEngine/Constant_nomain.o;\
-	fi
-
 ${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener.o Graphic/Listeners/QuitterOnClickListener.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener.o`; \
@@ -847,6 +828,19 @@ ${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener_nomain.o: ${OBJECTDIR}/Gra
 	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener_nomain.o Graphic/Listeners/QuitterOnClickListener.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener.o ${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener_nomain.o;\
+	fi
+
+${OBJECTDIR}/GraphicEngine/Constant_nomain.o: ${OBJECTDIR}/GraphicEngine/Constant.o GraphicEngine/Constant.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GraphicEngine
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GraphicEngine/Constant.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/Constant_nomain.o GraphicEngine/Constant.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GraphicEngine/Constant.o ${OBJECTDIR}/GraphicEngine/Constant_nomain.o;\
 	fi
 
 ${OBJECTDIR}/GameEngine/Case/Propriété/ServicePublique_nomain.o: ${OBJECTDIR}/GameEngine/Case/Propriété/ServicePublique.o GameEngine/Case/Propriété/ServicePublique.cpp 
@@ -925,19 +919,6 @@ ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/ModalWindow_nomain.o: ${OBJECTDIR}
 	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/ModalWindow_nomain.o GraphicEngine/GuiManager/GuiItem/ModalWindow.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/ModalWindow.o ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/ModalWindow_nomain.o;\
-	fi
-
-${OBJECTDIR}/GameEngine/Carte/TypeCarte_nomain.o: ${OBJECTDIR}/GameEngine/Carte/TypeCarte.o GameEngine/Carte/TypeCarte.cpp 
-	${MKDIR} -p ${OBJECTDIR}/GameEngine/Carte
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Carte/TypeCarte.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} $@.d;\
-	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Carte/TypeCarte_nomain.o GameEngine/Carte/TypeCarte.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/GameEngine/Carte/TypeCarte.o ${OBJECTDIR}/GameEngine/Carte/TypeCarte_nomain.o;\
 	fi
 
 ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem_nomain.o: ${OBJECTDIR}/GraphicEngine/GuiManager/GuiItem/GuiItem.o GraphicEngine/GuiManager/GuiItem/GuiItem.cpp 

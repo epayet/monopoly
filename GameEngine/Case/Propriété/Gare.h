@@ -10,7 +10,7 @@
 
 #include "Propriete.h"
 
-class Gare : Propriete
+class Gare : public Propriete
 {
 public:
 	void Agir(Joueur *joueur);

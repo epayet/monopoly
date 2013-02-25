@@ -1,14 +1,12 @@
 #include "Case.h"
 
-Case::Case(int numero)
+Case::Case(Plateau *plateau, int numero, std::string libelle)
 {
-	_numero = numero;
+	_plateau = plateau;
+        _numero = numero;
+        _libelle = libelle;
 }
 
-void Case::Agir(Joueur *joueur)
-{
-
-}
 
 int Case::GetNumero()
 {
