@@ -14,7 +14,7 @@
 class Propriete : public Case
 {
     public:
-            Propriete(Plateau *plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer[]);
+            Propriete(Plateau *plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer);
             virtual void Agir(Joueur *joueur, BilletManager *billetManager);  //redéfinit Agir de Case mais sera redéfini par Domaine, Gare et Service Publique
             virtual void Hypothequer();
             int LeverHypotheque();
@@ -23,6 +23,7 @@ class Propriete : public Case
             virtual int SommeAPayer();
             Joueur *GetProprietaire();
             int GetValeurHypotheque();
+            std::string GetMessage();
     protected:
         Joueur *_proprietaire;
         bool _estHypotheque;

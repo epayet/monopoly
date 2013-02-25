@@ -8,6 +8,8 @@
 #ifndef PLATEAU_H
 #define	PLATEAU_H
 
+#define NBCASES 40
+
 #include <cstdlib>
 #include <vector>
 #include <string>
@@ -34,7 +36,6 @@ public:
 private:
 	std::vector<Case*> _cases;
 	std::vector<Joueur*> _joueurs;
-	std::vector<Carte*> _cartes;
 	Cagnotte *_cagnotte;
     int _tour;
 };

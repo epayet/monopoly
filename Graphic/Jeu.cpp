@@ -77,6 +77,7 @@ Jeu::Jeu()
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::De2Key, de2);
     de2->SetCanDraw(false);
     
+    int yNbBillets;
     //Billets
     for(int i=0; i<JeuConstantes::NbBillets; i++)
     {
@@ -86,7 +87,8 @@ Jeu::Jeu()
         Image* billet = new Image(_graphicEngine->GetWindow(), INGAME, xbillet, ybillet, JeuConstantes::BilletsPaths[i]);
         _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::BilletsKeys[i], billet);
         
-        TextBlock* nbBillets = new TextBlock(_graphicEngine->GetWindow(), INGAME, xbillet + (JeuConstantes::HauteurBillet /3), ybillet - 40, 35, _graphicEngine->GetFont(), "0");
+        yNbBillets = ybillet - 40;
+        TextBlock* nbBillets = new TextBlock(_graphicEngine->GetWindow(), INGAME, xbillet + (JeuConstantes::HauteurBillet /3), yNbBillets, 35, _graphicEngine->GetFont(), "0");
         _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::NbBilletsKeys[i], nbBillets);
     }
     
@@ -94,10 +96,21 @@ Jeu::Jeu()
     TextBlock* sommeCagnotte = new TextBlock(_graphicEngine->GetWindow(), INGAME, JeuConstantes::HauteurCase + 20, plateauImage->GetSizeY() - JeuConstantes::TailleCase * 2.5, 35, _graphicEngine->GetFont(), "Cagnotte : 0");
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::SommeCagnotteKey, sommeCagnotte);
     
+    //Message affiché par la case
     TextBlock* caseMessage = new TextBlock(_graphicEngine->GetWindow(), INGAME, lancerLesDesButtons->GetX(), 
             actionsPossiblesPourTextBlock->GetY() + actionsPossiblesPourTextBlock->GetSizeY() + 20, 20, _graphicEngine->GetFont(), "");
     caseMessage->SetCanDraw(false);
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::CaseMessageKey, caseMessage);
+    
+    TextBlock* sommeAPayer = new TextBlock(_graphicEngine->GetWindow(), INGAME, plateauImage->GetSizeX(), yNbBillets - 20, 20, _graphicEngine->GetFont(), "Somme A Payer : 0 / 500");
+    _graphicEngine->GetGuiManager()->AddGuiItem("test", sommeAPayer);
+    
+    Button* resetBillets = new Button(_graphicEngine->GetWindow(), INGAME, sommeAPayer->GetSizeX() + plateauImage->GetSizeX() + 20, yNbBillets - 20, 20, _graphicEngine->GetFont(), "Reset");
+    _graphicEngine->GetGuiManager()->AddGuiItem("test", resetBillets);
+    
+    Button* validerBillets = new Button(_graphicEngine->GetWindow(), INGAME, 
+            sommeAPayer->GetSizeX() + plateauImage->GetSizeX() + 40 + resetBillets->GetSizeX(), yNbBillets - 20, 20, _graphicEngine->GetFont(), "Valider");
+    _graphicEngine->GetGuiManager()->AddGuiItem("test", validerBillets);
 }
 
 Jeu::~Jeu()

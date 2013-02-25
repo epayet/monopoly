@@ -7,6 +7,7 @@ Joueur::Joueur(std::string nom) : Participant(nom)
 	_position = 0;
     _tour = 0;
     _nombreCartesSortirPrison = 0;
+    _nbDoubles = 0;
 }
 
 Joueur::~Joueur()
@@ -28,6 +29,21 @@ void Joueur::Avancer(int valeur)
 		GagnerArgentCaseDepart();
 		_position -= 40;
 	}
+}
+
+void Joueur::SetAFaitDouble(int de1, int de2)
+{
+    if(de1 == de2)
+        _nbDoubles++;
+    else 
+        _nbDoubles = 0;
+    
+    //Si 3 doubles => prison
+    if(_nbDoubles == 3)
+    {
+        _nbDoubles = 0;
+        //Go prison
+    }
 }
 
 void Joueur::Acheter(Propriete *propriete)
@@ -99,9 +115,9 @@ void Joueur::GagnerArgentCaseDepart()
     _tour++;
 }
 
-int Joueur::GetNombreCartesSortirPrison()
+bool Joueur::PossedeCarteSortirPrison()
 {
-    return _nombreCartesSortirPrison;
+    return _nombreCartesSortirPrison != 0;
 }
 
 void Joueur::AjouterCarteSortirPrison()
@@ -112,4 +128,9 @@ void Joueur::AjouterCarteSortirPrison()
 void Joueur::EnleverCarteSortirPrison()
 {
     _nombreCartesSortirPrison--;
+}
+
+bool Joueur::AFaitDouble()
+{
+    return _nbDoubles > 0;
 }

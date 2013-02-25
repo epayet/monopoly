@@ -3,17 +3,18 @@
 #include "GameEngine/Participant/Participant.h"
 #include "GameEngine/Participant/Joueur.h"
 
-Propriete::Propriete(Plateau *plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer[]) : Case(plateau, numero, libelle)
+Propriete::Propriete(Plateau *plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer) : Case(plateau, numero, libelle)
 {
     _proprietaire = NULL;
     _estHypotheque = false;
     _prixAchat = prixAchat;
     _valeurHypotheque = valeurHypotheque;
-    int i = 0;
-    for(i=0; i<=prixLoyer->size();i++)
-    {
-        prixLoyer[i] = prixLoyer[i];
-    }
+    _prixLoyer = prixLoyer;
+}
+
+std::string Propriete::GetMessage()
+{
+    return "";
 }
 
 void Propriete::Hypothequer()

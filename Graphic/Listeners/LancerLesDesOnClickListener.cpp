@@ -9,6 +9,7 @@
 #include "GameEngine/Participant/Joueur.h"
 #include "../../GraphicEngine/GuiManager/GuiItem/Button.h"
 #include "GraphicEngine/GuiManager/GuiItem/TextBlock.h"
+#include "GameEngine/Case/Case.h"
 
 LancerLesDesOnClickListener::LancerLesDesOnClickListener(EVENTTYPE eventType, Button* lancerLesDesBouton, GraphicEngine* graphicEngine, Jeu* jeu) : ActionListener(eventType, lancerLesDesBouton, graphicEngine)
 {
@@ -17,6 +18,8 @@ LancerLesDesOnClickListener::LancerLesDesOnClickListener(EVENTTYPE eventType, Bu
 
 void LancerLesDesOnClickListener::Act(sf::Event)
 {
+    Joueur* joueurActuel = _jeu->GetPlateau()->GetJoueurActuel();
+    
     int de1 = De::Lancer();
     int de2 = De::Lancer();
     SetImageDe(JeuConstantes::De1Key, de1);
@@ -29,24 +32,46 @@ void LancerLesDesOnClickListener::Act(sf::Event)
     {
         if (clock.GetElapsedTime() > 0.5)
         {
-            _jeu->GetPlateau()->GetJoueurActuel()->Avancer(1);
+            joueurActuel->Avancer(1);
             _jeu->UpdateJoueurActuel();
             cpt++;
             clock.Reset();
         }
     }
     
+    joueurActuel->SetAFaitDouble(de1, de2);
+    
     //Enlève comme action possible lancer les dés
-//    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::LancerLesDesKey)->SetCanDraw(false);
-//    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::De1Key)->SetCanDraw(false);
-//    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::De2Key)->SetCanDraw(false);
+    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::LancerLesDesKey)->SetCanDraw(false);
+    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::De1Key)->SetCanDraw(false);
+    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::De2Key)->SetCanDraw(false);
+    
+    Case* caseActuelle = _jeu->GetPlateau()->GetCase(joueurActuel->GetPosition());
     
     //Actions possibles
     TextBlock* caseMessage = (TextBlock*)_graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::CaseMessageKey);
     caseMessage->SetCanDraw(true);
-    caseMessage->SetContent("");
+    caseMessage->SetContent(caseActuelle->GetMessage());
     
-    _jeu->GetPlateau()->FinirTour();
+    //DOITPAYER, DOITETREPAYE, PEUTACHETER, PEUTPAYER, RIEN
+    switch(caseActuelle->DoitPayer(joueurActuel))
+    {
+        case DOITPAYER:
+            
+            break;
+            
+        case DOITETREPAYE:
+            break;
+            
+        case PEUTPAYER:
+            break;
+            
+        case RIEN:
+            caseActuelle->Agir(joueurActuel);
+            break;
+    }
+    
+    //_jeu->GetPlateau()->FinirTour();
 }
 
 void LancerLesDesOnClickListener::SetImageDe(std::string deKey, int de)

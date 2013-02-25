@@ -1,6 +1,11 @@
 #include "Cagnotte.h"
 
-void Cagnotte::InitialiserBillets()
+Cagnotte::Cagnotte() : Participant("Cagnotte")
 {
 
+}
+
+void Cagnotte::InitialiserBillets()
+{
+    
 }

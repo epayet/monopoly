@@ -13,6 +13,7 @@
 class Cagnotte : public Participant
 {
 public:
+    Cagnotte();
 	void InitialiserBillets();
 };
 
