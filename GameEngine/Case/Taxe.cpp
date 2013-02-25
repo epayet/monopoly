@@ -10,6 +10,11 @@ void Taxe::Agir(Joueur *joueur, BilletManager *billetManager)
     
 }
 
+std::string Taxe::GetMessage()
+{
+    return "";
+}
+
 ACTION Taxe::DoitPayer()
 {
     return DOITPAYER;

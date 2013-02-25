@@ -15,8 +15,9 @@ class Parc : public Case
 public:
     Parc(Plateau *plateau, int numero, std::string libelle);
 	void Agir(Joueur *joueur);
-    ACTION DoitPayer();
     std::string GetMessage();
+    //int SommeAPayer();
+    ACTION DoitPayer();
 };
 
 #endif	/* PARC_H */

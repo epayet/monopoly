@@ -18,11 +18,17 @@ class Prison : public Case
     
     public:
             Prison(Plateau *plateau, int numero, std::string libelle);
-            void Agir(Joueur *joueur);
-            ACTION DoitPayer();
+            void Agir(Joueur *joueur, BilletManager *billetManager);
+            std::string GetMessage();
+            int SommeAPayer();
+            ACTION DoitPayer(Joueur *joueur);
+            void AjouterPrisonnier(Joueur *joueur);
+            bool EstEnPrison(Joueur *joueur);
             
     private:
             Emprisonnes _emprisonnes;
+            int _prixSortie;
+            void AjouterNbToursPasses(Joueur *joueur);
 };
 
 #endif	/* PRISON_H */

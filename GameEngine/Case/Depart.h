@@ -15,6 +15,8 @@ class Depart : public Case
 public:
     Depart(Plateau *plateau, int numero, std::string libelle, int sommeADonner);
     void Agir(Joueur *joueur);
+    std::string GetMessage();
+    int SommeAPayer();
     ACTION DoitPayer();
 private:
     int _sommeADonner;

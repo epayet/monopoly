@@ -6,6 +6,7 @@ Joueur::Joueur(std::string nom) : Participant(nom)
 {
 	_position = 0;
     _tour = 0;
+    _nombreCartesSortirPrison = 0;
 }
 
 Joueur::~Joueur()
@@ -52,7 +53,7 @@ void Joueur::Detruire(Propriete *propriete)
 
 void Joueur::Hypothequer(Propriete *propriete)
 {
-	BilletManager* billetManagerValHypotheque = new BilletManager(propriete->Hypothequer());
+	BilletManager* billetManagerValHypotheque = new BilletManager(propriete->GetValeurHypotheque());
 	_billetManager->Ajouter(billetManagerValHypotheque);
 	delete billetManagerValHypotheque;
 }
@@ -96,4 +97,19 @@ void Joueur::GagnerArgentCaseDepart()
 //    delete depart;
     
     _tour++;
+}
+
+int Joueur::GetNombreCartesSortirPrison()
+{
+    return _nombreCartesSortirPrison;
+}
+
+void Joueur::AjouterCarteSortirPrison()
+{
+    _nombreCartesSortirPrison++;
+}
+
+void Joueur::EnleverCarteSortirPrison()
+{
+    _nombreCartesSortirPrison--;
 }

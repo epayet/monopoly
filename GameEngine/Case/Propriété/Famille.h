@@ -15,11 +15,14 @@ class Propriete;
 class Famille
 {
     public:
-            Famille(std::string couleur, std::vector<Propriete*> proprietes = NULL);
+            Famille(std::string couleur, std::vector<Propriete*> proprietes, int prixMaisons);
             void AjouterPropriete(Propriete* propriete);
+            int GetPrixMaisons();
+            std::vector<Propriete*> GetProprietes();
     private:
             std::string _couleur;
             std::vector<Propriete*> _proprietes;
+            int _prixMaisons;
 };
 
 #endif	/* FAMILLE_H */

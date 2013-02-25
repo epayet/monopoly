@@ -10,24 +10,25 @@
 
 #include <cstdlib>
 #include <string>
+#include "../Participant/Joueur.h"
 
 class Joueur;
 class Plateau;
 class BilletManager;
 typedef enum {
-    DOITPAYER, DOITETREPAYE, PEUTACHETER, RIEN
+    DOITPAYER, DOITETREPAYE, PEUTACHETER, PEUTPAYER, RIEN
 } ACTION;
 
 
 class Case
 {
-public:
-	Case(Plateau *plateau, int numero, std::string libelle);
-	virtual void Agir(Joueur *joueur, BilletManager *billetManager = NULL) = 0;
-	int GetNumero();
-    virtual std::string GetMessage() = 0;   //Retourne le message des actions possibles (ex : "vous pouvez acheter ce terrain")
-    virtual int SommeAPayer() = 0;
-    virtual ACTION DoitPayer(Joueur *joueur = NULL) = 0;    //enum doitPayer, peutAcheter, doitEtrePaye rien.    
+    public:
+            Case(Plateau *plateau, int numero, std::string libelle);
+            int GetNumero();
+        	virtual void Agir(Joueur *joueur, BilletManager *billetManager = NULL) = 0;
+            virtual std::string GetMessage() = 0;   //Retourne le message des actions possibles (ex : "vous pouvez acheter ce terrain")
+            virtual int SommeAPayer() = 0;  //Si DoitPayer renvoit DOITPAYER
+            virtual ACTION DoitPayer(Joueur *joueur = NULL) = 0;    //enum doitPayer, peutAcheter, doitEtrePaye rien.    
 
 protected:
 	int _numero;

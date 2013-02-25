@@ -8,16 +8,16 @@ Parc::Parc(Plateau *plateau, int numero, std::string libelle) : Case(plateau, nu
 
 void Parc::Agir(Joueur *joueur) //Transfère les billets de la Cagnotte dans le Joueur et vide cagnotte
 {
-    //joueur->GetBilletManager()->Ajouter(Plateau->GetCagnotte->GetBilletManager());
+    //joueur->GetBilletManager()->Ajouter(Plateau->GetCagnotte()->GetBilletManager());
     //Cagnotte->GetBilletManager()->Vider();
-}
-
-ACTION Parc::DoitPayer()
-{
-    return RIEN;
 }
 
 std::string Parc::GetMessage()
 {
     return "";
+}
+
+ACTION Parc::DoitPayer()
+{
+    return RIEN;
 }

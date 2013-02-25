@@ -29,12 +29,16 @@ public:
 	void Placer(Case *caseAPlacer, bool passerParDepart = true);
 	void InitialiserBillets();
 	int GetPosition();
+    int GetNombreCartesSortirPrison();
+    void AjouterCarteSortirPrison();
+    void EnleverCarteSortirPrison();
 
 private:
 	int _position;
 	std::vector<Propriete*> _proprietes;
 	void GagnerArgentCaseDepart();
     int _tour;
+    int _nombreCartesSortirPrison;
 };
 
 #endif	/* JOUEUR_H */

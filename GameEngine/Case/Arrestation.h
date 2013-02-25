@@ -10,10 +10,14 @@
 
 #include "Case.h"
 
+class Prison;
+
 class Arrestation : public Case
 {
 public:
 	void Agir(Joueur *joueur);
+    std::string GetMessage();
+    //int SommeAPayer();
     ACTION DoitPayer();
 };
 
