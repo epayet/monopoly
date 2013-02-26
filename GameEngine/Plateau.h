@@ -13,6 +13,9 @@
 #include <cstdlib>
 #include <vector>
 #include <string>
+#include "lib/tinyxml.h"
+
+using namespace std;
 
 class Case;
 class Joueur;
@@ -28,14 +31,17 @@ public:
 	~Plateau();
 	void AddJoueur(std::string nomJoueur);
     Joueur* GetJoueurActuel();
-    std::vector<Joueur*> GetJoueurs();
+    vector<Joueur*> GetJoueurs();
     void FinirTour();
     Case* GetCase(int);
     Cagnotte* GetCagnotte();
+    void lireXml();
+    
+    
 
 private:
-	std::vector<Case*> _cases;
-	std::vector<Joueur*> _joueurs;
+	vector<Case*> _cases;
+	vector<Joueur*> _joueurs;
 	Cagnotte *_cagnotte;
     int _tour;
 };

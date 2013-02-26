@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Proprietes type = "domaine>
+<Proprietes type = "domaine">
     <Famille couleur = "marron" prixMaisons = '50'>
         <Domaine nom = "Cross roads" numCase = '1' achat = '60' p0 = '2' p1 = '10' p2 = '30' p3 = '90' p4 = '160' p5 = '250' hypotheque = '30'/>
         <Domaine nom = "Goldshire" numCase = '3' achat = '60' p0 = '4' p1 = '20' p2 = '60' p3 = '180' p4 = '320' p5 = '450' hypotheque = '30'/>
@@ -39,18 +39,18 @@
         <Domaine nom = "Darnassus" numCase = '39' achat = '400' p0 = '50' p1 = '200' p2 = '600' p3 = '1400' p4 = '1700' p5 = '2000' hypotheque = '200'/>
     </Famille>
 </Proprietes>
-<Proprietes type = "dungeon>
+<Proprietes type = "dungeon">
     <Famille couleur = "Blanc">
-        <Gare nom = "Deadmine dungeon" achat = '200' p0 = '25' p1 = '50' p2 = '100' p3 = '200' hypotheque = '100'/>
-        <Gare nom = "Scholomence dungeon" achat = '200' p0 = '25' p1 = '50' p2 = '100' p3 = '200' hypotheque = '100'/>
-        <Gare nom = "Molten Core dungeon" achat = '200' p0 = '25' p1 = '50' p2 = '100' p3 = '200' hypotheque = '100'/>
-        <Gare nom = "Naxxramas dungeon" achat = '200' p0 = '25' p1 = '50' p2 = '100' p3 = '200' hypotheque = '100'/>
+        <Gare nom = "Deadmine dungeon" numCase = '5' achat = '200' p0 = '25' p1 = '50' p2 = '100' p3 = '200' hypotheque = '100'/>
+        <Gare nom = "Scholomence dungeon" numCase = '15' achat = '200' p0 = '25' p1 = '50' p2 = '100' p3 = '200' hypotheque = '100'/>
+        <Gare nom = "Molten Core dungeon" numCase = '25' achat = '200' p0 = '25' p1 = '50' p2 = '100' p3 = '200' hypotheque = '100'/>
+        <Gare nom = "Naxxramas dungeon" numCase = '35' achat = '200' p0 = '25' p1 = '50' p2 = '100' p3 = '200' hypotheque = '100'/>
     </Famille>
 </Proprietes>
-<Proprietes type = "Services>
+<Proprietes type = "Services">
     <Famille couleur = "Blanc">
-        <Service nom = "Postal service" achat = '150' p0 = '4' p1 = '10' hypotheque = '75'/>
-        <Service nom = "Barber shop" achat = '150' p0 = '4' p1 = '10' hypotheque = '75'/>
+        <Service nom = "Postal service" numCase = '12' achat = '150' p0 = '4' p1 = '10' hypotheque = '75'/>
+        <Service nom = "Barber shop" numCase = '28' achat = '150' p0 = '4' p1 = '10' hypotheque = '75'/>
     </Famille>
 </Proprietes>
 <Cartes>
