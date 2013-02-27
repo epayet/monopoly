@@ -261,9 +261,9 @@
       </item>
       <item path="GameEngine/Case/Arrestation.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="GameEngine/Case/Carte.cpp" ex="false" tool="1" flavor2="0">
+      <item path="GameEngine/Case/Carte/Carte.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="GameEngine/Case/Carte.h" ex="false" tool="3" flavor2="0">
+      <item path="GameEngine/Case/Carte/TypeCarte.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="GameEngine/Case/Case.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -731,9 +731,9 @@
       </item>
       <item path="GameEngine/Case/Arrestation.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="GameEngine/Case/Carte.cpp" ex="false" tool="1" flavor2="0">
+      <item path="GameEngine/Case/Carte/Carte.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="GameEngine/Case/Carte.h" ex="false" tool="3" flavor2="0">
+      <item path="GameEngine/Case/Carte/TypeCarte.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="GameEngine/Case/Case.cpp" ex="false" tool="1" flavor2="0">
       </item>

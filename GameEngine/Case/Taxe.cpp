@@ -1,4 +1,5 @@
 #include "Taxe.h"
+#include "util.h"
 
 Taxe::Taxe(Plateau *plateau, int numero, std::string libelle, int sommeAPayer) : Case(plateau, numero, libelle)
 {
@@ -12,7 +13,7 @@ void Taxe::Agir(Joueur *joueur, BilletManager *billetManager)
 
 std::string Taxe::GetMessage()
 {
-    return "";
+    return "Vous devez payer la taxe : " + intToString(_sommeAPayer) + " €.";
 }
 
 ACTION Taxe::DoitPayer()
