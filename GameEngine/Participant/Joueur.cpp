@@ -134,3 +134,8 @@ bool Joueur::AFaitDouble()
 {
     return _nbDoubles > 0;
 }
+
+int Joueur::GetNbTours()
+{
+    return _tour;
+}

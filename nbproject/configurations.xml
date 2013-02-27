@@ -11,6 +11,7 @@
         </logicalFolder>
         <logicalFolder name="Case" displayName="Case" projectFiles="true">
           <logicalFolder name="Propriété" displayName="Propriété" projectFiles="true">
+            <itemPath>GameEngine/Case/Case.h</itemPath>
             <itemPath>GameEngine/Case/Propriété/Domaine.h</itemPath>
             <itemPath>GameEngine/Case/Propriété/Famille.h</itemPath>
             <itemPath>GameEngine/Case/Propriété/Gare.h</itemPath>
@@ -18,8 +19,6 @@
             <itemPath>GameEngine/Case/Propriété/ServicePublique.h</itemPath>
           </logicalFolder>
           <itemPath>GameEngine/Case/Arrestation.h</itemPath>
-          <itemPath>GameEngine/Case/Carte.h</itemPath>
-          <itemPath>GameEngine/Case/Case.h</itemPath>
           <itemPath>GameEngine/Case/Depart.h</itemPath>
           <itemPath>GameEngine/Case/Parc.h</itemPath>
           <itemPath>GameEngine/Case/Prison.h</itemPath>
@@ -105,7 +104,6 @@
             <itemPath>GameEngine/Case/Propriété/ServicePublique.cpp</itemPath>
           </logicalFolder>
           <itemPath>GameEngine/Case/Arrestation.cpp</itemPath>
-          <itemPath>GameEngine/Case/Carte.cpp</itemPath>
           <itemPath>GameEngine/Case/Case.cpp</itemPath>
           <itemPath>GameEngine/Case/Depart.cpp</itemPath>
           <itemPath>GameEngine/Case/Parc.cpp</itemPath>
@@ -260,10 +258,6 @@
       <item path="GameEngine/Case/Arrestation.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="GameEngine/Case/Arrestation.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="GameEngine/Case/Carte/Carte.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="GameEngine/Case/Carte/TypeCarte.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="GameEngine/Case/Case.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -730,10 +724,6 @@
       <item path="GameEngine/Case/Arrestation.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="GameEngine/Case/Arrestation.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="GameEngine/Case/Carte/Carte.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="GameEngine/Case/Carte/TypeCarte.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="GameEngine/Case/Case.cpp" ex="false" tool="1" flavor2="0">
       </item>

@@ -34,6 +34,7 @@ public:
     void EnleverCarteSortirPrison();
     bool AFaitDouble();
     void SetAFaitDouble(int de1, int de2);
+    int GetNbTours();
 
 private:
 	int _position;
