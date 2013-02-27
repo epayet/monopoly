@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/GameEngine/Billet/Billet.o \
 	${OBJECTDIR}/GameEngine/Billet/BilletManager.o \
 	${OBJECTDIR}/GameEngine/Case/Arrestation.o \
+	${OBJECTDIR}/GameEngine/Case/Carte.o \
 	${OBJECTDIR}/GameEngine/Case/Case.o \
 	${OBJECTDIR}/GameEngine/Case/Depart.o \
 	${OBJECTDIR}/GameEngine/Case/Parc.o \
@@ -53,6 +54,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/GameEngine/Participant/Joueur.o \
 	${OBJECTDIR}/GameEngine/Participant/Participant.o \
 	${OBJECTDIR}/GameEngine/Plateau.o \
+	${OBJECTDIR}/Graphic/GuiItems/Hotel.o \
+	${OBJECTDIR}/Graphic/GuiItems/Maison.o \
 	${OBJECTDIR}/Graphic/GuiItems/Pion.o \
 	${OBJECTDIR}/Graphic/Jeu.o \
 	${OBJECTDIR}/Graphic/JeuConstantes.o \
@@ -141,6 +144,11 @@ ${OBJECTDIR}/GameEngine/Case/Arrestation.o: GameEngine/Case/Arrestation.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Arrestation.o GameEngine/Case/Arrestation.cpp
 
+${OBJECTDIR}/GameEngine/Case/Carte.o: GameEngine/Case/Carte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
+	${RM} $@.d
+	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte.o GameEngine/Case/Carte.cpp
+
 ${OBJECTDIR}/GameEngine/Case/Case.o: GameEngine/Case/Case.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	${RM} $@.d
@@ -215,6 +223,16 @@ ${OBJECTDIR}/GameEngine/Plateau.o: GameEngine/Plateau.cpp
 	${MKDIR} -p ${OBJECTDIR}/GameEngine
 	${RM} $@.d
 	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Plateau.o GameEngine/Plateau.cpp
+
+${OBJECTDIR}/Graphic/GuiItems/Hotel.o: Graphic/GuiItems/Hotel.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/GuiItems
+	${RM} $@.d
+	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/GuiItems/Hotel.o Graphic/GuiItems/Hotel.cpp
+
+${OBJECTDIR}/Graphic/GuiItems/Maison.o: Graphic/GuiItems/Maison.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/GuiItems
+	${RM} $@.d
+	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/GuiItems/Maison.o Graphic/GuiItems/Maison.cpp
 
 ${OBJECTDIR}/Graphic/GuiItems/Pion.o: Graphic/GuiItems/Pion.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/GuiItems
@@ -463,6 +481,19 @@ ${OBJECTDIR}/GameEngine/Case/Arrestation_nomain.o: ${OBJECTDIR}/GameEngine/Case/
 	    ${CP} ${OBJECTDIR}/GameEngine/Case/Arrestation.o ${OBJECTDIR}/GameEngine/Case/Arrestation_nomain.o;\
 	fi
 
+${OBJECTDIR}/GameEngine/Case/Carte_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte.o GameEngine/Case/Carte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte_nomain.o GameEngine/Case/Carte.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte.o ${OBJECTDIR}/GameEngine/Case/Carte_nomain.o;\
+	fi
+
 ${OBJECTDIR}/GameEngine/Case/Case_nomain.o: ${OBJECTDIR}/GameEngine/Case/Case.o GameEngine/Case/Case.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Case.o`; \
@@ -656,6 +687,32 @@ ${OBJECTDIR}/GameEngine/Plateau_nomain.o: ${OBJECTDIR}/GameEngine/Plateau.o Game
 	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Plateau_nomain.o GameEngine/Plateau.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/GameEngine/Plateau.o ${OBJECTDIR}/GameEngine/Plateau_nomain.o;\
+	fi
+
+${OBJECTDIR}/Graphic/GuiItems/Hotel_nomain.o: ${OBJECTDIR}/Graphic/GuiItems/Hotel.o Graphic/GuiItems/Hotel.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/GuiItems
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/GuiItems/Hotel.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/GuiItems/Hotel_nomain.o Graphic/GuiItems/Hotel.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/GuiItems/Hotel.o ${OBJECTDIR}/Graphic/GuiItems/Hotel_nomain.o;\
+	fi
+
+${OBJECTDIR}/Graphic/GuiItems/Maison_nomain.o: ${OBJECTDIR}/Graphic/GuiItems/Maison.o Graphic/GuiItems/Maison.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/GuiItems
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/GuiItems/Maison.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/GuiItems/Maison_nomain.o Graphic/GuiItems/Maison.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/GuiItems/Maison.o ${OBJECTDIR}/Graphic/GuiItems/Maison_nomain.o;\
 	fi
 
 ${OBJECTDIR}/Graphic/GuiItems/Pion_nomain.o: ${OBJECTDIR}/Graphic/GuiItems/Pion.o Graphic/GuiItems/Pion.cpp 

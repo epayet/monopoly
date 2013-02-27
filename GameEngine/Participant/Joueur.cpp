@@ -31,6 +31,12 @@ void Joueur::Avancer(int valeur)
 	}
 }
 
+void Joueur::Avancer(int de1, int de2)
+{
+    Avancer(de1 + de2);
+    SetAFaitDouble(de1, de2);
+}
+
 void Joueur::SetAFaitDouble(int de1, int de2)
 {
     if(de1 == de2)

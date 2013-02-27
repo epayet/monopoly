@@ -25,21 +25,23 @@ void LancerLesDesOnClickListener::Act(sf::Event)
     SetImageDe(JeuConstantes::De1Key, de1);
     SetImageDe(JeuConstantes::De2Key, de2);
 
-    sf::Clock clock;
-    clock.Reset();
-    int cpt = 0;
-    while (cpt < de1 + de2)
-    {
-        if (clock.GetElapsedTime() > 0.5)
-        {
-            joueurActuel->Avancer(1);
-            _jeu->UpdateJoueurActuel();
-            cpt++;
-            clock.Reset();
-        }
-    }
-
-    joueurActuel->SetAFaitDouble(de1, de2);
+//    sf::Clock clock;
+//    clock.Reset();
+//    int cpt = 0;
+//    while (cpt < de1 + de2)
+//    {
+//        if (clock.GetElapsedTime() > 0.5)
+//        {
+//            joueurActuel->Avancer(1);
+//            _jeu->UpdateJoueurActuel();
+//            cpt++;
+//            clock.Reset();
+//        }
+//    }
+//    joueurActuel->SetAFaitDouble(de1, de2);
+    
+    joueurActuel->Avancer(de1, de2);
+    _jeu->UpdateJoueurActuel();
 
     //Enlève comme action possible lancer les dés
     _jeu->AfficherLancerDes(false);
@@ -53,7 +55,7 @@ void LancerLesDesOnClickListener::Act(sf::Event)
 
     ACTION action = caseActuelle->DoitPayer(joueurActuel);
 
-    //DOITPAYER, DOITETREPAYE, PEUTACHETER, PEUTPAYER, RIEN
+    //DOITPAYER, DOITETREPAYE, PEUTPAYER, RIEN
     if (action == DOITPAYER)
     {
         int sommeAPayer = caseActuelle->SommeAPayer();
@@ -70,6 +72,8 @@ void LancerLesDesOnClickListener::Act(sf::Event)
     {
         caseActuelle->Agir(joueurActuel);
     }
+    
+    _jeu->AfficherActionsPossibles(true);
 }
 
 void LancerLesDesOnClickListener::SetImageDe(std::string deKey, int de)

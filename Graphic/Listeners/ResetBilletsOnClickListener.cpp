@@ -5,15 +5,23 @@
 #include "GameEngine/Plateau.h"
 #include "GameEngine/Participant/Joueur.h"
 
-ResetBilletsOnClickListener::ResetBilletsOnClickListener(EVENTTYPE eventType, Button* resetBouton, GraphicEngine* graphicEngine, Jeu* jeu) 
-                                : ActionListener(eventType, resetBouton, graphicEngine)
+ResetBilletsOnClickListener::ResetBilletsOnClickListener(EVENTTYPE eventType, Button* resetBouton, GraphicEngine* graphicEngine, Jeu* jeu)
+: ActionListener(eventType, resetBouton, graphicEngine)
 {
     _jeu = jeu;
 }
 
 void ResetBilletsOnClickListener::Act(sf::Event)
 {
-    _jeu->GetPlateau()->GetJoueurActuel()->GetBilletManager()->Ajouter(_jeu->GetBilletManagerARemplir());
+    BilletManager* billetManagerJoueur = _jeu->GetPlateau()->GetJoueurActuel()->GetBilletManager();
+
+    if (_jeu->GetSommeAPayer() > 0)
+        billetManagerJoueur->Ajouter(_jeu->GetBilletManagerARemplir());
+    else if (_jeu->GetBilletACasser())
+    {
+        billetManagerJoueur->Enlever(_jeu->GetBilletManagerARemplir());
+    }
+    
     _jeu->GetBilletManagerARemplir()->Vider();
     _jeu->UpdateSommeAPayer();
 }

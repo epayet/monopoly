@@ -30,7 +30,7 @@ Jeu::Jeu()
 {
     _plateau = new Plateau();
     _billetManagerARemplir = new BilletManager();
-    _sommeAPayer = 0;
+    _billetACasser = _sommeAPayer = 0;
 
     _graphicEngine = new GraphicEngine(SIZEWINDOWX, SIZEWINDOWY, "Monopoly");
     _graphicEngine->SetState(FIRSTMENU);
@@ -137,35 +137,41 @@ Jeu::Jeu()
     TextBlock* voulezVousPayer = new TextBlock(_graphicEngine->GetWindow(), INGAME, plateauImage->GetSizeX(), yVoulezVousPayer
             , 20, _graphicEngine->GetFont(), JeuConstantes::VoulezVousPayerKey);
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::VoulezVousPayerKey, voulezVousPayer);
-    //    voulezVousPayer->SetCanDraw(false);
+    voulezVousPayer->SetCanDraw(false);
 
     //Réponse oui
     Button* ouiPayer = new Button(_graphicEngine->GetWindow(), INGAME, voulezVousPayer->GetSizeX() + voulezVousPayer->GetX() + 20, yVoulezVousPayer, 20, _graphicEngine->GetFont(), "Oui");
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::OuiPayerKey, ouiPayer);
-    //    ouiPayer->SetCanDraw(false);
+        ouiPayer->SetCanDraw(false);
     ouiPayer->AddListener(new OuiPayerOnClickListener(ONCLICK, ouiPayer, _graphicEngine, this));
 
     //Réponse non
     Button* nonPayer = new Button(_graphicEngine->GetWindow(), INGAME, ouiPayer->GetSizeX() + ouiPayer->GetX() + 10, yVoulezVousPayer, 20, _graphicEngine->GetFont(), "Non");
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::NonPayerKey, nonPayer);
-    //    nonPayer->SetCanDraw(false);
+        nonPayer->SetCanDraw(false);
     nonPayer->AddListener(new NonPayerOnClickListener(ONCLICK, nonPayer, _graphicEngine, this));
     
     //Faire monnaie
     Button* faireMonnaie = new Button(_graphicEngine->GetWindow(), INGAME, SIZEWINDOWX - 160, 20, 20, _graphicEngine->GetFont(), JeuConstantes::FaireMonnaieKey);
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::FaireMonnaieKey, faireMonnaie);
     faireMonnaie->AddListener(new FaireMonnaieOnClickListener(ONCLICK, faireMonnaie, _graphicEngine, this));
+    faireMonnaie->SetCanDraw(false);
     
     //Afficher/Cacher proprietes
     Button* afficherCacherProprietes = new Button(_graphicEngine->GetWindow(), INGAME, SIZEWINDOWX - 165, 20 + faireMonnaie->GetY() + faireMonnaie->GetSizeY()
             , 20, _graphicEngine->GetFont(), JeuConstantes::AfficherCacherProprietesKey);
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::AfficherCacherProprietesKey, afficherCacherProprietes);
     afficherCacherProprietes->AddListener(new AfficherCacherProprietesOnClickListener(ONCLICK, afficherCacherProprietes, _graphicEngine, this));
+    afficherCacherProprietes->SetCanDraw(false);
     
+    //Finir tour
     Button* finirTour = new Button(_graphicEngine->GetWindow(), INGAME, SIZEWINDOWX - 135, afficherCacherProprietes->GetSizeY() + afficherCacherProprietes->GetY() + 20,
             20, _graphicEngine->GetFont(), JeuConstantes::FinirTourKey);
     finirTour->AddListener(new FinirTourOnClickListener(ONCLICK, finirTour, _graphicEngine, this));
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::FinirTourKey, finirTour);
+    finirTour->SetCanDraw(false);
+    
+    
 }
 
 Jeu::~Jeu()
@@ -240,8 +246,15 @@ void Jeu::SetSommeAPayer(int somme)
 
 void Jeu::UpdateSommeAPayer()
 {
+    int somme;
+    
+    if(_sommeAPayer != 0)
+        somme = _sommeAPayer;
+    else if(_billetACasser > 0)
+        somme = _billetACasser;
+    
     std::string sommeBilletsString = intToString(_billetManagerARemplir->SommeBillets());
-    std::string sommeString = intToString(_sommeAPayer);
+    std::string sommeString = intToString(somme);
 
     TextBlock* sommeAPayer = (TextBlock*) _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::SommeAPayerKey);
     sommeAPayer->SetContent(JeuConstantes::SommeAPayerKey + sommeBilletsString + " / " + sommeString);
@@ -257,6 +270,22 @@ void Jeu::UpdateSommeAPayer()
 BilletManager* Jeu::GetBilletManagerARemplir()
 {
     return _billetManagerARemplir;
+}
+
+int Jeu::GetBilletACasser()
+{
+    return _billetACasser;
+}
+
+void Jeu::SetBilletACasser(int somme)
+{
+    _billetACasser = somme;
+    
+    if(somme != -1)
+    {
+        _billetManagerARemplir->Vider();
+        UpdateSommeAPayer();
+    }
 }
 
 void Jeu::AfficherVoulezVousPayer(bool affich)
@@ -278,6 +307,12 @@ void Jeu::AfficherSommeAPayer(bool affich)
     _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::ResetBilletsKey)->SetCanDraw(affich);
 }
 
+void Jeu::AfficherActionsPossibles(bool affich)
+{
+    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::FaireMonnaieKey)->SetCanDraw(affich);
+    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::FinirTourKey)->SetCanDraw(affich);
+}
+
 int Jeu::GetSommeAPayer()
 {
     return _sommeAPayer;
@@ -286,8 +321,11 @@ int Jeu::GetSommeAPayer()
 void Jeu::UpdateFinirTour()
 {
     _sommeAPayer = 0;
+    _billetACasser = 0;
     _plateau->FinirTour();
     UpdateJoueurActuel();
+    AfficherLancerDes(true);
+    AfficherActionsPossibles(false);
 }
 
 void Jeu::SetPositionJoueur(Joueur* joueur)
