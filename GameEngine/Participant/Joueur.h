@@ -20,6 +20,7 @@ public:
 	Joueur(std::string nom);
 	~Joueur();
 	void Avancer(int);
+    void Avancer(int de1, int de2);
 	void Acheter(Propriete *propriete);
 	bool PeutPayer(int somme);
 	void Construire(Propriete *propriete);

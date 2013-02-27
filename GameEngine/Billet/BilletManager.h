@@ -30,11 +30,13 @@ public:
 	void Ajouter(int nb, TYPEBILLET billet);
 	void Ajouter(BilletManager *billetManager);
 	void Enlever(int nb, TYPEBILLET billet);
+    void Enlever(BilletManager* billetManager);
 	void Vider();
 	void SetSomme(int somme);
 	bool PeutPayer(int somme);
     bool VautSomme(int somme);
     int NombreBillets(TYPEBILLET billet);
+    Billet* GetBillet(TYPEBILLET);
 
 private:
 	Billets _billets;

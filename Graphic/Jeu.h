@@ -36,13 +36,16 @@ public:
     void UpdatePlateau();
     void SetPositionJoueur(Joueur* joueur);
     void SetSommeAPayer(int somme);
+    void SetBilletACasser(int somme);
     BilletManager* GetBilletManagerARemplir();
     void UpdateSommeAPayer();
     void AfficherVoulezVousPayer(bool);
     void AfficherLancerDes(bool);
     void AfficherSommeAPayer(bool);
+    void AfficherActionsPossibles(bool);
     void UpdateFinirTour();
     int GetSommeAPayer();
+    int GetBilletACasser();
 
 private:
 	GraphicEngine* _graphicEngine;
@@ -50,7 +53,7 @@ private:
     int _nbJoueurs;
     std::vector<Pion*> _pions;
     BilletManager* _billetManagerARemplir;
-    int _sommeAPayer;
+    int _sommeAPayer, _billetACasser;
 };
 
 #endif	/* JEU_H */
