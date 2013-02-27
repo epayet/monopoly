@@ -23,12 +23,6 @@ void Domaine::Detruire()
     _nombreMaisons--;
 }
 
-void Domaine::Agir(Joueur *joueur, BilletManager *billetManager)
-{
-    if (DoitPayer(joueur) == DOITPAYER)
-        _proprietaire->Crediter(billetManager);
-}
-
 void Domaine::Hypothequer()
 {
     _estHypotheque = true;

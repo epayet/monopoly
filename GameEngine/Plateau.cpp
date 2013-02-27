@@ -7,7 +7,7 @@
 Plateau::Plateau()
 {
     _tour = 0;
-    _cagnotte = new Cagnotte;
+    _cagnotte = new Cagnotte(this);
     
     for(int i=0; i<NBCASES; i++)
     {
@@ -19,7 +19,7 @@ Plateau::Plateau()
         prix.push_back(3);
         prix.push_back(4);
         prix.push_back(5);
-        _cases.push_back(new Propriete(this, i, "fake case", 10, 10, prix));
+        //_cases.push_back(new Propriete(this, i, "fake case", 10, 10, prix));
     }
 }
 
@@ -34,9 +34,9 @@ Plateau::~Plateau()
     delete _cagnotte;
 }
 
-void Plateau::AddJoueur(std::string nomJoueur)
+void Plateau::AjouterJoueur(std::string nomJoueur)
 {
-    Joueur* joueur = new Joueur(nomJoueur);
+    Joueur* joueur = new Joueur(this, nomJoueur);
     joueur->InitialiserBillets();
     _joueurs.push_back(joueur);
 }

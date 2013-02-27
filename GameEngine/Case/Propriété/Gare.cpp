@@ -1,12 +1,8 @@
 #include "Gare.h"
 #include "GameEngine/Plateau.h"
+#include "util.h"
 
 Gare::Gare(Plateau *plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer) : Propriete(plateau, numero, libelle, valeurHypotheque, prixAchat, prixLoyer)
-{
-
-}
-
-void Gare::Agir(Joueur *joueur)
 {
 
 }
@@ -20,7 +16,7 @@ int Gare::SommeAPayer()
         int i, nbPossedes = 0;
         for (i = 0; i <= _famille->GetProprietes().size(); i++)
         {
-            if (_famille->GetProprietes()[i]->GetProprietaire() == _plateau->GetJoueurActuel())
+            if (_famille->GetProprietes()[i]->GetProprietaire() == _proprietaire)
                 nbPossedes++;
         }
         return _prixLoyer[nbPossedes];

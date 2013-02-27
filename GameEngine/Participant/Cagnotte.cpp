@@ -1,6 +1,6 @@
 #include "Cagnotte.h"
 
-Cagnotte::Cagnotte() : Participant("Cagnotte")
+Cagnotte::Cagnotte(Plateau *plateau) : Participant(plateau, "Cagnotte")
 {
 
 }

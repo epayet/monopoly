@@ -11,10 +11,12 @@
 #include "../Billet/BilletManager.h"
 #include <string>
 
+class Plateau;
+
 class Participant
 {
 public:
-	Participant(std::string nom = "");
+	Participant(Plateau *plateau, std::string nom = "");
 	~Participant();
 	virtual BilletManager* Payer(int somme);
 	void Crediter(BilletManager *billetManager);
@@ -26,6 +28,7 @@ public:
 protected:
 	BilletManager* _billetManager;
 	std::string _nom;
+    Plateau *_plateau;
 };
 
 #endif	/* PARTICIPANT_H */

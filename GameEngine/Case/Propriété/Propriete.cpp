@@ -14,6 +14,13 @@ Propriete::Propriete(Plateau *plateau, int numero, std::string libelle, int vale
     _famille = NULL;
 }
 
+void Propriete::Agir(Joueur* joueur, BilletManager* billetManager)
+{
+    if (DoitPayer(joueur) == DOITPAYER)
+        _proprietaire->Crediter(billetManager);
+    else if(DoitPayer(joueur) == PEUTPAYER && billetManager!=NULL)
+        _proprietaire = joueur;
+}
 
 void Propriete::Hypothequer()
 {

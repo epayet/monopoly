@@ -13,7 +13,7 @@ void Taxe::Agir(Joueur *joueur, BilletManager *billetManager)
 
 std::string Taxe::GetMessage()
 {
-    return "Vous devez payer la taxe : " + intToString(_sommeAPayer) + " €.";
+    return "Vous devez payer la taxe " + _libelle + " : " + intToString(_sommeAPayer) + " €.";
 }
 
 ACTION Taxe::DoitPayer()

@@ -51,7 +51,7 @@ ACTION Prison::DoitPayer(Joueur *joueur)
     int i = 0;
     for(i=0; i<=_emprisonnes.size(); i++)
     {
-        if(EstEnPrison(joueur))  //Est en prison
+        if(EstEnPrison(joueur) && _emprisonnes[i].first==joueur)  //Est en prison
         {
             if(joueur->PossedeCarteSortirPrison())
             {
@@ -67,7 +67,7 @@ ACTION Prison::DoitPayer(Joueur *joueur)
             else
             {
                 AjouterNbToursPasses(joueur);   //nbToursPassesEnPrison++
-                if(_emprisonnes[i].second>=3)   //Si ça fait 3 tours en prison
+                if(_emprisonnes[i].second==3)   //Si ça fait 3 tours en prison
                     return DOITPAYER;
                 else    //Si ça fait moins de 3 tours en prison
                     return PEUTPAYER;

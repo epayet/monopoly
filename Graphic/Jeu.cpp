@@ -197,7 +197,7 @@ void Jeu::SetNbJoueurs(int nbJoueurs)
     {
         std::string nomJoueur = "Joueur ";
         nomJoueur.append(intToString(i));
-        _plateau->AddJoueur(nomJoueur);
+        _plateau->AjouterJoueur(nomJoueur);
 
         Pion* pion = new Pion(_graphicEngine->GetWindow(), INGAME, 0, 0, 20, sf::Color(rand_a_b(0, 255), rand_a_b(0, 255), rand_a_b(0, 255)));
         _pions.push_back(pion);

@@ -21,10 +21,10 @@ class Propriete : public Case
             int LeverHypotheque();
         	void Acheter(Joueur *joueur);
             ACTION DoitPayer(Joueur *joueur);
-            virtual int SommeAPayer();
+            virtual int SommeAPayer()=0;
             Joueur *GetProprietaire();
             int GetValeurHypotheque();
-            virtual std::string GetMessage();
+            virtual std::string GetMessage()=0;
             int GetPrixMaisons();
             bool PossedeFamilleEntiere(Joueur *joueur);
     protected:

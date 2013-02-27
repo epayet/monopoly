@@ -19,7 +19,6 @@ public:
 	void Construire();
 	void Detruire();
     void Hypothequer();
-	void Agir(Joueur *joueur, BilletManager *billetManager);
     int SommeAPayer();
     std::string GetMessage();
     int GetNombreMaisons();

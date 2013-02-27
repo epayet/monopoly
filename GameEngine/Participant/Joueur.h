@@ -17,7 +17,7 @@ class Case;
 class Joueur : public Participant
 {
 public:
-	Joueur(std::string nom);
+	Joueur(Plateau *plateau, std::string nom);
 	~Joueur();
 	void Avancer(int);
     void Avancer(int de1, int de2);

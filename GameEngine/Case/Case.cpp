@@ -1,6 +1,7 @@
 #include "Case.h"
 #include "../Participant/Joueur.h"
 #include "../Plateau.h"
+#include "../../util.h"
 
 Case::Case(Plateau *plateau, int numero, std::string libelle)
 {
@@ -13,4 +14,9 @@ Case::Case(Plateau *plateau, int numero, std::string libelle)
 int Case::GetNumero()
 {
 	return _numero;
+}
+
+std::string Case::GetLibelle()
+{
+    return _libelle;
 }

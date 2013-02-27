@@ -26,7 +26,7 @@ class Plateau
 public:
 	Plateau();
 	~Plateau();
-	void AddJoueur(std::string nomJoueur);
+	void AjouterJoueur(std::string nomJoueur);
     Joueur* GetJoueurActuel();
     std::vector<Joueur*> GetJoueurs();
     void FinirTour();

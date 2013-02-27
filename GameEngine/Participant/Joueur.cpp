@@ -1,8 +1,10 @@
 #include "Joueur.h"
 #include "../Case/Case.h"
 #include "../Case/Propriété/Propriete.h"
+#include "GameEngine/Plateau.h"
+#include "GameEngine/Case/Prison.h"
 
-Joueur::Joueur(std::string nom) : Participant(nom)
+Joueur::Joueur(Plateau *plateau, std::string nom) : Participant(plateau, nom)
 {
 	_position = 0;
     _tour = 0;
@@ -48,8 +50,10 @@ void Joueur::SetAFaitDouble(int de1, int de2)
     if(_nbDoubles == 3)
     {
         _nbDoubles = 0;
-        //Go prison
+        Prison * prison = (Prison*)_plateau->GetCase(10);
+        prison->AjouterPrisonnier(this);
     }
+    _derniersDes = de1 + de2;
 }
 
 void Joueur::Acheter(Propriete *propriete)
@@ -112,9 +116,9 @@ int Joueur::GetPosition()
 
 void Joueur::GagnerArgentCaseDepart()
 {
-	_billetManager->Ajouter(2, BILLET100);
-    
-//    Depart* depart = new Depart();
+	//_billetManager->Ajouter(2, BILLET100);
+    _plateau->GetCase(0)->Agir(this);
+    //    Depart* depart = new Depart();
 //    depart->Agir(this);
 //    delete depart;
     

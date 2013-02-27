@@ -1,8 +1,9 @@
 #include "Participant.h"
 
-Participant::Participant(std::string nom)
+Participant::Participant(Plateau *plateau, std::string nom)
 {
-	_nom = nom;
+	_plateau = plateau;
+    _nom = nom;
 	_billetManager = new BilletManager();
 }
 
