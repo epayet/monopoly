@@ -1,6 +1,8 @@
 #include "Domaine.h"
 #include "GameEngine/Participant/Joueur.h"
 #include "Famille.h"
+#include "GameEngine/Plateau.h"
+#include "util.h"
 
 bool Domaine::PeutConstruire()
 {
@@ -13,42 +15,17 @@ bool Domaine::PeutConstruire()
 void Domaine::Construire()
 {
     _nombreMaisons++;
-    _proprietaire->Payer(_famille->GetPrixMaisons());
 }
 
-int Domaine::Detruire()
+void Domaine::Detruire()
 {
 	_nombreMaisons--;
-    BilletManager *prixMaison = new BilletManager(_famille->GetPrixMaisons());
-    _proprietaire->Crediter(prixMaison);
 }
 
-void Domaine::Agir(Joueur *joueur)
+void Domaine::Agir(Joueur *joueur, BilletManager *billetManager)
 {
-    if(_proprietaire==joueur)
-    {
-        
-    }
-    else
-    {
-        if(_nombreMaisons==0)
-        {
-            int i, nbProprietesPossedees, nbProprietes = 0;
-            for(i=0; i<=_famille->GetProprietes().size(); i++)
-            {
-                std::vector<Propriete*> proprietes = _famille->GetProprietes();
-                if(proprietes[i]->GetProprietaire()==joueur)
-                    nbProprietesPossedees++;
-                nbProprietes++;
-            }
-            if(nbProprietesPossedees==nbProprietes) //si possède la famille, paye terrain nu*2
-                joueur->Payer(_prixLoyer[0]*2);
-            else
-                joueur->Payer(_prixLoyer[0]);
-        }
-        else
-            joueur->Payer(_prixLoyer[_nombreMaisons]);
-    }
+    if(DoitPayer(joueur)==DOITPAYER)
+        _proprietaire->Crediter(billetManager);
 }
 
 void Domaine::Hypothequer()
@@ -58,4 +35,31 @@ void Domaine::Hypothequer()
     somme += _valeurHypotheque;
     BilletManager *hyp = new BilletManager(somme);
     _proprietaire->Crediter(hyp);
+    delete hyp;
+}
+
+int Domaine::SommeAPayer()
+{
+    if(DoitPayer()==PEUTPAYER)
+        
+    if(_nombreMaisons==0)
+    {            
+        if(PossedeFamilleEntiere(_proprietaire)) //si possède la famille, paye terrain nu*2
+                return _prixLoyer[0]*2;
+            else
+                return _prixLoyer[0];
+        }
+        else
+            return _prixLoyer[_nombreMaisons];
+}
+
+std::string Domaine::GetMessage()
+{
+    if(_proprietaire!=_plateau->GetJoueurActuel())
+        return "Vous êtes chez " + _proprietaire->GetNom() + ", vous lui devez : " + intToString(SommeAPayer()) + " €.";
+}
+
+int Domaine::GetNombreMaisons()
+{
+    return _nombreMaisons;
 }

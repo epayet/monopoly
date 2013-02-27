@@ -10,6 +10,7 @@
 
 #include "../Case.h"
 #include "../../Participant/Joueur.h"
+#include "Famille.h"
 
 class Propriete : public Case
 {
@@ -24,12 +25,15 @@ class Propriete : public Case
             Joueur *GetProprietaire();
             int GetValeurHypotheque();
             std::string GetMessage();
+            int GetPrixMaisons();
+            bool PossedeFamilleEntiere(Joueur *joueur);
     protected:
         Joueur *_proprietaire;
         bool _estHypotheque;
         int _valeurHypotheque;
         int _prixAchat;
         std::vector<int> _prixLoyer;
+        Famille *_famille;
 
 };
 

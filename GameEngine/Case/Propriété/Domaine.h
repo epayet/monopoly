@@ -9,6 +9,7 @@
 #define	DOMAINE_H
 
 #include "Propriete.h"
+
 class Famille;
 
 class Domaine : public Propriete
@@ -16,12 +17,14 @@ class Domaine : public Propriete
 public:
 	bool PeutConstruire();
 	void Construire();
-	int Detruire();
+	void Detruire();
     void Hypothequer();
-	void Agir(Joueur *joueur);
+	void Agir(Joueur *joueur, BilletManager *billetManager);
+    int SommeAPayer();
+    std::string GetMessage();
+    int GetNombreMaisons();
 
 private:
-	Famille *_famille;
     int _nombreMaisons;
 };
 

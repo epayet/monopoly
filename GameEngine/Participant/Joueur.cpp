@@ -65,7 +65,7 @@ bool Joueur::PeutPayer(int somme)
 
 void Joueur::Construire(Propriete *propriete)
 {
-
+    
 }
 
 void Joueur::Detruire(Propriete *propriete)

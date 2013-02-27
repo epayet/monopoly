@@ -1,5 +1,6 @@
 #include "Depart.h"
 #include "GameEngine/Participant/Participant.h"
+#include "util.h"
 
 
 Depart::Depart(Plateau *plateau, int numero, std::string libelle, int sommeADonner) : Case(plateau, numero, libelle)
@@ -24,5 +25,5 @@ ACTION Depart::DoitPayer()
 
 std::string Depart::GetMessage()
 {
-    return "";
+    return "Vous passez par la case départ : vous gagnez " + intToString(_sommeADonner) + " €.";
 }

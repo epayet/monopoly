@@ -1,5 +1,6 @@
 #include "Case.h"
 #include "../Participant/Joueur.h"
+#include "../Plateau.h"
 
 Case::Case(Plateau *plateau, int numero, std::string libelle)
 {
