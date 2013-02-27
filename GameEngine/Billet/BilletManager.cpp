@@ -18,7 +18,7 @@ BilletManager::~BilletManager()
 	_billets.clear();
 }
 
-void BilletManager::Ajouter(int nb, int billet)
+void BilletManager::Ajouter(int nb, TYPEBILLET billet)
 {
 	_billets[billet].first += nb;
 }
@@ -31,7 +31,7 @@ void BilletManager::Ajouter(BilletManager* billetManager)
 	}
 }
 
-void BilletManager::Enlever(int nb, int billet)
+void BilletManager::Enlever(int nb, TYPEBILLET billet)
 {
 	_billets[billet].first -= nb;
 
@@ -95,4 +95,14 @@ void BilletManager::SetSomme(int somme)
 bool BilletManager::PeutPayer(int somme)
 {
 	return SommeBillets() >= somme;
+}
+
+bool BilletManager::VautSomme(int somme)
+{
+    return SommeBillets() == somme;
+}
+
+int BilletManager::NombreBillets(TYPEBILLET billet)
+{
+    return _billets[billet].first;
 }

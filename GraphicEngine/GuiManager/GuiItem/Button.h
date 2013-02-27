@@ -19,6 +19,9 @@ public:
 	~Button();
 	void Draw(int state);
 	sf::String &GetText();
+    void SetX(int x);
+    void SetY(int y);
+    void UpdateRect();
 
 private:
 	sf::Font _font;

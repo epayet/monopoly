@@ -19,7 +19,7 @@ LancerLesDesOnClickListener::LancerLesDesOnClickListener(EVENTTYPE eventType, Bu
 void LancerLesDesOnClickListener::Act(sf::Event)
 {
     Joueur* joueurActuel = _jeu->GetPlateau()->GetJoueurActuel();
-    
+
     int de1 = De::Lancer();
     int de2 = De::Lancer();
     SetImageDe(JeuConstantes::De1Key, de1);
@@ -38,40 +38,38 @@ void LancerLesDesOnClickListener::Act(sf::Event)
             clock.Reset();
         }
     }
-    
+
     joueurActuel->SetAFaitDouble(de1, de2);
-    
+
     //Enlève comme action possible lancer les dés
-    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::LancerLesDesKey)->SetCanDraw(false);
-    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::De1Key)->SetCanDraw(false);
-    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::De2Key)->SetCanDraw(false);
-    
+    _jeu->AfficherLancerDes(false);
+
     Case* caseActuelle = _jeu->GetPlateau()->GetCase(joueurActuel->GetPosition());
-    
+
     //Actions possibles
-    TextBlock* caseMessage = (TextBlock*)_graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::CaseMessageKey);
+    TextBlock* caseMessage = (TextBlock*) _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::CaseMessageKey);
     caseMessage->SetCanDraw(true);
     caseMessage->SetContent(caseActuelle->GetMessage());
-    
+
+    ACTION action = caseActuelle->DoitPayer(joueurActuel);
+
     //DOITPAYER, DOITETREPAYE, PEUTACHETER, PEUTPAYER, RIEN
-    switch(caseActuelle->DoitPayer(joueurActuel))
+    if (action == DOITPAYER)
     {
-        case DOITPAYER:
-            
-            break;
-            
-        case DOITETREPAYE:
-            break;
-            
-        case PEUTPAYER:
-            break;
-            
-        case RIEN:
-            caseActuelle->Agir(joueurActuel);
-            break;
+        int sommeAPayer = caseActuelle->SommeAPayer();
+        _jeu->SetSommeAPayer(sommeAPayer);
     }
-    
-    //_jeu->GetPlateau()->FinirTour();
+    else if (action == DOITETREPAYE)
+    {
+    }
+    else if (action == PEUTPAYER)
+    {
+        _jeu->AfficherVoulezVousPayer(true);
+    }
+    else if (action == RIEN)
+    {
+        caseActuelle->Agir(joueurActuel);
+    }
 }
 
 void LancerLesDesOnClickListener::SetImageDe(std::string deKey, int de)

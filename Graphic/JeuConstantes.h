@@ -9,6 +9,7 @@
 #define	JEUCONSTANTES_H
 
 #include <string>
+#include "../GameEngine/Billet/BilletManager.h"
 
 class JeuConstantes
 {
@@ -34,11 +35,22 @@ public:
     static const std::string NbBilletsKeys[NbBillets];
     static const std::string SommeCagnotteKey;
     static const std::string CaseMessageKey;
+    static const std::string SommeAPayerKey;
+    static const std::string ResetBilletsKey;
+    static const std::string ValiderBilletsKey;
+    static const std::string VoulezVousPayerKey;
+    static const std::string OuiPayerKey;
+    static const std::string NonPayerKey;
+    static const std::string FaireMonnaieKey;
+    static const std::string AfficherCacherProprietesKey;
+    static const std::string FinirTourKey;
 
     //Paths
 	static const std::string PlateauPath;
     static const std::string DesPaths[6];
     static const std::string BilletsPaths[NbBillets];
+    
+    static const TYPEBILLET ValeurBillets[NbBillets];
 };
 
 #endif	/* JEUCONSTANTES_H */
