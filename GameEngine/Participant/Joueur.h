@@ -35,6 +35,7 @@ public:
     bool AFaitDouble();
     void SetAFaitDouble(int de1, int de2);
     int GetNbTours();
+    int GetDerniersDes();
 
 private:
 	int _position;
@@ -43,6 +44,7 @@ private:
     int _tour;
     int _nombreCartesSortirPrison;
     int _nbDoubles;
+    int _derniersDes;
 };
 
 #endif	/* JOUEUR_H */

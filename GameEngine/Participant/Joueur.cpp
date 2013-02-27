@@ -139,3 +139,8 @@ int Joueur::GetNbTours()
 {
     return _tour;
 }
+
+int Joueur::GetDerniersDes()
+{
+    return _derniersDes;
+}

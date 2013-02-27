@@ -15,6 +15,8 @@ class ServicePublique : public Propriete
 public:
 	void Agir(Joueur *joueur);
     ACTION DoitPayer(Joueur *joueur);
+    int SommeAPayer();
+    std::string GetMessage();
 };
 
 #endif	/* SERVICEPUBLIQUE_H */

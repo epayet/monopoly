@@ -14,10 +14,6 @@ Propriete::Propriete(Plateau *plateau, int numero, std::string libelle, int vale
     _famille = NULL;
 }
 
-std::string Propriete::GetMessage()
-{
-    return "";
-}
 
 void Propriete::Hypothequer()
 {
@@ -49,16 +45,6 @@ ACTION Propriete::DoitPayer(Joueur *joueur)
     {
         return DOITPAYER;
     }
-}
-
-int Propriete::SommeAPayer()
-{
-   
-}
-
-void Propriete::Agir(Joueur* joueur, BilletManager* billetManager)
-{
-    
 }
 
 Joueur* Propriete::GetProprietaire()
