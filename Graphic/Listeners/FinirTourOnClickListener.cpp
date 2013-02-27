@@ -12,4 +12,5 @@ FinirTourOnClickListener::FinirTourOnClickListener(EVENTTYPE eventType, Button* 
 void FinirTourOnClickListener::Act(sf::Event)
 {
     _jeu->UpdateFinirTour();
+    _guiItem->SetCanDraw(false);
 }

@@ -42,7 +42,7 @@ public:
     void AfficherVoulezVousPayer(bool);
     void AfficherLancerDes(bool);
     void AfficherSommeAPayer(bool);
-    void AfficherActionsPossibles(bool);
+    void AfficherActionsPossibles(bool affichFaireMonnaie, bool affichFinirTour = true);
     void UpdateFinirTour();
     int GetSommeAPayer();
     int GetBilletACasser();

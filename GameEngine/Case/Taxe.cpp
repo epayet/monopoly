@@ -16,7 +16,7 @@ std::string Taxe::GetMessage()
     return "Vous devez payer la taxe " + _libelle + " : " + intToString(_sommeAPayer) + " €.";
 }
 
-ACTION Taxe::DoitPayer()
+ACTION Taxe::DoitPayer(Joueur*)
 {
     return DOITPAYER;
 }

@@ -237,7 +237,7 @@ void Jeu::UpdateJoueurActuel()
 void Jeu::SetSommeAPayer(int somme)
 {
     //Mock
-    somme = 536;
+//    somme = 536;
     
     _sommeAPayer = somme;
     _billetManagerARemplir->Vider();
@@ -248,10 +248,11 @@ void Jeu::UpdateSommeAPayer()
 {
     int somme;
     
-    if(_sommeAPayer != 0)
-        somme = _sommeAPayer;
-    else if(_billetACasser > 0)
+    if(_billetACasser > 0)
         somme = _billetACasser;
+    else if(_sommeAPayer != 0)
+        somme = _sommeAPayer;
+    
     
     std::string sommeBilletsString = intToString(_billetManagerARemplir->SommeBillets());
     std::string sommeString = intToString(somme);
@@ -307,10 +308,10 @@ void Jeu::AfficherSommeAPayer(bool affich)
     _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::ResetBilletsKey)->SetCanDraw(affich);
 }
 
-void Jeu::AfficherActionsPossibles(bool affich)
+void Jeu::AfficherActionsPossibles(bool affichFaireMonnaie, bool affichFinirTour)
 {
-    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::FaireMonnaieKey)->SetCanDraw(affich);
-    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::FinirTourKey)->SetCanDraw(affich);
+    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::FaireMonnaieKey)->SetCanDraw(affichFaireMonnaie);
+    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::FinirTourKey)->SetCanDraw(affichFinirTour);
 }
 
 int Jeu::GetSommeAPayer()
@@ -326,6 +327,7 @@ void Jeu::UpdateFinirTour()
     UpdateJoueurActuel();
     AfficherLancerDes(true);
     AfficherActionsPossibles(false);
+    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::CaseMessageKey)->SetCanDraw(false);
 }
 
 void Jeu::SetPositionJoueur(Joueur* joueur)

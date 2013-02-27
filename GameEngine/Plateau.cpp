@@ -3,6 +3,9 @@
 #include "Participant/Cagnotte.h"
 #include "Case/Case.h"
 #include "Case/Propriété/Propriete.h"
+#include "Case/Propriété/Domaine.h"
+#include "Case/Propriété/Gare.h"
+#include "Case/Taxe.h"
 
 Plateau::Plateau()
 {
@@ -12,14 +15,13 @@ Plateau::Plateau()
     for(int i=0; i<NBCASES; i++)
     {
         //Fakes cases
-        std::vector<int> prix;
-        prix.push_back(0);
-        prix.push_back(1);
-        prix.push_back(2);
-        prix.push_back(3);
-        prix.push_back(4);
-        prix.push_back(5);
-        //_cases.push_back(new Propriete(this, i, "fake case", 10, 10, prix));
+//        std::vector<int> prix;
+//        prix.push_back(0);
+//        prix.push_back(1);
+//        prix.push_back(2);
+//        prix.push_back(3);
+//        prix.push_back(4);
+        _cases.push_back(new Taxe(this, i, "fake case", 10));
     }
 }
 

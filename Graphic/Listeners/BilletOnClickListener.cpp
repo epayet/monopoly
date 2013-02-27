@@ -17,7 +17,25 @@ BilletOnClickListener::BilletOnClickListener(EVENTTYPE eventType, Image* imageBi
 
 void BilletOnClickListener::Act(sf::Event)
 {
-    if (_jeu->GetSommeAPayer() != 0)
+    if (_jeu->GetBilletACasser() == -1)
+    {
+        _jeu->GetBilletManagerARemplir()->Vider();
+        _jeu->SetBilletACasser(_jeu->GetBilletManagerARemplir()->GetBillet(_billet)->GetValeur());
+        _jeu->GetPlateau()->GetJoueurActuel()->GetBilletManager()->Enlever(1, _billet);
+    }
+    else if (_jeu->GetBilletACasser() > 0)
+    {
+        BilletManager* billetManagerJoueurActuel = _jeu->GetPlateau()->GetJoueurActuel()->GetBilletManager();
+
+        _jeu->GetBilletManagerARemplir()->Ajouter(1, _billet);
+        billetManagerJoueurActuel->Ajouter(1, _billet);
+        _jeu->UpdateSommeAPayer();
+
+        if (_jeu->GetBilletManagerARemplir()->VautSomme(_jeu->GetBilletACasser()))
+            _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::ValiderBilletsKey)->SetCanDraw(true);
+
+    }
+    else if (_jeu->GetSommeAPayer() != 0)
     {
         BilletManager* billetManagerJoueurActuel = _jeu->GetPlateau()->GetJoueurActuel()->GetBilletManager();
 
@@ -28,25 +46,6 @@ void BilletOnClickListener::Act(sf::Event)
             _jeu->UpdateSommeAPayer();
 
             if (_jeu->GetBilletManagerARemplir()->VautSomme(_jeu->GetSommeAPayer()))
-                _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::ValiderBilletsKey)->SetCanDraw(true);
-        }
-    }
-    else if(_jeu->GetBilletACasser() == -1)
-    {
-        _jeu->SetBilletACasser(_jeu->GetBilletManagerARemplir()->GetBillet(_billet)->GetValeur());
-        _jeu->GetPlateau()->GetJoueurActuel()->GetBilletManager()->Enlever(1, _billet);
-    }
-    else if(_jeu->GetBilletACasser() > 0)
-    {
-        BilletManager* billetManagerJoueurActuel = _jeu->GetPlateau()->GetJoueurActuel()->GetBilletManager();
-
-        if (billetManagerJoueurActuel->NombreBillets(_billet) > 0)
-        {
-            _jeu->GetBilletManagerARemplir()->Ajouter(1, _billet);
-            billetManagerJoueurActuel->Ajouter(1, _billet);
-            _jeu->UpdateSommeAPayer();
-
-            if (_jeu->GetBilletManagerARemplir()->VautSomme(_jeu->GetBilletACasser()))
                 _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::ValiderBilletsKey)->SetCanDraw(true);
         }
     }

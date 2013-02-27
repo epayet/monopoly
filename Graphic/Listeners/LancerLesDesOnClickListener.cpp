@@ -73,7 +73,7 @@ void LancerLesDesOnClickListener::Act(sf::Event)
         caseActuelle->Agir(joueurActuel);
     }
     
-    _jeu->AfficherActionsPossibles(true);
+    _jeu->AfficherActionsPossibles(true, false);
 }
 
 void LancerLesDesOnClickListener::SetImageDe(std::string deKey, int de)
