@@ -4,6 +4,7 @@
 #include "Case/Case.h"
 #include "Case/Propriété/Propriete.h"
 #include "lib/tinyxml.h"
+#include "util.h"
 
 using namespace std;
 
@@ -73,21 +74,21 @@ Case* Plateau::GetCase(int numero)
     return _cases[numero];
 }
 
-void lireXml(){
+void Plateau::LireXml(){
     TiXmlDocument doc("config.xml");
     doc.LoadFile();
     
     TiXmlHandle handle(&doc);
     TiXmlElement* elem = handle.FirstChildElement().Element();
     while(elem){
-        if(elem->FirstChildElement()="Proprietes"){
+        if(elem->FirstChildElement()=="Proprietes"){
             vector<Propriete*> proprietes;
             while(elem->FirstChildElement()->FirstChildElement()->FirstChildElement()){
                 int i = 1;
-                if(elem->FirstChildElement()->FirstChildElement()->FirstChildElement()="Domaine"){
+                if(elem->FirstChildElement()->FirstChildElement()->FirstChildElement()=="Domaine"){
                      vector<int> prixLoyer;
-                     for(int j=0, j<6, j++){
-                         prixLoyer->push_back(elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("p"+j));
+                     for(int j=0; j<6; j++){
+                         prixLoyer.push_back(elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("p" + intToString(j)));
                      }
                                
                     _cases.push_back(new Propriete(
@@ -106,9 +107,9 @@ void lireXml(){
                         elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("achat"), 
                         prixLoyer));
                 }
-                else if(elem->FirstChildElement()->FirstChildElement()->FirstChildElement()="dungeon"){
+                else if(elem->FirstChildElement()->FirstChildElement()->FirstChildElement()=="dungeon"){
                     vector<int> prixLoyer;
-                     for(int j=0, j<3, j++){
+                     for(int j=0; j<3; j++){
                          prixLoyer->push_back(elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("p"+j));
                      }
                                
@@ -130,7 +131,7 @@ void lireXml(){
                 }
                 else{
                     vector<int> prixLoyer;
-                     for(int j=0, j<2, j++){
+                     for(int j=0; j<2; j++){
                          prixLoyer->push_back(elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("p"+j));
                      }
                                
@@ -159,14 +160,14 @@ void lireXml(){
                  elem->FirstChildElement()->FirstChildElement()->Attribute("prixMaisons"));              
             //need explications sur vector propriétés dans famille!
         }
-        else if(elem->FirstChildElement()="Cartes"){
+        else if(elem->FirstChildElement()=="Cartes"){
             
         }
         else{
-            _cases.push_back(new Case(
-                        this,
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("numCase"), 
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("type")); 
+//            _cases.push_back(new Case(
+//                        this,
+//                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("numCase"), 
+//                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("type")); 
         }
     }
 }

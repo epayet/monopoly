@@ -24,25 +24,24 @@ class Cagnotte;
 class Banque;
 class Carte;
 
-class Plateau
-{
+class Plateau {
 public:
-	Plateau();
-	~Plateau();
-	void AddJoueur(std::string nomJoueur);
+    Plateau();
+    ~Plateau();
+    void AddJoueur(std::string nomJoueur);
     Joueur* GetJoueurActuel();
     vector<Joueur*> GetJoueurs();
     void FinirTour();
     Case* GetCase(int);
     Cagnotte* GetCagnotte();
-    void lireXml();
-    
-    
+    void LireXml();
+
+
 
 private:
-	vector<Case*> _cases;
-	vector<Joueur*> _joueurs;
-	Cagnotte *_cagnotte;
+    vector<Case*> _cases;
+    vector<Joueur*> _joueurs;
+    Cagnotte *_cagnotte;
     int _tour;
 };
 
