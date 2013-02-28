@@ -2,6 +2,11 @@
 #include "GameEngine/Plateau.h"
 #include "../../../util.h"
 
+ServicePublique::ServicePublique(Plateau* plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer, Famille* famille) : Propriete(plateau, numero, libelle, valeurHypotheque, prixAchat, prixLoyer, famille)
+{
+    
+}
+
 void ServicePublique::Agir(Joueur *joueur)
 {
 
@@ -30,5 +35,5 @@ int ServicePublique::SommeAPayer()
 std::string ServicePublique::GetMessage()
 {
     if (_proprietaire != _plateau->GetJoueurActuel())
-        return "Vous êtes chez " + _proprietaire->GetNom() + ", vous lui devez : " + intToString(SommeAPayer()) + " €.";
+        return "Vous êtes chez " + _proprietaire->GetNom() + ", vous lui devez : " + intToString(SommeAPayer()) + " euros.";
 }

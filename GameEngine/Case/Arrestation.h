@@ -15,6 +15,7 @@ class Prison;
 class Arrestation : public Case
 {
 public:
+    Arrestation(Plateau *plateau, int numero, std::string libelle);
 	void Agir(Joueur *joueur);
     std::string GetMessage();
     //int SommeAPayer();

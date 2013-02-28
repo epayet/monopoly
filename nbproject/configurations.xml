@@ -10,6 +10,10 @@
           <itemPath>GameEngine/Billet/BilletManager.h</itemPath>
         </logicalFolder>
         <logicalFolder name="Case" displayName="Case" projectFiles="true">
+          <logicalFolder name="Carte" displayName="Carte" projectFiles="true">
+            <itemPath>GameEngine/Case/Carte/Carte.h</itemPath>
+            <itemPath>GameEngine/Case/Carte/TypeCarte.h</itemPath>
+          </logicalFolder>
           <logicalFolder name="Propriété" displayName="Propriété" projectFiles="true">
             <itemPath>GameEngine/Case/Case.h</itemPath>
             <itemPath>GameEngine/Case/Propriété/Domaine.h</itemPath>
@@ -203,7 +207,7 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>GameEngine</Elem>
+    <Elem>.</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -262,6 +266,10 @@
       <item path="GameEngine/Case/Arrestation.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="GameEngine/Case/Arrestation.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/Carte.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/TypeCarte.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="GameEngine/Case/Case.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -736,6 +744,10 @@
       <item path="GameEngine/Case/Arrestation.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="GameEngine/Case/Arrestation.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/Carte.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/TypeCarte.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="GameEngine/Case/Case.cpp" ex="false" tool="1" flavor2="0">
       </item>
