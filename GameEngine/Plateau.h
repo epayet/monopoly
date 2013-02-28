@@ -29,7 +29,7 @@ public:
 	~Plateau();
 	void AjouterJoueur(std::string nomJoueur);
     Joueur* GetJoueurActuel();
-    vector<Joueur*> GetJoueurs();
+    std::vector<Joueur*> GetJoueurs();
     void FinirTour();
     Case* GetCase(int);
     Cagnotte* GetCagnotte();
@@ -39,8 +39,8 @@ public:
     std::queue<Carte*> GetPaquetCartes(TYPECARTE typeCarte);
 
 private:
-    vector<Case*> _cases;
-    vector<Joueur*> _joueurs;
+    std::vector<Case*> _cases;
+    std::vector<Joueur*> _joueurs;
     Cagnotte *_cagnotte;
     int _tour;
     std::queue<Carte*> _cartesChance;
