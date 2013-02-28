@@ -1,125 +1,126 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Proprietes type = "domaine">
-    <Famille couleur = "marron" prixMaisons = '50'>
-        <Domaine nom = "Cross roads" numCase = '1' achat = '60' p0 = '2' p1 = '10' p2 = '30' p3 = '90' p4 = '160' p5 = '250' hypotheque = '30'/>
-        <Domaine nom = "Goldshire" numCase = '3' achat = '60' p0 = '4' p1 = '20' p2 = '60' p3 = '180' p4 = '320' p5 = '450' hypotheque = '30'/>
-    </Famille>
-    <Famille couleur = "bleu" prixMaisons = '50'>
-        <Domaine nom = "Auberdine" numCase = '6' achat = '100' p0 = '6' p1 = '30' p2 = '90' p3 = '270' p4 = '400' p5 = '550' hypotheque = '50'/>
-        <Domaine nom = "Sen'jin Village" numCase = '8' achat = '100' p0 = '6' p1 = '30' p2 = '90' p3 = '270' p4 = '400' p5 = '550' hypotheque = '50'/>
-        <Domaine nom = "Amber Mill" numCase = '9' achat = '120' p0 = '8' p1 = '40' p2 = '100' p3 = '300' p4 = '450' p5 = '600' hypotheque = '60'/>
-    </Famille>
-    <Famille couleur = "rose" prixMaisons = '100'>
-        <Domaine nom = "Nighthaven" numCase = '11' achat = '140' p0 = '10' p1 = '50' p2 = '150' p3 = '450' p4 = '625' p5 = '750' hypotheque = '70'/>
-        <Domaine nom = "Freewind Post" numCase = '13' achat = '140' p0 = '10' p1 = '50' p2 = '150' p3 = '450' p4 = '625' p5 = '750' hypotheque = '70'/>
-        <Domaine nom = "Astranaar" numCase = '14' achat = '160' p0 = '12' p1 = '60' p2 = '180' p3 = '500' p4 = '700' p5 = '900' hypotheque = '80'/>
-    </Famille>
-    <Famille couleur = "orange" prixMaisons = '100'>
-        <Domaine nom = "Booty Bay" numCase = '16' achat = '180' p0 = '14' p1 = '70' p2 = '200' p3 = '550' p4 = '750' p5 = '950' hypotheque = '90'/>
-        <Domaine nom = "Tarren Mill" numCase = '18' achat = '180' p0 = '14' p1 = '70' p2 = '200' p3 = '550' p4 = '750' p5 = '950' hypotheque = '90'/>
-        <Domaine nom = "Southshore" numCase = '19' achat = '200' p0 = '16' p1 = '80' p2 = '220' p3 = '600' p4 = '800' p5 = '1000' hypotheque = '100'/>
-    </Famille>
-    <Famille couleur = "rouge" prixMaisons = '150'>
-        <Domaine nom = "Gadgetzan" numCase = '21' achat = '220' p0 = '18' p1 = '90' p2 = '250' p3 = '700' p4 = '875' p5 = '1050' hypotheque = '110'/>
-        <Domaine nom = "Camp Mojache" numCase = '23' achat = '220' p0 = '18' p1 = '90' p2 = '250' p3 = '700' p4 = '875' p5 = '1050' hypotheque = '110'/>
-        <Domaine nom = "Aerie Peak" numCase = '24' achat = '240' p0 = '20' p1 = '100' p2 = '300' p3 = '750' p4 = '925' p5 = '1100' hypotheque = '120'/>
-    </Famille>
-    <Famille couleur = "jaune" prixMaisons = '150'>
-        <Domaine nom = "Everlook" numCase = '26' achat = '260' p0 = '22' p1 = '110' p2 = '330' p3 = '800' p4 = '975' p5 = '1150' hypotheque = '130'/>
-        <Domaine nom = "Light's hope chapel" numCase = '27' achat = '260'  p0 = '22' p1 = '110' p2 = '330' p3 = '800' p4 = '975' p5 = '1150' hypotheque = '130'/>
-        <Domaine nom = "Stormwind city" numCase = '29' achat = '280' p0 = '24' p1 = '120' p2 = '360' p3 = '850' p4 = '1025' p5 = '1200' hypotheque = '140'/>
-    </Famille>
-    <Famille couleur = "vert" prixMaisons = '200'>
-        <Domaine nom = "Thunderbluff" numCase = '31' achat = '300' p0 = '26' p1 = '130' p2 = '390' p3 = '900' p4 = '1100' p5 = '1275' hypotheque = '150'/>
-        <Domaine nom = "Iron Forge" numCase = '32' achat = '300' p0 = '26' p1 = '130' p2 = '390' p3 = '900' p4 = '1100' p5 = '1275' hypotheque = '150'/>
-        <Domaine nom = "Dalaran" numCase = '34' achat = '320' p0 = '28' p1 = '150' p2 = '450' p3 = '1000' p4 = '1200' p5 = '1400' hypotheque = '160'/>
-    </Famille>
-    <Famille couleur = "violet" prixMaisons = '200'>
-        <Domaine nom = "Orgrimmar" numCase = '37' achat = '350' p0 = '35' p1 = '175' p2 = '500' p3 = '1100' p4 = '1300' p5 = '1500' hypotheque = '175'/>
-        <Domaine nom = "Darnassus" numCase = '39' achat = '400' p0 = '50' p1 = '200' p2 = '600' p3 = '1400' p4 = '1700' p5 = '2000' hypotheque = '200'/>
-    </Famille>
-</Proprietes>
-<Proprietes type = "dungeon">
-    <Famille couleur = "Blanc">
-        <Gare nom = "Deadmine dungeon" numCase = '5' achat = '200' p0 = '25' p1 = '50' p2 = '100' p3 = '200' hypotheque = '100'/>
-        <Gare nom = "Scholomence dungeon" numCase = '15' achat = '200' p0 = '25' p1 = '50' p2 = '100' p3 = '200' hypotheque = '100'/>
-        <Gare nom = "Molten Core dungeon" numCase = '25' achat = '200' p0 = '25' p1 = '50' p2 = '100' p3 = '200' hypotheque = '100'/>
-        <Gare nom = "Naxxramas dungeon" numCase = '35' achat = '200' p0 = '25' p1 = '50' p2 = '100' p3 = '200' hypotheque = '100'/>
-    </Famille>
-</Proprietes>
-<Proprietes type = "Services">
-    <Famille couleur = "Blanc">
-        <Service nom = "Postal service" numCase = '12' achat = '150' p0 = '4' p1 = '10' hypotheque = '75'/>
-        <Service nom = "Barber shop" numCase = '28' achat = '150' p0 = '4' p1 = '10' hypotheque = '75'/>
-    </Famille>
-</Proprietes>
-<Cartes>
-    <Type type = "Communaute">
-        <Action action = "paye">
-            <Carte libelle = "Payez une contravention de 10 Or ou bien tirez une carte Chance." somme = '10'/>
-            <Carte libelle = "Payez votre Police d'assurance 50 Or.." somme = '50'/>
-            <Carte libelle = "Payez à l'hôpital 100 Or." somme = '100'/>
-            <Carte libelle = "Payez la note du Médecin 50 Or." somme = '50'/>
-        </Action>
-        <Action action = "deplacement">
-            <Carte libelle = "Retournez à Cross roads." numCase = '1' depart = '0"/>
-            <Carte libelle = "Avancez jusqu'à la case départ." numCase = '0' depart = '1"/>
-        </Action>
-        <Action action = "estPayeBanque">
-            <Carte libelle = "Vous avez gagné le deuxième prix de beauté. Recevez 10 Or." somme = '10'/>
-            <Carte libelle = "Erreur de la banque en votre faveur. Recevez 200 Or." somme = '200'/>
-            <Carte libelle = "Vous héritez de 100 Or." somme = '100'/>
-            <Carte libelle = "Vous avez remporté le grand prix de l'Warcraftvision de la chanson. Recevez 25 Or." somme = '25'/>
-            <Carte libelle = "Vous recevez une subvention de Baie-du-butin de 20 Or." somme = '20'/>
-            <Carte libelle = "Le Roi de hurlevent Varian Wrynn statue en votre faveur. Recevez 50 Or." somme = '50'/>
-            <Carte libelle = "On vous accorde une bourse naine. Recevez 100 Or." somme = '100'/>
-        </Action>
-        <Action action = "anniversaire">
-            <Carte libelle = "C'est votre anniversaire : Chaque joueur vous verse 10 Or." somme = '10'/>
-        </Action>
-        <Action action = "sortirPrison">
-            <Carte libelle = "Vous êtes libéré de prison. Cette carte peut être conservée jusqu'à ce qu'elle soit utilisée ou vendue." />
-        </Action>
-        <Action action = "allerPrison">
-            <Carte libelle = "Interpol vous a rattrapé. Avancez tout droit en prison. Ne passez pas par la case départ. Ne recevez pas 200 Or." numCase = '10'/>
-        </Action>
-    </Type>
-     <Type type = "Chance">
-        <Action action = "paye">
-            <Carte libelle = "Amande pour ivresse." somme = '20'/>
-            <Carte libelle = "Payez pour frais de scolarité." somme = '150'/>
-            <Carte libelle = "Amande pour excès de vitesse." somme = '15'/>
-        </Action>
-        <Action action = "payeConstructions">
-            <Carte libelle = "Vous êtes imposé pour les réparations de voiries à raison de :" prixMaison = '40' prixHotel = '115'/>
-            <Carte libelle = "Faites des réparations dans toutes vos propriétés." prixMaison = '25' prixHotel = '100'/>
-        </Action>
-        <Action action = "deplacement">
-            <Carte libelle = "Reculez de trois cases." numCase = '-3' depart = '0"/>
-            <Carte libelle = "Avancez jusqu'à la case départ." numCase = '0' depart = '1"/>
-            <Carte libelle = "Rendez-vous à Darnassus." numCase = '39' depart = '0"/>
-            <Carte libelle = "Rendez-vous au Donjon de Scholomance. Si vous passez par la case départ recevez 200 Or." numCase = '15' depart = '1"/>
-            <Carte libelle = "Avancez jusqu'à Aerie Peak. Si vous passez par la case départ recevez 200 Or." numCase = '24' depart = '1"/>
-            <Carte libelle = "Avancez jusqu'à Nighthaven. Si vous passez par la case départ recevez 200 Or." numCase = '11' depart = '1"/>
-        </Action>
-        <Action action = "estPayeBanque">
-            <Carte libelle = "Vous avez gagné au loto. Recevez 100 Or." somme = '100'/>
-            <Carte libelle = "Votre immeuble et votre prêt rapportent. Vous devez toucher 150 Or." somme = '150'/>
-            <Carte libelle = "La banque vous verse un dividende de 50 Or." somme = '50'/>
-        </Action>
-        <Action action = "sortirPrison">
-            <Carte libelle = "Vous êtes libéré de prison. Cette carte peut être conservée jusqu'à ce qu'elle soit utilisée ou vendue." />
-        </Action>
-        <Action action = "allerPrison">
-            <Carte libelle = "Interpol vous a rattrapé. Avancez tout droit en prison. Ne passez pas par la case départ. Ne recevez pas 200 Or." numCase = '10'/>
-        </Action>
-    </Type>
-</Cartes>
-<Cases>
-    <Case type = "depart" numCase = '' somme = '200'/>
-    <Case type = "parc" numCase = ''/>
-    <Case type = "arrestation" numCase = ''/>
-    <Case type = "prison" numCase = '10'/>
-    <Case type = "taxe" libelle = "Visit Trainer" somme = '200'/>
-    <Case type = "taxe" libelle = "Repaire Gear" somme = '200'/>
-</Cases>
+<config>
+    <Proprietes type = "domaine">
+        <Famille couleur = "marron" prixMaisons = '50'>
+            <Domaine nom = "Cross roads" numCase = '1' achat = '60' p0 = '2' p1 = '10' p2 = '30' p3 = '90' p4 = '160' p5 = '250' hypotheque = '30'/>
+            <Domaine nom = "Goldshire" numCase = '3' achat = '60' p0 = '4' p1 = '20' p2 = '60' p3 = '180' p4 = '320' p5 = '450' hypotheque = '30'/>
+        </Famille>
+        <Famille couleur = "bleu" prixMaisons = '50'>
+            <Domaine nom = "Auberdine" numCase = '6' achat = '100' p0 = '6' p1 = '30' p2 = '90' p3 = '270' p4 = '400' p5 = '550' hypotheque = '50'/>
+            <Domaine nom = "Sen'jin Village" numCase = '8' achat = '100' p0 = '6' p1 = '30' p2 = '90' p3 = '270' p4 = '400' p5 = '550' hypotheque = '50'/>
+            <Domaine nom = "Amber Mill" numCase = '9' achat = '120' p0 = '8' p1 = '40' p2 = '100' p3 = '300' p4 = '450' p5 = '600' hypotheque = '60'/>
+        </Famille>
+        <Famille couleur = "rose" prixMaisons = '100'>
+            <Domaine nom = "Nighthaven" numCase = '11' achat = '140' p0 = '10' p1 = '50' p2 = '150' p3 = '450' p4 = '625' p5 = '750' hypotheque = '70'/>
+            <Domaine nom = "Freewind Post" numCase = '13' achat = '140' p0 = '10' p1 = '50' p2 = '150' p3 = '450' p4 = '625' p5 = '750' hypotheque = '70'/>
+            <Domaine nom = "Astranaar" numCase = '14' achat = '160' p0 = '12' p1 = '60' p2 = '180' p3 = '500' p4 = '700' p5 = '900' hypotheque = '80'/>
+        </Famille>
+        <Famille couleur = "orange" prixMaisons = '100'>
+            <Domaine nom = "Booty Bay" numCase = '16' achat = '180' p0 = '14' p1 = '70' p2 = '200' p3 = '550' p4 = '750' p5 = '950' hypotheque = '90'/>
+            <Domaine nom = "Tarren Mill" numCase = '18' achat = '180' p0 = '14' p1 = '70' p2 = '200' p3 = '550' p4 = '750' p5 = '950' hypotheque = '90'/>
+            <Domaine nom = "Southshore" numCase = '19' achat = '200' p0 = '16' p1 = '80' p2 = '220' p3 = '600' p4 = '800' p5 = '1000' hypotheque = '100'/>
+        </Famille>
+        <Famille couleur = "rouge" prixMaisons = '150'>
+            <Domaine nom = "Gadgetzan" numCase = '21' achat = '220' p0 = '18' p1 = '90' p2 = '250' p3 = '700' p4 = '875' p5 = '1050' hypotheque = '110'/>
+            <Domaine nom = "Camp Mojache" numCase = '23' achat = '220' p0 = '18' p1 = '90' p2 = '250' p3 = '700' p4 = '875' p5 = '1050' hypotheque = '110'/>
+            <Domaine nom = "Aerie Peak" numCase = '24' achat = '240' p0 = '20' p1 = '100' p2 = '300' p3 = '750' p4 = '925' p5 = '1100' hypotheque = '120'/>
+        </Famille>
+        <Famille couleur = "jaune" prixMaisons = '150'>
+            <Domaine nom = "Everlook" numCase = '26' achat = '260' p0 = '22' p1 = '110' p2 = '330' p3 = '800' p4 = '975' p5 = '1150' hypotheque = '130'/>
+            <Domaine nom = "Light's hope chapel" numCase = '27' achat = '260'  p0 = '22' p1 = '110' p2 = '330' p3 = '800' p4 = '975' p5 = '1150' hypotheque = '130'/>
+            <Domaine nom = "Stormwind city" numCase = '29' achat = '280' p0 = '24' p1 = '120' p2 = '360' p3 = '850' p4 = '1025' p5 = '1200' hypotheque = '140'/>
+        </Famille>
+        <Famille couleur = "vert" prixMaisons = '200'>
+            <Domaine nom = "Thunderbluff" numCase = '31' achat = '300' p0 = '26' p1 = '130' p2 = '390' p3 = '900' p4 = '1100' p5 = '1275' hypotheque = '150'/>
+            <Domaine nom = "Iron Forge" numCase = '32' achat = '300' p0 = '26' p1 = '130' p2 = '390' p3 = '900' p4 = '1100' p5 = '1275' hypotheque = '150'/>
+            <Domaine nom = "Dalaran" numCase = '34' achat = '320' p0 = '28' p1 = '150' p2 = '450' p3 = '1000' p4 = '1200' p5 = '1400' hypotheque = '160'/>
+        </Famille>
+        <Famille couleur = "violet" prixMaisons = '200'>
+            <Domaine nom = "Orgrimmar" numCase = '37' achat = '350' p0 = '35' p1 = '175' p2 = '500' p3 = '1100' p4 = '1300' p5 = '1500' hypotheque = '175'/>
+            <Domaine nom = "Darnassus" numCase = '39' achat = '400' p0 = '50' p1 = '200' p2 = '600' p3 = '1400' p4 = '1700' p5 = '2000' hypotheque = '200'/>
+        </Famille>
+    </Proprietes>
+    <Proprietes type = "dungeon">
+        <Famille couleur = "Blanc">
+            <Gare nom = "Deadmine dungeon" numCase = '5' achat = '200' p0 = '25' p1 = '50' p2 = '100' p3 = '200' hypotheque = '100'/>
+            <Gare nom = "Scholomence dungeon" numCase = '15' achat = '200' p0 = '25' p1 = '50' p2 = '100' p3 = '200' hypotheque = '100'/>
+            <Gare nom = "Molten Core dungeon" numCase = '25' achat = '200' p0 = '25' p1 = '50' p2 = '100' p3 = '200' hypotheque = '100'/>
+            <Gare nom = "Naxxramas dungeon" numCase = '35' achat = '200' p0 = '25' p1 = '50' p2 = '100' p3 = '200' hypotheque = '100'/>
+        </Famille>
+    </Proprietes>
+    <Proprietes type = "Services">
+        <Famille couleur = "Blanc">
+            <Service nom = "Postal service" numCase = '12' achat = '150' p0 = '4' p1 = '10' hypotheque = '75'/>
+            <Service nom = "Barber shop" numCase = '28' achat = '150' p0 = '4' p1 = '10' hypotheque = '75'/>
+        </Famille>
+    </Proprietes>
+    <Cartes>
+        <Type type = "Communaute">
+            <Action action = "paye">
+                <Carte libelle = "Payez une contravention de 10 Or ou bien tirez une carte Chance." somme = '10'/>
+                <Carte libelle = "Payez votre Police d'assurance 50 Or.." somme = '50'/>
+                <Carte libelle = "Payez à l'hôpital 100 Or." somme = '100'/>
+                <Carte libelle = "Payez la note du Médecin 50 Or." somme = '50'/>
+            </Action>
+            <Action action = "deplacement">
+                <Carte libelle = "Retournez à Cross roads." numCase = '1' depart = '0'/>
+                <Carte libelle = "Avancez jusqu'à la case départ." numCase = '0' depart = '1'/>
+            </Action>
+            <Action action = "estPayeBanque">
+                <Carte libelle = "Vous avez gagné le deuxième prix de beauté. Recevez 10 Or." somme = '10'/>
+                <Carte libelle = "Erreur de la banque en votre faveur. Recevez 200 Or." somme = '200'/>
+                <Carte libelle = "Vous héritez de 100 Or." somme = '100'/>
+                <Carte libelle = "Vous avez remporté le grand prix de l'Warcraftvision de la chanson. Recevez 25 Or." somme = '25'/>
+                <Carte libelle = "Vous recevez une subvention de Baie-du-butin de 20 Or." somme = '20'/>
+                <Carte libelle = "Le Roi de hurlevent Varian Wrynn statue en votre faveur. Recevez 50 Or." somme = '50'/>
+                <Carte libelle = "On vous accorde une bourse naine. Recevez 100 Or." somme = '100'/>
+            </Action>
+            <Action action = "anniversaire">
+                <Carte libelle = "C'est votre anniversaire : Chaque joueur vous verse 10 Or." somme = '10'/>
+            </Action>
+            <Action action = "sortirPrison">
+                <Carte libelle = "Vous êtes libéré de prison. Cette carte peut être conservée jusqu'à ce qu'elle soit utilisée ou vendue." />
+            </Action>
+            <Action action = "allerPrison">
+                <Carte libelle = "Interpol vous a rattrapé. Avancez tout droit en prison. Ne passez pas par la case départ. Ne recevez pas 200 Or." numCase = '10'/>
+            </Action>
+        </Type>
+         <Type type = "Chance">
+            <Action action = "paye">
+                <Carte libelle = "Amande pour ivresse." somme = '20'/>
+                <Carte libelle = "Payez pour frais de scolarité." somme = '150'/>
+                <Carte libelle = "Amande pour excès de vitesse." somme = '15'/>
+            </Action>
+            <Action action = "payeConstructions">
+                <Carte libelle = "Vous êtes imposé pour les réparations de voiries à raison de :" prixMaison = '40' prixHotel = '115'/>
+                <Carte libelle = "Faites des réparations dans toutes vos propriétés." prixMaison = '25' prixHotel = '100'/>
+            </Action>
+            <Action action = "deplacement">
+                <Carte libelle = "Reculez de trois cases." numCase = '-3' depart = '0'/>
+                <Carte libelle = "Avancez jusqu'à la case départ." numCase = '0' depart = '1'/>
+                <Carte libelle = "Rendez-vous à Darnassus." numCase = '39' depart = '0'/>
+                <Carte libelle = "Rendez-vous au Donjon de Scholomance. Si vous passez par la case départ recevez 200 Or." numCase = '15' depart = '1'/>
+                <Carte libelle = "Avancez jusqu'à Aerie Peak. Si vous passez par la case départ recevez 200 Or." numCase = '24' depart = '1'/>
+                <Carte libelle = "Avancez jusqu'à Nighthaven. Si vous passez par la case départ recevez 200 Or." numCase = '11' depart = '1'/>
+            </Action>
+            <Action action = "estPayeBanque">
+                <Carte libelle = "Vous avez gagné au loto. Recevez 100 Or." somme = '100'/>
+                <Carte libelle = "Votre immeuble et votre prêt rapportent. Vous devez toucher 150 Or." somme = '150'/>
+                <Carte libelle = "La banque vous verse un dividende de 50 Or." somme = '50'/>
+            </Action>
+            <Action action = "sortirPrison">
+                <Carte libelle = "Vous êtes libéré de prison. Cette carte peut être conservée jusqu'à ce qu'elle soit utilisée ou vendue." />
+            </Action>
+            <Action action = "allerPrison">
+                <Carte libelle = "Interpol vous a rattrapé. Avancez tout droit en prison. Ne passez pas par la case départ. Ne recevez pas 200 Or." numCase = '10'/>
+            </Action>
+        </Type>
+    </Cartes>
+    <Cases>
+        <Case type = "depart" numCase = '' somme = '200'/>
+        <Case type = "parc" numCase = ''/>
+        <Case type = "arrestation" numCase = ''/>
+        <Case type = "prison" numCase = '10'/>
+        <Case type = "taxe" libelle = "Visit Trainer" somme = '200'/>
+        <Case type = "taxe" libelle = "Repaire Gear" somme = '200'/>
+    </Cases>
+</config>

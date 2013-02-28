@@ -79,7 +79,6 @@ void Plateau::LireXml(){
     doc.LoadFile();    
     TiXmlHandle handle(&doc);    
     TiXmlElement* propriete = handle.FirstChildElement().Element();
-    TiXmlElement* famille = handle.FirstChildElement().FirstChildElement().Element();
     TiXmlElement* domaine = handle.FirstChildElement().FirstChildElement().FirstChildElement().Element();
     
     while(propriete){
@@ -161,7 +160,7 @@ void Plateau::LireXml(){
                  proprietes, 
                  propriete->FirstChildElement()->Attribute("prixMaisons"));
         }
-        else if(handle.FirstChildElement("Cartes")){
+        else if(handle.FirstChildElement("Cartes").Element()){
             
         }
         else{
