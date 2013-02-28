@@ -11,6 +11,7 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>GameEngine</sourceRootElem>
+                <sourceRootElem>lib</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

@@ -76,98 +76,100 @@ Case* Plateau::GetCase(int numero)
 
 void Plateau::LireXml(){
     TiXmlDocument doc("config.xml");
-    doc.LoadFile();
+    doc.LoadFile();    
+    TiXmlHandle handle(&doc);    
+    TiXmlElement* propriete = handle.FirstChildElement().Element();
+    TiXmlElement* famille = handle.FirstChildElement().FirstChildElement().Element();
+    TiXmlElement* domaine = handle.FirstChildElement().FirstChildElement().FirstChildElement().Element();
     
-    TiXmlHandle handle(&doc);
-    TiXmlElement* elem = handle.FirstChildElement().Element();
-    while(elem){
-        if(elem->FirstChildElement()=="Proprietes"){
+    while(propriete){
+        if(handle.FirstChildElement("Proprietes").Element()){
             vector<Propriete*> proprietes;
-            while(elem->FirstChildElement()->FirstChildElement()->FirstChildElement()){
+            while(handle.FirstChildElement("Proprietes").Element()){
                 int i = 1;
-                if(elem->FirstChildElement()->FirstChildElement()->FirstChildElement()=="Domaine"){
+                if(handle.FirstChildElement().FirstChildElement().FirstChildElement("Domaine").Element()){
                      vector<int> prixLoyer;
                      for(int j=0; j<6; j++){
-                         prixLoyer.push_back(elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("p" + intToString(j)));
+                         prixLoyer.push_back(domaine->Attribute("p" + intToString(j)));
                      }
                                
                     _cases.push_back(new Propriete(
                         this,
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("numCase"), 
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("nom"), 
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("hypotheque"), 
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("achat"), 
+                        domaine->Attribute("numCase"), 
+                        domaine->Attribute("nom"), 
+                        domaine->Attribute("hypotheque"), 
+                        domaine->Attribute("achat"), 
                         prixLoyer));
                     
                     proprietes.push_back(new Propriete(
                         this,
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("numCase"), 
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("nom"), 
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("hypotheque"), 
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("achat"), 
+                        domaine->Attribute("numCase"), 
+                        domaine->Attribute("nom"), 
+                        domaine->Attribute("hypotheque"), 
+                        domaine->Attribute("achat"), 
                         prixLoyer));
+                    
                 }
-                else if(elem->FirstChildElement()->FirstChildElement()->FirstChildElement()=="dungeon"){
-                    vector<int> prixLoyer;
+                else if(propriete->Attribute("type")=="dungeon"){
+                     vector<int> prixLoyer;
                      for(int j=0; j<3; j++){
-                         prixLoyer->push_back(elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("p"+j));
+                         prixLoyer.push_back(domaine->Attribute("p" + intToString(j)));
                      }
                                
                     _cases.push_back(new Propriete(
                         this,
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("numCase"), 
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("nom"), 
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("hypotheque"), 
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("achat"), 
+                        domaine->Attribute("numCase"), 
+                        domaine->Attribute("nom"), 
+                        domaine->Attribute("hypotheque"), 
+                        domaine->Attribute("achat"), 
                         prixLoyer));
                     
                     proprietes.push_back(new Propriete(
                         this,
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("numCase"), 
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("nom"), 
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("hypotheque"), 
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("achat"), 
+                        domaine->Attribute("numCase"), 
+                        domaine->Attribute("nom"), 
+                        domaine->Attribute("hypotheque"), 
+                        domaine->Attribute("achat"), 
                         prixLoyer));
                 }
                 else{
                     vector<int> prixLoyer;
                      for(int j=0; j<2; j++){
-                         prixLoyer->push_back(elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("p"+j));
+                         prixLoyer.push_back(domaine->Attribute("p" + intToString(j)));
                      }
                                
                     _cases.push_back(new Propriete(
                         this,
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("numCase"), 
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("nom"), 
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("hypotheque"), 
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("achat"), 
+                        domaine->Attribute("nom"), 
+                        domaine->Attribute("hypotheque"), 
+                        domaine->Attribute("achat"), 
                         prixLoyer));
                     
                     proprietes.push_back(new Propriete(
                         this,
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("numCase"), 
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("nom"), 
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("hypotheque"), 
-                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("achat"), 
+                        domaine->Attribute("numCase"), 
+                        domaine->Attribute("nom"), 
+                        domaine->Attribute("hypotheque"), 
+                        domaine->Attribute("achat"), 
                         prixLoyer));
                 }
                 i++;
-                elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->NextSibling();
+                domaine->NextSiblingElement();
             }
-            Famille* famille = new Famille(
-                 elem->FirstChildElement()->FirstChildElement()->Attribute("couleur"), 
+            Famille* fam = new Famille(
+                 propriete->FirstChildElement()->Attribute("couleur"), 
                  proprietes, 
-                 elem->FirstChildElement()->FirstChildElement()->Attribute("prixMaisons"));              
-            //need explications sur vector propriétés dans famille!
+                 propriete->FirstChildElement()->Attribute("prixMaisons"));
         }
-        else if(elem->FirstChildElement()=="Cartes"){
+        else if(handle.FirstChildElement("Cartes")){
             
         }
         else{
-//            _cases.push_back(new Case(
-//                        this,
-//                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("numCase"), 
-//                        elem->FirstChildElement()->FirstChildElement()->FirstChildElement()->Attribute("type")); 
+            _cases.push_back(new Taxe(
+                        this,
+                        domaine->Attribute("numCase"), 
+                        domaine->Attribute("type"),
+                        domaine->Attribute("somme"))); 
         }
     }
 }
