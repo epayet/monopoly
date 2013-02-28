@@ -25,6 +25,8 @@
 #include "Listeners/FaireMonnaieOnClickListener.h"
 #include "Listeners/AfficherCacherProprietesOnClickListener.h"
 #include "Listeners/FinirTourOnClickListener.h"
+#include "GuiItems/Appartenance.h"
+#include "../GameEngine/Participant/Cagnotte.h"
 
 Jeu::Jeu()
 {
@@ -171,7 +173,12 @@ Jeu::Jeu()
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::FinirTourKey, finirTour);
     finirTour->SetCanDraw(false);
     
-    
+    for(int i = 0; i<40; i++)
+    {
+        position pos = GetCentreCase(i);
+        Appartenance* app = new Appartenance(_graphicEngine->GetWindow(), INGAME, pos.x, pos.y, 10, sf::Color(255, 255, 255));
+        _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::AppartenanceKey, app);
+    }
 }
 
 Jeu::~Jeu()
@@ -217,6 +224,16 @@ void Jeu::UpdatePlateau()
     UpdateJoueurActuel();
 
     //Update Cagnotte
+    int sommeCagnotte = _plateau->GetCagnotte()->GetBilletManager()->SommeBillets();
+    TextBlock* cagnotte = (TextBlock*)_graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::SommeCagnotteKey);
+    cagnotte->SetContent(JeuConstantes::SommeCagnotteKey + intToString(sommeCagnotte));
+    
+    //Update Appartenance
+    for(int i=0; i<40; i++)
+    {
+        Case* casePlateau = _plateau->GetCase(i);
+        
+    }
 }
 
 void Jeu::UpdateJoueurActuel()
@@ -324,16 +341,35 @@ void Jeu::UpdateFinirTour()
     _sommeAPayer = 0;
     _billetACasser = 0;
     _plateau->FinirTour();
-    UpdateJoueurActuel();
-    AfficherLancerDes(true);
     AfficherActionsPossibles(false);
-    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::CaseMessageKey)->SetCanDraw(false);
+    
+    if(_plateau->EstFini())
+    {
+        TextBlock* message = (TextBlock*)_graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::CaseMessageKey);
+        message->SetContent("La partie est finie. Le gagnant est : " + _plateau->GetJoueurActuel()->GetNom());
+        AfficherLancerDes(false);
+    }
+    else
+    {
+        _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::CaseMessageKey)->SetCanDraw(false);
+        AfficherLancerDes(true);
+    }
+    
+    UpdatePlateau();
 }
 
 void Jeu::SetPositionJoueur(Joueur* joueur)
 {
     Pion* pion = (Pion*) _graphicEngine->GetGuiManager()->GetGuiItem(joueur->GetNom());
-    int position = joueur->GetPosition();
+    position pos = GetCentreCase(joueur->GetPosition());
+
+    pion->SetX(pos.x);
+    pion->SetY(pos.y);
+    _graphicEngine->Draw();
+}
+
+position Jeu::GetCentreCase(int pos)
+{
     int h = JeuConstantes::HauteurCase;
     int t = JeuConstantes::TailleCase;
     Image* imagePlateau = (Image*) _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::PlateauPath);
@@ -341,50 +377,52 @@ void Jeu::SetPositionJoueur(Joueur* joueur)
     int ymax = imagePlateau->GetSizeY();
     int i, x, y;
 
-    if (position == 0)
+    if (pos == 0)
     {
         x = y = xmax - h / 2;
     }
-    else if (position == 10)
+    else if (pos == 10)
     {
         x = h / 2;
         y = ymax - h / 2;
     }
-    else if (position == 20)
+    else if (pos == 20)
     {
         x = y = h / 2;
     }
-    else if (position == 30)
+    else if (pos == 30)
     {
         x = xmax - h / 2;
         y = h / 2;
     }
-    else if (position <= 10)
+    else if (pos <= 10)
     {
-        i = 10 - position;
+        i = 10 - pos;
         x = i * t + t / 4 + t;
         y = ymax - h / 2;
     }
-    else if (position <= 20)
+    else if (pos <= 20)
     {
-        i = 20 - position;
+        i = 20 - pos;
         x = h / 2;
         y = i * t + t / 4 + t;
     }
-    else if (position <= 30)
+    else if (pos <= 30)
     {
-        i = position - 20;
+        i = pos - 20;
         x = i * t + t / 4 + t;
         y = h / 2;
     }
     else
     {
-        i = position - 30;
+        i = pos - 30;
         x = xmax - h / 2;
         y = i * t + t / 4 + t;
     }
-
-    pion->SetX(x);
-    pion->SetY(y);
-    _graphicEngine->Draw();
+    
+    position posi;
+    posi.x = x;
+    posi.y = y;
+    
+    return posi;
 }

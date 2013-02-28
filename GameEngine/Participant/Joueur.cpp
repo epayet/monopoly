@@ -10,16 +10,7 @@ Joueur::Joueur(Plateau *plateau, std::string nom) : Participant(plateau, nom)
     _tour = 0;
     _nombreCartesSortirPrison = 0;
     _nbDoubles = 0;
-}
-
-Joueur::~Joueur()
-{
-	for(int i = 0; i < _proprietes.size(); i++)
-	{
-		delete _proprietes[i];
-	}
-
-	_proprietes.clear();
+    _aPerdu = false;
 }
 
 void Joueur::Avancer(int valeur)
@@ -100,13 +91,13 @@ void Joueur::Placer(Case *caseAPlacer, bool passerParDepart)
 
 void Joueur::InitialiserBillets()
 {
-	_billetManager->Ajouter(2, BILLET500);
-	_billetManager->Ajouter(4, BILLET100);
-	_billetManager->Ajouter(1, BILLET50);
-	_billetManager->Ajouter(1, BILLET20);
-	_billetManager->Ajouter(2, BILLET10);
-	_billetManager->Ajouter(1, BILLET5);
-	_billetManager->Ajouter(5, BILLET1);
+//	_billetManager->Ajouter(2, BILLET500);
+//	_billetManager->Ajouter(4, BILLET100);
+//	_billetManager->Ajouter(1, BILLET50);
+//	_billetManager->Ajouter(1, BILLET20);
+	_billetManager->Ajouter(1, BILLET10);
+//	_billetManager->Ajouter(1, BILLET5);
+//	_billetManager->Ajouter(5, BILLET1);
 }
 
 int Joueur::GetPosition()
@@ -153,4 +144,14 @@ int Joueur::GetNbTours()
 int Joueur::GetDerniersDes()
 {
     return _derniersDes;
+}
+
+void Joueur::Perdre()
+{
+    _aPerdu = true;
+}
+
+bool Joueur::APerdu()
+{
+    return _aPerdu;
 }

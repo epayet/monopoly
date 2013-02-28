@@ -18,6 +18,11 @@ typedef enum
 	FIRSTMENU, CHOOSEPLAYER, INGAME
 } GAMESTATE;
 
+struct position
+{
+    int x,y;
+};
+
 class GraphicEngine;
 class Plateau;
 class Pion;
@@ -46,6 +51,7 @@ public:
     void UpdateFinirTour();
     int GetSommeAPayer();
     int GetBilletACasser();
+    position GetCentreCase(int num);
 
 private:
 	GraphicEngine* _graphicEngine;

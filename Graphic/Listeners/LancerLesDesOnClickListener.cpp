@@ -54,12 +54,21 @@ void LancerLesDesOnClickListener::Act(sf::Event)
     caseMessage->SetContent(caseActuelle->GetMessage());
 
     ACTION action = caseActuelle->DoitPayer(joueurActuel);
+    
+    bool canFinirTour = false;
 
     //DOITPAYER, DOITETREPAYE, PEUTPAYER, RIEN
     if (action == DOITPAYER)
     {
         int sommeAPayer = caseActuelle->SommeAPayer();
         _jeu->SetSommeAPayer(sommeAPayer);
+        
+        if(!joueurActuel->PeutPayer(sommeAPayer))
+        {
+            _jeu->GetPlateau()->JoueurActuelAPerdu();
+            caseMessage->SetContent("Vous avez perdu !");
+            canFinirTour = true;
+        }
     }
     else if (action == DOITETREPAYE)
     {
@@ -73,7 +82,7 @@ void LancerLesDesOnClickListener::Act(sf::Event)
         caseActuelle->Agir(joueurActuel);
     }
     
-    _jeu->AfficherActionsPossibles(true, false);
+    _jeu->AfficherActionsPossibles(true, canFinirTour);
 }
 
 void LancerLesDesOnClickListener::SetImageDe(std::string deKey, int de)

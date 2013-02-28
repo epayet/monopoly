@@ -44,6 +44,7 @@ public:
     static const std::string FaireMonnaieKey;
     static const std::string AfficherCacherProprietesKey;
     static const std::string FinirTourKey;
+    static const std::string AppartenanceKey;
 
     //Paths
 	static const std::string PlateauPath;

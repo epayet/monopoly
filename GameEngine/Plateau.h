@@ -32,6 +32,8 @@ public:
     void FinirTour();
     Case* GetCase(int);
     Cagnotte* GetCagnotte();
+    void JoueurActuelAPerdu();
+    bool EstFini();
 
 private:
 	std::vector<Case*> _cases;

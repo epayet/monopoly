@@ -18,7 +18,6 @@ class Joueur : public Participant
 {
 public:
 	Joueur(Plateau *plateau, std::string nom);
-	~Joueur();
 	void Avancer(int);
     void Avancer(int de1, int de2);
 	void Acheter(Propriete *propriete);
@@ -30,13 +29,15 @@ public:
 	void Placer(Case *caseAPlacer, bool passerParDepart = true);
 	void InitialiserBillets();
 	int GetPosition();
-    bool PossedeCarteSortirPrison();         //booléen comme ça on sait pas comment c'est géré à l'intérieur (int)
+    bool PossedeCarteSortirPrison();         
     void AjouterCarteSortirPrison();
     void EnleverCarteSortirPrison();
     bool AFaitDouble();
     void SetAFaitDouble(int de1, int de2);
     int GetNbTours();
     int GetDerniersDes();
+    void Perdre();
+    bool APerdu();
 
 private:
 	int _position;
@@ -46,6 +47,7 @@ private:
     int _nombreCartesSortirPrison;
     int _nbDoubles;
     int _derniersDes;
+    bool _aPerdu;
 };
 
 #endif	/* JOUEUR_H */

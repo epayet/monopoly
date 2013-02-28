@@ -53,6 +53,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/GameEngine/Participant/Joueur.o \
 	${OBJECTDIR}/GameEngine/Participant/Participant.o \
 	${OBJECTDIR}/GameEngine/Plateau.o \
+	${OBJECTDIR}/Graphic/GuiItems/Appartenance.o \
 	${OBJECTDIR}/Graphic/GuiItems/Hotel.o \
 	${OBJECTDIR}/Graphic/GuiItems/Maison.o \
 	${OBJECTDIR}/Graphic/GuiItems/Pion.o \
@@ -217,6 +218,11 @@ ${OBJECTDIR}/GameEngine/Plateau.o: GameEngine/Plateau.cpp
 	${MKDIR} -p ${OBJECTDIR}/GameEngine
 	${RM} $@.d
 	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Plateau.o GameEngine/Plateau.cpp
+
+${OBJECTDIR}/Graphic/GuiItems/Appartenance.o: Graphic/GuiItems/Appartenance.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/GuiItems
+	${RM} $@.d
+	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/GuiItems/Appartenance.o Graphic/GuiItems/Appartenance.cpp
 
 ${OBJECTDIR}/Graphic/GuiItems/Hotel.o: Graphic/GuiItems/Hotel.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/GuiItems
@@ -668,6 +674,19 @@ ${OBJECTDIR}/GameEngine/Plateau_nomain.o: ${OBJECTDIR}/GameEngine/Plateau.o Game
 	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Plateau_nomain.o GameEngine/Plateau.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/GameEngine/Plateau.o ${OBJECTDIR}/GameEngine/Plateau_nomain.o;\
+	fi
+
+${OBJECTDIR}/Graphic/GuiItems/Appartenance_nomain.o: ${OBJECTDIR}/Graphic/GuiItems/Appartenance.o Graphic/GuiItems/Appartenance.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/GuiItems
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/GuiItems/Appartenance.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/GuiItems/Appartenance_nomain.o Graphic/GuiItems/Appartenance.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/GuiItems/Appartenance.o ${OBJECTDIR}/Graphic/GuiItems/Appartenance_nomain.o;\
 	fi
 
 ${OBJECTDIR}/Graphic/GuiItems/Hotel_nomain.o: ${OBJECTDIR}/Graphic/GuiItems/Hotel.o Graphic/GuiItems/Hotel.cpp 

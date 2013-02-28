@@ -34,6 +34,7 @@
       </logicalFolder>
       <logicalFolder name="f2" displayName="Graphic" projectFiles="true">
         <logicalFolder name="f2" displayName="GuiItems" projectFiles="true">
+          <itemPath>Graphic/GuiItems/Appartenance.h</itemPath>
           <itemPath>Graphic/GuiItems/Hotel.h</itemPath>
           <itemPath>Graphic/GuiItems/Maison.h</itemPath>
           <itemPath>Graphic/GuiItems/Pion.h</itemPath>
@@ -122,6 +123,7 @@
       </logicalFolder>
       <logicalFolder name="f2" displayName="Graphic" projectFiles="true">
         <logicalFolder name="f2" displayName="GuiItems" projectFiles="true">
+          <itemPath>Graphic/GuiItems/Appartenance.cpp</itemPath>
           <itemPath>Graphic/GuiItems/Hotel.cpp</itemPath>
           <itemPath>Graphic/GuiItems/Maison.cpp</itemPath>
           <itemPath>Graphic/GuiItems/Pion.cpp</itemPath>
@@ -355,6 +357,10 @@
       <item path="GameEngine/Plateau.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="GameEngine/Plateau.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Graphic/GuiItems/Appartenance.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Graphic/GuiItems/Appartenance.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Graphic/GuiItems/Hotel.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -829,6 +835,10 @@
       <item path="GameEngine/Plateau.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="GameEngine/Plateau.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Graphic/GuiItems/Appartenance.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Graphic/GuiItems/Appartenance.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Graphic/GuiItems/Hotel.cpp" ex="false" tool="1" flavor2="0">
       </item>

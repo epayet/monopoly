@@ -55,6 +55,9 @@ void Plateau::FinirTour()
     
     if(_tour == _joueurs.size())
         _tour = 0;
+    
+    if(GetJoueurActuel()->APerdu())
+        FinirTour();
 }
 
 std::vector<Joueur*> Plateau::GetJoueurs()
@@ -70,4 +73,21 @@ Cagnotte* Plateau::GetCagnotte()
 Case* Plateau::GetCase(int numero)
 {
     return _cases[numero];
+}
+
+void Plateau::JoueurActuelAPerdu()
+{
+    GetJoueurActuel()->Perdre();
+}
+
+bool Plateau::EstFini()
+{
+    int nbJoueursRestants = 0;
+    for(int i=0; i<_joueurs.size(); i++)
+    {
+        if(!_joueurs[i]->APerdu())
+            nbJoueursRestants++;
+    }
+    
+    return nbJoueursRestants == 1;
 }
