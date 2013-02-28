@@ -35,6 +35,7 @@ public:
     Cagnotte* GetCagnotte();
     void JoueurActuelAPerdu();
     bool EstFini();
+    Carte* GetCarte(TYPECARTE typeCarte);
 
 private:
 	std::vector<Case*> _cases;

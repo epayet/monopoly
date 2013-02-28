@@ -92,3 +92,20 @@ bool Plateau::EstFini()
     
     return nbJoueursRestants == 1;
 }
+
+Carte* Plateau::GetCarte(TYPECARTE typeCarte)
+{
+    /*if(typeCarte==CHANCE)
+        return _cartesChance->Front();
+    else
+        return _cartesCommunaute->Front();*/
+
+
+
+
+
+
+
+
+
+}
