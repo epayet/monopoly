@@ -6,6 +6,7 @@
 #include "Case/Propriété/Domaine.h"
 #include "Case/Propriété/Gare.h"
 #include "Case/Taxe.h"
+#include "Case/CaseCarte.h"
 
 Plateau::Plateau()
 {

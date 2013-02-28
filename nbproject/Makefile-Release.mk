@@ -39,6 +39,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/GameEngine/Billet/BilletManager.o \
 	${OBJECTDIR}/GameEngine/Case/Arrestation.o \
 	${OBJECTDIR}/GameEngine/Case/Case.o \
+	${OBJECTDIR}/GameEngine/Case/CaseCarte.o \
 	${OBJECTDIR}/GameEngine/Case/Depart.o \
 	${OBJECTDIR}/GameEngine/Case/Parc.o \
 	${OBJECTDIR}/GameEngine/Case/Prison.o \
@@ -142,6 +143,11 @@ ${OBJECTDIR}/GameEngine/Case/Case.o: GameEngine/Case/Case.cpp
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Case.o GameEngine/Case/Case.cpp
+
+${OBJECTDIR}/GameEngine/Case/CaseCarte.o: GameEngine/Case/CaseCarte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/CaseCarte.o GameEngine/Case/CaseCarte.cpp
 
 ${OBJECTDIR}/GameEngine/Case/Depart.o: GameEngine/Case/Depart.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
@@ -486,6 +492,19 @@ ${OBJECTDIR}/GameEngine/Case/Case_nomain.o: ${OBJECTDIR}/GameEngine/Case/Case.o 
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Case_nomain.o GameEngine/Case/Case.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/GameEngine/Case/Case.o ${OBJECTDIR}/GameEngine/Case/Case_nomain.o;\
+	fi
+
+${OBJECTDIR}/GameEngine/Case/CaseCarte_nomain.o: ${OBJECTDIR}/GameEngine/Case/CaseCarte.o GameEngine/Case/CaseCarte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/CaseCarte.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/CaseCarte_nomain.o GameEngine/Case/CaseCarte.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/CaseCarte.o ${OBJECTDIR}/GameEngine/Case/CaseCarte_nomain.o;\
 	fi
 
 ${OBJECTDIR}/GameEngine/Case/Depart_nomain.o: ${OBJECTDIR}/GameEngine/Case/Depart.o GameEngine/Case/Depart.cpp 

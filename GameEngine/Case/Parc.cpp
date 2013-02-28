@@ -17,7 +17,7 @@ void Parc::Agir(Joueur *joueur) //Transfère les billets de la Cagnotte dans le 
 
 std::string Parc::GetMessage()
 {
-    return "Félicitations ! Vous gagnez la cagnotte : " + intToString(_plateau->GetCagnotte()->SommeBillets()) + " €!";
+    return "Félicitations ! Vous gagnez la cagnotte : " + intToString(_plateau->GetCagnotte()->SommeBillets()) + " euros!";
 }
 
 ACTION Parc::DoitPayer()

@@ -13,7 +13,7 @@
 class Gare : public Propriete
 {
 public:
-    Gare(Plateau *plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer);
+    Gare(Plateau* plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer, Famille* famille);
     int SommeAPayer();
     std::string GetMessage();
 };

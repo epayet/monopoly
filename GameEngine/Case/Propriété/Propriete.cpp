@@ -4,14 +4,14 @@
 #include "GameEngine/Participant/Joueur.h"
 #include "Famille.h"
 
-Propriete::Propriete(Plateau *plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer) : Case(plateau, numero, libelle)
+Propriete::Propriete(Plateau *plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer, Famille *famille) : Case(plateau, numero, libelle)
 {
     _proprietaire = NULL;
     _estHypotheque = false;
     _prixAchat = prixAchat;
     _valeurHypotheque = valeurHypotheque;
     _prixLoyer = prixLoyer;
-    _famille = NULL;
+    _famille = famille;
 }
 
 void Propriete::Agir(Joueur* joueur, BilletManager* billetManager)
@@ -80,4 +80,9 @@ bool Propriete::PossedeFamilleEntiere(Joueur *joueur)
     }
     if(nbPossedes == nbProprietes)
         return true;
+}
+
+bool Propriete::Achetable()
+{
+    return true;
 }

@@ -13,6 +13,7 @@
 class ServicePublique : public Propriete
 {
 public:
+    ServicePublique(Plateau *plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer, Famille *famille);
 	void Agir(Joueur *joueur);
     int SommeAPayer();
     std::string GetMessage();

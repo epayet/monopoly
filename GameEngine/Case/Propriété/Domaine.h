@@ -15,6 +15,7 @@ class Famille;
 class Domaine : public Propriete
 {
 public:
+    Domaine(Plateau* plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer, Famille* famille);
 	bool PeutConstruire();
 	void Construire();
 	void Detruire();

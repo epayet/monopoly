@@ -28,11 +28,11 @@ std::string Prison::GetMessage()
     {
         if(DoitPayer(_plateau->GetJoueurActuel())==DOITPAYER)
         {
-            return "Vous êtes resté 3 tours en prison : payez " + intToString(_prixSortie) + " €.";
+            return "Vous êtes resté 3 tours en prison : payez " + intToString(_prixSortie) + " euros.";
         }
         else if(DoitPayer(_plateau->GetJoueurActuel())==PEUTPAYER)
         {
-            return "Vous pouvez payer" + intToString(_prixSortie) + " € pour sortir de prison.";
+            return "Vous pouvez payer" + intToString(_prixSortie) + " euros pour sortir de prison.";
         }
     }
     else

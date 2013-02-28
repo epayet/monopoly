@@ -27,5 +27,5 @@ ACTION Depart::DoitPayer()
 
 std::string Depart::GetMessage()
 {
-    return "Vous passez par la case départ : vous gagnez " + intToString(_sommeADonner) + " €.";
+    return "Vous passez par la case départ : vous gagnez " + intToString(_sommeADonner) + " euros.";
 }
