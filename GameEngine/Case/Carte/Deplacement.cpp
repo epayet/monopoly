@@ -12,7 +12,7 @@ Deplacement::Deplacement(Plateau *plateau, int numero, std::string libelle, TYPE
 void Deplacement::Agir(Joueur *joueur)
 {
     joueur->Placer(_plateau->GetCase(_numeroCaseFinale), _passeParCaseDepart);
-    _plateau->GetPaquetCartes(_typeCarte)->push(this);
+    _plateau->GetPaquetCartes(_typeCarte).push(this);
 }
 
 std::string Deplacement::GetMessage()

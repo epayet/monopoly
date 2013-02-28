@@ -1,4 +1,5 @@
 #include "Payer.h"
+#include "../../Plateau.h"
 
 Payer::Payer(Plateau *plateau, int numero, std::string libelle, TYPECARTE typeCarte, int sommeAPayer) : Carte(plateau, numero, libelle, typeCarte)
 {
@@ -7,7 +8,7 @@ Payer::Payer(Plateau *plateau, int numero, std::string libelle, TYPECARTE typeCa
 
 void Payer::Agir(Joueur *joueur, BilletManager *billetManager)
 {
-    _plateau->GetPaquetCartes(_typeCarte)->push(this);
+    _plateau->GetPaquetCartes(_typeCarte).push(this);
 }
 
 int Payer::SommeAPayer()

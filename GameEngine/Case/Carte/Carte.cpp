@@ -1,7 +1,7 @@
-#include "Case/Carte/Carte.h"
+#include "../Carte/Carte.h"
 #include "GameEngine/Participant/Participant.h"
 #include "util.h"
-#include "Case/Case.h"
+#include "../Case.h"
 #include "GameEngine/Plateau.h"
 
 

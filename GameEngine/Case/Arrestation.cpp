@@ -1,7 +1,7 @@
 #include "Arrestation.h"
 #include "GameEngine/Participant/Joueur.h"
 #include "Prison.h"
-#include "GameEngine/Plateau.h"
+#include "../Plateau.h"
 
 void Arrestation::Agir(Joueur *joueur)
 {

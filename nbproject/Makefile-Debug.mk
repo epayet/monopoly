@@ -37,10 +37,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/GameEngine/Billet/Billet.o \
 	${OBJECTDIR}/GameEngine/Billet/BilletManager.o \
-	${OBJECTDIR}/GameEngine/Carte.o \
 	${OBJECTDIR}/GameEngine/Case/Arrestation.o \
 	${OBJECTDIR}/GameEngine/Case/Carte/AllerPrison.o \
 	${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire.o \
+	${OBJECTDIR}/GameEngine/Case/Carte/Carte.o \
 	${OBJECTDIR}/GameEngine/Case/Carte/Deplacement.o \
 	${OBJECTDIR}/GameEngine/Case/Carte/EstPayeParBanque.o \
 	${OBJECTDIR}/GameEngine/Case/Carte/Payer.o \
@@ -148,11 +148,6 @@ ${OBJECTDIR}/GameEngine/Billet/BilletManager.o: GameEngine/Billet/BilletManager.
 	${RM} $@.d
 	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Billet/BilletManager.o GameEngine/Billet/BilletManager.cpp
 
-${OBJECTDIR}/GameEngine/Carte.o: GameEngine/Carte.cpp 
-	${MKDIR} -p ${OBJECTDIR}/GameEngine
-	${RM} $@.d
-	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Carte.o GameEngine/Carte.cpp
-
 ${OBJECTDIR}/GameEngine/Case/Arrestation.o: GameEngine/Case/Arrestation.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	${RM} $@.d
@@ -167,6 +162,11 @@ ${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire.o: GameEngine/Case/Carte/Anniver
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
 	${RM} $@.d
 	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire.o GameEngine/Case/Carte/Anniversaire.cpp
+
+${OBJECTDIR}/GameEngine/Case/Carte/Carte.o: GameEngine/Case/Carte/Carte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	${RM} $@.d
+	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/Carte.o GameEngine/Case/Carte/Carte.cpp
 
 ${OBJECTDIR}/GameEngine/Case/Carte/Deplacement.o: GameEngine/Case/Carte/Deplacement.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
@@ -522,19 +522,6 @@ ${OBJECTDIR}/GameEngine/Billet/BilletManager_nomain.o: ${OBJECTDIR}/GameEngine/B
 	    ${CP} ${OBJECTDIR}/GameEngine/Billet/BilletManager.o ${OBJECTDIR}/GameEngine/Billet/BilletManager_nomain.o;\
 	fi
 
-${OBJECTDIR}/GameEngine/Carte_nomain.o: ${OBJECTDIR}/GameEngine/Carte.o GameEngine/Carte.cpp 
-	${MKDIR} -p ${OBJECTDIR}/GameEngine
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Carte.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} $@.d;\
-	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Carte_nomain.o GameEngine/Carte.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/GameEngine/Carte.o ${OBJECTDIR}/GameEngine/Carte_nomain.o;\
-	fi
-
 ${OBJECTDIR}/GameEngine/Case/Arrestation_nomain.o: ${OBJECTDIR}/GameEngine/Case/Arrestation.o GameEngine/Case/Arrestation.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Arrestation.o`; \
@@ -572,6 +559,19 @@ ${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire_nomain.o: ${OBJECTDIR}/GameEngin
 	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire_nomain.o GameEngine/Case/Carte/Anniversaire.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire.o ${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire_nomain.o;\
+	fi
+
+${OBJECTDIR}/GameEngine/Case/Carte/Carte_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte/Carte.o GameEngine/Case/Carte/Carte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte/Carte.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/Carte_nomain.o GameEngine/Case/Carte/Carte.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte/Carte.o ${OBJECTDIR}/GameEngine/Case/Carte/Carte_nomain.o;\
 	fi
 
 ${OBJECTDIR}/GameEngine/Case/Carte/Deplacement_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte/Deplacement.o GameEngine/Case/Carte/Deplacement.cpp 

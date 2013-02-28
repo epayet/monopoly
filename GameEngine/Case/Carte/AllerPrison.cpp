@@ -13,7 +13,7 @@ void AllerPrison::Agir(Joueur *joueur)
 {
     Prison *prison = (Prison*)_plateau->GetCase(10);
     prison->AjouterPrisonnier(joueur);
-    _plateau->GetPaquetCartes(_typeCarte)->push(this);
+    _plateau->GetPaquetCartes(_typeCarte).push(this);
 }
 
 std::string AllerPrison::GetMessage()

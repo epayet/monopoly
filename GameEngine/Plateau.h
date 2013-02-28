@@ -12,6 +12,7 @@
 
 #include <cstdlib>
 #include <vector>
+#include <queue>
 #include <string>
 #include "Case/Carte/Carte.h"
 
