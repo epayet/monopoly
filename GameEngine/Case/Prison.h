@@ -17,7 +17,7 @@ class Prison : public Case
     
     
     public:
-            Prison(Plateau *plateau, int numero, std::string libelle);
+            Prison(Plateau *plateau, int numero, std::string libelle, int prixSortie);
             void Agir(Joueur *joueur, BilletManager *billetManager);
             std::string GetMessage();
             int SommeAPayer();

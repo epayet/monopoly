@@ -18,10 +18,16 @@ typedef enum
 	FIRSTMENU, CHOOSEPLAYER, INGAME
 } GAMESTATE;
 
+struct position
+{
+    int x,y;
+};
+
 class GraphicEngine;
 class Plateau;
 class Pion;
 class Joueur;
+class BilletManager;
 
 class Jeu
 {
@@ -34,12 +40,26 @@ public:
     void UpdateJoueurActuel();
     void UpdatePlateau();
     void SetPositionJoueur(Joueur* joueur);
+    void SetSommeAPayer(int somme);
+    void SetBilletACasser(int somme);
+    BilletManager* GetBilletManagerARemplir();
+    void UpdateSommeAPayer();
+    void AfficherVoulezVousPayer(bool);
+    void AfficherLancerDes(bool);
+    void AfficherSommeAPayer(bool);
+    void AfficherActionsPossibles(bool affichFaireMonnaie, bool affichFinirTour = true);
+    void UpdateFinirTour();
+    int GetSommeAPayer();
+    int GetBilletACasser();
+    position GetCentreCase(int num);
 
 private:
 	GraphicEngine* _graphicEngine;
 	Plateau* _plateau;
     int _nbJoueurs;
     std::vector<Pion*> _pions;
+    BilletManager* _billetManagerARemplir;
+    int _sommeAPayer, _billetACasser;
 };
 
 #endif	/* JEU_H */

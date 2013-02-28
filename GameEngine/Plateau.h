@@ -12,10 +12,9 @@
 
 #include <cstdlib>
 #include <vector>
+#include <queue>
 #include <string>
-#include "lib/tinyxml.h"
-
-using namespace std;
+#include "Case/Carte/Carte.h"
 
 class Case;
 class Joueur;
@@ -26,23 +25,26 @@ class Carte;
 
 class Plateau {
 public:
-    Plateau();
-    ~Plateau();
-    void AddJoueur(std::string nomJoueur);
+	Plateau();
+	~Plateau();
+	void AjouterJoueur(std::string nomJoueur);
     Joueur* GetJoueurActuel();
     vector<Joueur*> GetJoueurs();
     void FinirTour();
     Case* GetCase(int);
     Cagnotte* GetCagnotte();
-    void LireXml();
-
-
+    void JoueurActuelAPerdu();
+    bool EstFini();
+    Carte* GetCarte(TYPECARTE typeCarte);
+    std::queue<Carte*> GetPaquetCartes(TYPECARTE typeCarte);
 
 private:
     vector<Case*> _cases;
     vector<Joueur*> _joueurs;
     Cagnotte *_cagnotte;
     int _tour;
+    std::queue<Carte*> _cartesChance;
+    std::queue<Carte*> _cartesCommunaute;
 };
 
 #endif	/* PLATEAU_H */

@@ -13,7 +13,9 @@
 class Gare : public Propriete
 {
 public:
-	void Agir(Joueur *joueur);
+    Gare(Plateau* plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer, Famille* famille);
+    int SommeAPayer();
+    std::string GetMessage();
 };
 
 #endif	/* GARE_H */

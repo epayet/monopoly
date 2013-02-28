@@ -10,8 +10,7 @@ TextBlock::TextBlock(sf::RenderWindow& window, int state, int x, int y, int size
 	_content.SetPosition(x, y);
 	_content.SetColor(sf::Color(255, 255, 255));
 
-	_sizex = _content.GetRect().GetWidth();
-	_sizey = _content.GetRect().GetHeight();
+	UpdateSize();
 }
 
 void TextBlock::Draw(int state)
@@ -23,4 +22,11 @@ void TextBlock::Draw(int state)
 void TextBlock::SetContent(std::string content)
 {
     _content.SetText(content);
+    UpdateSize();
+}
+
+void TextBlock::UpdateSize()
+{
+    _sizex = _content.GetRect().GetWidth();
+	_sizey = _content.GetRect().GetHeight();
 }

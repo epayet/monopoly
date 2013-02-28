@@ -1,4 +1,7 @@
 #include "Taxe.h"
+#include "util.h"
+#include "GameEngine/Plateau.h"
+#include "GameEngine/Participant/Cagnotte.h"
 
 Taxe::Taxe(Plateau *plateau, int numero, std::string libelle, int sommeAPayer) : Case(plateau, numero, libelle)
 {
@@ -7,15 +10,15 @@ Taxe::Taxe(Plateau *plateau, int numero, std::string libelle, int sommeAPayer) :
 
 void Taxe::Agir(Joueur *joueur, BilletManager *billetManager)
 {
-    
+    _plateau->GetCagnotte()->GetBilletManager()->Ajouter(billetManager);
 }
 
 std::string Taxe::GetMessage()
 {
-    return "";
+    return "Vous devez payer la taxe " + _libelle + " : " + intToString(_sommeAPayer) + " €.";
 }
 
-ACTION Taxe::DoitPayer()
+ACTION Taxe::DoitPayer(Joueur*)
 {
     return DOITPAYER;
 }

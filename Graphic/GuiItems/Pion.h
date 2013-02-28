@@ -17,9 +17,11 @@ public:
     void Draw(int state);
     void SetX(int x);
     void SetY(int y);
+    sf::Color GetColor();
 
 private:
     sf::Shape _cercle;
+    sf::Color _color;
 };
 
 #endif	/* PION_H */

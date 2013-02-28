@@ -16,7 +16,7 @@ class Taxe : public Case
             Taxe(Plateau *plateau, int numero, std::string libelle, int sommeAPayer);
             void Agir(Joueur *joueur, BilletManager *billetManager);
             std::string GetMessage();
-            ACTION DoitPayer();
+            ACTION DoitPayer(Joueur*);
             int SommeAPayer();
     private:
         int _sommeAPayer;

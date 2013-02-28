@@ -1,5 +1,6 @@
 #include "Depart.h"
 #include "GameEngine/Participant/Participant.h"
+#include "util.h"
 
 
 Depart::Depart(Plateau *plateau, int numero, std::string libelle, int sommeADonner) : Case(plateau, numero, libelle)
@@ -9,7 +10,9 @@ Depart::Depart(Plateau *plateau, int numero, std::string libelle, int sommeADonn
 
 void Depart::Agir(Joueur *joueur)
 {
-    
+    BilletManager *sommeADonner = new BilletManager(_sommeADonner);
+    joueur->GetBilletManager()->Ajouter(sommeADonner);
+    delete sommeADonner;
 }
 
 int Depart::SommeAPayer()
@@ -24,5 +27,5 @@ ACTION Depart::DoitPayer()
 
 std::string Depart::GetMessage()
 {
-    return "";
+    return "Vous passez par la case départ : vous gagnez " + intToString(_sommeADonner) + " euros.";
 }

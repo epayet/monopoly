@@ -1,23 +1,16 @@
 #include "Joueur.h"
 #include "../Case/Case.h"
 #include "../Case/Propriété/Propriete.h"
+#include "GameEngine/Plateau.h"
+#include "GameEngine/Case/Prison.h"
 
-Joueur::Joueur(std::string nom) : Participant(nom)
+Joueur::Joueur(Plateau *plateau, std::string nom) : Participant(plateau, nom)
 {
 	_position = 0;
     _tour = 0;
     _nombreCartesSortirPrison = 0;
     _nbDoubles = 0;
-}
-
-Joueur::~Joueur()
-{
-	for(int i = 0; i < _proprietes.size(); i++)
-	{
-		delete _proprietes[i];
-	}
-
-	_proprietes.clear();
+    _aPerdu = false;
 }
 
 void Joueur::Avancer(int valeur)
@@ -31,6 +24,12 @@ void Joueur::Avancer(int valeur)
 	}
 }
 
+void Joueur::Avancer(int de1, int de2)
+{
+    Avancer(de1 + de2);
+    SetAFaitDouble(de1, de2);
+}
+
 void Joueur::SetAFaitDouble(int de1, int de2)
 {
     if(de1 == de2)
@@ -42,8 +41,10 @@ void Joueur::SetAFaitDouble(int de1, int de2)
     if(_nbDoubles == 3)
     {
         _nbDoubles = 0;
-        //Go prison
+        Prison * prison = (Prison*)_plateau->GetCase(10);
+        prison->AjouterPrisonnier(this);
     }
+    _derniersDes = de1 + de2;
 }
 
 void Joueur::Acheter(Propriete *propriete)
@@ -59,7 +60,7 @@ bool Joueur::PeutPayer(int somme)
 
 void Joueur::Construire(Propriete *propriete)
 {
-
+    
 }
 
 void Joueur::Detruire(Propriete *propriete)
@@ -90,13 +91,13 @@ void Joueur::Placer(Case *caseAPlacer, bool passerParDepart)
 
 void Joueur::InitialiserBillets()
 {
-	_billetManager->Ajouter(2, BILLET500);
-	_billetManager->Ajouter(4, BILLET100);
-	_billetManager->Ajouter(1, BILLET50);
-	_billetManager->Ajouter(1, BILLET20);
-	_billetManager->Ajouter(2, BILLET10);
-	_billetManager->Ajouter(1, BILLET5);
-	_billetManager->Ajouter(5, BILLET1);
+//	_billetManager->Ajouter(2, BILLET500);
+//	_billetManager->Ajouter(4, BILLET100);
+//	_billetManager->Ajouter(1, BILLET50);
+//	_billetManager->Ajouter(1, BILLET20);
+	_billetManager->Ajouter(1, BILLET10);
+//	_billetManager->Ajouter(1, BILLET5);
+//	_billetManager->Ajouter(5, BILLET1);
 }
 
 int Joueur::GetPosition()
@@ -106,9 +107,9 @@ int Joueur::GetPosition()
 
 void Joueur::GagnerArgentCaseDepart()
 {
-	_billetManager->Ajouter(2, BILLET100);
-    
-//    Depart* depart = new Depart();
+	//_billetManager->Ajouter(2, BILLET100);
+    _plateau->GetCase(0)->Agir(this);
+    //    Depart* depart = new Depart();
 //    depart->Agir(this);
 //    delete depart;
     
@@ -133,4 +134,24 @@ void Joueur::EnleverCarteSortirPrison()
 bool Joueur::AFaitDouble()
 {
     return _nbDoubles > 0;
+}
+
+int Joueur::GetNbTours()
+{
+    return _tour;
+}
+
+int Joueur::GetDerniersDes()
+{
+    return _derniersDes;
+}
+
+void Joueur::Perdre()
+{
+    _aPerdu = true;
+}
+
+bool Joueur::APerdu()
+{
+    return _aPerdu;
 }

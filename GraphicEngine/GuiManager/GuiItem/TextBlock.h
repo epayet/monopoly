@@ -16,6 +16,7 @@ public:
 	TextBlock(sf::RenderWindow &window, int state, int x, int y, int size, sf::Font font, std::string content);
 	void Draw(int state);
     void SetContent(std::string content);
+    void UpdateSize();
 
 protected:
 	sf::Font _font;

@@ -10,26 +10,31 @@
 
 #include "../Case.h"
 #include "../../Participant/Joueur.h"
+#include "Famille.h"
 
 class Propriete : public Case
 {
     public:
-            Propriete(Plateau *plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer);
+            Propriete(Plateau *plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer, Famille *famille);
             virtual void Agir(Joueur *joueur, BilletManager *billetManager);  //redéfinit Agir de Case mais sera redéfini par Domaine, Gare et Service Publique
             virtual void Hypothequer();
             int LeverHypotheque();
         	void Acheter(Joueur *joueur);
             ACTION DoitPayer(Joueur *joueur);
-            virtual int SommeAPayer();
+            virtual int SommeAPayer()=0;
             Joueur *GetProprietaire();
             int GetValeurHypotheque();
-            std::string GetMessage();
+            virtual std::string GetMessage()=0;
+            int GetPrixMaisons();
+            bool PossedeFamilleEntiere(Joueur *joueur);
+            bool Achetable();
     protected:
         Joueur *_proprietaire;
         bool _estHypotheque;
         int _valeurHypotheque;
         int _prixAchat;
         std::vector<int> _prixLoyer;
+        Famille *_famille;
 
 };
 

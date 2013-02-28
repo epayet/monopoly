@@ -3,27 +3,27 @@
 #include "Participant/Cagnotte.h"
 #include "Case/Case.h"
 #include "Case/Propriété/Propriete.h"
-#include "lib/tinyxml.h"
-#include "util.h"
-
-using namespace std;
+#include "Case/Propriété/Domaine.h"
+#include "Case/Propriété/Gare.h"
+#include "Case/Taxe.h"
+#include "Case/CaseCarte.h"
+#include "Case/Carte/Carte.h"
 
 Plateau::Plateau()
 {
     _tour = 0;
-    _cagnotte = new Cagnotte;
+    _cagnotte = new Cagnotte(this);
     
     for(int i=0; i<NBCASES; i++)
     {
         //Fakes cases
-        std::vector<int> prix;
-        prix.push_back(0);
-        prix.push_back(1);
-        prix.push_back(2);
-        prix.push_back(3);
-        prix.push_back(4);
-        prix.push_back(5);
-        _cases.push_back(new Propriete(this, i, "fake case", 10, 10, prix));
+//        std::vector<int> prix;
+//        prix.push_back(0);
+//        prix.push_back(1);
+//        prix.push_back(2);
+//        prix.push_back(3);
+//        prix.push_back(4);
+        _cases.push_back(new Taxe(this, i, "fake case", 10));
     }
 }
 
@@ -38,9 +38,9 @@ Plateau::~Plateau()
     delete _cagnotte;
 }
 
-void Plateau::AddJoueur(std::string nomJoueur)
+void Plateau::AjouterJoueur(std::string nomJoueur)
 {
-    Joueur* joueur = new Joueur(nomJoueur);
+    Joueur* joueur = new Joueur(this, nomJoueur);
     joueur->InitialiserBillets();
     _joueurs.push_back(joueur);
 }
@@ -57,6 +57,9 @@ void Plateau::FinirTour()
     
     if(_tour == _joueurs.size())
         _tour = 0;
+    
+    if(GetJoueurActuel()->APerdu())
+        FinirTour();
 }
 
 std::vector<Joueur*> Plateau::GetJoueurs()
@@ -74,101 +77,35 @@ Case* Plateau::GetCase(int numero)
     return _cases[numero];
 }
 
-void Plateau::LireXml(){
-    TiXmlDocument doc("config.xml");
-    doc.LoadFile();    
-    TiXmlHandle handle(&doc);    
-    TiXmlElement* propriete = handle.FirstChildElement().Element();
-    TiXmlElement* domaine = handle.FirstChildElement().FirstChildElement().FirstChildElement().Element();
-    
-    while(propriete){
-        if(handle.FirstChildElement("Proprietes").Element()){
-            vector<Propriete*> proprietes;
-            while(handle.FirstChildElement("Proprietes").Element()){
-                int i = 1;
-                if(handle.FirstChildElement().FirstChildElement().FirstChildElement("Domaine").Element()){
-                     vector<int> prixLoyer;
-                     for(int j=0; j<6; j++){
-                         prixLoyer.push_back(domaine->Attribute("p" + intToString(j)));
-                     }
-                               
-                    _cases.push_back(new Propriete(
-                        this,
-                        domaine->Attribute("numCase"), 
-                        domaine->Attribute("nom"), 
-                        domaine->Attribute("hypotheque"), 
-                        domaine->Attribute("achat"), 
-                        prixLoyer));
-                    
-                    proprietes.push_back(new Propriete(
-                        this,
-                        domaine->Attribute("numCase"), 
-                        domaine->Attribute("nom"), 
-                        domaine->Attribute("hypotheque"), 
-                        domaine->Attribute("achat"), 
-                        prixLoyer));
-                    
-                }
-                else if(propriete->Attribute("type")=="dungeon"){
-                     vector<int> prixLoyer;
-                     for(int j=0; j<3; j++){
-                         prixLoyer.push_back(domaine->Attribute("p" + intToString(j)));
-                     }
-                               
-                    _cases.push_back(new Propriete(
-                        this,
-                        domaine->Attribute("numCase"), 
-                        domaine->Attribute("nom"), 
-                        domaine->Attribute("hypotheque"), 
-                        domaine->Attribute("achat"), 
-                        prixLoyer));
-                    
-                    proprietes.push_back(new Propriete(
-                        this,
-                        domaine->Attribute("numCase"), 
-                        domaine->Attribute("nom"), 
-                        domaine->Attribute("hypotheque"), 
-                        domaine->Attribute("achat"), 
-                        prixLoyer));
-                }
-                else{
-                    vector<int> prixLoyer;
-                     for(int j=0; j<2; j++){
-                         prixLoyer.push_back(domaine->Attribute("p" + intToString(j)));
-                     }
-                               
-                    _cases.push_back(new Propriete(
-                        this,
-                        domaine->Attribute("nom"), 
-                        domaine->Attribute("hypotheque"), 
-                        domaine->Attribute("achat"), 
-                        prixLoyer));
-                    
-                    proprietes.push_back(new Propriete(
-                        this,
-                        domaine->Attribute("numCase"), 
-                        domaine->Attribute("nom"), 
-                        domaine->Attribute("hypotheque"), 
-                        domaine->Attribute("achat"), 
-                        prixLoyer));
-                }
-                i++;
-                domaine->NextSiblingElement();
-            }
-            Famille* fam = new Famille(
-                 propriete->FirstChildElement()->Attribute("couleur"), 
-                 proprietes, 
-                 propriete->FirstChildElement()->Attribute("prixMaisons"));
-        }
-        else if(handle.FirstChildElement("Cartes").Element()){
-            
-        }
-        else{
-            _cases.push_back(new Taxe(
-                        this,
-                        domaine->Attribute("numCase"), 
-                        domaine->Attribute("type"),
-                        domaine->Attribute("somme"))); 
-        }
+void Plateau::JoueurActuelAPerdu()
+{
+    GetJoueurActuel()->Perdre();
+}
+
+bool Plateau::EstFini()
+{
+    int nbJoueursRestants = 0;
+    for(int i=0; i<_joueurs.size(); i++)
+    {
+        if(!_joueurs[i]->APerdu())
+            nbJoueursRestants++;
     }
+    
+    return nbJoueursRestants == 1;
+}
+
+Carte* Plateau::GetCarte(TYPECARTE typeCarte)
+{
+    if(typeCarte==CHANCE)
+        return _cartesChance.front();
+    else
+        return _cartesCommunaute.front();
+}
+
+std::queue<Carte*> Plateau::GetPaquetCartes(TYPECARTE typeCarte)
+{
+    if(typeCarte==CHANCE)
+        return _cartesChance;
+    else
+        return _cartesCommunaute;
 }

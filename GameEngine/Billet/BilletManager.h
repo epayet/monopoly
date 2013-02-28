@@ -15,6 +15,11 @@ class Billet;
 typedef std::pair<int, Billet*> NbBillets;
 typedef std::vector<NbBillets> Billets;
 
+typedef enum
+{
+	BILLET500, BILLET100, BILLET50, BILLET20, BILLET10, BILLET5, BILLET1
+} TYPEBILLET;
+
 class BilletManager
 {
 public:
@@ -22,20 +27,19 @@ public:
 	~BilletManager();
 	Billets GetBillets();
 	int SommeBillets();
-	void Ajouter(int nb, int billet);
+	void Ajouter(int nb, TYPEBILLET billet);
 	void Ajouter(BilletManager *billetManager);
-	void Enlever(int nb, int billet);
+	void Enlever(int nb, TYPEBILLET billet);
+    void Enlever(BilletManager* billetManager);
 	void Vider();
 	void SetSomme(int somme);
 	bool PeutPayer(int somme);
+    bool VautSomme(int somme);
+    int NombreBillets(TYPEBILLET billet);
+    Billet* GetBillet(TYPEBILLET);
 
 private:
 	Billets _billets;
-};
-
-enum
-{
-	BILLET500, BILLET100, BILLET50, BILLET20, BILLET10, BILLET5, BILLET1
 };
 
 #endif	/* BILLETMANAGER_H */

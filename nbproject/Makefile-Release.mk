@@ -38,8 +38,16 @@ OBJECTFILES= \
 	${OBJECTDIR}/GameEngine/Billet/Billet.o \
 	${OBJECTDIR}/GameEngine/Billet/BilletManager.o \
 	${OBJECTDIR}/GameEngine/Case/Arrestation.o \
-	${OBJECTDIR}/GameEngine/Case/Carte.o \
+	${OBJECTDIR}/GameEngine/Case/Carte/AllerPrison.o \
+	${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire.o \
+	${OBJECTDIR}/GameEngine/Case/Carte/Carte.o \
+	${OBJECTDIR}/GameEngine/Case/Carte/Deplacement.o \
+	${OBJECTDIR}/GameEngine/Case/Carte/EstPayeParBanque.o \
+	${OBJECTDIR}/GameEngine/Case/Carte/Payer.o \
+	${OBJECTDIR}/GameEngine/Case/Carte/PayerConstructions.o \
+	${OBJECTDIR}/GameEngine/Case/Carte/SortirPrison.o \
 	${OBJECTDIR}/GameEngine/Case/Case.o \
+	${OBJECTDIR}/GameEngine/Case/CaseCarte.o \
 	${OBJECTDIR}/GameEngine/Case/Depart.o \
 	${OBJECTDIR}/GameEngine/Case/Parc.o \
 	${OBJECTDIR}/GameEngine/Case/Prison.o \
@@ -54,13 +62,24 @@ OBJECTFILES= \
 	${OBJECTDIR}/GameEngine/Participant/Joueur.o \
 	${OBJECTDIR}/GameEngine/Participant/Participant.o \
 	${OBJECTDIR}/GameEngine/Plateau.o \
+	${OBJECTDIR}/Graphic/GuiItems/Appartenance.o \
+	${OBJECTDIR}/Graphic/GuiItems/Hotel.o \
+	${OBJECTDIR}/Graphic/GuiItems/Maison.o \
 	${OBJECTDIR}/Graphic/GuiItems/Pion.o \
 	${OBJECTDIR}/Graphic/Jeu.o \
 	${OBJECTDIR}/Graphic/JeuConstantes.o \
+	${OBJECTDIR}/Graphic/Listeners/AfficherCacherProprietesOnClickListener.o \
+	${OBJECTDIR}/Graphic/Listeners/BilletOnClickListener.o \
 	${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener.o \
+	${OBJECTDIR}/Graphic/Listeners/FaireMonnaieOnClickListener.o \
+	${OBJECTDIR}/Graphic/Listeners/FinirTourOnClickListener.o \
 	${OBJECTDIR}/Graphic/Listeners/JouerOnClickListener.o \
 	${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener.o \
+	${OBJECTDIR}/Graphic/Listeners/NonPayerOnClickListener.o \
+	${OBJECTDIR}/Graphic/Listeners/OuiPayerOnClickListener.o \
 	${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener.o \
+	${OBJECTDIR}/Graphic/Listeners/ResetBilletsOnClickListener.o \
+	${OBJECTDIR}/Graphic/Listeners/ValiderBilletsOnCLickListener.o \
 	${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener.o \
 	${OBJECTDIR}/GraphicEngine/ActionListeners/ButtonMouseOutListener.o \
 	${OBJECTDIR}/GraphicEngine/ActionListeners/ButtonMouseOverListener.o \
@@ -128,15 +147,55 @@ ${OBJECTDIR}/GameEngine/Case/Arrestation.o: GameEngine/Case/Arrestation.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Arrestation.o GameEngine/Case/Arrestation.cpp
 
-${OBJECTDIR}/GameEngine/Case/Carte.o: GameEngine/Case/Carte.cpp 
-	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
+${OBJECTDIR}/GameEngine/Case/Carte/AllerPrison.o: GameEngine/Case/Carte/AllerPrison.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte.o GameEngine/Case/Carte.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/AllerPrison.o GameEngine/Case/Carte/AllerPrison.cpp
+
+${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire.o: GameEngine/Case/Carte/Anniversaire.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire.o GameEngine/Case/Carte/Anniversaire.cpp
+
+${OBJECTDIR}/GameEngine/Case/Carte/Carte.o: GameEngine/Case/Carte/Carte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/Carte.o GameEngine/Case/Carte/Carte.cpp
+
+${OBJECTDIR}/GameEngine/Case/Carte/Deplacement.o: GameEngine/Case/Carte/Deplacement.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/Deplacement.o GameEngine/Case/Carte/Deplacement.cpp
+
+${OBJECTDIR}/GameEngine/Case/Carte/EstPayeParBanque.o: GameEngine/Case/Carte/EstPayeParBanque.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/EstPayeParBanque.o GameEngine/Case/Carte/EstPayeParBanque.cpp
+
+${OBJECTDIR}/GameEngine/Case/Carte/Payer.o: GameEngine/Case/Carte/Payer.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/Payer.o GameEngine/Case/Carte/Payer.cpp
+
+${OBJECTDIR}/GameEngine/Case/Carte/PayerConstructions.o: GameEngine/Case/Carte/PayerConstructions.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/PayerConstructions.o GameEngine/Case/Carte/PayerConstructions.cpp
+
+${OBJECTDIR}/GameEngine/Case/Carte/SortirPrison.o: GameEngine/Case/Carte/SortirPrison.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/SortirPrison.o GameEngine/Case/Carte/SortirPrison.cpp
 
 ${OBJECTDIR}/GameEngine/Case/Case.o: GameEngine/Case/Case.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Case.o GameEngine/Case/Case.cpp
+
+${OBJECTDIR}/GameEngine/Case/CaseCarte.o: GameEngine/Case/CaseCarte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/CaseCarte.o GameEngine/Case/CaseCarte.cpp
 
 ${OBJECTDIR}/GameEngine/Case/Depart.o: GameEngine/Case/Depart.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
@@ -208,6 +267,21 @@ ${OBJECTDIR}/GameEngine/Plateau.o: GameEngine/Plateau.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Plateau.o GameEngine/Plateau.cpp
 
+${OBJECTDIR}/Graphic/GuiItems/Appartenance.o: Graphic/GuiItems/Appartenance.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/GuiItems
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/GuiItems/Appartenance.o Graphic/GuiItems/Appartenance.cpp
+
+${OBJECTDIR}/Graphic/GuiItems/Hotel.o: Graphic/GuiItems/Hotel.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/GuiItems
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/GuiItems/Hotel.o Graphic/GuiItems/Hotel.cpp
+
+${OBJECTDIR}/Graphic/GuiItems/Maison.o: Graphic/GuiItems/Maison.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/GuiItems
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/GuiItems/Maison.o Graphic/GuiItems/Maison.cpp
+
 ${OBJECTDIR}/Graphic/GuiItems/Pion.o: Graphic/GuiItems/Pion.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/GuiItems
 	${RM} $@.d
@@ -223,10 +297,30 @@ ${OBJECTDIR}/Graphic/JeuConstantes.o: Graphic/JeuConstantes.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/JeuConstantes.o Graphic/JeuConstantes.cpp
 
+${OBJECTDIR}/Graphic/Listeners/AfficherCacherProprietesOnClickListener.o: Graphic/Listeners/AfficherCacherProprietesOnClickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/AfficherCacherProprietesOnClickListener.o Graphic/Listeners/AfficherCacherProprietesOnClickListener.cpp
+
+${OBJECTDIR}/Graphic/Listeners/BilletOnClickListener.o: Graphic/Listeners/BilletOnClickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/BilletOnClickListener.o Graphic/Listeners/BilletOnClickListener.cpp
+
 ${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener.o: Graphic/Listeners/CommencerOnClickListener.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener.o Graphic/Listeners/CommencerOnClickListener.cpp
+
+${OBJECTDIR}/Graphic/Listeners/FaireMonnaieOnClickListener.o: Graphic/Listeners/FaireMonnaieOnClickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/FaireMonnaieOnClickListener.o Graphic/Listeners/FaireMonnaieOnClickListener.cpp
+
+${OBJECTDIR}/Graphic/Listeners/FinirTourOnClickListener.o: Graphic/Listeners/FinirTourOnClickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/FinirTourOnClickListener.o Graphic/Listeners/FinirTourOnClickListener.cpp
 
 ${OBJECTDIR}/Graphic/Listeners/JouerOnClickListener.o: Graphic/Listeners/JouerOnClickListener.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
@@ -238,10 +332,30 @@ ${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener.o: Graphic/Listeners/
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener.o Graphic/Listeners/LancerLesDesOnClickListener.cpp
 
+${OBJECTDIR}/Graphic/Listeners/NonPayerOnClickListener.o: Graphic/Listeners/NonPayerOnClickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/NonPayerOnClickListener.o Graphic/Listeners/NonPayerOnClickListener.cpp
+
+${OBJECTDIR}/Graphic/Listeners/OuiPayerOnClickListener.o: Graphic/Listeners/OuiPayerOnClickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/OuiPayerOnClickListener.o Graphic/Listeners/OuiPayerOnClickListener.cpp
+
 ${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener.o: Graphic/Listeners/QuitterOnClickListener.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener.o Graphic/Listeners/QuitterOnClickListener.cpp
+
+${OBJECTDIR}/Graphic/Listeners/ResetBilletsOnClickListener.o: Graphic/Listeners/ResetBilletsOnClickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/ResetBilletsOnClickListener.o Graphic/Listeners/ResetBilletsOnClickListener.cpp
+
+${OBJECTDIR}/Graphic/Listeners/ValiderBilletsOnCLickListener.o: Graphic/Listeners/ValiderBilletsOnCLickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/ValiderBilletsOnCLickListener.o Graphic/Listeners/ValiderBilletsOnCLickListener.cpp
 
 ${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener.o: GraphicEngine/ActionListeners/ActionListener.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/ActionListeners
@@ -415,17 +529,108 @@ ${OBJECTDIR}/GameEngine/Case/Arrestation_nomain.o: ${OBJECTDIR}/GameEngine/Case/
 	    ${CP} ${OBJECTDIR}/GameEngine/Case/Arrestation.o ${OBJECTDIR}/GameEngine/Case/Arrestation_nomain.o;\
 	fi
 
-${OBJECTDIR}/GameEngine/Case/Carte_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte.o GameEngine/Case/Carte.cpp 
-	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte.o`; \
+${OBJECTDIR}/GameEngine/Case/Carte/AllerPrison_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte/AllerPrison.o GameEngine/Case/Carte/AllerPrison.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte/AllerPrison.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte_nomain.o GameEngine/Case/Carte.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/AllerPrison_nomain.o GameEngine/Case/Carte/AllerPrison.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte.o ${OBJECTDIR}/GameEngine/Case/Carte_nomain.o;\
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte/AllerPrison.o ${OBJECTDIR}/GameEngine/Case/Carte/AllerPrison_nomain.o;\
+	fi
+
+${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire.o GameEngine/Case/Carte/Anniversaire.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire_nomain.o GameEngine/Case/Carte/Anniversaire.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire.o ${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire_nomain.o;\
+	fi
+
+${OBJECTDIR}/GameEngine/Case/Carte/Carte_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte/Carte.o GameEngine/Case/Carte/Carte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte/Carte.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/Carte_nomain.o GameEngine/Case/Carte/Carte.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte/Carte.o ${OBJECTDIR}/GameEngine/Case/Carte/Carte_nomain.o;\
+	fi
+
+${OBJECTDIR}/GameEngine/Case/Carte/Deplacement_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte/Deplacement.o GameEngine/Case/Carte/Deplacement.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte/Deplacement.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/Deplacement_nomain.o GameEngine/Case/Carte/Deplacement.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte/Deplacement.o ${OBJECTDIR}/GameEngine/Case/Carte/Deplacement_nomain.o;\
+	fi
+
+${OBJECTDIR}/GameEngine/Case/Carte/EstPayeParBanque_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte/EstPayeParBanque.o GameEngine/Case/Carte/EstPayeParBanque.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte/EstPayeParBanque.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/EstPayeParBanque_nomain.o GameEngine/Case/Carte/EstPayeParBanque.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte/EstPayeParBanque.o ${OBJECTDIR}/GameEngine/Case/Carte/EstPayeParBanque_nomain.o;\
+	fi
+
+${OBJECTDIR}/GameEngine/Case/Carte/Payer_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte/Payer.o GameEngine/Case/Carte/Payer.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte/Payer.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/Payer_nomain.o GameEngine/Case/Carte/Payer.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte/Payer.o ${OBJECTDIR}/GameEngine/Case/Carte/Payer_nomain.o;\
+	fi
+
+${OBJECTDIR}/GameEngine/Case/Carte/PayerConstructions_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte/PayerConstructions.o GameEngine/Case/Carte/PayerConstructions.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte/PayerConstructions.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/PayerConstructions_nomain.o GameEngine/Case/Carte/PayerConstructions.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte/PayerConstructions.o ${OBJECTDIR}/GameEngine/Case/Carte/PayerConstructions_nomain.o;\
+	fi
+
+${OBJECTDIR}/GameEngine/Case/Carte/SortirPrison_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte/SortirPrison.o GameEngine/Case/Carte/SortirPrison.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte/SortirPrison.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/SortirPrison_nomain.o GameEngine/Case/Carte/SortirPrison.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte/SortirPrison.o ${OBJECTDIR}/GameEngine/Case/Carte/SortirPrison_nomain.o;\
 	fi
 
 ${OBJECTDIR}/GameEngine/Case/Case_nomain.o: ${OBJECTDIR}/GameEngine/Case/Case.o GameEngine/Case/Case.cpp 
@@ -439,6 +644,19 @@ ${OBJECTDIR}/GameEngine/Case/Case_nomain.o: ${OBJECTDIR}/GameEngine/Case/Case.o 
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Case_nomain.o GameEngine/Case/Case.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/GameEngine/Case/Case.o ${OBJECTDIR}/GameEngine/Case/Case_nomain.o;\
+	fi
+
+${OBJECTDIR}/GameEngine/Case/CaseCarte_nomain.o: ${OBJECTDIR}/GameEngine/Case/CaseCarte.o GameEngine/Case/CaseCarte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/CaseCarte.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/CaseCarte_nomain.o GameEngine/Case/CaseCarte.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/CaseCarte.o ${OBJECTDIR}/GameEngine/Case/CaseCarte_nomain.o;\
 	fi
 
 ${OBJECTDIR}/GameEngine/Case/Depart_nomain.o: ${OBJECTDIR}/GameEngine/Case/Depart.o GameEngine/Case/Depart.cpp 
@@ -623,6 +841,45 @@ ${OBJECTDIR}/GameEngine/Plateau_nomain.o: ${OBJECTDIR}/GameEngine/Plateau.o Game
 	    ${CP} ${OBJECTDIR}/GameEngine/Plateau.o ${OBJECTDIR}/GameEngine/Plateau_nomain.o;\
 	fi
 
+${OBJECTDIR}/Graphic/GuiItems/Appartenance_nomain.o: ${OBJECTDIR}/Graphic/GuiItems/Appartenance.o Graphic/GuiItems/Appartenance.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/GuiItems
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/GuiItems/Appartenance.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/GuiItems/Appartenance_nomain.o Graphic/GuiItems/Appartenance.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/GuiItems/Appartenance.o ${OBJECTDIR}/Graphic/GuiItems/Appartenance_nomain.o;\
+	fi
+
+${OBJECTDIR}/Graphic/GuiItems/Hotel_nomain.o: ${OBJECTDIR}/Graphic/GuiItems/Hotel.o Graphic/GuiItems/Hotel.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/GuiItems
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/GuiItems/Hotel.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/GuiItems/Hotel_nomain.o Graphic/GuiItems/Hotel.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/GuiItems/Hotel.o ${OBJECTDIR}/Graphic/GuiItems/Hotel_nomain.o;\
+	fi
+
+${OBJECTDIR}/Graphic/GuiItems/Maison_nomain.o: ${OBJECTDIR}/Graphic/GuiItems/Maison.o Graphic/GuiItems/Maison.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/GuiItems
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/GuiItems/Maison.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/GuiItems/Maison_nomain.o Graphic/GuiItems/Maison.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/GuiItems/Maison.o ${OBJECTDIR}/Graphic/GuiItems/Maison_nomain.o;\
+	fi
+
 ${OBJECTDIR}/Graphic/GuiItems/Pion_nomain.o: ${OBJECTDIR}/Graphic/GuiItems/Pion.o Graphic/GuiItems/Pion.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/GuiItems
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/GuiItems/Pion.o`; \
@@ -662,6 +919,32 @@ ${OBJECTDIR}/Graphic/JeuConstantes_nomain.o: ${OBJECTDIR}/Graphic/JeuConstantes.
 	    ${CP} ${OBJECTDIR}/Graphic/JeuConstantes.o ${OBJECTDIR}/Graphic/JeuConstantes_nomain.o;\
 	fi
 
+${OBJECTDIR}/Graphic/Listeners/AfficherCacherProprietesOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/AfficherCacherProprietesOnClickListener.o Graphic/Listeners/AfficherCacherProprietesOnClickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/Listeners/AfficherCacherProprietesOnClickListener.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/AfficherCacherProprietesOnClickListener_nomain.o Graphic/Listeners/AfficherCacherProprietesOnClickListener.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/Listeners/AfficherCacherProprietesOnClickListener.o ${OBJECTDIR}/Graphic/Listeners/AfficherCacherProprietesOnClickListener_nomain.o;\
+	fi
+
+${OBJECTDIR}/Graphic/Listeners/BilletOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/BilletOnClickListener.o Graphic/Listeners/BilletOnClickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/Listeners/BilletOnClickListener.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/BilletOnClickListener_nomain.o Graphic/Listeners/BilletOnClickListener.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/Listeners/BilletOnClickListener.o ${OBJECTDIR}/Graphic/Listeners/BilletOnClickListener_nomain.o;\
+	fi
+
 ${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener.o Graphic/Listeners/CommencerOnClickListener.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener.o`; \
@@ -673,6 +956,32 @@ ${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener_nomain.o: ${OBJECTDIR}/G
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener_nomain.o Graphic/Listeners/CommencerOnClickListener.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener.o ${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener_nomain.o;\
+	fi
+
+${OBJECTDIR}/Graphic/Listeners/FaireMonnaieOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/FaireMonnaieOnClickListener.o Graphic/Listeners/FaireMonnaieOnClickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/Listeners/FaireMonnaieOnClickListener.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/FaireMonnaieOnClickListener_nomain.o Graphic/Listeners/FaireMonnaieOnClickListener.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/Listeners/FaireMonnaieOnClickListener.o ${OBJECTDIR}/Graphic/Listeners/FaireMonnaieOnClickListener_nomain.o;\
+	fi
+
+${OBJECTDIR}/Graphic/Listeners/FinirTourOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/FinirTourOnClickListener.o Graphic/Listeners/FinirTourOnClickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/Listeners/FinirTourOnClickListener.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/FinirTourOnClickListener_nomain.o Graphic/Listeners/FinirTourOnClickListener.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/Listeners/FinirTourOnClickListener.o ${OBJECTDIR}/Graphic/Listeners/FinirTourOnClickListener_nomain.o;\
 	fi
 
 ${OBJECTDIR}/Graphic/Listeners/JouerOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/JouerOnClickListener.o Graphic/Listeners/JouerOnClickListener.cpp 
@@ -701,6 +1010,32 @@ ${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener_nomain.o: ${OBJECTDIR
 	    ${CP} ${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener.o ${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener_nomain.o;\
 	fi
 
+${OBJECTDIR}/Graphic/Listeners/NonPayerOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/NonPayerOnClickListener.o Graphic/Listeners/NonPayerOnClickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/Listeners/NonPayerOnClickListener.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/NonPayerOnClickListener_nomain.o Graphic/Listeners/NonPayerOnClickListener.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/Listeners/NonPayerOnClickListener.o ${OBJECTDIR}/Graphic/Listeners/NonPayerOnClickListener_nomain.o;\
+	fi
+
+${OBJECTDIR}/Graphic/Listeners/OuiPayerOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/OuiPayerOnClickListener.o Graphic/Listeners/OuiPayerOnClickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/Listeners/OuiPayerOnClickListener.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/OuiPayerOnClickListener_nomain.o Graphic/Listeners/OuiPayerOnClickListener.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/Listeners/OuiPayerOnClickListener.o ${OBJECTDIR}/Graphic/Listeners/OuiPayerOnClickListener_nomain.o;\
+	fi
+
 ${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener.o Graphic/Listeners/QuitterOnClickListener.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener.o`; \
@@ -712,6 +1047,32 @@ ${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener_nomain.o: ${OBJECTDIR}/Gra
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener_nomain.o Graphic/Listeners/QuitterOnClickListener.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener.o ${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener_nomain.o;\
+	fi
+
+${OBJECTDIR}/Graphic/Listeners/ResetBilletsOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/ResetBilletsOnClickListener.o Graphic/Listeners/ResetBilletsOnClickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/Listeners/ResetBilletsOnClickListener.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/ResetBilletsOnClickListener_nomain.o Graphic/Listeners/ResetBilletsOnClickListener.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/Listeners/ResetBilletsOnClickListener.o ${OBJECTDIR}/Graphic/Listeners/ResetBilletsOnClickListener_nomain.o;\
+	fi
+
+${OBJECTDIR}/Graphic/Listeners/ValiderBilletsOnCLickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/ValiderBilletsOnCLickListener.o Graphic/Listeners/ValiderBilletsOnCLickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/Listeners/ValiderBilletsOnCLickListener.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/ValiderBilletsOnCLickListener_nomain.o Graphic/Listeners/ValiderBilletsOnCLickListener.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/Listeners/ValiderBilletsOnCLickListener.o ${OBJECTDIR}/Graphic/Listeners/ValiderBilletsOnCLickListener_nomain.o;\
 	fi
 
 ${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener_nomain.o: ${OBJECTDIR}/GraphicEngine/ActionListeners/ActionListener.o GraphicEngine/ActionListeners/ActionListener.cpp 

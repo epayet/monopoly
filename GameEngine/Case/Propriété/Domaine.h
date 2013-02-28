@@ -9,19 +9,22 @@
 #define	DOMAINE_H
 
 #include "Propriete.h"
+
 class Famille;
 
 class Domaine : public Propriete
 {
 public:
+    Domaine(Plateau* plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer, Famille* famille);
 	bool PeutConstruire();
 	void Construire();
-	int Detruire();
+	void Detruire();
     void Hypothequer();
-	void Agir(Joueur *joueur);
+    int SommeAPayer();
+    std::string GetMessage();
+    int GetNombreMaisons();
 
 private:
-	Famille *_famille;
     int _nombreMaisons;
 };
 

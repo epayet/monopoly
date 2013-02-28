@@ -16,7 +16,7 @@ class Joueur;
 class Plateau;
 class BilletManager;
 typedef enum {
-    DOITPAYER, DOITETREPAYE, PEUTACHETER, PEUTPAYER, RIEN
+    DOITPAYER, DOITETREPAYE, PEUTPAYER, RIEN, ESTDEPLACE
 } ACTION;
 
 
@@ -28,7 +28,9 @@ class Case
         	virtual void Agir(Joueur *joueur, BilletManager *billetManager = NULL) = 0;
             virtual std::string GetMessage() = 0;   //Retourne le message des actions possibles (ex : "vous pouvez acheter ce terrain")
             virtual int SommeAPayer() = 0;  //Si DoitPayer renvoit DOITPAYER
-            virtual ACTION DoitPayer(Joueur *joueur = NULL) = 0;    //enum doitPayer, peutAcheter, doitEtrePaye rien.    
+            virtual ACTION DoitPayer(Joueur *joueur = NULL) = 0;    //enum doitPayer, peutAcheter, doitEtrePaye rien.
+            std::string GetLibelle();
+            virtual bool Achetable();
 
 protected:
 	int _numero;
