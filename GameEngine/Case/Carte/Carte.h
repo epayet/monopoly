@@ -10,8 +10,6 @@
 
 #include "../Case.h"
 
-class Joueur;
-
 typedef enum {
     CHANCE, COMMUNAUTE
 } TYPECARTE;
@@ -19,9 +17,15 @@ typedef enum {
 class Carte : public Case
 {
 public:
-	void Agir(Joueur *joueur, BilletManager *billetManager);
+    Carte(Plateau *plateau, int numero, std::string libelle, TYPECARTE typeCarte);
+	virtual void Agir(Joueur *joueur, BilletManager *billetManager) = 0;
+    virtual int SommeAPayer();
+    std::string GetMessage();
+    virtual ACTION DoitPayer(Joueur *joueur);
+    virtual std::string GetLibelle();
 private:
     TYPECARTE _typeCarte;
+    
 };
 
 #endif	/* CARTE_H */

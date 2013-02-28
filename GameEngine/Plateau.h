@@ -42,8 +42,8 @@ private:
 	std::vector<Joueur*> _joueurs;
 	Cagnotte *_cagnotte;
     int _tour;
-    //std::queue<Carte> _cartesChances;
-    //std::queue<Carte> _cartesCommunauté;
+    //std::queue<Carte*> _cartesChances;
+    //std::queue<Carte*> _cartesCommunauté;
 };
 
 #endif	/* PLATEAU_H */

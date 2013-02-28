@@ -268,11 +268,77 @@
       </item>
       <item path="GameEngine/Billet/BilletManager.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="GameEngine/Carte.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="GameEngine/Case/Arrestation.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="GameEngine/Case/Arrestation.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="GameEngine/Case/Carte/AllerPrison.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/AllerPrison.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/Anniversaire.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/Anniversaire.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="GameEngine/Case/Carte/Carte.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/Deplacement.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/Deplacement.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/EstPayeParBanque.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/EstPayeParBanque.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/Payer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/Payer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/PayerConstructions.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/PayerConstructions.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/SortirPrison.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/SortirPrison.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="GameEngine/Case/Case.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -752,11 +818,77 @@
       </item>
       <item path="GameEngine/Billet/BilletManager.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="GameEngine/Carte.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="GameEngine/Case/Arrestation.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="GameEngine/Case/Arrestation.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="GameEngine/Case/Carte/AllerPrison.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/AllerPrison.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/Anniversaire.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/Anniversaire.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="GameEngine/Case/Carte/Carte.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/Deplacement.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/Deplacement.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/EstPayeParBanque.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/EstPayeParBanque.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/Payer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/Payer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/PayerConstructions.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/PayerConstructions.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/SortirPrison.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GameEngine/Case/Carte/SortirPrison.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="GameEngine/Case/Case.cpp" ex="false" tool="1" flavor2="0">
       </item>
