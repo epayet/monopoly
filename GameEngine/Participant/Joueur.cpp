@@ -51,7 +51,6 @@ void Joueur::SetAFaitDouble(int de1, int de2)
 void Joueur::Acheter(Propriete *propriete)
 {
     _proprietes.push_back(propriete);
-    propriete->Acheter(this);
 }
 
 bool Joueur::PeutPayer(int somme)

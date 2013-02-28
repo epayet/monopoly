@@ -19,7 +19,10 @@ void Propriete::Agir(Joueur* joueur, BilletManager* billetManager)
     if (DoitPayer(joueur) == DOITPAYER)
         _proprietaire->Crediter(billetManager);
     else if(DoitPayer(joueur) == PEUTPAYER && billetManager!=NULL)
+    {
         _proprietaire = joueur;
+        joueur->Acheter(this);
+    }
 }
 
 void Propriete::Hypothequer()
@@ -28,11 +31,6 @@ void Propriete::Hypothequer()
     BilletManager *hypotheque = new BilletManager(_valeurHypotheque);
     _proprietaire->Crediter(hypotheque);
     delete hypotheque;    
-}
-
-void Propriete::Acheter(Joueur *joueur)
-{
-    _proprietaire = joueur;
 }
 
 int Propriete::LeverHypotheque()

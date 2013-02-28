@@ -8,6 +8,7 @@
 #include "Case/Taxe.h"
 #include "Case/CaseCarte.h"
 #include "Case/Carte/Carte.h"
+#include "Case/Prison.h"
 
 Plateau::Plateau()
 {
@@ -36,6 +37,8 @@ Plateau::Plateau()
         //_cases.push_back(new Taxe(this, i, "fake case", 10));
         _cases.push_back(new Domaine(this, i, "fake", 1, 2, prix, famille));
     }
+    
+    _cases.push_back(new Prison(this, 10, "Prison", 10));
 }
 
 Plateau::~Plateau()

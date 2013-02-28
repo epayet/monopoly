@@ -19,7 +19,6 @@ class Propriete : public Case
             virtual void Agir(Joueur *joueur, BilletManager *billetManager);  //redéfinit Agir de Case mais sera redéfini par Domaine, Gare et Service Publique
             virtual void Hypothequer();
             int LeverHypotheque();
-        	void Acheter(Joueur *joueur);
             ACTION DoitPayer(Joueur *joueur);
             virtual int SommeAPayer()=0;
             Joueur *GetProprietaire();

@@ -13,10 +13,7 @@ Domaine::Domaine(Plateau* plateau, int numero, std::string libelle, int valeurHy
 
 bool Domaine::PeutConstruire()
 {
-    if (_nombreMaisons < 5 && _proprietaire->PeutPayer(_famille->GetPrixMaisons()))
-        return true;
-    else
-        return false;
+    return _nombreMaisons < 5 && _proprietaire->PeutPayer(_famille->GetPrixMaisons());// && PossedeFamilleEntiere(_plateau->GetJoueurActuel());
 }
 
 void Domaine::Construire()

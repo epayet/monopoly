@@ -163,12 +163,12 @@ Jeu::Jeu()
     faireMonnaie->AddListener(new FaireMonnaieOnClickListener(ONCLICK, faireMonnaie, _graphicEngine, this));
     faireMonnaie->SetCanDraw(false);
 
-    //Afficher/Cacher proprietes
+    //Construire
     Button* constuireBouton = new Button(_graphicEngine->GetWindow(), INGAME, SIZEWINDOWX - 165, 20 + faireMonnaie->GetY() + faireMonnaie->GetSizeY()
             , 20, _graphicEngine->GetFont(), JeuConstantes::ConstruireKey);
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::ConstruireKey, constuireBouton);
     constuireBouton->AddListener(new ConstruireOnClickListener(ONCLICK, constuireBouton, _graphicEngine, this));
-    constuireBouton->SetCanDraw(false);
+//    constuireBouton->SetCanDraw(false);
 
     //Finir tour
     Button* finirTour = new Button(_graphicEngine->GetWindow(), INGAME, SIZEWINDOWX - 135, constuireBouton->GetSizeY() + constuireBouton->GetY() + 20,
