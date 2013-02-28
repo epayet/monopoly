@@ -11,7 +11,7 @@ PayerConstructions::PayerConstructions(Plateau *plateau, int numero, std::string
 
 void PayerConstructions::Agir(Joueur *joueur, BilletManager *billetManager)
 {
-    //Enfiler carte;
+    _plateau->GetPaquetCartes(_typeCarte)->push(this);
 }
 
 int PayerConstructions::SommeAPayer()

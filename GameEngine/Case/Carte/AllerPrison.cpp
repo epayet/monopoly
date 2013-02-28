@@ -1,3 +1,5 @@
+#include <queue>
+
 #include "AllerPrison.h"
 #include "GameEngine/Plateau.h"
 #include "GameEngine/Case/Prison.h"
@@ -11,7 +13,7 @@ void AllerPrison::Agir(Joueur *joueur)
 {
     Prison *prison = (Prison*)_plateau->GetCase(10);
     prison->AjouterPrisonnier(joueur);
-    //enfiler carte;
+    _plateau->GetPaquetCartes(_typeCarte)->push(this);
 }
 
 std::string AllerPrison::GetMessage()

@@ -36,14 +36,15 @@ public:
     void JoueurActuelAPerdu();
     bool EstFini();
     Carte* GetCarte(TYPECARTE typeCarte);
+    std::queue<Carte*> GetPaquetCartes(TYPECARTE typeCarte);
 
 private:
 	std::vector<Case*> _cases;
 	std::vector<Joueur*> _joueurs;
 	Cagnotte *_cagnotte;
     int _tour;
-    //std::queue<Carte*> _cartesChances;
-    //std::queue<Carte*> _cartesCommunauté;
+    std::queue<Carte*> _cartesChance;
+    std::queue<Carte*> _cartesCommunaute;
 };
 
 #endif	/* PLATEAU_H */

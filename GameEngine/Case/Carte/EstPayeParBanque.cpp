@@ -12,7 +12,7 @@ EstPayeParBanque::EstPayeParBanque(Plateau *plateau, int numero, std::string lib
 void EstPayeParBanque::Agir(Joueur *joueur, BilletManager *billetManager)
 {
     joueur->Crediter(billetManager);
-    //enfiler carte;
+    _plateau->GetPaquetCartes(_typeCarte)->push(this);
 }
 
 

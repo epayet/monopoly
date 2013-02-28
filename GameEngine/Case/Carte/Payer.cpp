@@ -7,7 +7,7 @@ Payer::Payer(Plateau *plateau, int numero, std::string libelle, TYPECARTE typeCa
 
 void Payer::Agir(Joueur *joueur, BilletManager *billetManager)
 {
-    //enfiler carte;
+    _plateau->GetPaquetCartes(_typeCarte)->push(this);
 }
 
 int Payer::SommeAPayer()

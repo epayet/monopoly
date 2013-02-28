@@ -7,6 +7,7 @@
 #include "Case/Propriété/Gare.h"
 #include "Case/Taxe.h"
 #include "Case/CaseCarte.h"
+#include "Case/Carte/Carte.h"
 
 Plateau::Plateau()
 {
@@ -95,17 +96,16 @@ bool Plateau::EstFini()
 
 Carte* Plateau::GetCarte(TYPECARTE typeCarte)
 {
-    /*if(typeCarte==CHANCE)
-        return _cartesChance->Front();
+    if(typeCarte==CHANCE)
+        return _cartesChance->front();
     else
-        return _cartesCommunaute->Front();*/
+        return _cartesCommunaute->front();
+}
 
-
-
-
-
-
-
-
-
+std::queue<Carte*> Plateau::GetPaquetCartes(TYPECARTE typeCarte)
+{
+    if(typeCarte==CHANCE)
+        return _cartesChance;
+    else
+        return _cartesCommunaute;
 }

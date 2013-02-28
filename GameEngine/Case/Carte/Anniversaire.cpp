@@ -12,7 +12,7 @@ Anniversaire::Anniversaire(Plateau *plateau, int numero, std::string libelle, TY
 void Anniversaire::Agir(Joueur *joueur, BilletManager *billetManager)
 {
     joueur->Crediter(billetManager);
-    //enfiler carte;
+    _plateau->GetPaquetCartes(_typeCarte)->push(this);
 }
 
 
