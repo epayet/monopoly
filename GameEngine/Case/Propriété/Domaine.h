@@ -18,6 +18,7 @@ public:
     Domaine(Plateau* plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer, Famille* famille);
 	bool PeutConstruire();
 	void Construire();
+    bool PeutDetruire();
 	void Detruire();
     void Hypothequer();
     int SommeAPayer();

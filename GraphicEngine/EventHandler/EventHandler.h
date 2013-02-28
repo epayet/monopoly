@@ -15,7 +15,7 @@ class GuiItem;
 class EventHandler
 {
 public:
-	EventHandler(GuiItem* guiItem);
+	EventHandler(GuiItem* guiItem = NULL);
 	~EventHandler();
 	virtual bool IsTriggered(sf::Event) = 0;
 

@@ -12,3 +12,9 @@ void Appartenance::Draw(int state)
     if(CanDraw(state))
         _window.Draw(_shape);
 }
+
+void Appartenance::SetColor(sf::Color color)
+{
+    _color = color;
+    _shape.SetColor(_color);
+}

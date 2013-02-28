@@ -5,6 +5,12 @@
 #include "util.h"
 #include "GameEngine/Case/Case.h"
 
+Domaine::Domaine(Plateau* plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer, Famille* famille) 
+        : Propriete(plateau, numero, libelle, valeurHypotheque, prixAchat, prixLoyer, famille)
+{
+    
+}
+
 bool Domaine::PeutConstruire()
 {
     if (_nombreMaisons < 5 && _proprietaire->PeutPayer(_famille->GetPrixMaisons()))
@@ -16,6 +22,11 @@ bool Domaine::PeutConstruire()
 void Domaine::Construire()
 {
     _nombreMaisons++;
+}
+
+bool Domaine::PeutDetruire()
+{
+    return _nombreMaisons > 0;
 }
 
 void Domaine::Detruire()
@@ -57,8 +68,10 @@ std::string Domaine::GetMessage()
         return "Vous êtes chez " + _proprietaire->GetNom() + ", vous lui devez : " + intToString(SommeAPayer()) + " euros.";
     else if(DoitPayer(_plateau->GetJoueurActuel())==PEUTPAYER)
         return "Vous pouvez acheter cette propriété. Elle coûte : " + intToString(_prixAchat)+ " euros.";
-    else if (DoitPayer(_plateau->GetJoueurActuel())==RIEN)
-        return "Vous êtes chez vous.";
+    else if (DoitPayer(_plateau->GetJoueurActuel())==RIEN && _plateau->GetJoueurActuel() == _proprietaire)
+        return "Vous etes chez vous.";
+    else
+        return "";
 }
 
 int Domaine::GetNombreMaisons()

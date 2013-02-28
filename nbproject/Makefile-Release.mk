@@ -60,10 +60,12 @@ OBJECTFILES= \
 	${OBJECTDIR}/Graphic/GuiItems/Pion.o \
 	${OBJECTDIR}/Graphic/Jeu.o \
 	${OBJECTDIR}/Graphic/JeuConstantes.o \
-	${OBJECTDIR}/Graphic/Listeners/AfficherCacherProprietesOnClickListener.o \
+	${OBJECTDIR}/Graphic/Listeners/AppartenanceOnClickListener.o \
 	${OBJECTDIR}/Graphic/Listeners/BilletOnClickListener.o \
 	${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener.o \
+	${OBJECTDIR}/Graphic/Listeners/ConstruireOnClickListener.o \
 	${OBJECTDIR}/Graphic/Listeners/FaireMonnaieOnClickListener.o \
+	${OBJECTDIR}/Graphic/Listeners/FinirTourKeyReleasedListener.o \
 	${OBJECTDIR}/Graphic/Listeners/FinirTourOnClickListener.o \
 	${OBJECTDIR}/Graphic/Listeners/JouerOnClickListener.o \
 	${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener.o \
@@ -78,6 +80,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/GraphicEngine/ActionListeners/SpinnerOnClickListener.o \
 	${OBJECTDIR}/GraphicEngine/Constant.o \
 	${OBJECTDIR}/GraphicEngine/EventHandler/EventHandler.o \
+	${OBJECTDIR}/GraphicEngine/EventHandler/KeyReleasedHandler.o \
 	${OBJECTDIR}/GraphicEngine/EventHandler/MouseOutHandler.o \
 	${OBJECTDIR}/GraphicEngine/EventHandler/MouseOverHandler.o \
 	${OBJECTDIR}/GraphicEngine/EventHandler/OnClickHandler.o \
@@ -249,10 +252,10 @@ ${OBJECTDIR}/Graphic/JeuConstantes.o: Graphic/JeuConstantes.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/JeuConstantes.o Graphic/JeuConstantes.cpp
 
-${OBJECTDIR}/Graphic/Listeners/AfficherCacherProprietesOnClickListener.o: Graphic/Listeners/AfficherCacherProprietesOnClickListener.cpp 
+${OBJECTDIR}/Graphic/Listeners/AppartenanceOnClickListener.o: Graphic/Listeners/AppartenanceOnClickListener.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/AfficherCacherProprietesOnClickListener.o Graphic/Listeners/AfficherCacherProprietesOnClickListener.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/AppartenanceOnClickListener.o Graphic/Listeners/AppartenanceOnClickListener.cpp
 
 ${OBJECTDIR}/Graphic/Listeners/BilletOnClickListener.o: Graphic/Listeners/BilletOnClickListener.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
@@ -264,10 +267,20 @@ ${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener.o: Graphic/Listeners/Com
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener.o Graphic/Listeners/CommencerOnClickListener.cpp
 
+${OBJECTDIR}/Graphic/Listeners/ConstruireOnClickListener.o: Graphic/Listeners/ConstruireOnClickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/ConstruireOnClickListener.o Graphic/Listeners/ConstruireOnClickListener.cpp
+
 ${OBJECTDIR}/Graphic/Listeners/FaireMonnaieOnClickListener.o: Graphic/Listeners/FaireMonnaieOnClickListener.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/FaireMonnaieOnClickListener.o Graphic/Listeners/FaireMonnaieOnClickListener.cpp
+
+${OBJECTDIR}/Graphic/Listeners/FinirTourKeyReleasedListener.o: Graphic/Listeners/FinirTourKeyReleasedListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/FinirTourKeyReleasedListener.o Graphic/Listeners/FinirTourKeyReleasedListener.cpp
 
 ${OBJECTDIR}/Graphic/Listeners/FinirTourOnClickListener.o: Graphic/Listeners/FinirTourOnClickListener.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
@@ -338,6 +351,11 @@ ${OBJECTDIR}/GraphicEngine/EventHandler/EventHandler.o: GraphicEngine/EventHandl
 	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/EventHandler
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/EventHandler/EventHandler.o GraphicEngine/EventHandler/EventHandler.cpp
+
+${OBJECTDIR}/GraphicEngine/EventHandler/KeyReleasedHandler.o: GraphicEngine/EventHandler/KeyReleasedHandler.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/EventHandler
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/EventHandler/KeyReleasedHandler.o GraphicEngine/EventHandler/KeyReleasedHandler.cpp
 
 ${OBJECTDIR}/GraphicEngine/EventHandler/MouseOutHandler.o: GraphicEngine/EventHandler/MouseOutHandler.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/EventHandler
@@ -767,17 +785,17 @@ ${OBJECTDIR}/Graphic/JeuConstantes_nomain.o: ${OBJECTDIR}/Graphic/JeuConstantes.
 	    ${CP} ${OBJECTDIR}/Graphic/JeuConstantes.o ${OBJECTDIR}/Graphic/JeuConstantes_nomain.o;\
 	fi
 
-${OBJECTDIR}/Graphic/Listeners/AfficherCacherProprietesOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/AfficherCacherProprietesOnClickListener.o Graphic/Listeners/AfficherCacherProprietesOnClickListener.cpp 
+${OBJECTDIR}/Graphic/Listeners/AppartenanceOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/AppartenanceOnClickListener.o Graphic/Listeners/AppartenanceOnClickListener.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/Listeners/AfficherCacherProprietesOnClickListener.o`; \
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/Listeners/AppartenanceOnClickListener.o`; \
 	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/AfficherCacherProprietesOnClickListener_nomain.o Graphic/Listeners/AfficherCacherProprietesOnClickListener.cpp;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/AppartenanceOnClickListener_nomain.o Graphic/Listeners/AppartenanceOnClickListener.cpp;\
 	else  \
-	    ${CP} ${OBJECTDIR}/Graphic/Listeners/AfficherCacherProprietesOnClickListener.o ${OBJECTDIR}/Graphic/Listeners/AfficherCacherProprietesOnClickListener_nomain.o;\
+	    ${CP} ${OBJECTDIR}/Graphic/Listeners/AppartenanceOnClickListener.o ${OBJECTDIR}/Graphic/Listeners/AppartenanceOnClickListener_nomain.o;\
 	fi
 
 ${OBJECTDIR}/Graphic/Listeners/BilletOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/BilletOnClickListener.o Graphic/Listeners/BilletOnClickListener.cpp 
@@ -806,6 +824,19 @@ ${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener_nomain.o: ${OBJECTDIR}/G
 	    ${CP} ${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener.o ${OBJECTDIR}/Graphic/Listeners/CommencerOnClickListener_nomain.o;\
 	fi
 
+${OBJECTDIR}/Graphic/Listeners/ConstruireOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/ConstruireOnClickListener.o Graphic/Listeners/ConstruireOnClickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/Listeners/ConstruireOnClickListener.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/ConstruireOnClickListener_nomain.o Graphic/Listeners/ConstruireOnClickListener.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/Listeners/ConstruireOnClickListener.o ${OBJECTDIR}/Graphic/Listeners/ConstruireOnClickListener_nomain.o;\
+	fi
+
 ${OBJECTDIR}/Graphic/Listeners/FaireMonnaieOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/FaireMonnaieOnClickListener.o Graphic/Listeners/FaireMonnaieOnClickListener.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/Listeners/FaireMonnaieOnClickListener.o`; \
@@ -817,6 +848,19 @@ ${OBJECTDIR}/Graphic/Listeners/FaireMonnaieOnClickListener_nomain.o: ${OBJECTDIR
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/FaireMonnaieOnClickListener_nomain.o Graphic/Listeners/FaireMonnaieOnClickListener.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/Graphic/Listeners/FaireMonnaieOnClickListener.o ${OBJECTDIR}/Graphic/Listeners/FaireMonnaieOnClickListener_nomain.o;\
+	fi
+
+${OBJECTDIR}/Graphic/Listeners/FinirTourKeyReleasedListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/FinirTourKeyReleasedListener.o Graphic/Listeners/FinirTourKeyReleasedListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/Listeners/FinirTourKeyReleasedListener.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/FinirTourKeyReleasedListener_nomain.o Graphic/Listeners/FinirTourKeyReleasedListener.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/Listeners/FinirTourKeyReleasedListener.o ${OBJECTDIR}/Graphic/Listeners/FinirTourKeyReleasedListener_nomain.o;\
 	fi
 
 ${OBJECTDIR}/Graphic/Listeners/FinirTourOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/FinirTourOnClickListener.o Graphic/Listeners/FinirTourOnClickListener.cpp 
@@ -999,6 +1043,19 @@ ${OBJECTDIR}/GraphicEngine/EventHandler/EventHandler_nomain.o: ${OBJECTDIR}/Grap
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/EventHandler/EventHandler_nomain.o GraphicEngine/EventHandler/EventHandler.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/GraphicEngine/EventHandler/EventHandler.o ${OBJECTDIR}/GraphicEngine/EventHandler/EventHandler_nomain.o;\
+	fi
+
+${OBJECTDIR}/GraphicEngine/EventHandler/KeyReleasedHandler_nomain.o: ${OBJECTDIR}/GraphicEngine/EventHandler/KeyReleasedHandler.o GraphicEngine/EventHandler/KeyReleasedHandler.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GraphicEngine/EventHandler
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GraphicEngine/EventHandler/KeyReleasedHandler.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GraphicEngine/EventHandler/KeyReleasedHandler_nomain.o GraphicEngine/EventHandler/KeyReleasedHandler.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GraphicEngine/EventHandler/KeyReleasedHandler.o ${OBJECTDIR}/GraphicEngine/EventHandler/KeyReleasedHandler_nomain.o;\
 	fi
 
 ${OBJECTDIR}/GraphicEngine/EventHandler/MouseOutHandler_nomain.o: ${OBJECTDIR}/GraphicEngine/EventHandler/MouseOutHandler.o GraphicEngine/EventHandler/MouseOutHandler.cpp 

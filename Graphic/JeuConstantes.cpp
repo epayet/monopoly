@@ -19,7 +19,7 @@ const std::string JeuConstantes::VoulezVousPayerKey = "Voulez-vous payer ?";
 const std::string JeuConstantes::OuiPayerKey = "OuiPayer";
 const std::string JeuConstantes::NonPayerKey = "NonPayer";
 const std::string JeuConstantes::FaireMonnaieKey = "Faire Monnaie";
-const std::string JeuConstantes::AfficherCacherProprietesKey = "Afficher/Cacher\n     Proprietes";
+const std::string JeuConstantes::ConstruireKey = "Constuire";
 const std::string JeuConstantes::FinirTourKey = "Finir tour";
 const std::string JeuConstantes::AppartenanceKey = "Appartenance";
 

@@ -23,10 +23,12 @@
 #include "Listeners/NonPayerOnClickListener.h"
 #include "Listeners/BilletOnClickListener.h"
 #include "Listeners/FaireMonnaieOnClickListener.h"
-#include "Listeners/AfficherCacherProprietesOnClickListener.h"
+#include "Listeners/ConstruireOnClickListener.h"
 #include "Listeners/FinirTourOnClickListener.h"
 #include "GuiItems/Appartenance.h"
 #include "../GameEngine/Participant/Cagnotte.h"
+#include "GameEngine/Case/Propriété/Propriete.h"
+#include "Listeners/FinirTourKeyReleasedListener.h"
 
 Jeu::Jeu()
 {
@@ -36,6 +38,8 @@ Jeu::Jeu()
 
     _graphicEngine = new GraphicEngine(SIZEWINDOWX, SIZEWINDOWY, "Monopoly");
     _graphicEngine->SetState(FIRSTMENU);
+    
+    _graphicEngine->AddListener(new FinirTourKeyReleasedListener(KEYRELEASED, sf::Key::Return, _graphicEngine, this));
 
     //FIRSTMENU
     //Bouton jouer
@@ -134,7 +138,7 @@ Jeu::Jeu()
     validerBillets->AddListener(new ValiderBilletsOnClickListener(ONCLICK, validerBillets, _graphicEngine, this));
 
     //Voulez vous payer ?
-    int yVoulezVousPayer = caseMessage->GetSizeY() + caseMessage->GetY() + 20;
+    int yVoulezVousPayer = caseMessage->GetSizeY() + caseMessage->GetY() + 40;
 
     TextBlock* voulezVousPayer = new TextBlock(_graphicEngine->GetWindow(), INGAME, plateauImage->GetSizeX(), yVoulezVousPayer
             , 20, _graphicEngine->GetFont(), JeuConstantes::VoulezVousPayerKey);
@@ -144,40 +148,45 @@ Jeu::Jeu()
     //Réponse oui
     Button* ouiPayer = new Button(_graphicEngine->GetWindow(), INGAME, voulezVousPayer->GetSizeX() + voulezVousPayer->GetX() + 20, yVoulezVousPayer, 20, _graphicEngine->GetFont(), "Oui");
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::OuiPayerKey, ouiPayer);
-        ouiPayer->SetCanDraw(false);
+    ouiPayer->SetCanDraw(false);
     ouiPayer->AddListener(new OuiPayerOnClickListener(ONCLICK, ouiPayer, _graphicEngine, this));
 
     //Réponse non
     Button* nonPayer = new Button(_graphicEngine->GetWindow(), INGAME, ouiPayer->GetSizeX() + ouiPayer->GetX() + 10, yVoulezVousPayer, 20, _graphicEngine->GetFont(), "Non");
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::NonPayerKey, nonPayer);
-        nonPayer->SetCanDraw(false);
+    nonPayer->SetCanDraw(false);
     nonPayer->AddListener(new NonPayerOnClickListener(ONCLICK, nonPayer, _graphicEngine, this));
-    
+
     //Faire monnaie
     Button* faireMonnaie = new Button(_graphicEngine->GetWindow(), INGAME, SIZEWINDOWX - 160, 20, 20, _graphicEngine->GetFont(), JeuConstantes::FaireMonnaieKey);
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::FaireMonnaieKey, faireMonnaie);
     faireMonnaie->AddListener(new FaireMonnaieOnClickListener(ONCLICK, faireMonnaie, _graphicEngine, this));
     faireMonnaie->SetCanDraw(false);
-    
+
     //Afficher/Cacher proprietes
-    Button* afficherCacherProprietes = new Button(_graphicEngine->GetWindow(), INGAME, SIZEWINDOWX - 165, 20 + faireMonnaie->GetY() + faireMonnaie->GetSizeY()
-            , 20, _graphicEngine->GetFont(), JeuConstantes::AfficherCacherProprietesKey);
-    _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::AfficherCacherProprietesKey, afficherCacherProprietes);
-    afficherCacherProprietes->AddListener(new AfficherCacherProprietesOnClickListener(ONCLICK, afficherCacherProprietes, _graphicEngine, this));
-    afficherCacherProprietes->SetCanDraw(false);
-    
+    Button* constuireBouton = new Button(_graphicEngine->GetWindow(), INGAME, SIZEWINDOWX - 165, 20 + faireMonnaie->GetY() + faireMonnaie->GetSizeY()
+            , 20, _graphicEngine->GetFont(), JeuConstantes::ConstruireKey);
+    _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::ConstruireKey, constuireBouton);
+    constuireBouton->AddListener(new ConstruireOnClickListener(ONCLICK, constuireBouton, _graphicEngine, this));
+    constuireBouton->SetCanDraw(false);
+
     //Finir tour
-    Button* finirTour = new Button(_graphicEngine->GetWindow(), INGAME, SIZEWINDOWX - 135, afficherCacherProprietes->GetSizeY() + afficherCacherProprietes->GetY() + 20,
+    Button* finirTour = new Button(_graphicEngine->GetWindow(), INGAME, SIZEWINDOWX - 135, constuireBouton->GetSizeY() + constuireBouton->GetY() + 20,
             20, _graphicEngine->GetFont(), JeuConstantes::FinirTourKey);
     finirTour->AddListener(new FinirTourOnClickListener(ONCLICK, finirTour, _graphicEngine, this));
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::FinirTourKey, finirTour);
     finirTour->SetCanDraw(false);
-    
-    for(int i = 0; i<40; i++)
+
+    for (int i = 0; i < 40; i++)
     {
-        position pos = GetCentreCase(i);
-        Appartenance* app = new Appartenance(_graphicEngine->GetWindow(), INGAME, pos.x, pos.y, 10, sf::Color(255, 255, 255));
-        _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::AppartenanceKey, app);
+        Case* casePLateau = _plateau->GetCase(i);
+
+        if (casePLateau->Achetable())
+        {
+            position pos = GetCentreCase(i);
+            Appartenance* app = new Appartenance(_graphicEngine->GetWindow(), INGAME, pos.x, pos.y, 10, sf::Color(255, 255, 255));
+            _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::AppartenanceKey + intToString(i), app);
+        }
     }
 }
 
@@ -225,15 +234,34 @@ void Jeu::UpdatePlateau()
 
     //Update Cagnotte
     int sommeCagnotte = _plateau->GetCagnotte()->GetBilletManager()->SommeBillets();
-    TextBlock* cagnotte = (TextBlock*)_graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::SommeCagnotteKey);
+    TextBlock* cagnotte = (TextBlock*) _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::SommeCagnotteKey);
     cagnotte->SetContent(JeuConstantes::SommeCagnotteKey + intToString(sommeCagnotte));
-    
+
     //Update Appartenance
-    for(int i=0; i<40; i++)
+    for (int i = 0; i < 40; i++)
     {
         Case* casePlateau = _plateau->GetCase(i);
-        
+        if (casePlateau->Achetable())
+        {
+            Propriete* propriete = (Propriete*) casePlateau;
+            Appartenance* appartenance = (Appartenance*) _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::AppartenanceKey + intToString(i));
+
+            Joueur* proprietaire = propriete->GetProprietaire();
+
+            if (proprietaire != NULL)
+            {
+                Pion* pion = (Pion*) _graphicEngine->GetGuiManager()->GetGuiItem(proprietaire->GetNom());
+                appartenance->SetColor(pion->GetColor());
+            }
+        }
     }
+    
+    //Update Construire
+    bool canConstruire = false;
+    if(_plateau->GetJoueurActuel()->PeutConstruire())
+        canConstruire = true;
+        
+    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::ConstruireKey)->SetCanDraw(canConstruire);
 }
 
 void Jeu::UpdateJoueurActuel()
@@ -253,9 +281,6 @@ void Jeu::UpdateJoueurActuel()
 
 void Jeu::SetSommeAPayer(int somme)
 {
-    //Mock
-//    somme = 536;
-    
     _sommeAPayer = somme;
     _billetManagerARemplir->Vider();
     UpdateSommeAPayer();
@@ -264,13 +289,13 @@ void Jeu::SetSommeAPayer(int somme)
 void Jeu::UpdateSommeAPayer()
 {
     int somme;
-    
-    if(_billetACasser > 0)
+
+    if (_billetACasser > 0)
         somme = _billetACasser;
-    else if(_sommeAPayer != 0)
+    else if (_sommeAPayer != 0)
         somme = _sommeAPayer;
-    
-    
+
+
     std::string sommeBilletsString = intToString(_billetManagerARemplir->SommeBillets());
     std::string sommeString = intToString(somme);
 
@@ -298,8 +323,8 @@ int Jeu::GetBilletACasser()
 void Jeu::SetBilletACasser(int somme)
 {
     _billetACasser = somme;
-    
-    if(somme != -1)
+
+    if (somme != -1)
     {
         _billetManagerARemplir->Vider();
         UpdateSommeAPayer();
@@ -313,7 +338,8 @@ void Jeu::AfficherVoulezVousPayer(bool affich)
     _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::OuiPayerKey)->SetCanDraw(affich);
 }
 
-void Jeu::AfficherLancerDes(bool affich){
+void Jeu::AfficherLancerDes(bool affich)
+{
     _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::LancerLesDesKey)->SetCanDraw(affich);
     _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::De1Key)->SetCanDraw(affich);
     _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::De2Key)->SetCanDraw(affich);
@@ -342,10 +368,10 @@ void Jeu::UpdateFinirTour()
     _billetACasser = 0;
     _plateau->FinirTour();
     AfficherActionsPossibles(false);
-    
-    if(_plateau->EstFini())
+
+    if (_plateau->EstFini())
     {
-        TextBlock* message = (TextBlock*)_graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::CaseMessageKey);
+        TextBlock* message = (TextBlock*) _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::CaseMessageKey);
         message->SetContent("La partie est finie. Le gagnant est : " + _plateau->GetJoueurActuel()->GetNom());
         AfficherLancerDes(false);
     }
@@ -354,7 +380,7 @@ void Jeu::UpdateFinirTour()
         _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::CaseMessageKey)->SetCanDraw(false);
         AfficherLancerDes(true);
     }
-    
+
     UpdatePlateau();
 }
 
@@ -419,10 +445,10 @@ position Jeu::GetCentreCase(int pos)
         x = xmax - h / 2;
         y = i * t + t / 4 + t;
     }
-    
+
     position posi;
     posi.x = x;
     posi.y = y;
-    
+
     return posi;
 }

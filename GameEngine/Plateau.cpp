@@ -16,13 +16,24 @@ Plateau::Plateau()
     for(int i=0; i<NBCASES; i++)
     {
         //Fakes cases
-//        std::vector<int> prix;
-//        prix.push_back(0);
-//        prix.push_back(1);
-//        prix.push_back(2);
-//        prix.push_back(3);
-//        prix.push_back(4);
-        _cases.push_back(new Taxe(this, i, "fake case", 10));
+        std::vector<int> prix;
+        prix.push_back(0);
+        prix.push_back(1);
+        prix.push_back(2);
+        prix.push_back(3);
+        prix.push_back(4);
+        prix.push_back(5);
+        
+        Famille* famille = new Famille("fake couleur", 10);
+        
+        if(i > 2)
+        {
+        for(int j=3; j>0; j--)
+            famille->AjouterPropriete((Propriete*)_cases[j]);
+        }
+        
+        //_cases.push_back(new Taxe(this, i, "fake case", 10));
+        _cases.push_back(new Domaine(this, i, "fake", 1, 2, prix, famille));
     }
 }
 

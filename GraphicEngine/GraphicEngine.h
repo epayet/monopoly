@@ -10,8 +10,10 @@
 
 #include <SFML/Graphics.hpp>
 
+
 class GuiManager;
 class Police;
+class ActionListener;
 
 class GraphicEngine
 {
@@ -25,12 +27,14 @@ public:
 	void SetState(int state);
     int GetState();
     void Draw();
+    void AddListener(ActionListener*);
 
 private:
 	GuiManager* _guiManager;
 	sf::RenderWindow _window;
 	Police* _police;
 	int _state;
+    std::vector<ActionListener*> _listeners;
 };
 
 #endif	/* GRAPHICENGINE_H */

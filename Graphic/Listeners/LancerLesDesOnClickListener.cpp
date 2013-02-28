@@ -40,7 +40,11 @@ void LancerLesDesOnClickListener::Act(sf::Event)
 //    }
 //    joueurActuel->SetAFaitDouble(de1, de2);
     
-    joueurActuel->Avancer(de1, de2);
+    if(joueurActuel->GetNbTours() == 0)
+        joueurActuel->Avancer(de1, de2);
+    else
+        joueurActuel->Avancer(1);
+    //joueurActuel->Avancer(de1, de2);
     _jeu->UpdateJoueurActuel();
 
     //Enlève comme action possible lancer les dés
@@ -80,6 +84,7 @@ void LancerLesDesOnClickListener::Act(sf::Event)
     else if (action == RIEN)
     {
         caseActuelle->Agir(joueurActuel);
+        canFinirTour = true;
     }
     
     _jeu->AfficherActionsPossibles(true, canFinirTour);

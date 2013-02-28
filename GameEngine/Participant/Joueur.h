@@ -13,6 +13,7 @@
 
 class Propriete;
 class Case;
+class Domaine;
 
 class Joueur : public Participant
 {
@@ -22,8 +23,8 @@ public:
     void Avancer(int de1, int de2);
 	void Acheter(Propriete *propriete);
 	bool PeutPayer(int somme);
-	void Construire(Propriete *propriete);
-	void Detruire(Propriete *propriete);
+	void Construire(Domaine*);
+	void Detruire(Domaine*);
 	void Hypothequer(Propriete *propriete);
 	void LeverHypotheque(Propriete *propriete, BilletManager* billetManager);
 	void Placer(Case *caseAPlacer, bool passerParDepart = true);
@@ -38,6 +39,8 @@ public:
     int GetDerniersDes();
     void Perdre();
     bool APerdu();
+    bool PeutConstruire();
+    std::vector<Propriete*> GetProprietes();
 
 private:
 	int _position;

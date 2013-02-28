@@ -48,10 +48,10 @@ ACTION Propriete::DoitPayer(Joueur *joueur)
         return RIEN;
     else if (_proprietaire==NULL && joueur->GetNbTours()>0)
         return PEUTPAYER;
-    else
-    {
+    else if(_proprietaire != NULL)
         return DOITPAYER;
-    }
+    else 
+        return RIEN;
 }
 
 Joueur* Propriete::GetProprietaire()
@@ -72,7 +72,7 @@ int Propriete::GetPrixMaisons()
 bool Propriete::PossedeFamilleEntiere(Joueur *joueur)
 {
     int i, nbProprietes, nbPossedes = 0;
-    for(i=0; i<=_famille->GetProprietes().size(); i++)
+    for(i=0; i<_famille->GetProprietes().size(); i++)
     {
         if(_famille->GetProprietes()[i]->_proprietaire == joueur)
             nbPossedes++;
@@ -85,4 +85,9 @@ bool Propriete::PossedeFamilleEntiere(Joueur *joueur)
 bool Propriete::Achetable()
 {
     return true;
+}
+
+bool Propriete::PeutConstruire()
+{
+    return false;
 }

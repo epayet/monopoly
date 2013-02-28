@@ -15,7 +15,8 @@ class Propriete;
 class Famille
 {
     public:
-            Famille(std::string couleur, std::vector<Propriete*> proprietes, int prixMaisons);
+            Famille(std::string couleur, int prixMaisons, std::vector<Propriete*> proprietes);
+            Famille(std::string couleur, int prixMaisons);
             void AjouterPropriete(Propriete* propriete);
             int GetPrixMaisons();
             std::vector<Propriete*> GetProprietes();

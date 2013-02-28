@@ -19,4 +19,7 @@ void NonPayerOnClickListener::Act(sf::Event)
     Joueur* joueurActuel = _jeu->GetPlateau()->GetJoueurActuel();
     _jeu->GetPlateau()->GetCase(joueurActuel->GetPosition())->Agir(joueurActuel);
     _jeu->AfficherVoulezVousPayer(false);
+    _jeu->AfficherActionsPossibles(true);
+    
+    
 }

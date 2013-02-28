@@ -42,7 +42,7 @@ public:
     static const std::string OuiPayerKey;
     static const std::string NonPayerKey;
     static const std::string FaireMonnaieKey;
-    static const std::string AfficherCacherProprietesKey;
+    static const std::string ConstruireKey;
     static const std::string FinirTourKey;
     static const std::string AppartenanceKey;
 

@@ -44,10 +44,12 @@
           <itemPath>Graphic/GuiItems/Pion.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f1" displayName="Listeners" projectFiles="true">
-          <itemPath>Graphic/Listeners/AfficherCacherProprietesOnClickListener.h</itemPath>
+          <itemPath>Graphic/Listeners/AppartenanceOnClickListener.h</itemPath>
           <itemPath>Graphic/Listeners/BilletOnClickListener.h</itemPath>
           <itemPath>Graphic/Listeners/CommencerOnClickListener.h</itemPath>
+          <itemPath>Graphic/Listeners/ConstruireOnClickListener.h</itemPath>
           <itemPath>Graphic/Listeners/FaireMonnaieOnClickListener.h</itemPath>
+          <itemPath>Graphic/Listeners/FinirTourKeyReleasedListener.h</itemPath>
           <itemPath>Graphic/Listeners/FinirTourOnClickListener.h</itemPath>
           <itemPath>Graphic/Listeners/JouerOnClickListener.h</itemPath>
           <itemPath>Graphic/Listeners/LancerLesDesOnClickListener.h</itemPath>
@@ -69,6 +71,7 @@
         </logicalFolder>
         <logicalFolder name="f2" displayName="EventHandler" projectFiles="true">
           <itemPath>GraphicEngine/EventHandler/EventHandler.h</itemPath>
+          <itemPath>GraphicEngine/EventHandler/KeyReleasedHandler.h</itemPath>
           <itemPath>GraphicEngine/EventHandler/MouseOutHandler.h</itemPath>
           <itemPath>GraphicEngine/EventHandler/MouseOverHandler.h</itemPath>
           <itemPath>GraphicEngine/EventHandler/OnClickHandler.h</itemPath>
@@ -136,10 +139,12 @@
           <itemPath>Graphic/GuiItems/Pion.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="f1" displayName="Listeners" projectFiles="true">
-          <itemPath>Graphic/Listeners/AfficherCacherProprietesOnClickListener.cpp</itemPath>
+          <itemPath>Graphic/Listeners/AppartenanceOnClickListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/BilletOnClickListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/CommencerOnClickListener.cpp</itemPath>
+          <itemPath>Graphic/Listeners/ConstruireOnClickListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/FaireMonnaieOnClickListener.cpp</itemPath>
+          <itemPath>Graphic/Listeners/FinirTourKeyReleasedListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/FinirTourOnClickListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/JouerOnClickListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/LancerLesDesOnClickListener.cpp</itemPath>
@@ -161,6 +166,7 @@
         </logicalFolder>
         <logicalFolder name="f2" displayName="EventHandler" projectFiles="true">
           <itemPath>GraphicEngine/EventHandler/EventHandler.cpp</itemPath>
+          <itemPath>GraphicEngine/EventHandler/KeyReleasedHandler.cpp</itemPath>
           <itemPath>GraphicEngine/EventHandler/MouseOutHandler.cpp</itemPath>
           <itemPath>GraphicEngine/EventHandler/MouseOverHandler.cpp</itemPath>
           <itemPath>GraphicEngine/EventHandler/OnClickHandler.cpp</itemPath>
@@ -395,12 +401,12 @@
       </item>
       <item path="Graphic/JeuConstantes.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Graphic/Listeners/AfficherCacherProprietesOnClickListener.cpp"
+      <item path="Graphic/Listeners/AppartenanceOnClickListener.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="Graphic/Listeners/AfficherCacherProprietesOnClickListener.h"
+      <item path="Graphic/Listeners/AppartenanceOnClickListener.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -425,12 +431,32 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="Graphic/Listeners/ConstruireOnClickListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/ConstruireOnClickListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="Graphic/Listeners/FaireMonnaieOnClickListener.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
       <item path="Graphic/Listeners/FaireMonnaieOnClickListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/FinirTourKeyReleasedListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/FinirTourKeyReleasedListener.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -565,6 +591,16 @@
             flavor2="0">
       </item>
       <item path="GraphicEngine/EventHandler/EventHandler.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/EventHandler/KeyReleasedHandler.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/EventHandler/KeyReleasedHandler.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -879,12 +915,12 @@
       </item>
       <item path="Graphic/JeuConstantes.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="Graphic/Listeners/AfficherCacherProprietesOnClickListener.cpp"
+      <item path="Graphic/Listeners/AppartenanceOnClickListener.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="Graphic/Listeners/AfficherCacherProprietesOnClickListener.h"
+      <item path="Graphic/Listeners/AppartenanceOnClickListener.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -909,12 +945,32 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="Graphic/Listeners/ConstruireOnClickListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/ConstruireOnClickListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="Graphic/Listeners/FaireMonnaieOnClickListener.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
       <item path="Graphic/Listeners/FaireMonnaieOnClickListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/FinirTourKeyReleasedListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/FinirTourKeyReleasedListener.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -1049,6 +1105,16 @@
             flavor2="0">
       </item>
       <item path="GraphicEngine/EventHandler/EventHandler.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/EventHandler/KeyReleasedHandler.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="GraphicEngine/EventHandler/KeyReleasedHandler.h"
             ex="false"
             tool="3"
             flavor2="0">

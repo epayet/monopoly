@@ -1,9 +1,15 @@
 #include "Famille.h"
 
-Famille::Famille(std::string couleur, std::vector<Propriete*> proprietes, int prixMaisons)
+Famille::Famille(std::string couleur, int prixMaisons, std::vector<Propriete*> proprietes)
 {
     _couleur = couleur;
     _proprietes = proprietes;
+    _prixMaisons = prixMaisons;
+}
+
+Famille::Famille(std::string couleur, int prixMaisons)
+{
+    _couleur = couleur;
     _prixMaisons = prixMaisons;
 }
 

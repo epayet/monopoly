@@ -86,7 +86,6 @@ void Prison::AjouterPrisonnier(Joueur* joueur)
         if(_emprisonnes[i].first==joueur)
             _emprisonnes[i].second++;   //Met nbToursPassesEnPrison à 0
     }
-    ;
 }
 
 void Prison::AjouterNbToursPasses(Joueur* joueur)

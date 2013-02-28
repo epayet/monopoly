@@ -13,7 +13,7 @@
 
 typedef enum
 {
-	ONCLICK, MOUSEOVER, MOUSEOUT
+	ONCLICK, MOUSEOVER, MOUSEOUT, KEYRELEASED
 } EVENTTYPE;
 
 class GraphicEngine;
@@ -24,6 +24,7 @@ class ActionListener
 {
 public:
 	ActionListener(EVENTTYPE, GuiItem*, GraphicEngine* graphicEngine = NULL);
+	ActionListener(EVENTTYPE, sf::Key::Code, GraphicEngine* graphicEngine = NULL);
     ~ActionListener();
 	virtual void Act(sf::Event) = 0;
     EventHandler* GetEventHandler();

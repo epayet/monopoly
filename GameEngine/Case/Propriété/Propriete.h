@@ -28,6 +28,7 @@ class Propriete : public Case
             int GetPrixMaisons();
             bool PossedeFamilleEntiere(Joueur *joueur);
             bool Achetable();
+            virtual bool PeutConstruire();
     protected:
         Joueur *_proprietaire;
         bool _estHypotheque;

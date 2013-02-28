@@ -2,7 +2,8 @@
 #include "GuiManager/GuiManager.h"
 #include "Constant.h"
 #include "Police.h"
-#include <stdio.h>
+#include "ActionListeners/ActionListener.h"
+#include "EventHandler/EventHandler.h"
 
 GraphicEngine::GraphicEngine(int sizex, int sizey, std::string windowName)
 {
@@ -17,6 +18,9 @@ GraphicEngine::~GraphicEngine()
 {
     delete _guiManager;
     delete _police;
+
+    for (int i = 0; i < _listeners.size(); i++)
+        delete _listeners[i];
 }
 
 void GraphicEngine::Run()
@@ -28,6 +32,12 @@ void GraphicEngine::Run()
         {
             if (event.Type == sf::Event::Closed)
                 _window.Close();
+
+            for (int i = 0; i < _listeners.size(); i++)
+            {
+                if (_listeners[i]->GetEventHandler()->IsTriggered(event))
+                    _listeners[i]->Act(event);
+            }
 
             _guiManager->HandleEvent(event, _state);
         }
@@ -66,4 +76,9 @@ void GraphicEngine::Draw()
     _window.Clear();
     _guiManager->Draw(_state);
     _window.Display();
+}
+
+void GraphicEngine::AddListener(ActionListener* actionListener)
+{
+    _listeners.push_back(actionListener);
 }

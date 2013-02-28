@@ -13,10 +13,10 @@
 class Jeu;
 class Button;
 
-class AfficherCacherProprietesOnClickListener : public ActionListener
+class ConstruireOnClickListener : public ActionListener
 {
 public:
-    AfficherCacherProprietesOnClickListener(EVENTTYPE, Button*, GraphicEngine*, Jeu*);
+    ConstruireOnClickListener(EVENTTYPE, Button*, GraphicEngine*, Jeu*);
     void Act(sf::Event);
 
 private:
