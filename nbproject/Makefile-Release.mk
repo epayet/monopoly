@@ -38,6 +38,14 @@ OBJECTFILES= \
 	${OBJECTDIR}/GameEngine/Billet/Billet.o \
 	${OBJECTDIR}/GameEngine/Billet/BilletManager.o \
 	${OBJECTDIR}/GameEngine/Case/Arrestation.o \
+	${OBJECTDIR}/GameEngine/Case/Carte/AllerPrison.o \
+	${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire.o \
+	${OBJECTDIR}/GameEngine/Case/Carte/Carte.o \
+	${OBJECTDIR}/GameEngine/Case/Carte/Deplacement.o \
+	${OBJECTDIR}/GameEngine/Case/Carte/EstPayeParBanque.o \
+	${OBJECTDIR}/GameEngine/Case/Carte/Payer.o \
+	${OBJECTDIR}/GameEngine/Case/Carte/PayerConstructions.o \
+	${OBJECTDIR}/GameEngine/Case/Carte/SortirPrison.o \
 	${OBJECTDIR}/GameEngine/Case/Case.o \
 	${OBJECTDIR}/GameEngine/Case/CaseCarte.o \
 	${OBJECTDIR}/GameEngine/Case/Depart.o \
@@ -141,6 +149,46 @@ ${OBJECTDIR}/GameEngine/Case/Arrestation.o: GameEngine/Case/Arrestation.cpp
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Arrestation.o GameEngine/Case/Arrestation.cpp
+
+${OBJECTDIR}/GameEngine/Case/Carte/AllerPrison.o: GameEngine/Case/Carte/AllerPrison.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/AllerPrison.o GameEngine/Case/Carte/AllerPrison.cpp
+
+${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire.o: GameEngine/Case/Carte/Anniversaire.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire.o GameEngine/Case/Carte/Anniversaire.cpp
+
+${OBJECTDIR}/GameEngine/Case/Carte/Carte.o: GameEngine/Case/Carte/Carte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/Carte.o GameEngine/Case/Carte/Carte.cpp
+
+${OBJECTDIR}/GameEngine/Case/Carte/Deplacement.o: GameEngine/Case/Carte/Deplacement.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/Deplacement.o GameEngine/Case/Carte/Deplacement.cpp
+
+${OBJECTDIR}/GameEngine/Case/Carte/EstPayeParBanque.o: GameEngine/Case/Carte/EstPayeParBanque.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/EstPayeParBanque.o GameEngine/Case/Carte/EstPayeParBanque.cpp
+
+${OBJECTDIR}/GameEngine/Case/Carte/Payer.o: GameEngine/Case/Carte/Payer.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/Payer.o GameEngine/Case/Carte/Payer.cpp
+
+${OBJECTDIR}/GameEngine/Case/Carte/PayerConstructions.o: GameEngine/Case/Carte/PayerConstructions.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/PayerConstructions.o GameEngine/Case/Carte/PayerConstructions.cpp
+
+${OBJECTDIR}/GameEngine/Case/Carte/SortirPrison.o: GameEngine/Case/Carte/SortirPrison.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/SortirPrison.o GameEngine/Case/Carte/SortirPrison.cpp
 
 ${OBJECTDIR}/GameEngine/Case/Case.o: GameEngine/Case/Case.cpp 
 	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case
@@ -497,6 +545,110 @@ ${OBJECTDIR}/GameEngine/Case/Arrestation_nomain.o: ${OBJECTDIR}/GameEngine/Case/
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Arrestation_nomain.o GameEngine/Case/Arrestation.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/GameEngine/Case/Arrestation.o ${OBJECTDIR}/GameEngine/Case/Arrestation_nomain.o;\
+	fi
+
+${OBJECTDIR}/GameEngine/Case/Carte/AllerPrison_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte/AllerPrison.o GameEngine/Case/Carte/AllerPrison.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte/AllerPrison.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/AllerPrison_nomain.o GameEngine/Case/Carte/AllerPrison.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte/AllerPrison.o ${OBJECTDIR}/GameEngine/Case/Carte/AllerPrison_nomain.o;\
+	fi
+
+${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire.o GameEngine/Case/Carte/Anniversaire.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire_nomain.o GameEngine/Case/Carte/Anniversaire.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire.o ${OBJECTDIR}/GameEngine/Case/Carte/Anniversaire_nomain.o;\
+	fi
+
+${OBJECTDIR}/GameEngine/Case/Carte/Carte_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte/Carte.o GameEngine/Case/Carte/Carte.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte/Carte.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/Carte_nomain.o GameEngine/Case/Carte/Carte.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte/Carte.o ${OBJECTDIR}/GameEngine/Case/Carte/Carte_nomain.o;\
+	fi
+
+${OBJECTDIR}/GameEngine/Case/Carte/Deplacement_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte/Deplacement.o GameEngine/Case/Carte/Deplacement.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte/Deplacement.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/Deplacement_nomain.o GameEngine/Case/Carte/Deplacement.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte/Deplacement.o ${OBJECTDIR}/GameEngine/Case/Carte/Deplacement_nomain.o;\
+	fi
+
+${OBJECTDIR}/GameEngine/Case/Carte/EstPayeParBanque_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte/EstPayeParBanque.o GameEngine/Case/Carte/EstPayeParBanque.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte/EstPayeParBanque.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/EstPayeParBanque_nomain.o GameEngine/Case/Carte/EstPayeParBanque.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte/EstPayeParBanque.o ${OBJECTDIR}/GameEngine/Case/Carte/EstPayeParBanque_nomain.o;\
+	fi
+
+${OBJECTDIR}/GameEngine/Case/Carte/Payer_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte/Payer.o GameEngine/Case/Carte/Payer.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte/Payer.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/Payer_nomain.o GameEngine/Case/Carte/Payer.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte/Payer.o ${OBJECTDIR}/GameEngine/Case/Carte/Payer_nomain.o;\
+	fi
+
+${OBJECTDIR}/GameEngine/Case/Carte/PayerConstructions_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte/PayerConstructions.o GameEngine/Case/Carte/PayerConstructions.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte/PayerConstructions.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/PayerConstructions_nomain.o GameEngine/Case/Carte/PayerConstructions.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte/PayerConstructions.o ${OBJECTDIR}/GameEngine/Case/Carte/PayerConstructions_nomain.o;\
+	fi
+
+${OBJECTDIR}/GameEngine/Case/Carte/SortirPrison_nomain.o: ${OBJECTDIR}/GameEngine/Case/Carte/SortirPrison.o GameEngine/Case/Carte/SortirPrison.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine/Case/Carte
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/Case/Carte/SortirPrison.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Case/Carte/SortirPrison_nomain.o GameEngine/Case/Carte/SortirPrison.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/Case/Carte/SortirPrison.o ${OBJECTDIR}/GameEngine/Case/Carte/SortirPrison_nomain.o;\
 	fi
 
 ${OBJECTDIR}/GameEngine/Case/Case_nomain.o: ${OBJECTDIR}/GameEngine/Case/Case.o GameEngine/Case/Case.cpp 

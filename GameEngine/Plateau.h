@@ -12,6 +12,7 @@
 
 #include <cstdlib>
 #include <vector>
+#include <queue>
 #include <string>
 #include "Case/Carte/Carte.h"
 
@@ -22,28 +23,28 @@ class Cagnotte;
 class Banque;
 class Carte;
 
-class Plateau
-{
+class Plateau {
 public:
 	Plateau();
 	~Plateau();
 	void AjouterJoueur(std::string nomJoueur);
     Joueur* GetJoueurActuel();
-    std::vector<Joueur*> GetJoueurs();
+    vector<Joueur*> GetJoueurs();
     void FinirTour();
     Case* GetCase(int);
     Cagnotte* GetCagnotte();
     void JoueurActuelAPerdu();
     bool EstFini();
     Carte* GetCarte(TYPECARTE typeCarte);
+    std::queue<Carte*> GetPaquetCartes(TYPECARTE typeCarte);
 
 private:
-	std::vector<Case*> _cases;
-	std::vector<Joueur*> _joueurs;
-	Cagnotte *_cagnotte;
+    vector<Case*> _cases;
+    vector<Joueur*> _joueurs;
+    Cagnotte *_cagnotte;
     int _tour;
-    //std::queue<Carte> _cartesChances;
-    //std::queue<Carte> _cartesCommunauté;
+    std::queue<Carte*> _cartesChance;
+    std::queue<Carte*> _cartesCommunaute;
 };
 
 #endif	/* PLATEAU_H */

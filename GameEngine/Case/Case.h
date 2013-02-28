@@ -16,7 +16,7 @@ class Joueur;
 class Plateau;
 class BilletManager;
 typedef enum {
-    DOITPAYER, DOITETREPAYE, PEUTPAYER, RIEN
+    DOITPAYER, DOITETREPAYE, PEUTPAYER, RIEN, ESTDEPLACE
 } ACTION;
 
 

@@ -1,37 +1,37 @@
-#include "../Case/CaseCarte.h"
+#include "Case/Carte/Carte.h"
 #include "GameEngine/Participant/Participant.h"
 #include "util.h"
-#include "Case.h"
+#include "Case/Case.h"
 #include "GameEngine/Plateau.h"
 
 
-CaseCarte::CaseCarte(Plateau *plateau, int numero, std::string libelle, TYPECARTE typecarte) : Case(plateau, numero, libelle)
+Carte::Carte(Plateau *plateau, int numero, std::string libelle, TYPECARTE typecarte) : Case(plateau, numero, libelle)
 {
     _typeCarte = typecarte;
 }
 
-void CaseCarte::Agir(Joueur *joueur, BilletManager *billetManager)
+void Carte::Agir(Joueur *joueur, BilletManager *billetManager)
 {
     return _plateau->GetCarte(_typeCarte)->Agir(joueur, billetManager);        
 }
 
-int CaseCarte::SommeAPayer()
+int Carte::SommeAPayer()
 {
     return _plateau->GetCarte(_typeCarte)->SommeAPayer();
 }
 
-ACTION CaseCarte::DoitPayer(Joueur *joueur)
+ACTION Carte::DoitPayer(Joueur *joueur)
 {
     return _plateau->GetCarte(_typeCarte)->DoitPayer(joueur);
 }
 
-std::string CaseCarte::GetMessage()
+std::string Carte::GetMessage()
 {
     
     return _plateau->GetCarte(_typeCarte)->GetMessage();
 }
 
-std::string CaseCarte::GetLibelle()
+std::string Carte::GetLibelle()
 {
     return _plateau->GetCarte(_typeCarte)->GetLibelle();
 }

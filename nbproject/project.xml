@@ -10,7 +10,8 @@
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>.</sourceRootElem>
+                <sourceRootElem>GameEngine</sourceRootElem>
+                <sourceRootElem>lib</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
