@@ -53,8 +53,12 @@ int Domaine::SommeAPayer()
 
 std::string Domaine::GetMessage()
 {
-    if (_proprietaire != _plateau->GetJoueurActuel())
+    if (DoitPayer(_plateau->GetJoueurActuel())==DOITPAYER)
         return "Vous êtes chez " + _proprietaire->GetNom() + ", vous lui devez : " + intToString(SommeAPayer()) + " euros.";
+    else if(DoitPayer(_plateau->GetJoueurActuel())==PEUTPAYER)
+        return "Vous pouvez acheter cette propriété. Elle coûte : " + intToString(_prixAchat)+ " euros.";
+    else if (DoitPayer(_plateau->GetJoueurActuel())==RIEN)
+        return "Vous êtes chez vous.";
 }
 
 int Domaine::GetNombreMaisons()

@@ -81,3 +81,8 @@ bool Propriete::PossedeFamilleEntiere(Joueur *joueur)
     if(nbPossedes == nbProprietes)
         return true;
 }
+
+bool Propriete::Achetable()
+{
+    return true;
+}

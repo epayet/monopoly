@@ -12,10 +12,8 @@
         <logicalFolder name="Case" displayName="Case" projectFiles="true">
           <logicalFolder name="Carte" displayName="Carte" projectFiles="true">
             <itemPath>GameEngine/Case/Carte/Carte.h</itemPath>
-            <itemPath>GameEngine/Case/Carte/TypeCarte.h</itemPath>
           </logicalFolder>
           <logicalFolder name="Propriété" displayName="Propriété" projectFiles="true">
-            <itemPath>GameEngine/Case/Case.h</itemPath>
             <itemPath>GameEngine/Case/Propriété/Domaine.h</itemPath>
             <itemPath>GameEngine/Case/Propriété/Famille.h</itemPath>
             <itemPath>GameEngine/Case/Propriété/Gare.h</itemPath>
@@ -23,6 +21,8 @@
             <itemPath>GameEngine/Case/Propriété/ServicePublique.h</itemPath>
           </logicalFolder>
           <itemPath>GameEngine/Case/Arrestation.h</itemPath>
+          <itemPath>GameEngine/Case/Case.h</itemPath>
+          <itemPath>GameEngine/Case/CaseCarte.h</itemPath>
           <itemPath>GameEngine/Case/Depart.h</itemPath>
           <itemPath>GameEngine/Case/Parc.h</itemPath>
           <itemPath>GameEngine/Case/Prison.h</itemPath>
@@ -102,6 +102,8 @@
           <itemPath>GameEngine/Billet/BilletManager.cpp</itemPath>
         </logicalFolder>
         <logicalFolder name="Case" displayName="Case" projectFiles="true">
+          <logicalFolder name="Carte" displayName="Carte" projectFiles="true">
+          </logicalFolder>
           <logicalFolder name="Propriété" displayName="Propriété" projectFiles="true">
             <itemPath>GameEngine/Case/Propriété/Domaine.cpp</itemPath>
             <itemPath>GameEngine/Case/Propriété/Famille.cpp</itemPath>
@@ -111,6 +113,7 @@
           </logicalFolder>
           <itemPath>GameEngine/Case/Arrestation.cpp</itemPath>
           <itemPath>GameEngine/Case/Case.cpp</itemPath>
+          <itemPath>GameEngine/Case/CaseCarte.cpp</itemPath>
           <itemPath>GameEngine/Case/Depart.cpp</itemPath>
           <itemPath>GameEngine/Case/Parc.cpp</itemPath>
           <itemPath>GameEngine/Case/Prison.cpp</itemPath>
@@ -269,11 +272,13 @@
       </item>
       <item path="GameEngine/Case/Carte/Carte.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="GameEngine/Case/Carte/TypeCarte.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="GameEngine/Case/Case.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="GameEngine/Case/Case.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/CaseCarte.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/CaseCarte.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="GameEngine/Case/Depart.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -747,11 +752,13 @@
       </item>
       <item path="GameEngine/Case/Carte/Carte.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="GameEngine/Case/Carte/TypeCarte.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="GameEngine/Case/Case.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="GameEngine/Case/Case.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/CaseCarte.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/Case/CaseCarte.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="GameEngine/Case/Depart.cpp" ex="false" tool="1" flavor2="0">
       </item>

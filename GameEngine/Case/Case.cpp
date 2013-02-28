@@ -20,3 +20,8 @@ std::string Case::GetLibelle()
 {
     return _libelle;
 }
+
+bool Case::Achetable()
+{
+    return false;
+}

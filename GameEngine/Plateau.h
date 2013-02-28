@@ -13,6 +13,7 @@
 #include <cstdlib>
 #include <vector>
 #include <string>
+#include "Case/Carte/Carte.h"
 
 class Case;
 class Joueur;
@@ -32,12 +33,15 @@ public:
     void FinirTour();
     Case* GetCase(int);
     Cagnotte* GetCagnotte();
+    Carte* GetCarte(TYPECARTE typeCarte);
 
 private:
 	std::vector<Case*> _cases;
 	std::vector<Joueur*> _joueurs;
 	Cagnotte *_cagnotte;
     int _tour;
+    //std::queue<Carte> _cartesChances;
+    //std::queue<Carte> _cartesCommunauté;
 };
 
 #endif	/* PLATEAU_H */

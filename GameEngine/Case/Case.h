@@ -30,6 +30,7 @@ class Case
             virtual int SommeAPayer() = 0;  //Si DoitPayer renvoit DOITPAYER
             virtual ACTION DoitPayer(Joueur *joueur = NULL) = 0;    //enum doitPayer, peutAcheter, doitEtrePaye rien.
             std::string GetLibelle();
+            virtual bool Achetable();
 
 protected:
 	int _numero;

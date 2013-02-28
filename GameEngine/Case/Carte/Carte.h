@@ -9,16 +9,19 @@
 #define	CARTE_H
 
 #include "../Case.h"
-#include "TypeCarte.h"
 
-class TypeCarte;
+class Joueur;
+
+typedef enum {
+    CHANCE, COMMUNAUTE
+} TYPECARTE;
 
 class Carte : public Case
 {
 public:
-	void Agir(Joueur *joueur);
+	void Agir(Joueur *joueur, BilletManager *billetManager);
 private:
-    TypeCarte *_typeCarte;
+    TYPECARTE _typeCarte;
 };
 
 #endif	/* CARTE_H */
