@@ -14,27 +14,29 @@
 
 class Propriete : public Case
 {
-    public:
-            Propriete(Plateau *plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer, Famille *famille);
-            virtual void Agir(Joueur *joueur, BilletManager *billetManager);  //redéfinit Agir de Case mais sera redéfini par Domaine, Gare et Service Publique
-            virtual void Hypothequer();
-            int LeverHypotheque();
-            ACTION DoitPayer(Joueur *joueur);
-            virtual int SommeAPayer()=0;
-            Joueur *GetProprietaire();
-            virtual int GetValeurHypotheque();
-            std::string GetMessage();
-            int GetPrixMaisons();
-            bool PossedeFamilleEntiere(Joueur *joueur);
-            bool Achetable();
-            virtual bool PeutConstruire();
-    protected:
-        Joueur *_proprietaire;
-        bool _estHypotheque;
-        int _valeurHypotheque;
-        int _prixAchat;
-        std::vector<int> _prixLoyer;
-        Famille *_famille;
+public:
+    Propriete(Plateau *plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer, Famille *famille);
+    virtual void Agir(Joueur *joueur, BilletManager *billetManager); //redéfinit Agir de Case mais sera redéfini par Domaine, Gare et Service Publique
+    virtual void Hypothequer();
+    int LeverHypotheque();
+    ACTION DoitPayer(Joueur *joueur);
+    virtual int SommeAPayer() = 0;
+    Joueur *GetProprietaire();
+    virtual int GetValeurHypotheque();
+    std::string GetMessage();
+    int GetPrixMaisons();
+    bool PossedeFamilleEntiere(Joueur *joueur);
+    bool Achetable();
+    virtual bool PeutConstruire();
+    bool EstHypotheque();
+    
+protected:
+    Joueur *_proprietaire;
+    bool _estHypotheque;
+    int _valeurHypotheque;
+    int _prixAchat;
+    std::vector<int> _prixLoyer;
+    Famille *_famille;
 
 };
 
