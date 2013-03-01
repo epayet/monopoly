@@ -37,6 +37,8 @@ void Prison::Agir(Joueur *joueur, BilletManager *billetManager)
                 _emprisonnes[GetIndicePrisonnier(joueur)].second = -1; //Sort de prison
         }
     }
+    else
+        _emprisonnes[GetIndicePrisonnier(joueur)].second++;
 }
 
 std::string Prison::GetMessage()
