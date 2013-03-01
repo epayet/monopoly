@@ -358,6 +358,7 @@
           <preprocessorList>
             <Elem>SFML_DYNAMIC</Elem>
           </preprocessorList>
+          <warningLevel>2</warningLevel>
         </ccTool>
         <linkerTool>
           <output>${TESTDIR}/TestFiles/f1</output>

@@ -19,12 +19,12 @@ Plateau::Plateau()
     {
         //Fakes cases
         std::vector<int> prix;
-        prix.push_back(0);
         prix.push_back(1);
         prix.push_back(2);
         prix.push_back(3);
         prix.push_back(4);
         prix.push_back(5);
+        prix.push_back(6);
         
         Famille* famille = new Famille("fake couleur", 10);
         

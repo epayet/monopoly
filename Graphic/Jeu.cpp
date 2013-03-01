@@ -29,12 +29,14 @@
 #include "../GameEngine/Participant/Cagnotte.h"
 #include "GameEngine/Case/Propriété/Propriete.h"
 #include "Listeners/FinirTourKeyReleasedListener.h"
+#include "Listeners/AppartenanceOnClickListener.h"
 
 Jeu::Jeu()
 {
     _plateau = new Plateau();
     _billetManagerARemplir = new BilletManager();
     _billetACasser = _sommeAPayer = 0;
+    _domaineEnConstruction = NULL;
 
     _graphicEngine = new GraphicEngine(SIZEWINDOWX, SIZEWINDOWY, "Monopoly");
     _graphicEngine->SetState(FIRSTMENU);
@@ -177,14 +179,18 @@ Jeu::Jeu()
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::FinirTourKey, finirTour);
     finirTour->SetCanDraw(false);
 
+    //Appartenance
     for (int i = 0; i < 40; i++)
     {
-        Case* casePLateau = _plateau->GetCase(i);
+        Case* casePlateau = _plateau->GetCase(i);
 
-        if (casePLateau->Achetable())
+        if (casePlateau->Achetable())
         {
             position pos = GetCentreCase(i);
             Appartenance* app = new Appartenance(_graphicEngine->GetWindow(), INGAME, pos.x, pos.y, 10, sf::Color(255, 255, 255));
+            app->SetCanDraw(false);
+            Domaine* domaine = (Domaine*)casePlateau;
+            app->AddListener(new AppartenanceOnClickListener(ONCLICK, app, _graphicEngine, this, domaine));
             _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::AppartenanceKey + intToString(i), app);
         }
     }
@@ -252,6 +258,7 @@ void Jeu::UpdatePlateau()
             {
                 Pion* pion = (Pion*) _graphicEngine->GetGuiManager()->GetGuiItem(proprietaire->GetNom());
                 appartenance->SetColor(pion->GetColor());
+                appartenance->SetCanDraw(true);
             }
         }
     }
@@ -360,6 +367,16 @@ void Jeu::AfficherActionsPossibles(bool affichFaireMonnaie, bool affichFinirTour
 int Jeu::GetSommeAPayer()
 {
     return _sommeAPayer;
+}
+
+Domaine* Jeu::GetDomaineEnConstruction()
+{
+    return _domaineEnConstruction;
+}
+
+void Jeu::SetDomaineEnConstruction(Domaine* domaine)
+{
+    _domaineEnConstruction = domaine;
 }
 
 void Jeu::UpdateFinirTour()

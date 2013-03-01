@@ -58,7 +58,7 @@ bool Joueur::PeutPayer(int somme)
     if (!_billetManager->PeutPayer(somme))
         return false;
 
-
+    return true;
 }
 
 void Joueur::Construire(Domaine *domaine)
@@ -96,13 +96,21 @@ void Joueur::Placer(Case *caseAPlacer, bool passerParDepart)
 
 void Joueur::InitialiserBillets()
 {
-    _billetManager->Ajouter(2, BILLET500);
-    _billetManager->Ajouter(4, BILLET100);
-    _billetManager->Ajouter(1, BILLET50);
-    _billetManager->Ajouter(1, BILLET20);
-    _billetManager->Ajouter(2, BILLET10);
-    _billetManager->Ajouter(1, BILLET5);
-    _billetManager->Ajouter(5, BILLET1);
+//    _billetManager->Ajouter(2, BILLET500);
+//    _billetManager->Ajouter(4, BILLET100);
+//    _billetManager->Ajouter(1, BILLET50);
+//    _billetManager->Ajouter(1, BILLET20);
+//    _billetManager->Ajouter(2, BILLET10);
+//    _billetManager->Ajouter(1, BILLET5);
+//    _billetManager->Ajouter(5, BILLET1);
+    
+    _billetManager->Ajouter(999, BILLET500);
+    _billetManager->Ajouter(999, BILLET100);
+    _billetManager->Ajouter(999, BILLET50);
+    _billetManager->Ajouter(999, BILLET20);
+    _billetManager->Ajouter(999, BILLET10);
+    _billetManager->Ajouter(999, BILLET5);
+    _billetManager->Ajouter(999, BILLET1);
 }
 
 int Joueur::GetPosition()
@@ -113,7 +121,7 @@ int Joueur::GetPosition()
 void Joueur::GagnerArgentCaseDepart()
 {
     //_billetManager->Ajouter(2, BILLET100);
-    _plateau->GetCase(0)->Agir(this);
+    //_plateau->GetCase(0)->Agir(this);
     //    Depart* depart = new Depart();
     //    depart->Agir(this);
     //    delete depart;

@@ -69,15 +69,16 @@ int Propriete::GetPrixMaisons()
 
 bool Propriete::PossedeFamilleEntiere(Joueur *joueur)
 {
-    int i, nbProprietes, nbPossedes = 0;
-    for(i=0; i<_famille->GetProprietes().size(); i++)
+    int nbPossedes = 0;
+    for(int i=0; i<_famille->GetProprietes().size(); i++)
     {
-        if(_famille->GetProprietes()[i]->_proprietaire == joueur)
+        if(_famille->GetProprietes()[i]->GetProprietaire() == joueur)
             nbPossedes++;
-        nbProprietes++;
     }
-    if(nbPossedes == nbProprietes)
+    if(nbPossedes == _famille->GetProprietes().size())
         return true;
+    else 
+        return false;
 }
 
 bool Propriete::Achetable()

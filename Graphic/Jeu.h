@@ -28,6 +28,7 @@ class Plateau;
 class Pion;
 class Joueur;
 class BilletManager;
+class Domaine;
 
 class Jeu
 {
@@ -52,6 +53,8 @@ public:
     int GetSommeAPayer();
     int GetBilletACasser();
     position GetCentreCase(int num);
+    Domaine* GetDomaineEnConstruction();
+    void SetDomaineEnConstruction(Domaine*);
 
 private:
 	GraphicEngine* _graphicEngine;
@@ -60,6 +63,7 @@ private:
     std::vector<Pion*> _pions;
     BilletManager* _billetManagerARemplir;
     int _sommeAPayer, _billetACasser;
+    Domaine* _domaineEnConstruction;
 };
 
 #endif	/* JEU_H */

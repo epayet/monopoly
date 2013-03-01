@@ -26,7 +26,11 @@ void ValiderBilletsOnClickListener::Act(sf::Event)
     }
     else if (_jeu->GetSommeAPayer() > 0)
     {
-        _jeu->GetPlateau()->GetCase(joueurActuel->GetPosition())->Agir(joueurActuel, _jeu->GetBilletManagerARemplir());
+        if(_jeu->GetDomaineEnConstruction() != NULL)
+            joueurActuel->Construire(_jeu->GetDomaineEnConstruction());
+        else
+            _jeu->GetPlateau()->GetCase(joueurActuel->GetPosition())->Agir(joueurActuel, _jeu->GetBilletManagerARemplir());        
+        
         _jeu->SetSommeAPayer(0);
     }
     

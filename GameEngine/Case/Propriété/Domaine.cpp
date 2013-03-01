@@ -8,12 +8,12 @@
 Domaine::Domaine(Plateau* plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer, Famille* famille) 
         : Propriete(plateau, numero, libelle, valeurHypotheque, prixAchat, prixLoyer, famille)
 {
-    
+    _nombreMaisons = 0;
 }
 
 bool Domaine::PeutConstruire()
 {
-    return _nombreMaisons < 5 && _proprietaire->PeutPayer(_famille->GetPrixMaisons());// && PossedeFamilleEntiere(_plateau->GetJoueurActuel());
+    return _nombreMaisons < 5 && _proprietaire->PeutPayer(_famille->GetPrixMaisons()) && PossedeFamilleEntiere(_plateau->GetJoueurActuel());
 }
 
 void Domaine::Construire()
