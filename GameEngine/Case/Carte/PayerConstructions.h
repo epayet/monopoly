@@ -13,7 +13,7 @@
 class PayerConstructions : public Carte
 {
 public:
-    PayerConstructions(Plateau *plateau, int numero, std::string libelle, TYPECARTE typeCarte, int sommeMaisons, int sommeHotels);
+    PayerConstructions(Plateau *plateau, std::string libelle, TYPECARTE typeCarte, int sommeMaisons, int sommeHotels);
 	void Agir(Joueur *joueur, BilletManager *billetManager);
     int SommeAPayer();
     std::string GetMessage();

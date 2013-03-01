@@ -3,6 +3,8 @@
 #include "GameEngine/Participant/Participant.h"
 #include "GameEngine/Participant/Joueur.h"
 #include "Famille.h"
+#include "../../Plateau.h"
+#include "../../../util.h"
 
 Propriete::Propriete(Plateau *plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer, Famille *famille) : Case(plateau, numero, libelle)
 {
@@ -89,7 +91,14 @@ bool Propriete::PeutConstruire()
     return false;
 }
 
-bool Propriete::EstHypotheque()
+std::string Propriete::GetMessage()
 {
-    return _estHypotheque;
+    if (DoitPayer(_plateau->GetJoueurActuel())==DOITPAYER)
+        return "Vous etes sur " +_libelle+ ".Cette propriete appartient a " + _proprietaire->GetNom() + ", vous lui devez : " + intToString(SommeAPayer()) + " Or.";
+    else if(DoitPayer(_plateau->GetJoueurActuel())==PEUTPAYER)
+        return "Vous pouvez acheter cette propriété. Elle coute : " + intToString(_prixAchat)+ " Or.";
+    else if (DoitPayer(_plateau->GetJoueurActuel())==RIEN && _plateau->GetJoueurActuel() == _proprietaire)
+        return "Vous etes chez vous.";
+    else
+        return "";
 }

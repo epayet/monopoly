@@ -2,7 +2,7 @@
 #include "GameEngine/Case/Case.h"
 #include "GameEngine/Plateau.h"
 
-PayerConstructions::PayerConstructions(Plateau *plateau, int numero, std::string libelle, TYPECARTE typeCarte, int sommeMaisons, int sommeHotels) : Carte(plateau, numero, libelle, typeCarte)
+PayerConstructions::PayerConstructions(Plateau *plateau, std::string libelle, TYPECARTE typeCarte, int sommeMaisons, int sommeHotels) : Carte(plateau, libelle, typeCarte)
 {
     _sommeMaisons = sommeMaisons;
     _sommeHotels = sommeHotels;

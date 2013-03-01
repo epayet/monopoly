@@ -17,7 +17,7 @@ typedef enum {
 class Carte : public Case
 {
 public:
-    Carte(Plateau *plateau, int numero, std::string libelle, TYPECARTE typeCarte);
+    Carte(Plateau *plateau, std::string libelle, TYPECARTE typeCarte);
 	virtual void Agir(Joueur *joueur, BilletManager *billetManager) = 0;
     virtual int SommeAPayer();
     std::string GetMessage();

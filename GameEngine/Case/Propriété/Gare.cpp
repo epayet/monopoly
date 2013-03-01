@@ -23,11 +23,3 @@ int Gare::SommeAPayer()
     }
 }
 
-std::string Gare::GetMessage()
-{
-    if(_proprietaire!=_plateau->GetJoueurActuel())
-    {
-        if (_proprietaire != _plateau->GetJoueurActuel())
-        return "Vous êtes chez " + _proprietaire->GetNom() + ", vous lui devez : " + intToString(SommeAPayer()) + " euros.";
-    }
-}

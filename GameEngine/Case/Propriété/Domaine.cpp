@@ -34,9 +34,7 @@ void Domaine::Detruire()
 void Domaine::Hypothequer()
 {
     _estHypotheque = true;
-    int somme = _nombreMaisons * _famille->GetPrixMaisons();
-    somme += _valeurHypotheque;
-    BilletManager *hyp = new BilletManager(somme);
+    BilletManager *hyp = new BilletManager(GetValeurHypotheque());
     _proprietaire->Crediter(hyp);
     delete hyp;
 }
@@ -59,19 +57,12 @@ int Domaine::SommeAPayer()
     }
 }
 
-std::string Domaine::GetMessage()
-{
-    if (DoitPayer(_plateau->GetJoueurActuel())==DOITPAYER)
-        return "Vous êtes chez " + _proprietaire->GetNom() + ", vous lui devez : " + intToString(SommeAPayer()) + " euros.";
-    else if(DoitPayer(_plateau->GetJoueurActuel())==PEUTPAYER)
-        return "Vous pouvez acheter cette propriété. Elle coûte : " + intToString(_prixAchat)+ " euros.";
-    else if (DoitPayer(_plateau->GetJoueurActuel())==RIEN && _plateau->GetJoueurActuel() == _proprietaire)
-        return "Vous etes chez vous.";
-    else
-        return "";
-}
-
 int Domaine::GetNombreMaisons()
 {
     return _nombreMaisons;
+}
+
+int Domaine::GetValeurHypotheque()
+{
+    return _nombreMaisons * _famille->GetPrixMaisons();
 }

@@ -1,7 +1,7 @@
 #include "Payer.h"
 #include "../../Plateau.h"
 
-Payer::Payer(Plateau *plateau, int numero, std::string libelle, TYPECARTE typeCarte, int sommeAPayer) : Carte(plateau, numero, libelle, typeCarte)
+Payer::Payer(Plateau *plateau, std::string libelle, TYPECARTE typeCarte, int sommeAPayer) : Carte(plateau, libelle, typeCarte)
 {
     _sommeAPayer = sommeAPayer;
 }

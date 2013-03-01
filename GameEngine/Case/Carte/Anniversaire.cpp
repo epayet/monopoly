@@ -4,7 +4,7 @@
 #include "Carte.h"
 #include "../../Plateau.h"
 
-Anniversaire::Anniversaire(Plateau *plateau, int numero, std::string libelle, TYPECARTE typeCarte, int somme) : Carte(plateau, numero, libelle, typeCarte)
+Anniversaire::Anniversaire(Plateau *plateau, std::string libelle, TYPECARTE typeCarte, int somme) : Carte(plateau, libelle, typeCarte)
 {
     _sommeADonner = somme;
 }

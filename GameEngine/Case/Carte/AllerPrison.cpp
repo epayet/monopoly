@@ -4,7 +4,7 @@
 #include "GameEngine/Plateau.h"
 #include "GameEngine/Case/Prison.h"
 
-AllerPrison::AllerPrison(Plateau *plateau, int numero, std::string libelle, TYPECARTE typeCarte) : Carte(plateau, numero, libelle, typeCarte)
+AllerPrison::AllerPrison(Plateau *plateau, std::string libelle, TYPECARTE typeCarte) : Carte(plateau, libelle, typeCarte)
 {
     
 }

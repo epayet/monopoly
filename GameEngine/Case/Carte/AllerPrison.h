@@ -14,7 +14,7 @@
 class AllerPrison : public Carte
 {
 public:
-    AllerPrison(Plateau *plateau, int numero, std::string libelle, TYPECARTE typeCarte);
+    AllerPrison(Plateau *plateau, std::string libelle, TYPECARTE typeCarte);
 	void Agir(Joueur *joueur);
     std::string GetMessage();
     ACTION DoitPayer(Joueur *joueur);
