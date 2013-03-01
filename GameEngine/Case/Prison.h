@@ -25,7 +25,7 @@ class Prison : public Case
             void AjouterPrisonnier(Joueur *joueur);
             bool EstEnPrison(Joueur *joueur);
             void AjouterJoueur(Joueur* joueur);
-            
+            int GetIndicePrisonnier(Joueur *joueur);
     private:
             Emprisonnes _emprisonnes;
             int _prixSortie;
