@@ -63,6 +63,7 @@
           <itemPath>Graphic/Listeners/JouerOnClickListener.h</itemPath>
           <itemPath>Graphic/Listeners/LancerLesDesKeyReleasedListener.h</itemPath>
           <itemPath>Graphic/Listeners/LancerLesDesOnClickListener.h</itemPath>
+          <itemPath>Graphic/Listeners/LeverHypothequeOnClickListener.h</itemPath>
           <itemPath>Graphic/Listeners/NonPayerOnClickListener.h</itemPath>
           <itemPath>Graphic/Listeners/OuiPayerOnClickListener.h</itemPath>
           <itemPath>Graphic/Listeners/QuitterOnClickListener.h</itemPath>
@@ -182,6 +183,7 @@
           <itemPath>Graphic/Listeners/JouerOnClickListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/LancerLesDesKeyReleasedListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/LancerLesDesOnClickListener.cpp</itemPath>
+          <itemPath>Graphic/Listeners/LeverHypothequeOnClickListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/NonPayerOnClickListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/OuiPayerOnClickListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/QuitterOnClickListener.cpp</itemPath>
@@ -612,6 +614,16 @@
             flavor2="0">
       </item>
       <item path="Graphic/Listeners/LancerLesDesOnClickListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/LeverHypothequeOnClickListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/LeverHypothequeOnClickListener.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -1239,6 +1251,16 @@
             flavor2="0">
       </item>
       <item path="Graphic/Listeners/LancerLesDesOnClickListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/LeverHypothequeOnClickListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/LeverHypothequeOnClickListener.h"
             ex="false"
             tool="3"
             flavor2="0">

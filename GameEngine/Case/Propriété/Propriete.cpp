@@ -25,7 +25,7 @@ void Propriete::Agir(Joueur* joueur, BilletManager* billetManager)
 {
     if (DoitPayer(joueur) == DOITPAYER)
         _proprietaire->Crediter(billetManager);
-    else if(DoitPayer(joueur) == PEUTPAYER && billetManager!=NULL)
+    else if (DoitPayer(joueur) == PEUTPAYER && billetManager != NULL)
     {
         _proprietaire = joueur;
         joueur->Acheter(this);
@@ -37,25 +37,28 @@ void Propriete::Hypothequer()
     _estHypotheque = true;
     BilletManager *hypotheque = new BilletManager(_valeurHypotheque);
     _proprietaire->Crediter(hypotheque);
-    delete hypotheque;    
+    delete hypotheque;
 }
 
-int Propriete::LeverHypotheque()
+void Propriete::LeverHypotheque()
 {
-	_estHypotheque = false;
-    int levHyp = _valeurHypotheque + _valeurHypotheque*10/100;
-    return levHyp;
+    _estHypotheque = false;
+}
+
+int Propriete::GetValeurLeverHypotheque()
+{
+    return _valeurHypotheque + _valeurHypotheque * 10 / 100;
 }
 
 ACTION Propriete::DoitPayer(Joueur *joueur)
 {
-    if (_proprietaire==joueur)
+    if (_proprietaire == joueur)
         return RIEN;
-    else if (_proprietaire==NULL && joueur->GetNbTours()>0)
+    else if (_proprietaire == NULL && joueur->GetNbTours() > 0)
         return PEUTPAYER;
-    else if(_proprietaire != NULL)
+    else if (_proprietaire != NULL)
         return DOITPAYER;
-    else 
+    else
         return RIEN;
 }
 
@@ -77,12 +80,12 @@ int Propriete::GetPrixMaisons()
 bool Propriete::PossedeFamilleEntiere(Joueur *joueur)
 {
     int nbPossedes = 0;
-    for(int i=0; i<_famille->GetProprietes().size(); i++)
+    for (int i = 0; i < _famille->GetProprietes().size(); i++)
     {
-        if(_famille->GetProprietes()[i]->GetProprietaire() == joueur)
+        if (_famille->GetProprietes()[i]->GetProprietaire() == joueur)
             nbPossedes++;
     }
-    
+
     return nbPossedes == _famille->GetProprietes().size();
 }
 
@@ -98,11 +101,11 @@ bool Propriete::PeutConstruire()
 
 std::string Propriete::GetMessage()
 {
-    if (DoitPayer(_plateau->GetJoueurActuel())==DOITPAYER)
-        return "Vous etes sur " +_libelle+ ".Cette propriete appartient a " + _proprietaire->GetNom() + ", vous lui devez : " + intToString(SommeAPayer()) + " Or.";
-    else if(DoitPayer(_plateau->GetJoueurActuel())==PEUTPAYER)
-        return "Vous pouvez acheter cette propriété. Elle coute : " + intToString(_prixAchat)+ " Or.";
-    else if (DoitPayer(_plateau->GetJoueurActuel())==RIEN && _plateau->GetJoueurActuel() == _proprietaire)
+    if (DoitPayer(_plateau->GetJoueurActuel()) == DOITPAYER)
+        return "Vous etes sur " + _libelle + ".Cette propriete appartient a " + _proprietaire->GetNom() + ", vous lui devez : " + intToString(SommeAPayer()) + " Or.";
+    else if (DoitPayer(_plateau->GetJoueurActuel()) == PEUTPAYER)
+        return "Vous pouvez acheter cette propriété. Elle coute : " + intToString(_prixAchat) + " Or.";
+    else if (DoitPayer(_plateau->GetJoueurActuel()) == RIEN && _plateau->GetJoueurActuel() == _proprietaire)
         return "Vous etes chez vous.";
     else
         return "";

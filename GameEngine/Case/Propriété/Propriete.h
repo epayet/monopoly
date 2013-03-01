@@ -19,11 +19,12 @@ public:
     ~Propriete();
     virtual void Agir(Joueur *joueur, BilletManager *billetManager); //redéfinit Agir de Case mais sera redéfini par Domaine, Gare et Service Publique
     virtual void Hypothequer();
-    int LeverHypotheque();
+    void LeverHypotheque();
     ACTION DoitPayer(Joueur *joueur);
     virtual int SommeAPayer() = 0;
     Joueur *GetProprietaire();
     virtual int GetValeurHypotheque();
+    int GetValeurLeverHypotheque();
     std::string GetMessage();
     int GetPrixMaisons();
     bool PossedeFamilleEntiere(Joueur *joueur);

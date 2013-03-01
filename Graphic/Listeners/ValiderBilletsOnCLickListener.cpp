@@ -26,18 +26,27 @@ void ValiderBilletsOnClickListener::Act(sf::Event)
     }
     else if (_jeu->GetSommeAPayer() > 0)
     {
-        if(_jeu->GetProprieteACliquer() != NULL)
+        if (_jeu->GetProprieteACliquer() != NULL)
         {
-            Domaine* domaine = (Domaine*)_jeu->GetProprieteACliquer();
-            joueurActuel->Construire(domaine);
+            if(_jeu->GetActionAppartenance() == CONSTRUIRE)
+            {
+                    Domaine* domaine = (Domaine*) _jeu->GetProprieteACliquer();
+                    joueurActuel->Construire(domaine);
+            }
+            else if(_jeu->GetActionAppartenance() == LEVERHYPOTHEQUE)
+            {
+                    joueurActuel->LeverHypotheque(_jeu->GetProprieteACliquer(), _jeu->GetBilletManagerARemplir());
+                   
+            }
+            
             _jeu->UpdateAppartenance();
         }
         else
-            _jeu->GetPlateau()->GetCase(joueurActuel->GetPosition())->Agir(joueurActuel, _jeu->GetBilletManagerARemplir());        
-        
+            _jeu->GetPlateau()->GetCase(joueurActuel->GetPosition())->Agir(joueurActuel, _jeu->GetBilletManagerARemplir());
+
         _jeu->SetSommeAPayer(0);
     }
-    
+
 
     _jeu->GetBilletManagerARemplir()->Vider();
     _guiItem->SetCanDraw(false);
@@ -48,5 +57,5 @@ void ValiderBilletsOnClickListener::Act(sf::Event)
         _jeu->AfficherActionsPossibles(true);
     }
     else
-        _jeu->AfficherActionsPossibles(true,false);
+        _jeu->AfficherActionsPossibles(true, false);
 }

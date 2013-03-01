@@ -34,6 +34,7 @@
 #include "Listeners/HypothequerOnClickListener.h"
 #include "Listeners/LancerLesDesKeyReleasedListener.h"
 #include "../GameEngine/De.h"
+#include "Listeners/LeverHypothequeOnClickListener.h"
 
 Jeu::Jeu()
 {
@@ -184,9 +185,16 @@ Jeu::Jeu()
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::HypothequerKey, hypothequer);
     hypothequer->AddListener(new HypothequerOnClickListener(ONCLICK, hypothequer, _graphicEngine, this));
     hypothequer->SetCanDraw(false);
+    
+    //Lever Hypotheque
+    Button* leverhypotheque = new Button(_graphicEngine->GetWindow(), INGAME, hypothequer->GetX()
+            , hypothequer->GetSizeY() + hypothequer->GetY() + 20, 20, _graphicEngine->GetFont(), JeuConstantes::LeverHypothequeKey);
+    _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::LeverHypothequeKey, leverhypotheque);
+    leverhypotheque->AddListener(new LeverHypothequeOnClickListener(ONCLICK, leverhypotheque, _graphicEngine, this));
+    leverhypotheque->SetCanDraw(false);
 
     //Finir tour
-    Button* finirTour = new Button(_graphicEngine->GetWindow(), INGAME, SIZEWINDOWX - 135, hypothequer->GetSizeY() + hypothequer->GetY() + 20,
+    Button* finirTour = new Button(_graphicEngine->GetWindow(), INGAME, SIZEWINDOWX - 135, leverhypotheque->GetSizeY() + leverhypotheque->GetY() + 20,
             20, _graphicEngine->GetFont(), JeuConstantes::FinirTourKey);
     finirTour->AddListener(new FinirTourOnClickListener(ONCLICK, finirTour, _graphicEngine, this));
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::FinirTourKey, finirTour);
@@ -269,9 +277,15 @@ void Jeu::UpdatePlateau()
     bool peutHypothequer = false;
     if (_plateau->GetJoueurActuel()->PeutHypothequer())
         peutHypothequer = true;
+    
+    //Update peut lever Hypotheque
+    bool peutLeverHypotheque = false;
+    if (_plateau->GetJoueurActuel()->PeutLeverHypotheque())
+        peutLeverHypotheque = true;
 
     _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::ConstruireKey)->SetCanDraw(peutConstruire);
     _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::HypothequerKey)->SetCanDraw(peutHypothequer);
+    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::LeverHypothequeKey)->SetCanDraw(peutLeverHypotheque);
 }
 
 void Jeu::UpdateAppartenance()
@@ -574,7 +588,7 @@ void Jeu::LancerLesDes()
 //    int cpt = 0;
 //    while (cpt < de1 + de2)
 //    {
-//        if (clock.GetElapsedTime() > 0.5)
+//        if (clock.GetElapsedTime() > 0.3)
 //        {
 //            joueurActuel->Avancer(1);
 //            _jeu->UpdateJoueurActuel();
@@ -584,11 +598,9 @@ void Jeu::LancerLesDes()
 //    }
 //    joueurActuel->SetAFaitDouble(de1, de2);
     
-//    if(joueurActuel->GetNbTours() == 0)
-//        joueurActuel->Avancer(de1, de2);
-//    else
-        joueurActuel->Avancer(1);
-//    joueurActuel->Avancer(de1, de2);
+
+//        joueurActuel->Avancer(1);
+    joueurActuel->Avancer(de1, de2);
     UpdateJoueurActuel();
 
     //Enlève comme action possible lancer les dés

@@ -10,9 +10,9 @@ Depart::Depart(Plateau *plateau, int numero, std::string libelle, int sommeADonn
 
 void Depart::Agir(Joueur *joueur, BilletManager*)
 {
-    BilletManager *sommeADonner = new BilletManager(_sommeADonner);
-    joueur->GetBilletManager()->Ajouter(sommeADonner);
-    delete sommeADonner;
+//    BilletManager *sommeADonner = new BilletManager(_sommeADonner);
+//    joueur->GetBilletManager()->Ajouter(sommeADonner);
+//    delete sommeADonner;
 }
 
 int Depart::SommeAPayer()

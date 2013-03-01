@@ -80,6 +80,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Graphic/Listeners/JouerOnClickListener.o \
 	${OBJECTDIR}/Graphic/Listeners/LancerLesDesKeyReleasedListener.o \
 	${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener.o \
+	${OBJECTDIR}/Graphic/Listeners/LeverHypothequeOnClickListener.o \
 	${OBJECTDIR}/Graphic/Listeners/NonPayerOnClickListener.o \
 	${OBJECTDIR}/Graphic/Listeners/OuiPayerOnClickListener.o \
 	${OBJECTDIR}/Graphic/Listeners/QuitterOnClickListener.o \
@@ -362,6 +363,11 @@ ${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener.o: Graphic/Listeners/
 	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener.o Graphic/Listeners/LancerLesDesOnClickListener.cpp
+
+${OBJECTDIR}/Graphic/Listeners/LeverHypothequeOnClickListener.o: Graphic/Listeners/LeverHypothequeOnClickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/LeverHypothequeOnClickListener.o Graphic/Listeners/LeverHypothequeOnClickListener.cpp
 
 ${OBJECTDIR}/Graphic/Listeners/NonPayerOnClickListener.o: Graphic/Listeners/NonPayerOnClickListener.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
@@ -1109,6 +1115,19 @@ ${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener_nomain.o: ${OBJECTDIR
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener_nomain.o Graphic/Listeners/LancerLesDesOnClickListener.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener.o ${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener_nomain.o;\
+	fi
+
+${OBJECTDIR}/Graphic/Listeners/LeverHypothequeOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/LeverHypothequeOnClickListener.o Graphic/Listeners/LeverHypothequeOnClickListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/Listeners/LeverHypothequeOnClickListener.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/LeverHypothequeOnClickListener_nomain.o Graphic/Listeners/LeverHypothequeOnClickListener.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/Listeners/LeverHypothequeOnClickListener.o ${OBJECTDIR}/Graphic/Listeners/LeverHypothequeOnClickListener_nomain.o;\
 	fi
 
 ${OBJECTDIR}/Graphic/Listeners/NonPayerOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/NonPayerOnClickListener.o Graphic/Listeners/NonPayerOnClickListener.cpp 

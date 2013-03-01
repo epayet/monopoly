@@ -50,6 +50,17 @@ void AppartenanceOnClickListener::Act(sf::Event)
                     _jeu->UpdateAppartenance();
                 }
                 break;
+                
+                case LEVERHYPOTHEQUE:
+                if (!_propriete->EstHypotheque())
+                    message->SetContent("Cette propriete n'est pas hypothequee");
+                else
+                {
+                    message->SetContent("Vous pouvez lever l'hypothque sur cette propriete. \nLe prix est de " + intToString(_propriete->GetValeurLeverHypotheque()));
+                    _jeu->SetSommeAPayer(_propriete->GetValeurLeverHypotheque());
+                    _jeu->SetProprieteACliquer(_propriete);
+                }
+                break;
         }
 
 
