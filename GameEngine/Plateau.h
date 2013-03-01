@@ -37,6 +37,7 @@ public:
     bool EstFini();
     Carte* GetCarte(TYPECARTE typeCarte);
     std::queue<Carte*> GetPaquetCartes(TYPECARTE typeCarte);
+    void LireDonnees();
 
 private:
     std::vector<Case*> _cases;

@@ -9,36 +9,17 @@
 #include "Case/CaseCarte.h"
 #include "Case/Carte/Carte.h"
 #include "Case/Prison.h"
+#include "../lib/rapidxml-1.13/rapidxml.hpp"
+
+using namespace std;
+using namespace rapidxml;
 
 Plateau::Plateau()
 {
     _tour = 0;
     _cagnotte = new Cagnotte(this);
     
-    for(int i=0; i<NBCASES; i++)
-    {
-        //Fakes cases
-        std::vector<int> prix;
-        prix.push_back(1);
-        prix.push_back(2);
-        prix.push_back(3);
-        prix.push_back(4);
-        prix.push_back(5);
-        prix.push_back(6);
-        
-        Famille* famille = new Famille("fake couleur", 10);
-        
-        if(i > 2)
-        {
-        for(int j=3; j>0; j--)
-            famille->AjouterPropriete((Propriete*)_cases[j]);
-        }
-        
-        //_cases.push_back(new Taxe(this, i, "fake case", 10));
-        _cases.push_back(new Domaine(this, i, "fake", 1, 2, prix, famille));
-    }
-    
-    _cases.push_back(new Prison(this, 10, "Prison", 10));
+    LireDonnees();
 }
 
 Plateau::~Plateau()
@@ -122,4 +103,76 @@ std::queue<Carte*> Plateau::GetPaquetCartes(TYPECARTE typeCarte)
         return _cartesChance;
     else
         return _cartesCommunaute;
+}
+
+void Plateau::LireDonnees()
+{
+    string input_xml = get_file_contents("config.xml");
+    vector<char> xml_copy(input_xml.begin(), input_xml.end());
+    xml_copy.push_back('\0');
+    //copie du xml
+    xml_document<> doc;
+    doc.parse < parse_declaration_node | parse_no_data_nodes > (&xml_copy[0]);
+
+    xml_node<char> *cur_node = doc.first_node()->first_node();
+
+    //Cartes
+    xml_node<char>* type_node = cur_node->first_node();
+//    cout << type_node->name() << endl;
+    while (type_node)
+    {
+        xml_node<char>* action_node = type_node->first_node();
+        string typeAction = action_node->first_attribute("action")->value();
+       
+            while (action_node)
+            {
+//                 if (typeAction == "Communaute")
+        
+                xml_node<char>* carte_node = action_node->first_node();
+                    while (carte_node)
+                    {
+//                        cout << carte_node->first_attribute("libelle")->value() << endl;
+                        //attribut
+                        carte_node = carte_node->next_sibling("Carte");
+                    }
+
+                action_node = action_node->next_sibling("Action");
+            }
+
+        type_node = type_node->next_sibling("Type");
+    }
+
+    //Cases
+    xml_node<char>* cases_node = cur_node->next_sibling("Cases");
+    xml_node<char>* case_node = cases_node->first_node();
+    while (case_node)
+    {
+        cout << case_node->first_attribute("type")->value() << endl;
+        //attribut
+        case_node = case_node->next_sibling("Case");
+    }
+
+    //Proprietes
+    xml_node<char>* proprietes = cur_node->next_sibling("Proprietes");
+    xml_node<char>* typePropriete = proprietes->first_node();
+    while (typePropriete)
+    {
+        xml_node<char>* famille_node = typePropriete->first_node();
+        while (famille_node)
+        {
+            string typeProprieteString = typePropriete->first_attribute("type")->value();
+            xml_node<char>* case_node = famille_node->first_node();
+                //attribut famille
+                while (case_node)
+                {
+//                    if (typeProprieteString == "domaine")
+                    cout << case_node->first_attribute("nom")->value() << endl;
+                    //recuperation attribut
+                    case_node = case_node->next_sibling("Domaine");
+                }
+            famille_node = famille_node->next_sibling("Famille");
+        }
+        
+        typePropriete = typePropriete->next_sibling("TypeProprietes");
+    }
 }
