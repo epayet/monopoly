@@ -14,11 +14,23 @@ Prison::Prison(Plateau *plateau, int numero, std::string libelle, int prixSortie
 
 void Prison::Agir(Joueur *joueur, BilletManager *billetManager)
 {
-    if(billetManager != NULL)
+    if(DoitPayer(joueur)==DOITPAYER)
         _plateau->GetCagnotte()->Crediter(billetManager);
-    
-    if(EstEnPrison(joueur))
-        AjouterNbToursPasses(joueur); //nbToursPassesEnPrison++
+    else if(DoitPayer(joueur)==PEUTPAYER && billetManager!=NULL)
+        _plateau->GetCagnotte()->Crediter(billetManager);
+    else if(DoitPayer(joueur)==RIEN)
+    {
+        if(EstEnPrison(joueur))
+        {
+            if(joueur->PossedeCarteSortirPrison())
+            {
+                _emprisonnes[GetIndicePrisonnier(joueur)].second == -1; //Sort de prison
+                joueur->EnleverCarteSortirPrison();
+            }
+            else if(joueur->AFaitDouble())
+                _emprisonnes[GetIndicePrisonnier(joueur)].second == -1; //Sort de prison
+        }
+    }
 }
 
 std::string Prison::GetMessage()
@@ -47,66 +59,40 @@ int Prison::SommeAPayer()
 
 ACTION Prison::DoitPayer(Joueur *joueur)
 {
-    int i = 0;
-    for (i = 0; i <= _emprisonnes.size(); i++)
+    if(EstEnPrison(joueur))
     {
-        if (EstEnPrison(joueur) && _emprisonnes[i].first == joueur) //Est en prison
-        {
-            if (joueur->PossedeCarteSortirPrison())
-            {
-                _emprisonnes[i].second == -1; //Sort de prison
-                joueur->EnleverCarteSortirPrison();
-                return RIEN;
-            }
-            else if (joueur->AFaitDouble()) //Fait un double
-            {
-                _emprisonnes[i].second == -1; //Sort de prison
-                return RIEN;
-            }
-            else
-            {
-                if (_emprisonnes[i].second == 3) //Si ça fait 3 tours en prison
-                    return DOITPAYER;
-                else //Si ça fait moins de 3 tours en prison
-                    return PEUTPAYER;
-            }
-        }
-        else
+        if(joueur->PossedeCarteSortirPrison())
             return RIEN;
+        else if(joueur->AFaitDouble())
+            return RIEN;
+        else
+        {
+            _emprisonnes[GetIndicePrisonnier(joueur)].second++;
+            if(_emprisonnes[GetIndicePrisonnier(joueur)].second<3)
+                return PEUTPAYER;
+            else
+                return DOITPAYER;
+        }
     }
+    else
+        return RIEN;
 }
 
 void Prison::AjouterPrisonnier(Joueur* joueur)
 {
-    int i = 0;
-    for (i = 0; i < _plateau->GetJoueurs().size(); i++)
-    {
-        if (_emprisonnes[i].first == joueur)
-            _emprisonnes[i].second++; //Met nbToursPassesEnPrison à 0
-    }
+    AjouterNbToursPasses(joueur);
 
     joueur->Placer(this, false);
 }
 
 void Prison::AjouterNbToursPasses(Joueur* joueur)
 {
-    int i = 0;
-    for (i = 0; i <= _emprisonnes.size(); i++)
-    {
-        if (_emprisonnes[i].first == joueur)
-            _emprisonnes[i].second++;
-    }
+    _emprisonnes[GetIndicePrisonnier(joueur)].second++;
 }
 
 bool Prison::EstEnPrison(Joueur *joueur)
 {
-    for (int i = 0; i < _emprisonnes.size(); i++)
-    {
-        if (_emprisonnes[i].first == joueur && _emprisonnes[i].second>-1)
-            return true;
-    }
-
-    return false;
+    return (_emprisonnes[GetIndicePrisonnier(joueur)].second >-1);
 }
 
 void Prison::AjouterJoueur(Joueur* joueur)
@@ -115,4 +101,13 @@ void Prison::AjouterJoueur(Joueur* joueur)
     nouveauPrisonnier.first = joueur;
     nouveauPrisonnier.second = -1;
     _emprisonnes.push_back(nouveauPrisonnier);
+}
+
+int Prison::GetIndicePrisonnier(Joueur* joueur)
+{
+    for (int i = 0; i < _emprisonnes.size(); i++)
+    {
+        if (_emprisonnes[i].first == joueur)
+            return i;
+    }
 }
