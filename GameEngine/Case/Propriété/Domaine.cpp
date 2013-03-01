@@ -64,5 +64,5 @@ int Domaine::GetNombreMaisons()
 
 int Domaine::GetValeurHypotheque()
 {
-    return _nombreMaisons * _famille->GetPrixMaisons();
+    return _nombreMaisons * _famille->GetPrixMaisons() + _valeurHypotheque;
 }
