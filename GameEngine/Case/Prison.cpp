@@ -15,20 +15,26 @@ Prison::Prison(Plateau *plateau, int numero, std::string libelle, int prixSortie
 void Prison::Agir(Joueur *joueur, BilletManager *billetManager)
 {
     if(DoitPayer(joueur)==DOITPAYER)
+    {
         _plateau->GetCagnotte()->Crediter(billetManager);
+        _emprisonnes[GetIndicePrisonnier(joueur)].second = -1; //Sort de prison
+    }
     else if(DoitPayer(joueur)==PEUTPAYER && billetManager!=NULL)
+    {
         _plateau->GetCagnotte()->Crediter(billetManager);
+        _emprisonnes[GetIndicePrisonnier(joueur)].second == -1; //Sort de prison
+    }
     else if(DoitPayer(joueur)==RIEN)
     {
         if(EstEnPrison(joueur))
         {
             if(joueur->PossedeCarteSortirPrison())
             {
-                _emprisonnes[GetIndicePrisonnier(joueur)].second == -1; //Sort de prison
+                _emprisonnes[GetIndicePrisonnier(joueur)].second = -1; //Sort de prison
                 joueur->EnleverCarteSortirPrison();
             }
             else if(joueur->AFaitDouble())
-                _emprisonnes[GetIndicePrisonnier(joueur)].second == -1; //Sort de prison
+                _emprisonnes[GetIndicePrisonnier(joueur)].second = -1; //Sort de prison
         }
     }
 }
