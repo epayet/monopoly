@@ -102,3 +102,8 @@ std::string Propriete::GetMessage()
     else
         return "";
 }
+
+bool Propriete::EstHypotheque()
+{
+    return _estHypotheque;
+}
