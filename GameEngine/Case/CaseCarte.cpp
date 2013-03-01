@@ -31,7 +31,7 @@ std::string CaseCarte::GetMessage()
     if(_typeCarte==CHANCE)
         return "Vous tirez une carte Chance : \n" + _plateau->GetCarte(_typeCarte)->GetMessage();
     else
-        return "Vous tirez une carte Caisse de Communauté : \n" + _plateau->GetCarte(_typeCarte)->GetMessage();
+        return "Vous tirez une carte Caisse de Communaute : \n" + _plateau->GetCarte(_typeCarte)->GetMessage();
 }
 
 std::string CaseCarte::GetLibelle()

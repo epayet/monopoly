@@ -23,6 +23,7 @@ public:
     void Hypothequer();
     int SommeAPayer();
     int GetNombreMaisons();
+    int GetValeurHypotheque();
 
 private:
     int _nombreMaisons;

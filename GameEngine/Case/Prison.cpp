@@ -28,7 +28,7 @@ std::string Prison::GetMessage()
     {
         if(DoitPayer(_plateau->GetJoueurActuel())==DOITPAYER)
         {
-            return "Vous êtes resté 3 tours en prison : payez " + intToString(_prixSortie) + " Or.";
+            return "Vous etes reste 3 tours en prison : payez " + intToString(_prixSortie) + " Or.";
         }
         else if(DoitPayer(_plateau->GetJoueurActuel())==PEUTPAYER)
         {

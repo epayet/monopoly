@@ -12,7 +12,7 @@ void Arrestation::Agir(Joueur *joueur)
 
 std::string Arrestation::GetMessage()
 {
-    return "Vous êtes envoyé en prison !";
+    return "Vous etes envoye en prison !";
 }
 
 ACTION Arrestation::DoitPayer()
