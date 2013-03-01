@@ -295,10 +295,10 @@ void Jeu::UpdateAppartenance()
         Case* casePlateau = _plateau->GetCase(i);
         if (casePlateau->Achetable())
         {
-            Domaine* domaine = (Domaine*) casePlateau;
+            Propriete* propriete = (Propriete*) casePlateau;
             Appartenance* appartenance = (Appartenance*) _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::AppartenanceKey + intToString(i));
 
-            Joueur* proprietaire = domaine->GetProprietaire();
+            Joueur* proprietaire = propriete->GetProprietaire();
 
             if (proprietaire != NULL)
             {
@@ -306,10 +306,15 @@ void Jeu::UpdateAppartenance()
                 appartenance->SetColor(pion->GetColor());
                 appartenance->SetCanDraw(true);
 
-                if (domaine->EstHypotheque())
+                if (propriete->EstHypotheque())
                     appartenance->SetNbMaisons("H");
-                else
+                else if(propriete->PeutConstruire())
+                {
+                    Domaine* domaine = (Domaine*) casePlateau;
                     appartenance->SetNbMaisons(domaine->GetNombreMaisons());
+                }
+                else
+                    appartenance->SetNbMaisons("P");
             }
         }
     }
