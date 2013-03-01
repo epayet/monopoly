@@ -75,8 +75,7 @@ ACTION Prison::DoitPayer(Joueur *joueur)
             return RIEN;
         else
         {
-            _emprisonnes[GetIndicePrisonnier(joueur)].second++;
-            if(_emprisonnes[GetIndicePrisonnier(joueur)].second<3)
+            if(_emprisonnes[GetIndicePrisonnier(joueur)].second<2)
                 return PEUTPAYER;
             else
                 return DOITPAYER;
