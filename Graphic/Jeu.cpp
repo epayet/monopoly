@@ -583,23 +583,23 @@ void Jeu::LancerLesDes()
     SetImageDe(JeuConstantes::De1Key, de1);
     SetImageDe(JeuConstantes::De2Key, de2);
 
-//    sf::Clock clock;
-//    clock.Reset();
-//    int cpt = 0;
-//    while (cpt < de1 + de2)
-//    {
-//        if (clock.GetElapsedTime() > 0.3)
-//        {
-//            joueurActuel->Avancer(1);
-//            _jeu->UpdateJoueurActuel();
-//            cpt++;
-//            clock.Reset();
-//        }
-//    }
-//    joueurActuel->SetAFaitDouble(de1, de2);
+    sf::Clock clock;
+    clock.Reset();
+    int cpt = 0;
+    while (cpt < de1 + de2)
+    {
+        if (clock.GetElapsedTime() > 0.4)
+        {
+            joueurActuel->Avancer(1);
+            UpdateJoueurActuel();
+            cpt++;
+            clock.Reset();
+        }
+    }
+    joueurActuel->SetAFaitDouble(de1, de2);
     
 
-        joueurActuel->Avancer(1);
+//        joueurActuel->Avancer(1);
 //    joueurActuel->Avancer(de1, de2);
     UpdateJoueurActuel();
 

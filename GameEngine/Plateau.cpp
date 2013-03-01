@@ -63,7 +63,7 @@ void Plateau::AjouterJoueur(std::string nomJoueur)
     Prison* prison = (Prison*)_cases[10];
     prison->AjouterJoueur(joueur);
     
-    joueur->Placer(_cases[29]);
+//    joueur->Placer(_cases[29]);
 }
 
 Joueur* Plateau::GetJoueurActuel()
