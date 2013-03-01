@@ -18,6 +18,7 @@ BilletOnClickListener::BilletOnClickListener(EVENTTYPE eventType, Image* imageBi
 void BilletOnClickListener::Act(sf::Event)
 {
     BilletManager* billetManagerJoueurActuel = _jeu->GetPlateau()->GetJoueurActuel()->GetBilletManager();
+    bool affichValider = false;
     
     if (_jeu->GetBilletACasser() == -1)
     {
@@ -35,8 +36,7 @@ void BilletOnClickListener::Act(sf::Event)
         _jeu->UpdateSommeAPayer();
 
         if (_jeu->GetBilletManagerARemplir()->VautSomme(_jeu->GetBilletACasser()))
-            _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::ValiderBilletsKey)->SetCanDraw(true);
-
+            affichValider = true;
     }
     else if (_jeu->GetSommeAPayer() != 0)
     {
@@ -47,7 +47,9 @@ void BilletOnClickListener::Act(sf::Event)
             _jeu->UpdateSommeAPayer();
 
             if (_jeu->GetBilletManagerARemplir()->VautSomme(_jeu->GetSommeAPayer()))
-                _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::ValiderBilletsKey)->SetCanDraw(true);
+                affichValider = true; 
         }
     }
+    
+    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::ValiderBilletsKey)->SetCanDraw(affichValider);
 }

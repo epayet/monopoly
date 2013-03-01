@@ -12,8 +12,9 @@ EstPayeParBanque::EstPayeParBanque(Plateau *plateau, std::string libelle, TYPECA
 
 void EstPayeParBanque::Agir(Joueur *joueur, BilletManager *billetManager)
 {
-    joueur->Crediter(billetManager);
-    _plateau->GetPaquetCartes(_typeCarte).push(this);
+    BilletManager* billetsBanque = new BilletManager(_sommeADonner);
+    joueur->Crediter(billetsBanque);
+    delete billetsBanque;
 }
 
 

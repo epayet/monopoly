@@ -63,18 +63,18 @@
     </Cartes>
     
     <Cases>
-        <Case type = "depart" numCase = '0' somme = '200'/>
-        <Case type = "chance" numCase = '22' />
-        <Case type = "chance" numCase = '7' />
-        <Case type = "caisse de communaute" numCase = '2' />
-        <Case type = "caisse de communaute" numCase = '17' />
-        <Case type = "caisse de communaute" numCase = '33' />
-        <Case type = "chance" numCase = '36' />
-        <Case type = "parc" numCase = '20'/>
-        <Case type = "arrestation" numCase = ''/>
-        <Case type = "prison" numCase = '10'/>
-        <Case type = "taxe" libelle = "Visit Trainer" somme = '200'/>
-        <Case type = "taxe" libelle = "Repaire Gear" somme = '200'/>
+        <Case type = "depart" libelle = "Case depart" numCase = '0' somme = '200'/>
+        <Case type = "chance" libelle = "Carte chance" numCase = '22' />
+        <Case type = "chance" libelle = "Carte chance" numCase = '7' />
+        <Case type = "caisseCommunaute" libelle = "Caisse de communaute" numCase = '2' />
+        <Case type = "caisseCommunaute" libelle = "Caisse de communaute" numCase = '17' />
+        <Case type = "caisseCommunaute" libelle = "Caisse de communaute" numCase = '33' />
+        <Case type = "chance" libelle = "Carte chance" numCase = '36' />
+        <Case type = "parc" libelle="Parc gratuit" numCase = '20'/>
+        <Case type = "arrestation" libelle = "Aller en prison" numCase = '30'/>
+        <Case type = "prison" libelle = "Prison" numCase = '10' prixSortie = '50'/>
+        <Case type = "taxe" libelle = "Visit Trainer" numCase = '4' somme = '200'/>
+        <Case type = "taxe" libelle = "Repair Gear" numCase = '38' somme = '200'/>
     </Cases>
     
     <Proprietes>
@@ -126,7 +126,7 @@
                 <Gare nom = "Naxxramas dungeon" numCase = '35' achat = '200' p0 = '25' p1 = '50' p2 = '100' p3 = '200' hypotheque = '100'/>
             </Famille>
         </TypeProprietes>
-        <TypeProprietes type = "Services">
+        <TypeProprietes type = "services">
             <Famille couleur = "Blanc">
                 <Service nom = "Postal service" numCase = '12' achat = '150' p0 = '4' p1 = '10' hypotheque = '75'/>
                 <Service nom = "Barber shop" numCase = '28' achat = '150' p0 = '4' p1 = '10' hypotheque = '75'/>

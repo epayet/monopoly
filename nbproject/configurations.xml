@@ -42,6 +42,7 @@
         </logicalFolder>
         <itemPath>GameEngine/De.h</itemPath>
         <itemPath>GameEngine/Plateau.h</itemPath>
+        <itemPath>GameEngine/plateauUtil.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Graphic" projectFiles="true">
         <logicalFolder name="f2" displayName="GuiItems" projectFiles="true">
@@ -60,6 +61,7 @@
           <itemPath>Graphic/Listeners/FinirTourOnClickListener.h</itemPath>
           <itemPath>Graphic/Listeners/HypothequerOnClickListener.h</itemPath>
           <itemPath>Graphic/Listeners/JouerOnClickListener.h</itemPath>
+          <itemPath>Graphic/Listeners/LancerLesDesKeyReleasedListener.h</itemPath>
           <itemPath>Graphic/Listeners/LancerLesDesOnClickListener.h</itemPath>
           <itemPath>Graphic/Listeners/NonPayerOnClickListener.h</itemPath>
           <itemPath>Graphic/Listeners/OuiPayerOnClickListener.h</itemPath>
@@ -105,97 +107,16 @@
                    displayName="Resource Files"
                    projectFiles="true">
       <logicalFolder name="lib" displayName="lib" projectFiles="true">
-        <logicalFolder name="docs" displayName="docs" projectFiles="true">
-          <itemPath>lib/docs/annotated.html</itemPath>
-          <itemPath>lib/docs/classTiXmlAttribute-members.html</itemPath>
-          <itemPath>lib/docs/classTiXmlAttribute.html</itemPath>
-          <itemPath>lib/docs/classTiXmlAttribute.png</itemPath>
-          <itemPath>lib/docs/classTiXmlBase-members.html</itemPath>
-          <itemPath>lib/docs/classTiXmlBase.html</itemPath>
-          <itemPath>lib/docs/classTiXmlBase.png</itemPath>
-          <itemPath>lib/docs/classTiXmlComment-members.html</itemPath>
-          <itemPath>lib/docs/classTiXmlComment.html</itemPath>
-          <itemPath>lib/docs/classTiXmlComment.png</itemPath>
-          <itemPath>lib/docs/classTiXmlDeclaration-members.html</itemPath>
-          <itemPath>lib/docs/classTiXmlDeclaration.html</itemPath>
-          <itemPath>lib/docs/classTiXmlDeclaration.png</itemPath>
-          <itemPath>lib/docs/classTiXmlDocument-members.html</itemPath>
-          <itemPath>lib/docs/classTiXmlDocument.html</itemPath>
-          <itemPath>lib/docs/classTiXmlDocument.png</itemPath>
-          <itemPath>lib/docs/classTiXmlElement-members.html</itemPath>
-          <itemPath>lib/docs/classTiXmlElement.html</itemPath>
-          <itemPath>lib/docs/classTiXmlElement.png</itemPath>
-          <itemPath>lib/docs/classTiXmlHandle-members.html</itemPath>
-          <itemPath>lib/docs/classTiXmlHandle.html</itemPath>
-          <itemPath>lib/docs/classTiXmlNode-members.html</itemPath>
-          <itemPath>lib/docs/classTiXmlNode.html</itemPath>
-          <itemPath>lib/docs/classTiXmlNode.png</itemPath>
-          <itemPath>lib/docs/classTiXmlPrinter-members.html</itemPath>
-          <itemPath>lib/docs/classTiXmlPrinter.html</itemPath>
-          <itemPath>lib/docs/classTiXmlPrinter.png</itemPath>
-          <itemPath>lib/docs/classTiXmlText-members.html</itemPath>
-          <itemPath>lib/docs/classTiXmlText.html</itemPath>
-          <itemPath>lib/docs/classTiXmlText.png</itemPath>
-          <itemPath>lib/docs/classTiXmlUnknown-members.html</itemPath>
-          <itemPath>lib/docs/classTiXmlUnknown.html</itemPath>
-          <itemPath>lib/docs/classTiXmlUnknown.png</itemPath>
-          <itemPath>lib/docs/classTiXmlVisitor-members.html</itemPath>
-          <itemPath>lib/docs/classTiXmlVisitor.html</itemPath>
-          <itemPath>lib/docs/classTiXmlVisitor.png</itemPath>
-          <itemPath>lib/docs/classes.html</itemPath>
-          <itemPath>lib/docs/deprecated.html</itemPath>
-          <itemPath>lib/docs/doxygen.css</itemPath>
-          <itemPath>lib/docs/doxygen.png</itemPath>
-          <itemPath>lib/docs/files.html</itemPath>
-          <itemPath>lib/docs/functions.html</itemPath>
-          <itemPath>lib/docs/functions_0x63.html</itemPath>
-          <itemPath>lib/docs/functions_0x64.html</itemPath>
-          <itemPath>lib/docs/functions_0x65.html</itemPath>
-          <itemPath>lib/docs/functions_0x66.html</itemPath>
-          <itemPath>lib/docs/functions_0x67.html</itemPath>
-          <itemPath>lib/docs/functions_0x69.html</itemPath>
-          <itemPath>lib/docs/functions_0x6c.html</itemPath>
-          <itemPath>lib/docs/functions_0x6e.html</itemPath>
-          <itemPath>lib/docs/functions_0x6f.html</itemPath>
-          <itemPath>lib/docs/functions_0x70.html</itemPath>
-          <itemPath>lib/docs/functions_0x71.html</itemPath>
-          <itemPath>lib/docs/functions_0x72.html</itemPath>
-          <itemPath>lib/docs/functions_0x73.html</itemPath>
-          <itemPath>lib/docs/functions_0x74.html</itemPath>
-          <itemPath>lib/docs/functions_0x75.html</itemPath>
-          <itemPath>lib/docs/functions_0x76.html</itemPath>
-          <itemPath>lib/docs/functions_enum.html</itemPath>
-          <itemPath>lib/docs/functions_func.html</itemPath>
-          <itemPath>lib/docs/functions_func_0x63.html</itemPath>
-          <itemPath>lib/docs/functions_func_0x64.html</itemPath>
-          <itemPath>lib/docs/functions_func_0x65.html</itemPath>
-          <itemPath>lib/docs/functions_func_0x66.html</itemPath>
-          <itemPath>lib/docs/functions_func_0x67.html</itemPath>
-          <itemPath>lib/docs/functions_func_0x69.html</itemPath>
-          <itemPath>lib/docs/functions_func_0x6c.html</itemPath>
-          <itemPath>lib/docs/functions_func_0x6e.html</itemPath>
-          <itemPath>lib/docs/functions_func_0x70.html</itemPath>
-          <itemPath>lib/docs/functions_func_0x71.html</itemPath>
-          <itemPath>lib/docs/functions_func_0x72.html</itemPath>
-          <itemPath>lib/docs/functions_func_0x73.html</itemPath>
-          <itemPath>lib/docs/functions_func_0x74.html</itemPath>
-          <itemPath>lib/docs/functions_func_0x75.html</itemPath>
-          <itemPath>lib/docs/functions_func_0x76.html</itemPath>
-          <itemPath>lib/docs/functions_rela.html</itemPath>
-          <itemPath>lib/docs/functions_vars.html</itemPath>
-          <itemPath>lib/docs/hierarchy.html</itemPath>
-          <itemPath>lib/docs/index.html</itemPath>
-          <itemPath>lib/docs/pages.html</itemPath>
-          <itemPath>lib/docs/tab_b.gif</itemPath>
-          <itemPath>lib/docs/tab_l.gif</itemPath>
-          <itemPath>lib/docs/tab_r.gif</itemPath>
-          <itemPath>lib/docs/tabs.css</itemPath>
-          <itemPath>lib/docs/tinystr_8h_source.html</itemPath>
-          <itemPath>lib/docs/tinyxml_8h_source.html</itemPath>
-          <itemPath>lib/docs/tutorial0.html</itemPath>
+        <logicalFolder name="rapidxml-1.13"
+                       displayName="rapidxml-1.13"
+                       projectFiles="true">
+          <itemPath>lib/rapidxml-1.13/license.txt</itemPath>
+          <itemPath>lib/rapidxml-1.13/manual.html</itemPath>
+          <itemPath>lib/rapidxml-1.13/rapidxml.hpp</itemPath>
+          <itemPath>lib/rapidxml-1.13/rapidxml_iterators.hpp</itemPath>
+          <itemPath>lib/rapidxml-1.13/rapidxml_print.hpp</itemPath>
+          <itemPath>lib/rapidxml-1.13/rapidxml_utils.hpp</itemPath>
         </logicalFolder>
-        <itemPath>lib/tinystr.h</itemPath>
-        <itemPath>lib/tinyxml.h</itemPath>
       </logicalFolder>
       <itemPath>config.xml</itemPath>
     </logicalFolder>
@@ -240,6 +161,7 @@
         </logicalFolder>
         <itemPath>GameEngine/De.cpp</itemPath>
         <itemPath>GameEngine/Plateau.cpp</itemPath>
+        <itemPath>GameEngine/plateauUtil.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="Graphic" projectFiles="true">
         <logicalFolder name="f2" displayName="GuiItems" projectFiles="true">
@@ -258,6 +180,7 @@
           <itemPath>Graphic/Listeners/FinirTourOnClickListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/HypothequerOnClickListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/JouerOnClickListener.cpp</itemPath>
+          <itemPath>Graphic/Listeners/LancerLesDesKeyReleasedListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/LancerLesDesOnClickListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/NonPayerOnClickListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/OuiPayerOnClickListener.cpp</itemPath>
@@ -555,6 +478,10 @@
       </item>
       <item path="GameEngine/Plateau.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="GameEngine/plateauUtil.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/plateauUtil.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Graphic/GuiItems/Appartenance.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Graphic/GuiItems/Appartenance.h" ex="false" tool="3" flavor2="0">
@@ -665,6 +592,16 @@
             flavor2="0">
       </item>
       <item path="Graphic/Listeners/JouerOnClickListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/LancerLesDesKeyReleasedListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/LancerLesDesKeyReleasedListener.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -929,222 +866,26 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
-      <item path="lib/docs/annotated.html" ex="false" tool="3" flavor2="0">
+      <item path="lib/rapidxml-1.13/license.txt" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="lib/docs/classTiXmlAttribute-members.html"
+      <item path="lib/rapidxml-1.13/manual.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="lib/rapidxml-1.13/rapidxml.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="lib/rapidxml-1.13/rapidxml_iterators.hpp"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="lib/docs/classTiXmlAttribute.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlAttribute.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlBase-members.html"
+      <item path="lib/rapidxml-1.13/rapidxml_print.hpp"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="lib/docs/classTiXmlBase.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlBase.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlComment-members.html"
+      <item path="lib/rapidxml-1.13/rapidxml_utils.hpp"
             ex="false"
             tool="3"
             flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlComment.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlComment.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlDeclaration-members.html"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlDeclaration.html"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlDeclaration.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlDocument-members.html"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlDocument.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlDocument.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlElement-members.html"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlElement.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlElement.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlHandle-members.html"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlHandle.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlNode-members.html"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlNode.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlNode.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlPrinter-members.html"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlPrinter.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlPrinter.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlText-members.html"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlText.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlText.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlUnknown-members.html"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlUnknown.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlUnknown.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlVisitor-members.html"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlVisitor.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlVisitor.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classes.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/deprecated.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/doxygen.css" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/doxygen.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/files.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x63.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x64.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x65.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x66.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x67.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x69.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x6c.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x6e.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x6f.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x70.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x71.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x72.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x73.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x74.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x75.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x76.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_enum.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x63.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x64.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x65.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x66.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x67.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x69.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x6c.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x6e.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x70.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x71.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x72.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x73.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x74.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x75.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x76.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_rela.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_vars.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/hierarchy.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/index.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/pages.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/tab_b.gif" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/tab_l.gif" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/tab_r.gif" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/tabs.css" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/tinystr_8h_source.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/tinyxml_8h_source.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/tutorial0.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/tinystr.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/tinyxml.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -1364,6 +1105,10 @@
       </item>
       <item path="GameEngine/Plateau.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="GameEngine/plateauUtil.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GameEngine/plateauUtil.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Graphic/GuiItems/Appartenance.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Graphic/GuiItems/Appartenance.h" ex="false" tool="3" flavor2="0">
@@ -1474,6 +1219,16 @@
             flavor2="0">
       </item>
       <item path="Graphic/Listeners/JouerOnClickListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/LancerLesDesKeyReleasedListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/LancerLesDesKeyReleasedListener.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -1702,222 +1457,26 @@
       </item>
       <item path="config.xml" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="lib/docs/annotated.html" ex="false" tool="3" flavor2="0">
+      <item path="lib/rapidxml-1.13/license.txt" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="lib/docs/classTiXmlAttribute-members.html"
+      <item path="lib/rapidxml-1.13/manual.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="lib/rapidxml-1.13/rapidxml.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="lib/rapidxml-1.13/rapidxml_iterators.hpp"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="lib/docs/classTiXmlAttribute.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlAttribute.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlBase-members.html"
+      <item path="lib/rapidxml-1.13/rapidxml_print.hpp"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="lib/docs/classTiXmlBase.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlBase.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlComment-members.html"
+      <item path="lib/rapidxml-1.13/rapidxml_utils.hpp"
             ex="false"
             tool="3"
             flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlComment.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlComment.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlDeclaration-members.html"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlDeclaration.html"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlDeclaration.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlDocument-members.html"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlDocument.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlDocument.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlElement-members.html"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlElement.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlElement.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlHandle-members.html"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlHandle.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlNode-members.html"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlNode.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlNode.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlPrinter-members.html"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlPrinter.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlPrinter.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlText-members.html"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlText.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlText.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlUnknown-members.html"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlUnknown.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlUnknown.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlVisitor-members.html"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlVisitor.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classTiXmlVisitor.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/classes.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/deprecated.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/doxygen.css" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/doxygen.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/files.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x63.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x64.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x65.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x66.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x67.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x69.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x6c.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x6e.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x6f.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x70.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x71.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x72.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x73.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x74.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x75.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_0x76.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_enum.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x63.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x64.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x65.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x66.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x67.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x69.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x6c.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x6e.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x70.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x71.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x72.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x73.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x74.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x75.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_func_0x76.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_rela.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/functions_vars.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/hierarchy.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/index.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/pages.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/tab_b.gif" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/tab_l.gif" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/tab_r.gif" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/tabs.css" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/tinystr_8h_source.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/tinyxml_8h_source.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/docs/tutorial0.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/tinystr.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="lib/tinyxml.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

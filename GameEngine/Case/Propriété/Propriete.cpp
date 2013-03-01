@@ -16,6 +16,11 @@ Propriete::Propriete(Plateau *plateau, int numero, std::string libelle, int vale
     _famille = famille;
 }
 
+Propriete::~Propriete()
+{
+    delete _famille;
+}
+
 void Propriete::Agir(Joueur* joueur, BilletManager* billetManager)
 {
     if (DoitPayer(joueur) == DOITPAYER)

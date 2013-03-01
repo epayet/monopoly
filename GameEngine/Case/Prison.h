@@ -24,6 +24,7 @@ class Prison : public Case
             ACTION DoitPayer(Joueur *joueur);
             void AjouterPrisonnier(Joueur *joueur);
             bool EstEnPrison(Joueur *joueur);
+            void AjouterJoueur(Joueur* joueur);
             
     private:
             Emprisonnes _emprisonnes;

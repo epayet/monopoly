@@ -8,7 +8,7 @@ Depart::Depart(Plateau *plateau, int numero, std::string libelle, int sommeADonn
     _sommeADonner = sommeADonner;
 }
 
-void Depart::Agir(Joueur *joueur)
+void Depart::Agir(Joueur *joueur, BilletManager*)
 {
     BilletManager *sommeADonner = new BilletManager(_sommeADonner);
     joueur->GetBilletManager()->Ajouter(sommeADonner);
@@ -20,7 +20,7 @@ int Depart::SommeAPayer()
     return _sommeADonner;
 }
 
-ACTION Depart::DoitPayer()
+ACTION Depart::DoitPayer(Joueur*)
 {
     return RIEN;
 }

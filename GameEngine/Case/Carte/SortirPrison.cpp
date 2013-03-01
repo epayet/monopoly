@@ -7,7 +7,7 @@ SortirPrison::SortirPrison(Plateau *plateau, std::string libelle, TYPECARTE type
     
 }
 
-void SortirPrison::Agir(Joueur *joueur)
+void SortirPrison::Agir(Joueur *joueur, BilletManager*)
 {
     joueur->AjouterCarteSortirPrison();
 }

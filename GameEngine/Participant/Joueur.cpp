@@ -4,6 +4,7 @@
 #include "GameEngine/Plateau.h"
 #include "GameEngine/Case/Prison.h"
 #include "GameEngine/Case/Propriété/Domaine.h"
+#include "../Participant/Cagnotte.h"
 
 Joueur::Joueur(Plateau *plateau, std::string nom) : Participant(plateau, nom)
 {
@@ -16,17 +17,22 @@ Joueur::Joueur(Plateau *plateau, std::string nom) : Participant(plateau, nom)
 
 void Joueur::Avancer(int valeur)
 {
-    _position += valeur;
-
-    if (_position > 39)
+    Prison* prison = (Prison*) _plateau->GetCase(10);
+    if (!prison->EstEnPrison(this))
     {
-        GagnerArgentCaseDepart();
-        _position -= 40;
+        _position += valeur;
+
+        if (_position > 39)
+        {
+            GagnerArgentCaseDepart();
+            _position -= 40;
+        }
     }
 }
 
 void Joueur::Avancer(int de1, int de2)
 {
+
     Avancer(de1 + de2);
     SetAFaitDouble(de1, de2);
 }
@@ -59,13 +65,13 @@ bool Joueur::PeutPayer(int somme)
         return false;
 
     int sommeEnHypothequant = SommeBillets();
-    
-    for(int i=0; i<_proprietes.size(); i++)
+
+    for (int i = 0; i < _proprietes.size(); i++)
     {
         sommeEnHypothequant += _proprietes[i]->GetValeurHypotheque();
     }
-    
-    return sommeEnHypothequant > somme;
+
+    return sommeEnHypothequant >= somme;
 }
 
 void Joueur::Construire(Domaine *domaine)
@@ -103,14 +109,14 @@ void Joueur::Placer(Case *caseAPlacer, bool passerParDepart)
 
 void Joueur::InitialiserBillets()
 {
-//    _billetManager->Ajouter(2, BILLET500);
-//    _billetManager->Ajouter(4, BILLET100);
-//    _billetManager->Ajouter(1, BILLET50);
-//    _billetManager->Ajouter(1, BILLET20);
-//    _billetManager->Ajouter(2, BILLET10);
-//    _billetManager->Ajouter(1, BILLET5);
-//    _billetManager->Ajouter(5, BILLET1);
-    
+    //    _billetManager->Ajouter(2, BILLET500);
+    //    _billetManager->Ajouter(4, BILLET100);
+    //    _billetManager->Ajouter(1, BILLET50);
+    //    _billetManager->Ajouter(1, BILLET20);
+    //    _billetManager->Ajouter(2, BILLET10);
+    //    _billetManager->Ajouter(1, BILLET5);
+    //    _billetManager->Ajouter(5, BILLET1);
+
     _billetManager->Ajouter(999, BILLET500);
     _billetManager->Ajouter(999, BILLET100);
     _billetManager->Ajouter(999, BILLET50);
@@ -178,23 +184,23 @@ bool Joueur::APerdu()
 
 bool Joueur::PeutConstruire()
 {
-    for(int i=0; i<_proprietes.size(); i++)
+    for (int i = 0; i < _proprietes.size(); i++)
     {
-        if(_proprietes[i]->PeutConstruire())
+        if (_proprietes[i]->PeutConstruire())
             return true;
     }
-    
+
     return false;
 }
 
 bool Joueur::PeutHypothequer()
 {
-    for(int i=0; i<_proprietes.size(); i++)
+    for (int i = 0; i < _proprietes.size(); i++)
     {
-        if(!_proprietes[i]->EstHypotheque())
+        if (!_proprietes[i]->EstHypotheque())
             return true;
     }
-    
+
     return false;
 }
 

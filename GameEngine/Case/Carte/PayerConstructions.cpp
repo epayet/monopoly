@@ -1,6 +1,9 @@
 #include "PayerConstructions.h"
 #include "GameEngine/Case/Case.h"
 #include "GameEngine/Plateau.h"
+#include "../../Participant/Cagnotte.h"
+#include "GameEngine/Case/Propriété/Propriete.h"
+#include "GameEngine/Case/Propriété/Domaine.h"
 
 PayerConstructions::PayerConstructions(Plateau *plateau, std::string libelle, TYPECARTE typeCarte, int sommeMaisons, int sommeHotels) : Carte(plateau, libelle, typeCarte)
 {
@@ -8,27 +11,29 @@ PayerConstructions::PayerConstructions(Plateau *plateau, std::string libelle, TY
     _sommeHotels = sommeHotels;
 }
 
-
 void PayerConstructions::Agir(Joueur *joueur, BilletManager *billetManager)
 {
-    _plateau->GetPaquetCartes(_typeCarte).push(this);
+    if (billetManager != NULL)
+        _plateau->GetCagnotte()->GetBilletManager()->Ajouter(billetManager);
 }
 
 int PayerConstructions::SommeAPayer()
 {
-    /*
-    nbMaisons, nbHotels, i = 0;
-    std::vector<Proprietes*> proprietes;
+    int nbMaisons = 0, nbHotels = 0, i = 0;
+    std::vector<Propriete*> proprietes;
     proprietes = _plateau->GetJoueurActuel()->GetProprietes();
-    for(i=0; i<proprietes[i].size(); i++)
+    for (i = 0; i < proprietes.size(); i++)
     {
-        if(proprietes[i]->GetNbMaisons == 5)
-            nbHotels++;
-     else if(proprietes[i]->GetNbMaisons > 0)
-            nbMaisons++;
+        if (proprietes[i]->PeutConstruire())
+        {
+            Domaine* domaine = (Domaine*) proprietes[i];
+            if (domaine->GetNombreMaisons() == 5)
+                nbHotels++;
+            else if (domaine->GetNombreMaisons() > 0)
+                nbMaisons++;
+        }
     }
-    return ((nbMaisons*_prixMaisons)+(nbHotels*_prixHotels));
-    */
+    return ((nbMaisons * _sommeMaisons)+(nbHotels * _sommeHotels));
 }
 
 std::string PayerConstructions::GetMessage()
@@ -38,5 +43,8 @@ std::string PayerConstructions::GetMessage()
 
 ACTION PayerConstructions::DoitPayer(Joueur *joueur)
 {
-    return DOITPAYER;
+    if (SommeAPayer() > 0)
+        return DOITPAYER;
+    else
+        return RIEN;
 }

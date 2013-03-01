@@ -16,6 +16,7 @@ class Propriete : public Case
 {
 public:
     Propriete(Plateau *plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer, Famille *famille);
+    ~Propriete();
     virtual void Agir(Joueur *joueur, BilletManager *billetManager); //redéfinit Agir de Case mais sera redéfini par Domaine, Gare et Service Publique
     virtual void Hypothequer();
     int LeverHypotheque();

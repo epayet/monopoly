@@ -35,7 +35,7 @@ public:
     Cagnotte* GetCagnotte();
     void JoueurActuelAPerdu();
     bool EstFini();
-    Carte* GetCarte(TYPECARTE typeCarte);
+    Carte* TirerCarte(TYPECARTE typeCarte, bool remmettreSousLeTas = false);
     std::queue<Carte*> GetPaquetCartes(TYPECARTE typeCarte);
     void LireDonnees();
 

@@ -32,6 +32,8 @@
 #include "Listeners/AppartenanceOnClickListener.h"
 #include "GameEngine/Case/Propriété/Domaine.h"
 #include "Listeners/HypothequerOnClickListener.h"
+#include "Listeners/LancerLesDesKeyReleasedListener.h"
+#include "../GameEngine/De.h"
 
 Jeu::Jeu()
 {
@@ -45,6 +47,7 @@ Jeu::Jeu()
     _graphicEngine->SetState(FIRSTMENU);
 
     _graphicEngine->AddListener(new FinirTourKeyReleasedListener(KEYRELEASED, sf::Key::Return, _graphicEngine, this));
+    _graphicEngine->AddListener(new LancerLesDesKeyReleasedListener(KEYRELEASED, sf::Key::L, _graphicEngine, this));
 
     //FIRSTMENU
     //Bouton jouer
@@ -505,4 +508,98 @@ position Jeu::GetCentreCase(int pos)
     posi.y = y;
 
     return posi;
+}
+
+void Jeu::AgirJoueur()
+{
+    Joueur* joueurActuel = _plateau->GetJoueurActuel();
+    
+    Case* caseActuelle = _plateau->GetCase(joueurActuel->GetPosition());
+
+    //Actions possibles
+    TextBlock* caseMessage = (TextBlock*) _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::CaseMessageKey);
+    caseMessage->SetCanDraw(true);
+    caseMessage->SetContent(caseActuelle->GetMessage());
+
+    ACTION action = caseActuelle->DoitPayer(joueurActuel);
+    
+    bool canFinirTour = false;
+
+    //DOITPAYER, DOITETREPAYE, PEUTPAYER, RIEN
+    if (action == DOITPAYER)
+    {
+        int sommeAPayer = caseActuelle->SommeAPayer();
+        SetSommeAPayer(sommeAPayer);
+        
+        if(!joueurActuel->PeutPayer(sommeAPayer))
+        {
+            _plateau->JoueurActuelAPerdu();
+            caseMessage->SetContent("Vous avez perdu !");
+            canFinirTour = true;
+        }
+    }
+    else if (action == DOITETREPAYE)
+    {
+        //Non implemente
+        canFinirTour = true;
+    }
+    else if (action == PEUTPAYER)
+    {
+        AfficherVoulezVousPayer(true);
+    }
+    else if (action == RIEN)
+    {
+        caseActuelle->Agir(joueurActuel);
+        canFinirTour = true;
+    }
+    else if(action == ESTDEPLACE)
+    {
+        AgirJoueur();
+    }
+    
+    AfficherActionsPossibles(true, canFinirTour);
+}
+
+void Jeu::LancerLesDes()
+{
+    Joueur* joueurActuel = _plateau->GetJoueurActuel();
+
+    int de1 = De::Lancer();
+    int de2 = De::Lancer();
+    SetImageDe(JeuConstantes::De1Key, de1);
+    SetImageDe(JeuConstantes::De2Key, de2);
+
+//    sf::Clock clock;
+//    clock.Reset();
+//    int cpt = 0;
+//    while (cpt < de1 + de2)
+//    {
+//        if (clock.GetElapsedTime() > 0.5)
+//        {
+//            joueurActuel->Avancer(1);
+//            _jeu->UpdateJoueurActuel();
+//            cpt++;
+//            clock.Reset();
+//        }
+//    }
+//    joueurActuel->SetAFaitDouble(de1, de2);
+    
+//    if(joueurActuel->GetNbTours() == 0)
+//        joueurActuel->Avancer(de1, de2);
+//    else
+        joueurActuel->Avancer(1);
+//    joueurActuel->Avancer(de1, de2);
+    UpdateJoueurActuel();
+
+    //Enlève comme action possible lancer les dés
+    AfficherLancerDes(false);
+
+    AgirJoueur();
+}
+
+void Jeu::SetImageDe(std::string deKey, int de)
+{
+    Image* deImage = (Image*) _graphicEngine->GetGuiManager()->GetGuiItem(deKey);
+    deImage->SetFilePath(JeuConstantes::DesPaths[de - 1]);
+    deImage->SetCanDraw(true);
 }

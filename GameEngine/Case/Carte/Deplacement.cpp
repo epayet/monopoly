@@ -9,15 +9,12 @@ Deplacement::Deplacement(Plateau *plateau, std::string libelle, TYPECARTE typeCa
     _passeParCaseDepart = passeParDepart;
 }
 
-void Deplacement::Agir(Joueur *joueur)
+void Deplacement::Agir(Joueur *joueur, BilletManager*)
 {
     if(_numeroCaseFinale<0)     //Déplacement de type "reculez de X cases"
         joueur->Placer(_plateau->GetCase(joueur->GetPosition() - _numeroCaseFinale), _passeParCaseDepart);
     else
-    {
         joueur->Placer(_plateau->GetCase(_numeroCaseFinale), _passeParCaseDepart);
-    }
-    _plateau->GetPaquetCartes(_typeCarte).push(this);
 }
 
 std::string Deplacement::GetMessage()

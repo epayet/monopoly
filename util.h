@@ -12,6 +12,7 @@
 
 int rand_a_b(int a, int b);
 std::string intToString(int);
+int stringToInt(std::string str);
 std::string get_file_contents(const char *filename);
 
 #endif	/* UTIL_H */

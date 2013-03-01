@@ -20,9 +20,8 @@ public:
     Carte(Plateau *plateau, std::string libelle, TYPECARTE typeCarte);
 	virtual void Agir(Joueur *joueur, BilletManager *billetManager) = 0;
     virtual int SommeAPayer();
-    std::string GetMessage();
-    virtual ACTION DoitPayer(Joueur *joueur);
-    virtual std::string GetLibelle();
+//    std::string GetMessage();
+    virtual ACTION DoitPayer(Joueur *joueur) = 0;
 private:
     TYPECARTE _typeCarte;
     

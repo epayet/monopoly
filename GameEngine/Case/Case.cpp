@@ -5,15 +5,14 @@
 
 Case::Case(Plateau *plateau, int numero, std::string libelle)
 {
-	_plateau = plateau;
-        _numero = numero;
-        _libelle = libelle;
+    _plateau = plateau;
+    _numero = numero;
+    _libelle = libelle;
 }
-
 
 int Case::GetNumero()
 {
-	return _numero;
+    return _numero;
 }
 
 std::string Case::GetLibelle()
@@ -24,4 +23,9 @@ std::string Case::GetLibelle()
 bool Case::Achetable()
 {
     return false;
+}
+
+int Case::SommeAPayer()
+{
+    return -1;
 }

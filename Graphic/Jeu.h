@@ -12,6 +12,7 @@
 #define SIZEWINDOWY 768
 
 #include <vector>
+#include <string>
 
 typedef enum
 {
@@ -63,6 +64,9 @@ public:
     void SetProprieteACliquer(Propriete*);
     void SetActionAppartenance(ACTIONAPPARTENANCE);
     ACTIONAPPARTENANCE GetActionAppartenance();
+    void AgirJoueur();
+    void LancerLesDes();
+    
 
 private:
 	GraphicEngine* _graphicEngine;
@@ -73,6 +77,7 @@ private:
     int _sommeAPayer, _billetACasser;
     Propriete* _proprieteACliquer;
     ACTIONAPPARTENANCE _actionAppartenance;
+    void SetImageDe(std::string deKey, int de);
 };
 
 #endif	/* JEU_H */

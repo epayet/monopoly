@@ -14,10 +14,10 @@ class Depart : public Case
 {
 public:
     Depart(Plateau *plateau, int numero, std::string libelle, int sommeADonner);
-    void Agir(Joueur *joueur);
+    void Agir(Joueur *joueur, BilletManager*);
     std::string GetMessage();
     int SommeAPayer();
-    ACTION DoitPayer();
+    ACTION DoitPayer(Joueur*);
 private:
     int _sommeADonner;
 };

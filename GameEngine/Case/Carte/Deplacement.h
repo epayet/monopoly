@@ -14,7 +14,7 @@ class Deplacement : public Carte
 {
 public:
     Deplacement(Plateau *plateau, std::string libelle, TYPECARTE typeCarte, int numCaseFinale, bool passeParDepart);
-	void Agir(Joueur *joueur);
+	void Agir(Joueur *joueur, BilletManager*);
     std::string GetMessage();
     ACTION DoitPayer(Joueur *joueur);
 private:

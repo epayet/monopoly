@@ -3,6 +3,9 @@
 #include <sstream>
 #include <fstream>
 #include <cerrno>
+#include <sstream>
+#include <sstream>
+#include <string>
 
 /**
  * Génère un nombre aléatoire entre a et b (b > a)
@@ -12,17 +15,24 @@
  */
 int rand_a_b(int a, int b)
 {
-	return rand() % (b - a) + a;
+    return rand() % (b - a) + a;
 }
 
 std::string intToString(int nb)
 {
     // créer un flux de sortie
-	std::ostringstream oss;
-	// écrire un nombre dans le flux
-	oss << nb;
-	// récupérer une chaîne de caractères
-	return oss.str();
+    std::ostringstream oss;
+    // écrire un nombre dans le flux
+    oss << nb;
+    // récupérer une chaîne de caractères
+    return oss.str();
+}
+
+int stringToInt(std::string str)
+{
+    int numb;
+    std::istringstream(str) >> numb;
+    return numb;
 }
 
 std::string get_file_contents(const char *filename)

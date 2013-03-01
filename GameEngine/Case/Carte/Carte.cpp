@@ -10,28 +10,13 @@ Carte::Carte(Plateau *plateau, std::string libelle, TYPECARTE typecarte) : Case(
     _typeCarte = typecarte;
 }
 
-void Carte::Agir(Joueur *joueur, BilletManager *billetManager)
-{
-    return _plateau->GetCarte(_typeCarte)->Agir(joueur, billetManager);        
-}
+//void Carte::RemettreSousLeTas()
+//{
+//    _plateau->GetPaquetCartes(_typeCarte).pop();
+//    _plateau->GetPaquetCartes(_typeCarte).push(this);
+//}
 
 int Carte::SommeAPayer()
 {
-    return _plateau->GetCarte(_typeCarte)->SommeAPayer();
-}
-
-ACTION Carte::DoitPayer(Joueur *joueur)
-{
-    return _plateau->GetCarte(_typeCarte)->DoitPayer(joueur);
-}
-
-std::string Carte::GetMessage()
-{
-    
-    return _plateau->GetCarte(_typeCarte)->GetMessage();
-}
-
-std::string Carte::GetLibelle()
-{
-    return _plateau->GetCarte(_typeCarte)->GetLibelle();
+    return -1;
 }

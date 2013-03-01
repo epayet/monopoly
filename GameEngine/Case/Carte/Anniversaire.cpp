@@ -13,7 +13,6 @@ Anniversaire::Anniversaire(Plateau *plateau, std::string libelle, TYPECARTE type
 void Anniversaire::Agir(Joueur *joueur, BilletManager *billetManager)
 {
     joueur->Crediter(billetManager);
-    _plateau->GetPaquetCartes(_typeCarte).push(this);
 }
 
 

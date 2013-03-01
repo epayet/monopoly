@@ -62,6 +62,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/GameEngine/Participant/Joueur.o \
 	${OBJECTDIR}/GameEngine/Participant/Participant.o \
 	${OBJECTDIR}/GameEngine/Plateau.o \
+	${OBJECTDIR}/GameEngine/plateauUtil.o \
 	${OBJECTDIR}/Graphic/GuiItems/Appartenance.o \
 	${OBJECTDIR}/Graphic/GuiItems/Hotel.o \
 	${OBJECTDIR}/Graphic/GuiItems/Maison.o \
@@ -77,6 +78,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Graphic/Listeners/FinirTourOnClickListener.o \
 	${OBJECTDIR}/Graphic/Listeners/HypothequerOnClickListener.o \
 	${OBJECTDIR}/Graphic/Listeners/JouerOnClickListener.o \
+	${OBJECTDIR}/Graphic/Listeners/LancerLesDesKeyReleasedListener.o \
 	${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener.o \
 	${OBJECTDIR}/Graphic/Listeners/NonPayerOnClickListener.o \
 	${OBJECTDIR}/Graphic/Listeners/OuiPayerOnClickListener.o \
@@ -277,6 +279,11 @@ ${OBJECTDIR}/GameEngine/Plateau.o: GameEngine/Plateau.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/Plateau.o GameEngine/Plateau.cpp
 
+${OBJECTDIR}/GameEngine/plateauUtil.o: GameEngine/plateauUtil.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine
+	${RM} $@.d
+	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/plateauUtil.o GameEngine/plateauUtil.cpp
+
 ${OBJECTDIR}/Graphic/GuiItems/Appartenance.o: Graphic/GuiItems/Appartenance.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/GuiItems
 	${RM} $@.d
@@ -351,6 +358,11 @@ ${OBJECTDIR}/Graphic/Listeners/JouerOnClickListener.o: Graphic/Listeners/JouerOn
 	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
 	${RM} $@.d
 	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/JouerOnClickListener.o Graphic/Listeners/JouerOnClickListener.cpp
+
+${OBJECTDIR}/Graphic/Listeners/LancerLesDesKeyReleasedListener.o: Graphic/Listeners/LancerLesDesKeyReleasedListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	${RM} $@.d
+	$(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/LancerLesDesKeyReleasedListener.o Graphic/Listeners/LancerLesDesKeyReleasedListener.cpp
 
 ${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener.o: Graphic/Listeners/LancerLesDesOnClickListener.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
@@ -871,6 +883,19 @@ ${OBJECTDIR}/GameEngine/Plateau_nomain.o: ${OBJECTDIR}/GameEngine/Plateau.o Game
 	    ${CP} ${OBJECTDIR}/GameEngine/Plateau.o ${OBJECTDIR}/GameEngine/Plateau_nomain.o;\
 	fi
 
+${OBJECTDIR}/GameEngine/plateauUtil_nomain.o: ${OBJECTDIR}/GameEngine/plateauUtil.o GameEngine/plateauUtil.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GameEngine
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/GameEngine/plateauUtil.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/GameEngine/plateauUtil_nomain.o GameEngine/plateauUtil.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/GameEngine/plateauUtil.o ${OBJECTDIR}/GameEngine/plateauUtil_nomain.o;\
+	fi
+
 ${OBJECTDIR}/Graphic/GuiItems/Appartenance_nomain.o: ${OBJECTDIR}/Graphic/GuiItems/Appartenance.o Graphic/GuiItems/Appartenance.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Graphic/GuiItems
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/GuiItems/Appartenance.o`; \
@@ -1064,6 +1089,19 @@ ${OBJECTDIR}/Graphic/Listeners/JouerOnClickListener_nomain.o: ${OBJECTDIR}/Graph
 	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/JouerOnClickListener_nomain.o Graphic/Listeners/JouerOnClickListener.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/Graphic/Listeners/JouerOnClickListener.o ${OBJECTDIR}/Graphic/Listeners/JouerOnClickListener_nomain.o;\
+	fi
+
+${OBJECTDIR}/Graphic/Listeners/LancerLesDesKeyReleasedListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/LancerLesDesKeyReleasedListener.o Graphic/Listeners/LancerLesDesKeyReleasedListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Graphic/Listeners
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Graphic/Listeners/LancerLesDesKeyReleasedListener.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -DSFML_DYNAMIC -I. -I. -I. -I. -I. -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Graphic/Listeners/LancerLesDesKeyReleasedListener_nomain.o Graphic/Listeners/LancerLesDesKeyReleasedListener.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Graphic/Listeners/LancerLesDesKeyReleasedListener.o ${OBJECTDIR}/Graphic/Listeners/LancerLesDesKeyReleasedListener_nomain.o;\
 	fi
 
 ${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener_nomain.o: ${OBJECTDIR}/Graphic/Listeners/LancerLesDesOnClickListener.o Graphic/Listeners/LancerLesDesOnClickListener.cpp 
