@@ -22,7 +22,6 @@ public:
 	void Detruire();
     void Hypothequer();
     int SommeAPayer();
-    std::string GetMessage();
     int GetNombreMaisons();
 
 private:

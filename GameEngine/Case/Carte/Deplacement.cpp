@@ -3,7 +3,7 @@
 #include "GameEngine/Case/Case.h"
 #include "GameEngine/Plateau.h"
 
-Deplacement::Deplacement(Plateau *plateau, int numero, std::string libelle, TYPECARTE typeCarte, int numCaseFinale, bool passeParDepart) : Carte(plateau, numero, libelle, typeCarte)
+Deplacement::Deplacement(Plateau *plateau, std::string libelle, TYPECARTE typeCarte, int numCaseFinale, bool passeParDepart) : Carte(plateau, libelle, typeCarte)
 {
     _numeroCaseFinale = numCaseFinale;
     _passeParCaseDepart = passeParDepart;
@@ -11,7 +11,12 @@ Deplacement::Deplacement(Plateau *plateau, int numero, std::string libelle, TYPE
 
 void Deplacement::Agir(Joueur *joueur)
 {
-    joueur->Placer(_plateau->GetCase(_numeroCaseFinale), _passeParCaseDepart);
+    if(_numeroCaseFinale<0)     //Déplacement de type "reculez de X cases"
+        joueur->Placer(_plateau->GetCase(joueur->GetPosition() - _numeroCaseFinale), _passeParCaseDepart);
+    else
+    {
+        joueur->Placer(_plateau->GetCase(_numeroCaseFinale), _passeParCaseDepart);
+    }
     _plateau->GetPaquetCartes(_typeCarte).push(this);
 }
 

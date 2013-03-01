@@ -31,9 +31,3 @@ int ServicePublique::SommeAPayer()
             return _prixLoyer[1] * _plateau->GetJoueurActuel()->GetDerniersDes();
     }
 }
-
-std::string ServicePublique::GetMessage()
-{
-    if (_proprietaire != _plateau->GetJoueurActuel())
-        return "Vous êtes chez " + _proprietaire->GetNom() + ", vous lui devez : " + intToString(SommeAPayer()) + " euros.";
-}

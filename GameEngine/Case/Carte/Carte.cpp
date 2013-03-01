@@ -5,7 +5,7 @@
 #include "GameEngine/Plateau.h"
 
 
-Carte::Carte(Plateau *plateau, int numero, std::string libelle, TYPECARTE typecarte) : Case(plateau, numero, libelle)
+Carte::Carte(Plateau *plateau, std::string libelle, TYPECARTE typecarte) : Case(plateau, 0, libelle)
 {
     _typeCarte = typecarte;
 }

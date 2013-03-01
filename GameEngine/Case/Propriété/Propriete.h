@@ -23,7 +23,7 @@ class Propriete : public Case
             virtual int SommeAPayer()=0;
             Joueur *GetProprietaire();
             int GetValeurHypotheque();
-            virtual std::string GetMessage()=0;
+            std::string GetMessage();
             int GetPrixMaisons();
             bool PossedeFamilleEntiere(Joueur *joueur);
             bool Achetable();

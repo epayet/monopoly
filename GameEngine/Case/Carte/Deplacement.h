@@ -13,7 +13,7 @@
 class Deplacement : public Carte
 {
 public:
-    Deplacement(Plateau *plateau, int numero, std::string libelle, TYPECARTE typeCarte, int numCaseFinale, bool passeParDepart);
+    Deplacement(Plateau *plateau, std::string libelle, TYPECARTE typeCarte, int numCaseFinale, bool passeParDepart);
 	void Agir(Joueur *joueur);
     std::string GetMessage();
     ACTION DoitPayer(Joueur *joueur);

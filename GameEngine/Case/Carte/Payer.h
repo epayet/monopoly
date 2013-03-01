@@ -14,7 +14,7 @@
 class Payer : public Carte
 {
 public:
-    Payer(Plateau *plateau, int numero, std::string libelle, TYPECARTE typeCarte, int sommeAPayer);
+    Payer(Plateau *plateau, std::string libelle, TYPECARTE typeCarte, int sommeAPayer);
 	void Agir(Joueur *joueur, BilletManager *billetManager);
     int SommeAPayer();
     std::string GetMessage();

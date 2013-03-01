@@ -13,7 +13,7 @@
 class EstPayeParBanque : public Carte
 {
 public:
-    EstPayeParBanque(Plateau *plateau, int numero, std::string libelle, TYPECARTE typeCarte, int somme);
+    EstPayeParBanque(Plateau *plateau, std::string libelle, TYPECARTE typeCarte, int somme);
 	void Agir(Joueur *joueur, BilletManager *billetManager);
     std::string GetMessage();
     ACTION DoitPayer(Joueur *joueur);

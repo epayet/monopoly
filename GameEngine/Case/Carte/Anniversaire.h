@@ -14,7 +14,7 @@
 class Anniversaire : public Carte
 {
 public:
-    Anniversaire(Plateau *plateau, int numero, std::string libelle, TYPECARTE typeCarte, int somme);
+    Anniversaire(Plateau *plateau, std::string libelle, TYPECARTE typeCarte, int somme);
 	void Agir(Joueur *joueur, BilletManager *billetManager);
     std::string GetMessage();
     ACTION DoitPayer(Joueur *joueur);
