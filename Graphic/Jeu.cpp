@@ -30,17 +30,20 @@
 #include "GameEngine/Case/Propriété/Propriete.h"
 #include "Listeners/FinirTourKeyReleasedListener.h"
 #include "Listeners/AppartenanceOnClickListener.h"
+#include "GameEngine/Case/Propriété/Domaine.h"
+#include "Listeners/HypothequerOnClickListener.h"
 
 Jeu::Jeu()
 {
     _plateau = new Plateau();
     _billetManagerARemplir = new BilletManager();
     _billetACasser = _sommeAPayer = 0;
-    _domaineEnConstruction = NULL;
+    _proprieteACliquer = NULL;
+    _actionAppartenance = RIENAPPARTENANCE;
 
     _graphicEngine = new GraphicEngine(SIZEWINDOWX, SIZEWINDOWY, "Monopoly");
     _graphicEngine->SetState(FIRSTMENU);
-    
+
     _graphicEngine->AddListener(new FinirTourKeyReleasedListener(KEYRELEASED, sf::Key::Return, _graphicEngine, this));
 
     //FIRSTMENU
@@ -117,7 +120,7 @@ Jeu::Jeu()
 
     //Message affiché par la case
     TextBlock* caseMessage = new TextBlock(_graphicEngine->GetWindow(), INGAME, lancerLesDesButtons->GetX(),
-            actionsPossiblesPourTextBlock->GetY() + actionsPossiblesPourTextBlock->GetSizeY() + 20, 20, _graphicEngine->GetFont(), "");
+            de1->GetY() + de1->GetSizeY() + 20, 20, _graphicEngine->GetFont(), "");
     caseMessage->SetCanDraw(false);
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::CaseMessageKey, caseMessage);
 
@@ -170,10 +173,17 @@ Jeu::Jeu()
             , 20, _graphicEngine->GetFont(), JeuConstantes::ConstruireKey);
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::ConstruireKey, constuireBouton);
     constuireBouton->AddListener(new ConstruireOnClickListener(ONCLICK, constuireBouton, _graphicEngine, this));
-//    constuireBouton->SetCanDraw(false);
+    constuireBouton->SetCanDraw(false);
+
+    //Hypothequer
+    Button* hypothequer = new Button(_graphicEngine->GetWindow(), INGAME, constuireBouton->GetX()
+            , constuireBouton->GetSizeY() + constuireBouton->GetY() + 20, 20, _graphicEngine->GetFont(), JeuConstantes::HypothequerKey);
+    _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::HypothequerKey, hypothequer);
+    hypothequer->AddListener(new HypothequerOnClickListener(ONCLICK, hypothequer, _graphicEngine, this));
+    hypothequer->SetCanDraw(false);
 
     //Finir tour
-    Button* finirTour = new Button(_graphicEngine->GetWindow(), INGAME, SIZEWINDOWX - 135, constuireBouton->GetSizeY() + constuireBouton->GetY() + 20,
+    Button* finirTour = new Button(_graphicEngine->GetWindow(), INGAME, SIZEWINDOWX - 135, hypothequer->GetSizeY() + hypothequer->GetY() + 20,
             20, _graphicEngine->GetFont(), JeuConstantes::FinirTourKey);
     finirTour->AddListener(new FinirTourOnClickListener(ONCLICK, finirTour, _graphicEngine, this));
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::FinirTourKey, finirTour);
@@ -187,13 +197,14 @@ Jeu::Jeu()
         if (casePlateau->Achetable())
         {
             position pos = GetCentreCase(i);
-            Appartenance* app = new Appartenance(_graphicEngine->GetWindow(), INGAME, pos.x, pos.y, 10, sf::Color(255, 255, 255));
+            Appartenance* app = new Appartenance(_graphicEngine->GetWindow(), INGAME, pos.x, pos.y, 40, sf::Color(255, 255, 255));
             app->SetCanDraw(false);
-            Domaine* domaine = (Domaine*)casePlateau;
+            Domaine* domaine = (Domaine*) casePlateau;
             app->AddListener(new AppartenanceOnClickListener(ONCLICK, app, _graphicEngine, this, domaine));
             _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::AppartenanceKey + intToString(i), app);
         }
     }
+
 }
 
 Jeu::~Jeu()
@@ -244,31 +255,47 @@ void Jeu::UpdatePlateau()
     cagnotte->SetContent(JeuConstantes::SommeCagnotteKey + intToString(sommeCagnotte));
 
     //Update Appartenance
+    UpdateAppartenance();
+
+    //Update Construire
+    bool peutConstruire = false;
+    if (_plateau->GetJoueurActuel()->PeutConstruire())
+        peutConstruire = true;
+    
+    //Update Hypothequer
+    bool peutHypothequer = false;
+    if (_plateau->GetJoueurActuel()->PeutHypothequer())
+        peutHypothequer = true;
+
+    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::ConstruireKey)->SetCanDraw(peutConstruire);
+    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::HypothequerKey)->SetCanDraw(peutHypothequer);
+}
+
+void Jeu::UpdateAppartenance()
+{
     for (int i = 0; i < 40; i++)
     {
         Case* casePlateau = _plateau->GetCase(i);
         if (casePlateau->Achetable())
         {
-            Propriete* propriete = (Propriete*) casePlateau;
+            Domaine* domaine = (Domaine*) casePlateau;
             Appartenance* appartenance = (Appartenance*) _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::AppartenanceKey + intToString(i));
 
-            Joueur* proprietaire = propriete->GetProprietaire();
+            Joueur* proprietaire = domaine->GetProprietaire();
 
             if (proprietaire != NULL)
             {
                 Pion* pion = (Pion*) _graphicEngine->GetGuiManager()->GetGuiItem(proprietaire->GetNom());
                 appartenance->SetColor(pion->GetColor());
                 appartenance->SetCanDraw(true);
+
+                if (domaine->EstHypotheque())
+                    appartenance->SetNbMaisons("H");
+                else
+                    appartenance->SetNbMaisons(domaine->GetNombreMaisons());
             }
         }
     }
-    
-    //Update Construire
-    bool canConstruire = false;
-    if(_plateau->GetJoueurActuel()->PeutConstruire())
-        canConstruire = true;
-        
-    _graphicEngine->GetGuiManager()->GetGuiItem(JeuConstantes::ConstruireKey)->SetCanDraw(canConstruire);
 }
 
 void Jeu::UpdateJoueurActuel()
@@ -369,14 +396,24 @@ int Jeu::GetSommeAPayer()
     return _sommeAPayer;
 }
 
-Domaine* Jeu::GetDomaineEnConstruction()
+Propriete* Jeu::GetProprieteACliquer()
 {
-    return _domaineEnConstruction;
+    return _proprieteACliquer;
 }
 
-void Jeu::SetDomaineEnConstruction(Domaine* domaine)
+void Jeu::SetProprieteACliquer(Propriete* propriete)
 {
-    _domaineEnConstruction = domaine;
+    _proprieteACliquer = propriete;
+}
+
+ACTIONAPPARTENANCE Jeu::GetActionAppartenance()
+{
+    return _actionAppartenance;
+}
+
+void Jeu::SetActionAppartenance(ACTIONAPPARTENANCE action)
+{
+    _actionAppartenance = action;
 }
 
 void Jeu::UpdateFinirTour()

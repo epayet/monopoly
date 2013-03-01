@@ -58,7 +58,14 @@ bool Joueur::PeutPayer(int somme)
     if (!_billetManager->PeutPayer(somme))
         return false;
 
-    return true;
+    int sommeEnHypothequant = SommeBillets();
+    
+    for(int i=0; i<_proprietes.size(); i++)
+    {
+        sommeEnHypothequant += _proprietes[i]->GetValeurHypotheque();
+    }
+    
+    return sommeEnHypothequant > somme;
 }
 
 void Joueur::Construire(Domaine *domaine)
@@ -174,6 +181,17 @@ bool Joueur::PeutConstruire()
     for(int i=0; i<_proprietes.size(); i++)
     {
         if(_proprietes[i]->PeutConstruire())
+            return true;
+    }
+    
+    return false;
+}
+
+bool Joueur::PeutHypothequer()
+{
+    for(int i=0; i<_proprietes.size(); i++)
+    {
+        if(!_proprietes[i]->EstHypotheque())
             return true;
     }
     

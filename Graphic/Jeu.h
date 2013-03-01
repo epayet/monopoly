@@ -18,6 +18,11 @@ typedef enum
 	FIRSTMENU, CHOOSEPLAYER, INGAME
 } GAMESTATE;
 
+typedef enum
+{
+    HYPOTHEQUER, CONSTRUIRE, RIENAPPARTENANCE
+}ACTIONAPPARTENANCE;
+
 struct position
 {
     int x,y;
@@ -28,7 +33,7 @@ class Plateau;
 class Pion;
 class Joueur;
 class BilletManager;
-class Domaine;
+class Propriete;
 
 class Jeu
 {
@@ -40,6 +45,7 @@ public:
     void SetNbJoueurs(int nbJoueurs);
     void UpdateJoueurActuel();
     void UpdatePlateau();
+    void UpdateAppartenance();
     void SetPositionJoueur(Joueur* joueur);
     void SetSommeAPayer(int somme);
     void SetBilletACasser(int somme);
@@ -53,8 +59,10 @@ public:
     int GetSommeAPayer();
     int GetBilletACasser();
     position GetCentreCase(int num);
-    Domaine* GetDomaineEnConstruction();
-    void SetDomaineEnConstruction(Domaine*);
+    Propriete* GetProprieteACliquer();
+    void SetProprieteACliquer(Propriete*);
+    void SetActionAppartenance(ACTIONAPPARTENANCE);
+    ACTIONAPPARTENANCE GetActionAppartenance();
 
 private:
 	GraphicEngine* _graphicEngine;
@@ -63,7 +71,8 @@ private:
     std::vector<Pion*> _pions;
     BilletManager* _billetManagerARemplir;
     int _sommeAPayer, _billetACasser;
-    Domaine* _domaineEnConstruction;
+    Propriete* _proprieteACliquer;
+    ACTIONAPPARTENANCE _actionAppartenance;
 };
 
 #endif	/* JEU_H */

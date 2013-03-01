@@ -22,6 +22,7 @@ const std::string JeuConstantes::FaireMonnaieKey = "Faire Monnaie";
 const std::string JeuConstantes::ConstruireKey = "Constuire";
 const std::string JeuConstantes::FinirTourKey = "Finir tour";
 const std::string JeuConstantes::AppartenanceKey = "Appartenance";
+const std::string JeuConstantes::HypothequerKey = "Hypothequer";
 
 const std::string JeuConstantes::BilletsKeys[JeuConstantes::NbBillets] = {"Billet1", "Billet5", "Billet10", "Billet20", "Billet50", "Billet100", "Billet500"};
 const std::string JeuConstantes::NbBilletsKeys[JeuConstantes::NbBillets] = {"NbBillets1", "NbBillets5", "NbBillets10", "NbBillets20", "NbBillets50", "NbBillets100", "NbBillets500"};

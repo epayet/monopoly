@@ -16,10 +16,13 @@ public:
     Appartenance(sf::RenderWindow &window, int state, int x, int y, int size, sf::Color color);
     void Draw(int state);
     void SetColor(sf::Color);
+    void SetNbMaisons(int);
+    void SetNbMaisons(std::string);
 
 private:
-    sf::Shape _shape;
+//    sf::Shape _shape;
     sf::Color _color;
+    sf::String _str;
 };
 
 #endif	/* APPARTENANCE_H */

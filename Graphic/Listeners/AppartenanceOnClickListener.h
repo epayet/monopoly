@@ -12,17 +12,17 @@
 
 class Appartenance;
 class Jeu;
-class Domaine;
+class Propriete;
 
 class AppartenanceOnClickListener : public ActionListener
 {
 public:
-    AppartenanceOnClickListener(EVENTTYPE, Appartenance*, GraphicEngine*, Jeu*, Domaine*);
+    AppartenanceOnClickListener(EVENTTYPE, Appartenance*, GraphicEngine*, Jeu*, Propriete*);
     void Act(sf::Event);
 
 private:
     Jeu* _jeu;
-    Domaine* _domaine;
+    Propriete* _propriete;
 };
 
 #endif	/* APPARTENANCEONCLICKLISTENER_H */

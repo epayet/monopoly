@@ -45,6 +45,7 @@ public:
     static const std::string ConstruireKey;
     static const std::string FinirTourKey;
     static const std::string AppartenanceKey;
+    static const std::string HypothequerKey;
 
     //Paths
 	static const std::string PlateauPath;

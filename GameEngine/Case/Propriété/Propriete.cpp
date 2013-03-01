@@ -75,10 +75,8 @@ bool Propriete::PossedeFamilleEntiere(Joueur *joueur)
         if(_famille->GetProprietes()[i]->GetProprietaire() == joueur)
             nbPossedes++;
     }
-    if(nbPossedes == _famille->GetProprietes().size())
-        return true;
-    else 
-        return false;
+    
+    return nbPossedes == _famille->GetProprietes().size();
 }
 
 bool Propriete::Achetable()
@@ -89,4 +87,9 @@ bool Propriete::Achetable()
 bool Propriete::PeutConstruire()
 {
     return false;
+}
+
+bool Propriete::EstHypotheque()
+{
+    return _estHypotheque;
 }

@@ -41,6 +41,7 @@ public:
     bool APerdu();
     bool PeutConstruire();
     std::vector<Propriete*> GetProprietes();
+    bool PeutHypothequer();
 
 private:
 	int _position;

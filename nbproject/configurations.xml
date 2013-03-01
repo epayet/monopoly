@@ -58,6 +58,7 @@
           <itemPath>Graphic/Listeners/FaireMonnaieOnClickListener.h</itemPath>
           <itemPath>Graphic/Listeners/FinirTourKeyReleasedListener.h</itemPath>
           <itemPath>Graphic/Listeners/FinirTourOnClickListener.h</itemPath>
+          <itemPath>Graphic/Listeners/HypothequerOnClickListener.h</itemPath>
           <itemPath>Graphic/Listeners/JouerOnClickListener.h</itemPath>
           <itemPath>Graphic/Listeners/LancerLesDesOnClickListener.h</itemPath>
           <itemPath>Graphic/Listeners/NonPayerOnClickListener.h</itemPath>
@@ -255,6 +256,7 @@
           <itemPath>Graphic/Listeners/FaireMonnaieOnClickListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/FinirTourKeyReleasedListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/FinirTourOnClickListener.cpp</itemPath>
+          <itemPath>Graphic/Listeners/HypothequerOnClickListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/JouerOnClickListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/LancerLesDesOnClickListener.cpp</itemPath>
           <itemPath>Graphic/Listeners/NonPayerOnClickListener.cpp</itemPath>
@@ -358,7 +360,6 @@
           <preprocessorList>
             <Elem>SFML_DYNAMIC</Elem>
           </preprocessorList>
-          <warningLevel>2</warningLevel>
         </ccTool>
         <linkerTool>
           <output>${TESTDIR}/TestFiles/f1</output>
@@ -644,6 +645,16 @@
             flavor2="0">
       </item>
       <item path="Graphic/Listeners/FinirTourOnClickListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/HypothequerOnClickListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/HypothequerOnClickListener.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -1443,6 +1454,16 @@
             flavor2="0">
       </item>
       <item path="Graphic/Listeners/FinirTourOnClickListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/HypothequerOnClickListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="Graphic/Listeners/HypothequerOnClickListener.h"
             ex="false"
             tool="3"
             flavor2="0">
