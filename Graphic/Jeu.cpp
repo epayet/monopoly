@@ -599,8 +599,8 @@ void Jeu::LancerLesDes()
 //    joueurActuel->SetAFaitDouble(de1, de2);
     
 
-//        joueurActuel->Avancer(1);
-    joueurActuel->Avancer(de1, de2);
+        joueurActuel->Avancer(1);
+//    joueurActuel->Avancer(de1, de2);
     UpdateJoueurActuel();
 
     //Enlève comme action possible lancer les dés
