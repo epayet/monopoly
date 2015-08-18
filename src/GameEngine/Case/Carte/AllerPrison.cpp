@@ -1,7 +1,7 @@
 #include <queue>
 #include "AllerPrison.h"
-#include "GameEngine/Plateau.h"
-#include "GameEngine/Case/Prison.h"
+#include "../../Plateau.h"
+#include "../../Case/Prison.h"
 
 AllerPrison::AllerPrison(Plateau *plateau, std::string libelle, TYPECARTE typeCarte) : Carte(plateau, libelle, typeCarte)
 {

@@ -1,7 +1,7 @@
 #include "Taxe.h"
-#include "util.h"
-#include "GameEngine/Plateau.h"
-#include "GameEngine/Participant/Cagnotte.h"
+#include "../../util.h"
+#include "../Plateau.h"
+#include "../Participant/Cagnotte.h"
 
 Taxe::Taxe(Plateau *plateau, int numero, std::string libelle, int sommeAPayer) : Case(plateau, numero, libelle)
 {

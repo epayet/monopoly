@@ -1,5 +1,4 @@
 #include "Arrestation.h"
-#include "GameEngine/Participant/Joueur.h"
 #include "Prison.h"
 #include "../Plateau.h"
 

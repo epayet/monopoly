@@ -1,9 +1,8 @@
 #include "PayerConstructions.h"
-#include "GameEngine/Case/Case.h"
-#include "GameEngine/Plateau.h"
+#include "../../Plateau.h"
 #include "../../Participant/Cagnotte.h"
-#include "GameEngine/Case/Propriété/Propriete.h"
-#include "GameEngine/Case/Propriété/Domaine.h"
+#include "../Propriété/Propriete.h"
+#include "../Propriété/Domaine.h"
 
 PayerConstructions::PayerConstructions(Plateau *plateau, std::string libelle, TYPECARTE typeCarte, int sommeMaisons, int sommeHotels) : Carte(plateau, libelle, typeCarte)
 {

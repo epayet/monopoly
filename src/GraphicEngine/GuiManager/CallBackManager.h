@@ -1,19 +1,19 @@
-/* 
- * File:   CallBackManager.h
- * Author: manu
- *
- * Created on 21 février 2013, 11:28
- */
-
-#ifndef CALLBACKMANAGER_H
-#define	CALLBACKMANAGER_H
-
-#include <SFML/Graphics.hpp>
-
-class ActionListener;
-class EventHandler;
-class GuiItem;
-
+///*
+// * File:   CallBackManager.h
+// * Author: manu
+// *
+// * Created on 21 février 2013, 11:28
+// */
+//
+//#ifndef CALLBACKMANAGER_H
+//#define	CALLBACKMANAGER_H
+//
+//#include <SFML/Graphics.hpp>
+//
+//class ActionListener;
+//class EventHandler;
+//class GuiItem;
+//
 //typedef enum
 //{
 //	ONCLICK, MOUSEOVER, MOUSEOUT
@@ -31,6 +31,6 @@ class GuiItem;
 //	ActionListener* _actionListener;
 //	EventHandler* _eventHandler;
 //};
-
-#endif	/* CALLBACKMANAGER_H */
-
+//
+//#endif	/* CALLBACKMANAGER_H */
+//

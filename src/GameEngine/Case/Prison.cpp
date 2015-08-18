@@ -1,8 +1,6 @@
 #include "Prison.h"
-#include "GameEngine/Billet/BilletManager.h"
-#include "GameEngine/Participant/Participant.h"
-#include "GameEngine/Plateau.h"
-#include "util.h"
+#include "../Plateau.h"
+#include "../../util.h"
 #include "../Participant/Cagnotte.h"
 
 Prison::Prison(Plateau *plateau, int numero, std::string libelle, int prixSortie) : Case(plateau, numero, libelle)

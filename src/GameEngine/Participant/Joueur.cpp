@@ -1,10 +1,9 @@
 #include "Joueur.h"
 #include "../Case/Case.h"
 #include "../Case/Propriété/Propriete.h"
-#include "GameEngine/Plateau.h"
-#include "GameEngine/Case/Prison.h"
-#include "GameEngine/Case/Propriété/Domaine.h"
-#include "../Participant/Cagnotte.h"
+#include "../Plateau.h"
+#include "../Case/Prison.h"
+#include "../Case/Propriété/Domaine.h"
 
 Joueur::Joueur(Plateau *plateau, std::string nom) : Participant(plateau, nom)
 {

@@ -1,7 +1,4 @@
 #include "EstPayeParBanque.h"
-#include "GameEngine/Participant/Participant.h"
-#include "GameEngine/Case/Case.h"
-#include "Carte.h"
 #include "../../Plateau.h"
 
 EstPayeParBanque::EstPayeParBanque(Plateau *plateau, std::string libelle, TYPECARTE typeCarte, int somme) : Carte(plateau, libelle, typeCarte)

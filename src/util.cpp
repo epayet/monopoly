@@ -1,11 +1,6 @@
 #include "util.h"
-#include <cstdlib>
 #include <sstream>
 #include <fstream>
-#include <cerrno>
-#include <sstream>
-#include <sstream>
-#include <string>
 
 /**
  * Génère un nombre aléatoire entre a et b (b > a)

@@ -1,8 +1,7 @@
 #include "Parc.h"
-#include "GameEngine/Participant/Participant.h"
-#include "GameEngine/Participant/Cagnotte.h"
-#include "GameEngine/Plateau.h"
-#include "util.h"
+#include "../Participant/Cagnotte.h"
+#include "../Plateau.h"
+#include "../../util.h"
 
 Parc::Parc(Plateau *plateau, int numero, std::string libelle) : Case(plateau, numero, libelle)
 {

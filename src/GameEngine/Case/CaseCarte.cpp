@@ -1,9 +1,5 @@
 #include "../Case/CaseCarte.h"
-#include "GameEngine/Participant/Participant.h"
-#include "util.h"
-#include "Case.h"
-#include "GameEngine/Plateau.h"
-
+#include "../Plateau.h"
 
 CaseCarte::CaseCarte(Plateau *plateau, int numero, std::string libelle, TYPECARTE typecarte) : Case(plateau, numero, libelle)
 {

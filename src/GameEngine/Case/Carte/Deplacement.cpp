@@ -1,7 +1,5 @@
 #include "Deplacement.h"
-#include "GameEngine/Participant/Joueur.h"
-#include "GameEngine/Case/Case.h"
-#include "GameEngine/Plateau.h"
+#include "../../Plateau.h"
 
 Deplacement::Deplacement(Plateau *plateau, std::string libelle, TYPECARTE typeCarte, int numCaseFinale, bool passeParDepart) : Carte(plateau, libelle, typeCarte)
 {

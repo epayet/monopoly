@@ -1,6 +1,5 @@
 #include "Depart.h"
-#include "GameEngine/Participant/Participant.h"
-#include "util.h"
+#include "../../util.h"
 
 
 Depart::Depart(Plateau *plateau, int numero, std::string libelle, int sommeADonner) : Case(plateau, numero, libelle)
