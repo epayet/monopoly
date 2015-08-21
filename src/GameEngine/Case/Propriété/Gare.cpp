@@ -1,6 +1,5 @@
 #include "Gare.h"
-#include "GameEngine/Plateau.h"
-#include "util.h"
+#include "../../Plateau.h"
 
 Gare::Gare(Plateau* plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer, Famille* famille) : Propriete(plateau, numero, libelle, valeurHypotheque, prixAchat, prixLoyer, famille)
 {

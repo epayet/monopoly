@@ -1,10 +1,10 @@
 #include "FaireMonnaieOnClickListener.h"
 #include "../../GraphicEngine/GuiManager/GuiItem/Button.h"
-#include "GraphicEngine/GraphicEngine.h"
-#include "GraphicEngine/GuiManager/GuiManager.h"
-#include "Graphic/JeuConstantes.h"
-#include "GraphicEngine/GuiManager/GuiItem/TextBlock.h"
-#include "Graphic/Jeu.h"
+#include "../../GraphicEngine/GraphicEngine.h"
+#include "../../GraphicEngine/GuiManager/GuiManager.h"
+#include "../../Graphic/JeuConstantes.h"
+#include "../../GraphicEngine/GuiManager/GuiItem/TextBlock.h"
+#include "../../Graphic/Jeu.h"
 
 FaireMonnaieOnClickListener::FaireMonnaieOnClickListener(EVENTTYPE eventType, Button* faireMonnaieBouton, GraphicEngine* graphicEngine, Jeu* jeu) 
                             : ActionListener(eventType, faireMonnaieBouton, graphicEngine)

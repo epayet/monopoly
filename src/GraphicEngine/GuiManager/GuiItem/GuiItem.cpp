@@ -1,7 +1,7 @@
 #include "GuiItem.h"
 #include "../CallBackManager.h"
-#include "GraphicEngine/EventHandler/EventHandler.h"
-#include "GraphicEngine/ActionListeners/ActionListener.h"
+#include "../../EventHandler/EventHandler.h"
+#include "../../ActionListeners/ActionListener.h"
 
 GuiItem::GuiItem(sf::RenderWindow& window, int state, int x, int y, int sizex, int sizey) : _window(window)
 {

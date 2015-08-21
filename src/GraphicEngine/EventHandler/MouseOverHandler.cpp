@@ -1,5 +1,5 @@
 #include "MouseOverHandler.h"
-#include "GraphicEngine/GuiManager/GuiItem/GuiItem.h"
+#include "../../GraphicEngine/GuiManager/GuiItem/GuiItem.h"
 
 MouseOverHandler::MouseOverHandler(GuiItem* guiItem) : EventHandler(guiItem)
 {

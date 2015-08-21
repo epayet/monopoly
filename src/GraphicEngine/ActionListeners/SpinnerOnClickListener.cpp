@@ -1,6 +1,6 @@
 #include "SpinnerOnClickListener.h"
-#include "GraphicEngine/GuiManager/GuiItem/GuiItem.h"
-#include "GraphicEngine/GuiManager/GuiItem/Spinner.h"
+#include "../../GraphicEngine/GuiManager/GuiItem/GuiItem.h"
+#include "../../GraphicEngine/GuiManager/GuiItem/Spinner.h"
 
 SpinnerOnClickListener::SpinnerOnClickListener(EVENTTYPE eventType, Spinner* spinner) : ActionListener(eventType, spinner)
 {

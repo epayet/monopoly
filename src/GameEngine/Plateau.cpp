@@ -9,7 +9,7 @@
 #include "Case/CaseCarte.h"
 #include "Case/Carte/Carte.h"
 #include "Case/Prison.h"
-#include "../../lib/rapidxml-1.13/rapidxml.hpp"
+#include "../rapidxml-1.13/rapidxml.hpp"
 #include "../util.h"
 #include "Case/Carte/Payer.h"
 #include "Case/Carte/Deplacement.h"

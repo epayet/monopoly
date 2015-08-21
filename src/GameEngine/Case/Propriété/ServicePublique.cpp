@@ -1,5 +1,5 @@
 #include "ServicePublique.h"
-#include "GameEngine/Plateau.h"
+#include "../../Plateau.h"
 #include "../../../util.h"
 
 ServicePublique::ServicePublique(Plateau* plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer, Famille* famille) : Propriete(plateau, numero, libelle, valeurHypotheque, prixAchat, prixLoyer, famille)

@@ -1,7 +1,7 @@
 #include "Button.h"
-#include "GraphicEngine/GuiManager/CallBackManager.h"
-#include "GraphicEngine/ActionListeners/ButtonMouseOverListener.h"
-#include "GraphicEngine/ActionListeners/ButtonMouseOutListener.h"
+#include "../CallBackManager.h"
+#include "../../ActionListeners/ButtonMouseOverListener.h"
+#include "../../ActionListeners/ButtonMouseOutListener.h"
 
 Button::Button(sf::RenderWindow& window, int state, int x, int y, int size, sf::Font font, std::string content) : GuiItem(window, state, x - MARGIN / 2, y - MARGIN / 2)
 {

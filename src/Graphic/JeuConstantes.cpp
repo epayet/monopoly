@@ -29,11 +29,11 @@ const std::string JeuConstantes::BilletsKeys[JeuConstantes::NbBillets] = {"Bille
 const std::string JeuConstantes::NbBilletsKeys[JeuConstantes::NbBillets] = {"NbBillets1", "NbBillets5", "NbBillets10", "NbBillets20", "NbBillets50", "NbBillets100", "NbBillets500"};
 
 //Paths
-const std::string JeuConstantes::PlateauPath = "./Graphic/Images/plateau.jpg";
-const std::string JeuConstantes::DesPaths[6] = {"./Graphic/Images/de1.png", "./Graphic/Images/de2.png", 
-                                "./Graphic/Images/de3.png","./Graphic/Images/de4.png", "./Graphic/Images/de5.png", "./Graphic/Images/de6.png"};
-const std::string JeuConstantes::BilletsPaths[JeuConstantes::NbBillets] = {"./Graphic/Images/billet1.jpg", "./Graphic/Images/billet5.jpg", 
-                                "./Graphic/Images/billet10.jpg", "./Graphic/Images/billet20.jpg", 
-                                "./Graphic/Images/billet50.jpg", "./Graphic/Images/billet100.jpg", "./Graphic/Images/billet500.jpg"};
+const std::string JeuConstantes::PlateauPath = "./src/Graphic/Images/plateau.jpg";
+const std::string JeuConstantes::DesPaths[6] = {"./src/Graphic/Images/de1.png", "./src/Graphic/Images/de2.png",
+                                "./src/Graphic/Images/de3.png","./src/Graphic/Images/de4.png", "./src/Graphic/Images/de5.png", "./src/Graphic/Images/de6.png"};
+const std::string JeuConstantes::BilletsPaths[JeuConstantes::NbBillets] = {"./src/Graphic/Images/billet1.jpg", "./src/Graphic/Images/billet5.jpg",
+                                "./src/Graphic/Images/billet10.jpg", "./src/Graphic/Images/billet20.jpg",
+                                "./src/Graphic/Images/billet50.jpg", "./src/Graphic/Images/billet100.jpg", "./src/Graphic/Images/billet500.jpg"};
 
 const TYPEBILLET JeuConstantes::ValeurBillets[JeuConstantes::NbBillets] = {BILLET1, BILLET5, BILLET10, BILLET20, BILLET50, BILLET100, BILLET500};

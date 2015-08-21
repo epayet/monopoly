@@ -1,12 +1,12 @@
 #include "BilletOnClickListener.h"
 #include "../../GraphicEngine/GuiManager/GuiItem/Image.h"
-#include "Graphic/Jeu.h"
-#include "GameEngine/Plateau.h"
-#include "GameEngine/Participant/Joueur.h"
-#include "GraphicEngine/GraphicEngine.h"
-#include "GraphicEngine/GuiManager/GuiManager.h"
-#include "Graphic/JeuConstantes.h"
-#include "GameEngine/Billet/Billet.h"
+#include "../../Graphic/Jeu.h"
+#include "../../GameEngine/Plateau.h"
+#include "../../GameEngine/Participant/Joueur.h"
+#include "../../GraphicEngine/GraphicEngine.h"
+#include "../../GraphicEngine/GuiManager/GuiManager.h"
+#include "../../Graphic/JeuConstantes.h"
+#include "../../GameEngine/Billet/Billet.h"
 
 BilletOnClickListener::BilletOnClickListener(EVENTTYPE eventType, Image* imageBillet, GraphicEngine* graphicEngine, Jeu* jeu, TYPEBILLET billet)
 : ActionListener(eventType, imageBillet, graphicEngine)

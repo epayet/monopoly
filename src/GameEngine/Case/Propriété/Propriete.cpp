@@ -1,8 +1,4 @@
 #include "Propriete.h"
-#include "../Case.h"
-#include "GameEngine/Participant/Participant.h"
-#include "GameEngine/Participant/Joueur.h"
-#include "Famille.h"
 #include "../../Plateau.h"
 #include "../../../util.h"
 

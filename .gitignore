@@ -2,3 +2,6 @@
 /dist/
 bin
 .idea
+monopoly
+.release_time
+libs

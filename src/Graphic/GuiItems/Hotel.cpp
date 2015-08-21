@@ -1,5 +1,4 @@
 #include "Hotel.h"
-#include "GraphicEngine/GuiManager/GuiItem/GuiItem.h"
 
 Hotel::Hotel(sf::RenderWindow& window, int state, int x, int y, int size) : GuiItem(window, state, x, y, size, size)
 {

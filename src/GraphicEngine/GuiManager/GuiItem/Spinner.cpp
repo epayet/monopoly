@@ -1,7 +1,7 @@
 #include "Spinner.h"
-#include "GraphicEngine/ActionListeners/SpinnerOnClickListener.h"
-#include "GraphicEngine/GuiManager/CallBackManager.h"
-#include "util.h"
+#include "../../ActionListeners/SpinnerOnClickListener.h"
+#include "../../GuiManager/CallBackManager.h"
+#include "../../../util.h"
 
 Spinner::Spinner(sf::RenderWindow& window, int state, int x, int y, int size, sf::Font font, int min, int max) : GuiItem(window, state, x, y, size, size)
 {

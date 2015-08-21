@@ -4,10 +4,10 @@ project(monopoly)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 set(SOURCE_FILES
-    lib/rapidxml-1.13/rapidxml.hpp
-    lib/rapidxml-1.13/rapidxml_iterators.hpp
-    lib/rapidxml-1.13/rapidxml_print.hpp
-    lib/rapidxml-1.13/rapidxml_utils.hpp
+    src/lib/rapidxml-1.13/rapidxml.hpp
+    src/lib/rapidxml-1.13/rapidxml_iterators.hpp
+    src/lib/rapidxml-1.13/rapidxml_print.hpp
+    src/lib/rapidxml-1.13/rapidxml_utils.hpp
     src/GameEngine/Billet/Billet.cpp
     src/GameEngine/Billet/Billet.h
     src/GameEngine/Billet/BilletManager.cpp

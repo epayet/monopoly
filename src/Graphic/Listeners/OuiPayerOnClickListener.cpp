@@ -1,9 +1,9 @@
 #include "OuiPayerOnClickListener.h"
 #include "../../GraphicEngine/GuiManager/GuiItem/Button.h"
-#include "Graphic/Jeu.h"
-#include "GameEngine/Plateau.h"
-#include "GameEngine/Participant/Joueur.h"
-#include "GameEngine/Case/Case.h"
+#include "../../Graphic/Jeu.h"
+#include "../../GameEngine/Plateau.h"
+#include "../../GameEngine/Participant/Joueur.h"
+#include "../../GameEngine/Case/Case.h"
 
 OuiPayerOnClickListener::OuiPayerOnClickListener(EVENTTYPE eventType, Button* ouiBouton, GraphicEngine* graphicEngine, Jeu* jeu) 
                     : ActionListener(eventType, ouiBouton, graphicEngine)

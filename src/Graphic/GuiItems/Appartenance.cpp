@@ -1,6 +1,5 @@
 #include "Appartenance.h"
-#include "GraphicEngine/GuiManager/GuiItem/GuiItem.h"
-#include "util.h"
+#include "../../util.h"
 
 Appartenance::Appartenance(sf::RenderWindow& window, int state, int x, int y, int size, sf::Color color) : GuiItem(window, state, x, y, size, size)
 {

@@ -1,9 +1,5 @@
 #include "Domaine.h"
-#include "GameEngine/Participant/Joueur.h"
-#include "Famille.h"
-#include "GameEngine/Plateau.h"
-#include "util.h"
-#include "GameEngine/Case/Case.h"
+#include "../../Plateau.h"
 
 Domaine::Domaine(Plateau* plateau, int numero, std::string libelle, int valeurHypotheque, int prixAchat, std::vector<int> prixLoyer, Famille* famille) 
         : Propriete(plateau, numero, libelle, valeurHypotheque, prixAchat, prixLoyer, famille)

@@ -1,13 +1,13 @@
 #include "AppartenanceOnClickListener.h"
-#include "Graphic/GuiItems/Appartenance.h"
-#include "GameEngine/Case/Propriété/Domaine.h"
-#include "Graphic/Jeu.h"
-#include "GameEngine/Plateau.h"
-#include "GraphicEngine/GuiManager/GuiItem/TextBlock.h"
-#include "GraphicEngine/GraphicEngine.h"
-#include "GraphicEngine/GuiManager/GuiManager.h"
-#include "Graphic/JeuConstantes.h"
-#include "util.h"
+#include "../GuiItems/Appartenance.h"
+#include "../../GameEngine/Case/Propriété/Domaine.h"
+#include "../Jeu.h"
+#include "../../GameEngine/Plateau.h"
+#include "../../GraphicEngine/GuiManager/GuiItem/TextBlock.h"
+#include "../../GraphicEngine/GraphicEngine.h"
+#include "../../GraphicEngine/GuiManager/GuiManager.h"
+#include "../../Graphic/JeuConstantes.h"
+#include "../../util.h"
 
 AppartenanceOnClickListener::AppartenanceOnClickListener(EVENTTYPE eventType, Appartenance* appartenance, GraphicEngine* graphicEngine, Jeu* jeu, Propriete* propriete)
 : ActionListener(eventType, appartenance, graphicEngine)

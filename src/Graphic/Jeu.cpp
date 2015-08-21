@@ -81,7 +81,7 @@ Jeu::Jeu()
     Image* plateauImage = new Image(_graphicEngine->GetWindow(), INGAME, 0, 0, JeuConstantes::PlateauPath);
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::PlateauPath, plateauImage);
 
-    //Actions possibles pour : 
+    //Actions possibles pour :
     TextBlock* actionsPossiblesPourTextBlock = new TextBlock(_graphicEngine->GetWindow(), INGAME, plateauImage->GetSizeX() + 20, 10, 20, _graphicEngine->GetFont(), JeuConstantes::ActionsPossiblesPourKey);
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::ActionsPossiblesPourKey, actionsPossiblesPourTextBlock);
 
@@ -184,7 +184,7 @@ Jeu::Jeu()
     _graphicEngine->GetGuiManager()->AddGuiItem(JeuConstantes::HypothequerKey, hypothequer);
     hypothequer->AddListener(new HypothequerOnClickListener(ONCLICK, hypothequer, _graphicEngine, this));
     hypothequer->SetCanDraw(false);
-    
+
     //Lever Hypotheque
     Button* leverhypotheque = new Button(_graphicEngine->GetWindow(), INGAME, hypothequer->GetX()
             , hypothequer->GetSizeY() + hypothequer->GetY() + 20, 20, _graphicEngine->GetFont(), JeuConstantes::LeverHypothequeKey);
