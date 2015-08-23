@@ -1,3 +1,3 @@
 #include "Constant.h"
 
-const std::string Constant::PolicePath = "./src/GraphicEngine/Polices/sanf.TTF";
+const std::string Constant::PolicePath = "./assets/Polices/sanf.TTF";
