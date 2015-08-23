@@ -1,1 +1,3 @@
-docker run -ti --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix epayet/monopoly:latest
+DIR=$( cd -P `dirname "$0"` && pwd )
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$DIR'/libs/SFML'
+./monopoly
