@@ -2,4 +2,4 @@
 
 ![In game screen][screen]
 
-[screen]: images/screen.png
+[screen]: https://raw.githubusercontent.com/epayet/monopoly/master/assets/Images/screen.png
