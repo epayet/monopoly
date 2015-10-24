@@ -1,3 +1,2 @@
-DIR=$( cd -P `dirname "$0"` && pwd )
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$DIR'/libs/SFML'
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD'/libs/SFML'
 ./monopoly
